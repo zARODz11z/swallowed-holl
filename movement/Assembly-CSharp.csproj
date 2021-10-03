@@ -61,6 +61,7 @@
      <Compile Include="Assets\Scripts\Drive.cs" />
      <Compile Include="Assets\Scripts\PositionInterpolator.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshProFloatingText.cs" />
+     <Compile Include="Assets\disableDynamicBone.cs" />
      <Compile Include="Assets\Scripts\CustomGravityRigidbody.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeB.cs" />
      <Compile Include="Assets\Scripts\GenericMovingSphere.cs" />
@@ -121,7 +122,10 @@
      <Compile Include="Assets\Scripts\MovingSphere.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexZoom.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
-     <Compile Include="Assets\disableDynamicBone.cs" />
+     <Compile Include="Assets\BBallHoop.cs" />
+     <Compile Include="Assets\BBall.cs" />
+     <Compile Include="Assets\BBallHoop2.cs" />
+     <Compile Include="Assets\Notes.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />

@@ -2,8 +2,6 @@
 // gibs lag when there are too many, create a max amount of gibs that can be created at once
 //animations scale you up a little bit
 // in air light goes on when in water
-// what if i have an empty on the character that rotates around you based on your input then i draw a line between the charcater and the empty to determine the rotation?
-// still having issues related to velocity deciding rotation, such as jumping and pressing against a sloped surface
 // if you press forward then backward very quickly afterwards youll continue moving forwards just really really slowly. also applied to climbing 
 // make the default be that stuff is not climbable, and make it so you have to manually say what is climbable. the current way is annoying 
 // animations tied to being on a wall, like climbing and wallrunning, will still trigger if youre just going against a little ledge. maybe do like 5 raycasts from the body and if 3 or more return a climbable thing / a wall then it considers that valid? is that too intensive?
@@ -12,7 +10,6 @@
 // hyper specific bug but technically if you were to be standing on a big platform that is a rigid body and it was orbiting an orbital gravity source your orientation would go weirdo. really true if gravity is changing at all. 
 // when gravity changes while you are stationary you dont rotate relative to the gravity source unless you move ( really the same issue as above)
 // maybe overhaul everything to be based on the characters velocity rather than just the inputs, that may make for a more elegant system
-// if you jump after falling off a platform the jump animation plays but you dont jump (this is greatly alleviated, but technically if you jump right before you switch to the falling animation this can still happen)
 // small jitters when running along a sphere gravity (update steps can alleviate this)
 // small jitters when turning or rotating, this one is subtle but it seems to be true for all rigidbodies, i think that is what is causing it on my character (update steps can alleviate this)
 

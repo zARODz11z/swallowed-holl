@@ -18,6 +18,7 @@ public class Shatter : MonoBehaviour
     float breakSpeed = 40f;
 
     void OnCollisionEnter(Collision other) {
+        // is the object colliding with another object past the breaking speed? if so, break it
         if (((other.gameObject.GetComponent<Rigidbody>() != null) && other.gameObject.GetComponent<Rigidbody>().velocity.magnitude > breakSpeed) || this.gameObject.GetComponent<Rigidbody>().velocity.magnitude > breakSpeed){
             oneShot(0);
         }
@@ -26,7 +27,6 @@ public class Shatter : MonoBehaviour
         color = GetComponent<Renderer>();
     }
     public void oneShot(float time){
-        //Debug.Log("get one shotted");
         Invoke("spawnShatter", time);
     }
     public void takeDamage(){

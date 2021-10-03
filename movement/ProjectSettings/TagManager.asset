@@ -8,6 +8,7 @@ TagManager:
   - Breakable
   - wp
   - Hitbox
+  - bball
   layers:
   - Default
   - TransparentFX
