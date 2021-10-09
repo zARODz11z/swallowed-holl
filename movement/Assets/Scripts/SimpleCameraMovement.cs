@@ -19,6 +19,7 @@ public class SimpleCameraMovement : MonoBehaviour
     [SerializeField, Range(0.1f, 10f)]
     float sens = 3.5f;
 
+
     void Awake() {
         if (!cursorLock) {
             Cursor.lockState = CursorLockMode.Locked;

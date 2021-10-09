@@ -54,8 +54,10 @@ public class Grab : MonoBehaviour
         bone.toggle(false);
         hand.setisHolding(false);
         dummy.DetachChildren();
-        body = prop.gameObject.GetComponent<CustomGravityRigidbody>();
-        body.enabled = true;
+
+       // body = prop.gameObject.GetComponent<CustomGravityRigidbody>();
+       // body.enabled = true;
+       
         propRB.isKinematic=(false);
         isHolding = false;
         //this may not be super smart, but i am assuming everything you pick up is labeled as a rigid body. If that changes, this should be updated
@@ -97,10 +99,14 @@ public class Grab : MonoBehaviour
                     // set the hit object to be a child of the grab point
                     hit.transform.SetParent(dummy);
                     // get a reference to the custom gravity rigidbody to disable gravity and sleeping
-                    body = hit.transform.gameObject.GetComponent<CustomGravityRigidbody>();
+
+                    //body = hit.transform.gameObject.GetComponent<CustomGravityRigidbody>();
+
                     //get a reference to the material, obsolete for now but this should be used to make held objects transparent
                     renda = prop.gameObject.GetComponent<Renderer>();
-                    body.enabled = false;
+
+                    //body.enabled = false;
+
                     propRB.isKinematic=(true);
                     isHolding = true;
                     // set the held object to the "nocollidewithplayer" layer to prevent clipping with the player

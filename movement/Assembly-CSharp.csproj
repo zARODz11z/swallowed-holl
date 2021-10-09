@@ -61,10 +61,11 @@
      <Compile Include="Assets\Scripts\Drive.cs" />
      <Compile Include="Assets\Scripts\PositionInterpolator.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshProFloatingText.cs" />
-     <Compile Include="Assets\disableDynamicBone.cs" />
+     <Compile Include="Assets\Scripts\disableDynamicBone.cs" />
      <Compile Include="Assets\Scripts\CustomGravityRigidbody.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeB.cs" />
      <Compile Include="Assets\Scripts\GenericMovingSphere.cs" />
+     <Compile Include="Assets\Scripts\BBallHoop2.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\EnvMapAnimator.cs" />
      <Compile Include="Assets\DynamicBone\Demo\DynamicBoneDemo1.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_UiFrameRateCounter.cs" />
@@ -73,6 +74,7 @@
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\CameraController.cs" />
      <Compile Include="Assets\Scripts\GravityPlane.cs" />
      <Compile Include="Assets\Scripts\PlayerStats.cs" />
+     <Compile Include="Assets\Notes.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMPro_InstructionOverlay.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_ExampleScript_01.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextConsoleSimulator.cs" />
@@ -83,6 +85,7 @@
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventCheck.cs" />
      <Compile Include="Assets\Graphs\Node.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ShaderPropAnimator.cs" />
+     <Compile Include="Assets\Scripts\BBall.cs" />
      <Compile Include="Assets\Scripts\DoorOpen.cs" />
      <Compile Include="Assets\Scripts\StableFloatingRigidbody.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\WarpTextExample.cs" />
@@ -121,11 +124,9 @@
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TeleType.cs" />
      <Compile Include="Assets\Scripts\MovingSphere.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexZoom.cs" />
+     <Compile Include="Assets\Scripts\BBallHoop.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
-     <Compile Include="Assets\BBallHoop.cs" />
-     <Compile Include="Assets\BBall.cs" />
-     <Compile Include="Assets\BBallHoop2.cs" />
-     <Compile Include="Assets\Notes.cs" />
+     <Compile Include="Assets\GravSwapWake.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
