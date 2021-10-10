@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 6550371801029000879}
   - component: {fileID: 6383869558425824233}
   - component: {fileID: 6383869558425824234}
-  - component: {fileID: 6383869558425824232}
   - component: {fileID: 6383869558425824237}
+  - component: {fileID: 7346660719892298976}
   m_Layer: 0
   m_Name: Neck.002
   m_TagString: Untagged
@@ -114,27 +114,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.080476195, y: 0.07829099, z: 0.013641234}
   m_Center: {x: 0.045913875, y: -0.0016144753, z: -0.0007443936}
---- !u!114 &6383869558425824232
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4176458656099108692}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 69e316c1e602f8e4dbad1c3ceac70897, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  buoyancyOffset: {x: 0, y: 0, z: 0}
-  submergenceOffset: 0.5
-  submergenceRange: 1
-  buoyancy: 1
-  waterDrag: 1
-  waterMask:
-    serializedVersion: 2
-    m_Bits: 16
-  floatToSleep: 1
 --- !u!114 &6383869558425824237
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -149,6 +128,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lifeMin: 5
   lifeMax: 10
+--- !u!114 &7346660719892298976
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4176458656099108692}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e6fe35308d54744db558ae6ccc37ea9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4592629962570011307
 GameObject:
   m_ObjectHideFlags: 0
@@ -162,8 +153,8 @@ GameObject:
   - component: {fileID: 5621886496397182632}
   - component: {fileID: 6383869559204219853}
   - component: {fileID: 6383869559204219854}
-  - component: {fileID: 6383869559204219852}
   - component: {fileID: 6383869559204219857}
+  - component: {fileID: 6702221961483770605}
   m_Layer: 0
   m_Name: Neck.001
   m_TagString: Untagged
@@ -263,27 +254,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.035743665, y: 0.080337696, z: 0.0066853077}
   m_Center: {x: 0.089953795, y: 0.00066845474, z: -0.0042223562}
---- !u!114 &6383869559204219852
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4592629962570011307}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 69e316c1e602f8e4dbad1c3ceac70897, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  buoyancyOffset: {x: 0, y: 0, z: 0}
-  submergenceOffset: 0.5
-  submergenceRange: 1
-  buoyancy: 1
-  waterDrag: 1
-  waterMask:
-    serializedVersion: 2
-    m_Bits: 16
-  floatToSleep: 1
 --- !u!114 &6383869559204219857
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -298,6 +268,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lifeMin: 5
   lifeMax: 10
+--- !u!114 &6702221961483770605
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4592629962570011307}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e6fe35308d54744db558ae6ccc37ea9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5708537419506968192
 GameObject:
   m_ObjectHideFlags: 0
@@ -311,8 +293,8 @@ GameObject:
   - component: {fileID: 4747150160572478838}
   - component: {fileID: 6383869558447220846}
   - component: {fileID: 6383869558447220847}
-  - component: {fileID: 6383869558447220845}
   - component: {fileID: 6383869558447220850}
+  - component: {fileID: 6566984420839976114}
   m_Layer: 0
   m_Name: Neck.003
   m_TagString: Untagged
@@ -412,27 +394,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.03719099, y: 0.020269608, z: 0.0066853077}
   m_Center: {x: 0.02489364, y: 0.023128305, z: -0.0042223562}
---- !u!114 &6383869558447220845
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5708537419506968192}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 69e316c1e602f8e4dbad1c3ceac70897, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  buoyancyOffset: {x: 0, y: 0, z: 0}
-  submergenceOffset: 0.5
-  submergenceRange: 1
-  buoyancy: 1
-  waterDrag: 1
-  waterMask:
-    serializedVersion: 2
-    m_Bits: 16
-  floatToSleep: 1
 --- !u!114 &6383869558447220850
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -447,6 +408,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lifeMin: 5
   lifeMax: 10
+--- !u!114 &6566984420839976114
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5708537419506968192}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e6fe35308d54744db558ae6ccc37ea9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6078001717102491270
 GameObject:
   m_ObjectHideFlags: 0
@@ -457,7 +430,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6850739157148101692}
   - component: {fileID: 6383869559175838919}
-  - component: {fileID: -9025694858941613497}
   m_Layer: 0
   m_Name: guitar shards Prefab Blue
   m_TagString: Untagged
@@ -501,18 +473,6 @@ MonoBehaviour:
   upModifier: 1
   isBomb: 0
   otherExplosiveTime: 1
---- !u!114 &-9025694858941613497
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6078001717102491270}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9e6fe35308d54744db558ae6ccc37ea9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &6996100595123187678
 GameObject:
   m_ObjectHideFlags: 0
@@ -526,8 +486,8 @@ GameObject:
   - component: {fileID: 3289931578335524281}
   - component: {fileID: 6383869558545735191}
   - component: {fileID: 6383869558545735192}
-  - component: {fileID: 6383869558545735190}
   - component: {fileID: 6383869558545735195}
+  - component: {fileID: 7311202086884459722}
   m_Layer: 0
   m_Name: Neck
   m_TagString: Untagged
@@ -627,27 +587,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.101496145, y: 0.021943912, z: 0.018701985}
   m_Center: {x: -0.08361041, y: -0.0000009536743, z: -0.0049981684}
---- !u!114 &6383869558545735190
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6996100595123187678}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 69e316c1e602f8e4dbad1c3ceac70897, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  buoyancyOffset: {x: 0, y: 0, z: 0}
-  submergenceOffset: 0.5
-  submergenceRange: 1
-  buoyancy: 1
-  waterDrag: 1
-  waterMask:
-    serializedVersion: 2
-    m_Bits: 16
-  floatToSleep: 1
 --- !u!114 &6383869558545735195
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -662,6 +601,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lifeMin: 5
   lifeMax: 10
+--- !u!114 &7311202086884459722
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6996100595123187678}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e6fe35308d54744db558ae6ccc37ea9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7719373621137197605
 GameObject:
   m_ObjectHideFlags: 0
@@ -675,8 +626,8 @@ GameObject:
   - component: {fileID: 7750948221304702161}
   - component: {fileID: 6383869557351036095}
   - component: {fileID: 6383869557351035968}
-  - component: {fileID: 6383869557351036094}
   - component: {fileID: 6383869557351035971}
+  - component: {fileID: 5777334446250088456}
   m_Layer: 0
   m_Name: Neck.004
   m_TagString: Untagged
@@ -776,27 +727,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.050705545, y: 0.013042214, z: 0.008875806}
   m_Center: {x: 0.004332797, y: -0.0000009534415, z: -0.0037424704}
---- !u!114 &6383869557351036094
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7719373621137197605}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 69e316c1e602f8e4dbad1c3ceac70897, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  buoyancyOffset: {x: 0, y: 0, z: 0}
-  submergenceOffset: 0.5
-  submergenceRange: 1
-  buoyancy: 1
-  waterDrag: 1
-  waterMask:
-    serializedVersion: 2
-    m_Bits: 16
-  floatToSleep: 1
 --- !u!114 &6383869557351035971
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -811,3 +741,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lifeMin: 5
   lifeMax: 10
+--- !u!114 &5777334446250088456
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7719373621137197605}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e6fe35308d54744db558ae6ccc37ea9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

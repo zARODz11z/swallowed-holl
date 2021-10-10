@@ -6,8 +6,6 @@ stuff I think needs work, or needs to be implemented, or whatever. just a to do 
 
 the way that BBallHoop, BBallHoop2, and grab all independently build a list of all tha balls in a level is redundant. should probably just do it once on the player then have everything else reference that. 
 
-The holding props system is flawed, you can push props through walls, need to look into that
-
 teleporting between worlds is also a problem still, need to have some sort of cast first to see if the area you are trying to teleport to is clear. also put some thought into how to handle that situation. should it just block them outright from teleporting? how could that be communicated to the player? 
 
 the gibs system for breaking props can be optimized a bit too to handle mass breaking better. maybe check to see how many gibs there currently are spawned already then set a cap to how many can be rendered at once. then the shatter script can vary how many gibs it spawns depending on that
@@ -30,9 +28,7 @@ make wall climbing jumps contextual. climbing idle jump-> jump is perpendicular 
 
 fall damage
 
-little skid when you rapidly change directions
-
-really need a crouching state
+little skid when you rapidly change directions?
 
 interactable NPC's. Speaking, roaming, fighting, etc.
 
@@ -48,7 +44,7 @@ SOUND EFFECTS! need to learn how to make an "array" of sounds that will be rando
 
 Implement player stats, hp, hunger, coins, etc and set up scenarios to drain them. taking damage, casting "spells" like the world shift, or purchasing something. 
 
-make some foor scattered around the level you can eat and increase your hunger bar
+make some food scattered around the level you can eat and increase your hunger bar
 
 HUNGER DIVE! set up the hunger dive mechanic
 
@@ -71,5 +67,9 @@ Cant climb while holding something
 sometimes i just have to change sphere physics material from minimum to multiply and idk why it just like changes sometimes idk
 
 figure out how to make a material togglable transparent
+
+wall jumping probably shouldnt reset your jump count
+
+combine crouch / climb / walk
 
 */

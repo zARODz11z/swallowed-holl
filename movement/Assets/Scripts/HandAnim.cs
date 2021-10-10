@@ -38,11 +38,14 @@ public class HandAnim : MonoBehaviour
     bool JumpPressed;
     Grab grab;
     // Start is called before the first frame update
-
+    public bool getisThrowing(){
+        return animator.GetBool("isThrowing");
+    }
     public void setisHolding(bool plug){
         animator.SetBool("isHolding", plug);
     }
     public void setisThrowing(bool plug){
+        animator.SetBool("grabCharge", !plug);
         animator.SetBool("isThrowing", plug);
     }
 
@@ -93,13 +96,13 @@ public class HandAnim : MonoBehaviour
         blocker = false;
         flipflop = !flipflop;
         animator.SetBool("isPunchingLeft", true);
-        Invoke("waveStop", .3f);
+        Invoke("waveStop", .1f);
     }
     void waveStartR(){
         blocker = false;
         flipflop = !flipflop;
         animator.SetBool("isPunchingRight", true);
-        Invoke("waveStop", .3f);
+        Invoke("waveStop", .1f);
 
     }
     void waveStop(){
@@ -113,6 +116,12 @@ public class HandAnim : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(grab.isgrabCharging){
+            animator.SetBool("grabCharge", true);
+        }
+        else if (!grab.isgrabCharging){
+            animator.SetBool("grabCharge", false);
+        }
         BoolAdjuster();
         bool JumpPressed = Input.GetKey("space");
         isOnGround = isOnGroundADJ;

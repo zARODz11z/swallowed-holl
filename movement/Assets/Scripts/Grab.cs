@@ -8,12 +8,15 @@ public class Grab : MonoBehaviour
     [SerializeField]
     float distance;
     [SerializeField]
+    [Tooltip("what objects can be picked up by the player")]
+
     LayerMask mask = default;
-    
 
     [SerializeField]
     Transform dummy;
     [SerializeField]
+    [Tooltip("where the throwing force originates from")]
+
     GameObject origin;
     Transform prop;
     Rigidbody propRB;
@@ -26,18 +29,41 @@ public class Grab : MonoBehaviour
     HandAnim hand;
     FPSMovingSphere player;
     disableDynamicBone bone;
-    [SerializeField]
-    Transform throwingPoint;
-    GameObject[] balls;
+    [Tooltip("the point that a fully charged throw will head toward")]
 
+    [SerializeField]
+    Transform LowthrowingPoint;
+    [SerializeField]
+    [Tooltip("the point that a light toss will head toward")]
+
+    Transform HighthrowingPoint;
+    GameObject[] balls;
     int ballLength;
+    [SerializeField]
+    bool highorLow = true;
+    float throwingTemp;
+    [SerializeField]
+    [Tooltip("the heaviest possible object the player can pick up")]
+
+    float strength;
     
+    [SerializeField]
+    [Tooltip("the maximum force the player can throw an object at, when fully charged")]
+    float maxThrowingForce;
+    
+    [SerializeField]
+    [Tooltip("the rate at which the players throw charges")]
+    float chargeRate;
+    public bool isgrabCharging = false;
+    
+    public string SmallMediumLarge = "NULL";
 
     void Start() {
+        throwingTemp = throwingforce;
         // fill list with all gameobjects tagged "bball"
         balls = GameObject.FindGameObjectsWithTag("bball");
         // get a reference to the player's moving component
-        player = transform.parent.transform.parent.GetComponent<FPSMovingSphere>();
+        player = transform.parent.transform.parent.transform.parent.GetComponent<FPSMovingSphere>();
         // get a reference to the players animation controller
         hand = GetComponent<HandAnim>();
         //get a reference to the players disable dynamic bones script
@@ -50,10 +76,12 @@ public class Grab : MonoBehaviour
 
 
     void detach(){
+        SmallMediumLarge = "NULL";
         //opposite of the pick up section, just undoing all of that back to its default state
+        isgrabCharging = false;
         bone.toggle(false);
         hand.setisHolding(false);
-        dummy.DetachChildren();
+        dummy.GetChild(5).SetParent(null);
 
        // body = prop.gameObject.GetComponent<CustomGravityRigidbody>();
        // body.enabled = true;
@@ -87,42 +115,54 @@ public class Grab : MonoBehaviour
                 // send a raycast
                 if (Physics.SphereCast(origin.transform.position, 1, (dummy.position - origin.transform.position), out hit, distance, mask))
                 {
-                    //disable dynamic bones
-                    bone.toggle(true);
-                    //trigger animation
-                    hand.setisHolding(true);
-                    // create temp refrences
-                    prop = hit.transform;
-                    propRB = hit.rigidbody;
-                    // move the hit object to the grab point
-                    hit.transform.position = dummy.transform.position;
-                    // set the hit object to be a child of the grab point
-                    hit.transform.SetParent(dummy);
-                    // get a reference to the custom gravity rigidbody to disable gravity and sleeping
-
-                    //body = hit.transform.gameObject.GetComponent<CustomGravityRigidbody>();
-
-                    //get a reference to the material, obsolete for now but this should be used to make held objects transparent
-                    renda = prop.gameObject.GetComponent<Renderer>();
-
-                    //body.enabled = false;
-
-                    propRB.isKinematic=(true);
-                    isHolding = true;
-                    // set the held object to the "nocollidewithplayer" layer to prevent clipping with the player
-                    prop.transform.gameObject.layer = 16;
-                    // do the same for all children and childrens children 
-                    foreach ( Transform child in prop.transform){
-                        child.transform.gameObject.layer = 16;
-                        foreach ( Transform child2 in child.transform){
-                            child2.transform.gameObject.layer = 16;
+                    if(hit.transform.gameObject.GetComponent<Rigidbody>().mass <= strength){
+                        if(hit.transform.gameObject.GetComponent<objectSize>().isLarge && !hit.transform.gameObject.GetComponent<objectSize>().isMedium && !hit.transform.gameObject.GetComponent<objectSize>().isSmall){
+                            SmallMediumLarge = "LARGE";
                         }
-                    // find if you grabbed a basketball. If so, disable it's "thruHoop" status
-                    }
-                    foreach(GameObject b in balls){
-                        if (b.gameObject == hit.transform.gameObject){
-                            b.gameObject.GetComponent<BBall>().setThruHoop(false);
-                            break;
+                        if(hit.transform.gameObject.GetComponent<objectSize>().isMedium && !hit.transform.gameObject.GetComponent<objectSize>().isLarge && !hit.transform.gameObject.GetComponent<objectSize>().isSmall){
+                            SmallMediumLarge = "MEDIUM";
+                        }
+                        if(hit.transform.gameObject.GetComponent<objectSize>().isSmall && !hit.transform.gameObject.GetComponent<objectSize>().isLarge && !hit.transform.gameObject.GetComponent<objectSize>().isMedium){
+                            SmallMediumLarge = "SMALL";
+                            
+                        }                        
+                        //disable dynamic bones
+                        bone.toggle(true);
+                        //trigger animation
+                        hand.setisHolding(true);
+                        // create temp refrences
+                        prop = hit.transform;
+                        propRB = hit.rigidbody;
+                        // move the hit object to the grab point
+                        hit.transform.position = dummy.transform.position;
+                        // set the hit object to be a child of the grab point
+                        hit.transform.SetParent(dummy);
+                        // get a reference to the custom gravity rigidbody to disable gravity and sleeping
+
+                        //body = hit.transform.gameObject.GetComponent<CustomGravityRigidbody>();
+
+                        //get a reference to the material, obsolete for now but this should be used to make held objects transparent
+                        renda = prop.gameObject.GetComponent<Renderer>();
+
+                        //body.enabled = false;
+
+                        propRB.isKinematic=(true);
+                        isHolding = true;
+                        // set the held object to the "nocollidewithplayer" layer to prevent clipping with the player
+                        prop.transform.gameObject.layer = 16;
+                        // do the same for all children and childrens children 
+                        foreach ( Transform child in prop.transform){
+                            child.transform.gameObject.layer = 16;
+                            foreach ( Transform child2 in child.transform){
+                                child2.transform.gameObject.layer = 16;
+                            }
+                        // find if you grabbed a basketball. If so, disable it's "thruHoop" status
+                        }
+                        foreach(GameObject b in balls){
+                            if (b.gameObject == hit.transform.gameObject){
+                                b.gameObject.GetComponent<BBall>().setThruHoop(false);
+                                break;
+                            }
                     }
                 }
             }
@@ -133,23 +173,47 @@ public class Grab : MonoBehaviour
                 //clear the temps for next loop
                 prop = null;
                 propRB = null;
+                throwingforce = throwingTemp;
             }
 
+        }
+        if (Input.GetKeyUp("mouse 0") && isHolding && !hand.barragePrep && !player.isBarraging ){
+            Debug.Log("throwing");
+            
+            detach();
+            if (highorLow){
+                Debug.Log("normal speed throw");
+                propRB.AddForce((HighthrowingPoint.position - origin.transform.position ) * throwingforce, ForceMode.Impulse);
+                //propRB.velocity = (HighthrowingPoint.position - origin.transform.position ) * throwingforce;
+            }
+            else{
+                Debug.Log("Max speed throw");
+                propRB.AddForce((LowthrowingPoint.position - origin.transform.position ) * throwingforce, ForceMode.Impulse);
+                //propRB.velocity = (LowthrowingPoint.position - origin.transform.position ) * throwingforce;
+            }
+            //give it velocity in the direction of the throwing point to give it a slight upward angle
+                
+            // trigger animation
+            hand.setisThrowing(true);
+            //prepare to reset animation
+            Invoke("setisThrowingFalse", .1f);
+            throwingforce = throwingTemp;
+            highorLow = true;
         }
         //throw
-        if (Input.GetKeyDown("mouse 2")){
-            //if you are holding something, throw it. 
-            if(isHolding){
-                detach();
-                //give it velocity in the direction of the throwing point to give it a slight upward angle
-                propRB.velocity = (throwingPoint.position - origin.transform.position ) * throwingforce;
-                // trigger animation
-                hand.setisThrowing(true);
-                //prepare to reset animation
-                Invoke("setisThrowingFalse", .1f);
-
+        if (Input.GetKey("mouse 0") && isHolding && !hand.barragePrep && !player.isBarraging ){
+            if (throwingforce <= maxThrowingForce){
+                isgrabCharging = true;
+                throwingforce = throwingforce + chargeRate;
             }
+            if (throwingforce > maxThrowingForce){
+                isgrabCharging = false;
+                highorLow = false;
+            }
+            //if you are holding something, throw it. 
+
         }
+
 
     }
 }

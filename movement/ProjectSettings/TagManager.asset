@@ -24,7 +24,7 @@ TagManager:
   - CameraIgnore
   - Unclimbable
   - RigidBodies
-  - Ammo
+  - heldItemCollider
   - Fists
   - NoCollideWithPlayer
   - 
