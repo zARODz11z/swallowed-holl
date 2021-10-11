@@ -3,7 +3,8 @@ using UnityEngine;
 
 [RequireComponent(typeof(Light))]
 public class FPSMovingSphere : MonoBehaviour { 
-
+	
+	[HideInInspector]
 	public bool isBarraging;
 
 	[SerializeField, Range(0.01f, 1f)]
@@ -117,12 +118,18 @@ public class FPSMovingSphere : MonoBehaviour {
 
 	[SerializeField, Min(0f)]
 	float buoyancy = 1f;
-
+	Animator camanim;
+	
 	// this is so i can prevent the player from entering a climbing state while standing on the ground
 	[HideInInspector]
 	public bool ClimbingADJ;
 
+	bool divingPrep;
+
+	bool skip;
+
 	void Awake () {
+		camanim = transform.GetChild(0).GetComponent<Animator>();
 		// this is so i can prevent the player from entering a climbing state while standing on the ground
 		if(Climbing && !OnGround){
 			ClimbingADJ = true;
@@ -142,6 +149,14 @@ public class FPSMovingSphere : MonoBehaviour {
 		OnValidate();
 	}
 	void Update () {
+        if(Input.GetButtonDown("Dive")){
+            camanim.SetBool("divePrep", true);
+			divingPrep = true;
+        }
+        if(Input.GetButtonUp("Dive")){
+            camanim.SetBool("divePrep", false);
+			divingPrep = false;
+        }
 		// this is so i can prevent the player from entering a climbing state while standing on the ground
 		if(Climbing && !OnGround){
 			ClimbingADJ = true;
@@ -430,14 +445,23 @@ public class FPSMovingSphere : MonoBehaviour {
 	}
 	
 	void Jump(Vector3 gravity) {
+
 			
 			Vector3 jumpDirection;
+
 			//this was originally just "OnGround" but i switched it to be the adjusted one so you can jump a little after going off the ledge
 			if (submergence < 1){
 				jumpDirection = contactNormal;
 			}
 
-			if (OnGround) {
+			if(divingPrep){
+				Debug.Log("HUNGA DIVE");
+				
+				jumpDirection = contactNormal + transform.forward * 3f;
+				velocity += jumpDirection.normalized * 25f;
+			}
+
+			else if (OnGround) {
 				jumpDirection = contactNormal;
 			}
 
@@ -455,19 +479,25 @@ public class FPSMovingSphere : MonoBehaviour {
 			else {
 				return;
 			}
-			stepsSinceLastJump = 0;
-			jumpPhase += 1;
-			float jumpSpeed = Mathf.Sqrt(2f * gravity.magnitude * jumpHeight);
-			//This slows down your jump speed based on how far you are in water, Im gonna comment it out for now so that water jumps work better
-			//if (InWater) {
-			//jumpSpeed *= Mathf.Max(0f, 1f - submergence / swimThreshold);
+			//stuff i was doing for hunger dive was fuckin stuff up fix later
+			//if (skip){
+				stepsSinceLastJump = 0;
+				jumpPhase += 1;
+				float jumpSpeed = Mathf.Sqrt(2f * gravity.magnitude * jumpHeight);
+				//This slows down your jump speed based on how far you are in water, Im gonna comment it out for now so that water jumps work better
+				//if (InWater) {
+				//jumpSpeed *= Mathf.Max(0f, 1f - submergence / swimThreshold);
+				//}
+				jumpDirection = (jumpDirection + upAxis).normalized;
+				float alignedSpeed = Vector3.Dot(velocity, jumpDirection);
+				if (alignedSpeed > 0f) {
+					jumpSpeed = Mathf.Max(jumpSpeed - alignedSpeed, 0f);
+				}
+				velocity += jumpDirection * jumpSpeed;
 			//}
-			jumpDirection = (jumpDirection + upAxis).normalized;
-			float alignedSpeed = Vector3.Dot(velocity, jumpDirection);
-			if (alignedSpeed > 0f) {
-				jumpSpeed = Mathf.Max(jumpSpeed - alignedSpeed, 0f);
-			}
-			velocity += jumpDirection * jumpSpeed;
+			//else{
+			//	skip = true;
+			//}
 		}
 
 	void OnCollisionEnter (Collision collision) {

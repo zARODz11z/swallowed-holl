@@ -7,7 +7,8 @@ public class HandAnim : MonoBehaviour
     [SerializeField]
     GameObject sphere;
     FPSMovingSphere player;
-    bool barragePrep = false;
+    [HideInInspector]
+    public bool barragePrep = false;
     bool flipflop = true;
     bool flipflop2 = true;
     bool blocker = true;
@@ -35,7 +36,18 @@ public class HandAnim : MonoBehaviour
     float Groundstopwatch = 0;
     float Jumpstopwatch = 0;
     bool JumpPressed;
+    Grab grab;
     // Start is called before the first frame update
+    public bool getisThrowing(){
+        return animator.GetBool("isThrowing");
+    }
+    public void setisHolding(bool plug){
+        animator.SetBool("isHolding", plug);
+    }
+    public void setisThrowing(bool plug){
+        animator.SetBool("grabCharge", !plug);
+        animator.SetBool("isThrowing", plug);
+    }
 
     void BoolAdjuster(){
         isOnGround = player.OnGround;
@@ -58,13 +70,19 @@ public class HandAnim : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         player = sphere.GetComponent<FPSMovingSphere>();
+        grab = GetComponent<Grab>();
     }
 
     void startBarrage(){
         animator.SetBool("barragePrep", false);
+        
         player.isBarraging = true;
         flipflop2 = true;
 
+    }
+
+    void resetbarragePrep(){
+        barragePrep = false;
     }
 
     void openGate(){
@@ -78,13 +96,13 @@ public class HandAnim : MonoBehaviour
         blocker = false;
         flipflop = !flipflop;
         animator.SetBool("isPunchingLeft", true);
-        Invoke("waveStop", .3f);
+        Invoke("waveStop", .1f);
     }
     void waveStartR(){
         blocker = false;
         flipflop = !flipflop;
         animator.SetBool("isPunchingRight", true);
-        Invoke("waveStop", .3f);
+        Invoke("waveStop", .1f);
 
     }
     void waveStop(){
@@ -98,6 +116,12 @@ public class HandAnim : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(grab.isgrabCharging){
+            animator.SetBool("grabCharge", true);
+        }
+        else if (!grab.isgrabCharging){
+            animator.SetBool("grabCharge", false);
+        }
         BoolAdjuster();
         bool JumpPressed = Input.GetKey("space");
         isOnGround = isOnGroundADJ;
@@ -151,7 +175,7 @@ public class HandAnim : MonoBehaviour
             }
         }
         if(Input.GetKeyDown("mouse 1")){
-            if(flipflop2 && !player.isBarraging){
+            if(flipflop2 && !player.isBarraging && !grab.isHolding){
                 animator.SetBool("barragePrep", true);
                 barragePrep = true;
                 blocker = false;
@@ -166,7 +190,7 @@ public class HandAnim : MonoBehaviour
             }
         }
         if ( Input.GetKeyDown("mouse 0") ){
-            if(blocker){
+            if(blocker && !grab.isHolding){
                 if(flipflop){
                     Invoke("waveStartL", .1f);
                 }
