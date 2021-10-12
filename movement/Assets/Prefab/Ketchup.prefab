@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 2459820335033795305}
   - component: {fileID: -7874144706449186746}
   - component: {fileID: -5178516156296341042}
+  - component: {fileID: 665602610473098994}
   m_Layer: 13
   m_Name: Ketchup
   m_TagString: Untagged
@@ -128,6 +129,19 @@ MonoBehaviour:
   isSmall: 1
   isMedium: 0
   isLarge: 0
+--- !u!114 &665602610473098994
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3198707054581729232}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c7484c6807b99349b85071be08c81f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  value: 0
 --- !u!1 &6264970319400327922
 GameObject:
   m_ObjectHideFlags: 0
