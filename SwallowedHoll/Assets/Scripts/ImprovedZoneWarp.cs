@@ -31,7 +31,6 @@ public class ImprovedZoneWarp : MonoBehaviour
     }
     void Update()
     {
-        Debug.Log(possibleShift);
         if(flipflop){
                 dummy.transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z - warpOffset);
         }

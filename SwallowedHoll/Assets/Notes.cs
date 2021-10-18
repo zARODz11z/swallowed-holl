@@ -10,9 +10,7 @@ if you press forward then backward very quickly afterwards youll continue moving
 
 need to implement climbing animations, use a 2d blend tree!
 
-need to make a "landing" animation
-
-switch the logic on stuff being climbable. by default everything should be unclimbable, then we make exceptions. 
+need to make a "landing" animation(do i really?)
 
 make responding to gravity shifts work in first person too. check the UpdateRotation script
 

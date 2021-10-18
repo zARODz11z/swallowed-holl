@@ -528,7 +528,7 @@ public class FPSMovingSphere : MonoBehaviour {
 					}
 				}
 				if (desiresClimbing && upDot >= minClimbDotProduct&&
-					(climbMask & (1 << layer)) != 0)
+					(climbMask & (1 << layer)) == 0)
 					{
 					climbContactCount += 1;
 					climbNormal += normal;
