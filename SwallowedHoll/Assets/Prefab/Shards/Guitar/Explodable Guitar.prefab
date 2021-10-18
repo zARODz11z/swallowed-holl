@@ -14,9 +14,9 @@ GameObject:
   - component: {fileID: 5671663020419769919}
   - component: {fileID: 5671663020419769913}
   - component: {fileID: 5671663020419769912}
-  - component: {fileID: 5845182725207603314}
   - component: {fileID: -455387078490907958}
   - component: {fileID: -6782167662197062051}
+  - component: {fileID: 6292515422168663267}
   m_Layer: 13
   m_Name: Explodable Guitar
   m_TagString: Breakable
@@ -132,19 +132,6 @@ MonoBehaviour:
   shatterPrefab: {fileID: 6078001717102491270, guid: 766230095b9b75046bbc389b39275ae2, type: 3}
   shatterSpawnPos: {fileID: 5671663021510199957}
   hitPoints: 1
---- !u!65 &5845182725207603314
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4788631138404640926}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.24218415, y: 0.081597276, z: 0.01571038}
-  m_Center: {x: -0.013266417, y: 0.000039614726, z: -0.006493971}
 --- !u!114 &-455387078490907958
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -172,6 +159,20 @@ MonoBehaviour:
   isSmall: 0
   isMedium: 1
   isLarge: 0
+--- !u!64 &6292515422168663267
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4788631138404640926}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 5413519113922030728, guid: 1657480fb8a3d7f419a274bfcf7bb657, type: 3}
 --- !u!1 &5671663021510199957
 GameObject:
   m_ObjectHideFlags: 0

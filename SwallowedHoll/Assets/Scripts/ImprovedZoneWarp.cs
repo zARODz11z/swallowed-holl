@@ -44,13 +44,13 @@ public class ImprovedZoneWarp : MonoBehaviour
                     if(dummy.gameObject.GetComponent<canShift>().getShiftable()){
                         
                         if(dummy.gameObject.GetComponent<canShift>().getCollider() != null){
-                            Debug.Log("Shifting to Breakable Object");
+                            //Debug.Log("Shifting to Breakable Object");
                             dummy.gameObject.GetComponent<canShift>().getCollider().GetComponent<Shatter>().oneShot(0);
                             transform.position = dummy.transform.position;
                             flipflop = false;
                         }
                         else{
-                            Debug.Log("Shifting to Main dummy");
+                            //Debug.Log("Shifting to Main dummy");
                             transform.position = dummy.transform.position;
                             flipflop = false;
                         }
@@ -59,7 +59,7 @@ public class ImprovedZoneWarp : MonoBehaviour
                     else {
                         foreach(GameObject d in dummies){
                             if(d.gameObject.GetComponent<canShift>().getShiftable()){
-                                Debug.Log("Shifting to subdummy "+ d);
+                                //Debug.Log("Shifting to subdummy "+ d);
                                 transform.position = d.transform.position;
                                 flipflop = false;
                                 subDummy = true;
@@ -72,11 +72,11 @@ public class ImprovedZoneWarp : MonoBehaviour
 
                     }
                     if(subDummy == false){
-                        Debug.Log("Cant Shift!");
+                        //Debug.Log("Cant Shift!");
                     }
                 }
                 else{
-                    Debug.Log("Shift Blocked!");
+                    //Debug.Log("Shift Blocked!");
                 }
             }          
             else if (!flipflop){ 
@@ -85,13 +85,13 @@ public class ImprovedZoneWarp : MonoBehaviour
                 if(dummy.gameObject.GetComponent<canShift>().getShiftable()){
                     
                     if(dummy.gameObject.GetComponent<canShift>().getCollider() != null){
-                        Debug.Log("Shifting to Breakable Object");
+                        //Debug.Log("Shifting to Breakable Object");
                         dummy.gameObject.GetComponent<canShift>().getCollider().GetComponent<Shatter>().oneShot(0);
                         transform.position = dummy.transform.position;
                         flipflop = true;
                     }
                     else{
-                        Debug.Log("Shifting to Main dummy");
+                        //Debug.Log("Shifting to Main dummy");
                         transform.position = dummy.transform.position;
                         flipflop = true;
                     }
@@ -100,7 +100,7 @@ public class ImprovedZoneWarp : MonoBehaviour
                 else {
                     foreach(GameObject d in dummies){
                         if(d.gameObject.GetComponent<canShift>().getShiftable()){
-                            Debug.Log("Shifting to subdummy "+ d);
+                            //Debug.Log("Shifting to subdummy "+ d);
                             transform.position = d.transform.position;
                             flipflop = true;
                             subDummy = true;
@@ -113,11 +113,11 @@ public class ImprovedZoneWarp : MonoBehaviour
 
                 }
                 if(subDummy == false){
-                    Debug.Log("Cant Shift!");
+                    //Debug.Log("Cant Shift!");
                         }
                     }   
                     else{
-                        Debug.Log("Shift Blocked");
+                        //Debug.Log("Shift Blocked");
                     }
                 }       
             }

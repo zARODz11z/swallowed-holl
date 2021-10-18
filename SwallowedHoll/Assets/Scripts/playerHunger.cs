@@ -4,23 +4,24 @@ using UnityEngine;
 
 public class playerHunger : MonoBehaviour
 {
+    PlayerStats stats;
     float maxHunger = 100f;
-    float hunger = 100f;
     [SerializeField]
     float hungerRate;
+    float interval;
     // Start is called before the first frame update
     void Start()
     {
-
+        stats = GetComponent<PlayerStats>();
     }
 
     public void increaseHunger(float food){
-        if (hunger < 100){
-            if (hunger + food > maxHunger){
-                hunger = 100f;
+        if (stats.hunger < 100){
+            if (stats.hunger + food > maxHunger){
+                stats.hunger = 100f;
             }
             else{
-                hunger = hunger + food;
+                stats.hunger = stats.hunger + food;
             }
         }
         else {
@@ -31,14 +32,24 @@ public class playerHunger : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Debug.Log(hunger);
-        if (hunger <= 0){
+        //Debug.Log(stats.hunger);
+        if (stats.hunger <= 0){
+            stats.hunger = 0;
            // Debug.Log("STARVED");
             //script
         }
-        else{
-            hunger = hunger - hungerRate;
+        if (interval > 1)
+        {
+            if (stats.hunger > 0)
+                stats.hunger -= hungerRate;
+            else
+            {
+                stats.hp -= 1;
+            }
+
+            interval = 0;
         }
+        interval += UnityEngine.Time.deltaTime;
         
     }
 }

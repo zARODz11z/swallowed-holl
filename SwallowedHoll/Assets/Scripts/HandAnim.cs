@@ -29,13 +29,7 @@ public class HandAnim : MonoBehaviour
     [SerializeField]
     [Tooltip("how long you need to be in the air before the 'onGround' bool triggers")]
     float OnGroundBuffer = .5f;
-    [SerializeField]
-    [Tooltip("how long isJumping stays true after pressing it ( maybe should be in movingsphere?)")]
-    float JumpBuffer = .5f;
-
-    bool JumpSwitch = true;
     float Groundstopwatch = 0;
-    float Jumpstopwatch = 0;
     bool JumpPressed;
     Grab grab;
     // Start is called before the first frame update
