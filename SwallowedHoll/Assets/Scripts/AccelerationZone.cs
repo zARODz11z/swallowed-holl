@@ -4,16 +4,16 @@ public class AccelerationZone : MonoBehaviour {
 	public bool Gate = false;
 
 	[SerializeField, Min(0f)]
-	float acceleration = 10f, speed = 10f;
+	public float acceleration = 10f, speed = 10f;
 	void OnTriggerEnter (Collider other) {
 		Rigidbody body = other.attachedRigidbody;
-		if (body) {
+		if (body && other.gameObject.layer != 14) {
 			Accelerate(body);
 		}
 	}
 	void OnTriggerStay (Collider other) {
 		Rigidbody body = other.attachedRigidbody;
-		if (body) {
+		if (body && other.gameObject.layer != 14) {
 			Accelerate(body);
 		}
 	}

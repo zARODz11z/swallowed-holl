@@ -8,14 +8,14 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Bench
-  m_Shader: {fileID: 4800000, guid: 83ee54f347721384682308aa4c317371, type: 3}
+  m_Shader: {fileID: 4800000, guid: cba4fbed4056fba4a94c4c7ccd91805c, type: 3}
   m_ShaderKeywords: VIGNETTE_MASKED _SMOOTHNESS_TEXTURE_ALBEDO_CHANNEL_A _SPECGLOSSMAP
   m_LightmapFlags: 2
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: 2000
   stringTagMap:
-    OptimizedShaderFolder: Bench-aacce137
+    OptimizedShaderFolder: Bench-5d0b8b54
     OriginalShader: ".poiyomi/\u2022 Poiyomi Toon \u2022"
     RenderType: Opaque
   disabledShaderPasses: []
@@ -496,7 +496,7 @@ Material:
     - _ClearCoatSmoothnessMapUV: 0
     - _ClearCoatSmoothnessMapUVAnimated: 0
     - _ClearCoatTintAnimated: 0
-    - _ColorAnimated: 0
+    - _ColorAnimated: 1
     - _ColorMask: 15
     - _ColorMaskAnimated: 0
     - _ContinuousDissolve: 0

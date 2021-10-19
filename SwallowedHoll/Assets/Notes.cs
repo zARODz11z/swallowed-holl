@@ -54,4 +54,5 @@ figure out how to make a material togglable transparent (Poyomi may make this ea
 
 need to make a death state
 
+running forward + sideways (strafing) seems to be faster than just running, should be patched
 */
