@@ -5,6 +5,8 @@ using UnityEngine;
 public class ConveyorBelt : MonoBehaviour
 {
     [SerializeField]
+    bool isEndPiece = false;
+    [SerializeField]
     float speed;
     [SerializeField]
     [Tooltip("amount of spin added to objects on the conveyor belt")]
@@ -46,20 +48,28 @@ public class ConveyorBelt : MonoBehaviour
         if(other.gameObject.GetComponent<Rigidbody>() != null && other.gameObject.GetComponent<Rigidbody>().isKinematic == false && other.gameObject.layer != 16 && other.gameObject.tag != "Player" && pushingObjects.Contains(other.gameObject) == true){
             //Debug.Log("An object just got removed");
             pushingObjects.Remove(other.gameObject);
-            other.gameObject.GetComponent<Rigidbody>().velocity = other.gameObject.GetComponent<Rigidbody>().velocity + this.transform.right * (speed);
+            if(isEndPiece){
+                Debug.Log("Lil Speed Boost");
+                other.gameObject.GetComponent<Rigidbody>().velocity = other.gameObject.GetComponent<Rigidbody>().velocity + this.transform.right * (speed);
+            }
         }
         if(other.transform.parent != null){
             if(other.transform.parent.gameObject.GetComponent<Rigidbody>() != null && other.transform.parent.gameObject.tag != "Player" && pushingObjects.Contains(other.transform.parent.gameObject) == true){
                 //Debug.Log("An object with a parent rigidbody just got removed");
                 pushingObjects.Remove(other.transform.parent.gameObject);
-                other.transform.parent.gameObject.GetComponent<Rigidbody>().velocity = other.transform.parent.gameObject.GetComponent<Rigidbody>().velocity + this.transform.right * (speed);
+                if(isEndPiece){
+                    Debug.Log("Lil Speed Boost");
+                    other.transform.parent.gameObject.GetComponent<Rigidbody>().velocity = other.transform.parent.gameObject.GetComponent<Rigidbody>().velocity + this.transform.right * (speed);
+                }
             }
         }
         if(other.gameObject.tag == "Player" && pushingObjects.Contains(other.gameObject.transform.root.gameObject) == true){
             //Debug.Log("A player just got removed");
             pushingObjects.Remove(other.gameObject.transform.root.gameObject);
-            other.gameObject.transform.root.gameObject.GetComponent<Rigidbody>().velocity = other.gameObject.transform.root.gameObject.GetComponent<Rigidbody>().velocity + this.transform.right * (speed);
-
+            if(isEndPiece){
+                Debug.Log("Lil Speed Boost");
+                other.gameObject.transform.root.gameObject.GetComponent<Rigidbody>().velocity = other.gameObject.transform.root.gameObject.GetComponent<Rigidbody>().velocity + this.transform.right * (speed);
+            }
         }
     }
     //void Update() {
@@ -70,13 +80,21 @@ public class ConveyorBelt : MonoBehaviour
     void FixedUpdate()
     {
         for (int i = 0; i < pushingObjects.Count; i++){
-            if(pushingObjects[i].gameObject.layer == 16){
-                //Debug.Log("REMOVED VIA LAYER");
+            if (pushingObjects[i] == null){
+                Debug.Log("REMOVED VIA DESTRUCTION");
+                pushingObjects.Remove(pushingObjects[i].gameObject);
+            }
+            else if(pushingObjects[i].gameObject.layer == 16){
+                Debug.Log("REMOVED VIA LAYER");
                 pushingObjects.Remove(pushingObjects[i].gameObject);
             }
             else{
-                pushingObjects[i].transform.position = pushingObjects[i].transform.position + this.transform.right * (speed * Time.deltaTime);
-                pushingObjects[i].transform.Rotate(new Vector3(0f, Time.deltaTime * spinAmount), Space.World);
+                if(speed != 0){
+                    pushingObjects[i].transform.position = pushingObjects[i].transform.position + this.transform.right * (speed * Time.deltaTime);
+                }
+                if(spinAmount != 0){
+                    pushingObjects[i].transform.Rotate(new Vector3(0f, Time.deltaTime * spinAmount), Space.World);
+                }
             }
         }
     }

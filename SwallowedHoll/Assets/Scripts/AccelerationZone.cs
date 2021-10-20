@@ -3,7 +3,7 @@ using UnityEngine;
 public class AccelerationZone : MonoBehaviour {
 	public bool Gate = false;
 
-	[SerializeField, Min(0f)]
+	[SerializeField]
 	public float acceleration = 10f, speed = 10f;
 	void OnTriggerEnter (Collider other) {
 		Rigidbody body = other.attachedRigidbody;
