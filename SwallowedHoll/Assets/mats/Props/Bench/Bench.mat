@@ -8,14 +8,14 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Bench
-  m_Shader: {fileID: 4800000, guid: cba4fbed4056fba4a94c4c7ccd91805c, type: 3}
-  m_ShaderKeywords: VIGNETTE_MASKED _SMOOTHNESS_TEXTURE_ALBEDO_CHANNEL_A _SPECGLOSSMAP
+  m_Shader: {fileID: 4800000, guid: 6be6f1bb804f862428d7e4a8abe52cf7, type: 3}
+  m_ShaderKeywords: _SMOOTHNESS_TEXTURE_ALBEDO_CHANNEL_A _SPECGLOSSMAP
   m_LightmapFlags: 2
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: 2000
   stringTagMap:
-    OptimizedShaderFolder: Bench-5d0b8b54
+    OptimizedShaderFolder: Bench-37b625e9
     OriginalShader: ".poiyomi/\u2022 Poiyomi Toon \u2022"
     RenderType: Opaque
   disabledShaderPasses: []
@@ -467,7 +467,7 @@ Material:
     - _BumpMapPanAnimated: 0
     - _BumpMapUV: 0
     - _BumpMapUVAnimated: 0
-    - _BumpScale: 0.93
+    - _BumpScale: 0.6
     - _BumpScaleAnimated: 0
     - _CameraAngleMax: 90
     - _CameraAngleMaxAnimated: 0
@@ -776,7 +776,7 @@ Material:
     - _EnableGITDEmissionAnimated: 0
     - _EnableHoloAnimated: 0
     - _EnableIridescenceAnimated: 0
-    - _EnableLighting: 1
+    - _EnableLighting: 0
     - _EnableLightingAnimated: 0
     - _EnableMetallic: 0
     - _EnableMetallicAnimated: 0
@@ -1038,7 +1038,7 @@ Material:
     - _MainAlphaToCoverage: 0
     - _MainAlphaToCoverageAnimated: 0
     - _MainDistanceFadeAnimated: 0
-    - _MainEmissionStrength: 0.48
+    - _MainEmissionStrength: 1.03
     - _MainEmissionStrengthAnimated: 0
     - _MainFadeTextureAnimated: 0
     - _MainFadeTexturePanAnimated: 0
@@ -1459,7 +1459,7 @@ Material:
     - _SpecularSmoothnessAnimated: 0
     - _SpecularTint1Animated: 0
     - _SpecularTintAnimated: 0
-    - _SpecularToonEnd: 1.331
+    - _SpecularToonEnd: 1.52
     - _SpecularToonEnd1: 1
     - _SpecularToonEnd1Animated: 0
     - _SpecularToonEndAnimated: 0
@@ -1678,7 +1678,7 @@ Material:
     - m_end_specular1: 0
     - m_end_subsurface: 0
     - m_end_vertexManipulation: 0
-    - m_lightingOptions: 1
+    - m_lightingOptions: 0
     - m_mainOptions: 1
     - m_outlineOptions: 0
     - m_renderingOptions: 0
@@ -1740,7 +1740,7 @@ Material:
     - m_start_scrollingEmissionOptions: 0
     - m_start_scrollingEmissionOptions1: 0
     - m_start_shadowTexture: 0
-    - m_start_specular: 1
+    - m_start_specular: 0
     - m_start_specular1: 0
     - m_start_subsurface: 0
     - m_start_vertexManipulation: 0

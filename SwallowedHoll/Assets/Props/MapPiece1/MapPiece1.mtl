@@ -1,0 +1,47 @@
+newmtl ProBuilderPiece_14
+map_Kd unity_builtin_extra
+map_Ke unity_builtin_extra
+Kd 0.5849056 0 0
+d 1
+
+newmtl ProBuilderPiece_6
+map_Kd unity_builtin_extra
+map_Ke unity_builtin_extra
+Kd 0 0.5849056 0.2752497
+d 1
+
+newmtl ProBuilderPiece_2
+map_Kd unity_builtin_extra
+map_Ke unity_builtin_extra
+Kd 0.5849056 0.3715871 0
+d 1
+
+newmtl New_Material
+map_Kd MuckWall.png
+bump MuckWallNormal.png
+map_Ke MuckWall.png
+Kd 0.2830189 0.2830189 0.2830189
+d 1
+
+newmtl HollWall
+map_Kd HollWall.png
+bump HollWallNormal.png
+Kd 1 1 1
+d 1
+
+newmtl HollWall_Dark
+map_Kd HollWall.png
+bump HollWallNormal.png
+Kd 0.5694641 0.5953665 0.6320754
+d 1
+
+newmtl New_Material_1
+map_Kd HollWood.png
+Kd 1 1 1
+d 1
+
+newmtl New_Material_1_1
+map_Kd HollWood.png
+Kd 0.3962264 0.3962264 0.3962264
+d 1
+
