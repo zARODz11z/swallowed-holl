@@ -39,6 +39,9 @@ public class HandAnim : MonoBehaviour
     public void setisHolding(bool plug){
         animator.SetBool("isHolding", plug);
     }
+    public bool getisHolding(){
+        return animator.GetBool("isHolding");
+    }
     public void setisThrowing(bool plug){
         animator.SetBool("grabCharge", !plug);
         animator.SetBool("isThrowing", plug);

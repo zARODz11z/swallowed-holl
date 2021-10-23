@@ -66,7 +66,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 96555af8b4aec5441b098e2d4586c2bf, type: 2}
+  - {fileID: 2100000, guid: 8b717e539861d4d49875915c2c355f9c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -126,7 +126,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4788631138404640926}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dcd8f62791add1a4dbe3052c1e028d36, type: 3}
+  m_Script: {fileID: 11500000, guid: 16f86a5e3c3f23645bae0f9e99a54e90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   shatterPrefab: {fileID: 6078001717102491270, guid: 766230095b9b75046bbc389b39275ae2, type: 3}
@@ -141,7 +141,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4788631138404640926}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9e6fe35308d54744db558ae6ccc37ea9, type: 3}
+  m_Script: {fileID: 11500000, guid: 82afca58c8a95a54dbf84cc3b54351cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &-6782167662197062051
@@ -153,7 +153,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4788631138404640926}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ce63cbfe659afae4e9728ca9c753e595, type: 3}
+  m_Script: {fileID: 11500000, guid: fd648e0587f96b64e89bd50c03e12cb5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   isSmall: 0

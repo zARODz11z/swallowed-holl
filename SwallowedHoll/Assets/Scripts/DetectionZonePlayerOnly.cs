@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public class DetectionZonePlayerOnly : MonoBehaviour {
 
-	MovingSphere sphere = default;
+	FPSMovingSphere sphere = default;
 	public GameObject player = default;
 	public bool isPlayerOnly;
 
@@ -14,7 +14,7 @@ public class DetectionZonePlayerOnly : MonoBehaviour {
 	List<Collider> colliders = new List<Collider>();
 
 	void Start() {
-		sphere = player.GetComponent<MovingSphere>();
+		sphere = player.GetComponent<FPSMovingSphere>();
 	}
     void OnTriggerEnter (Collider other) {
 		if (!isPlayerOnly){

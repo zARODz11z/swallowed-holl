@@ -15,9 +15,20 @@ public class grabPointAnimController : MonoBehaviour
         anim = GetComponent<Animator>();
     }
 
+    void setisDropped(bool plug){
+        anim.SetBool("isDropped", plug);
+    }
+
     // Update is called once per frame
     void Update()
     {
+        if(hand.getisHolding() == false){
+            anim.SetBool("isDropped", true);
+        }
+        else if (hand.getisHolding()){
+            anim.SetBool("isDropped", false);
+        }
+
         if (hand.getisThrowing()){
             anim.SetBool("isThrowing", true);
         }

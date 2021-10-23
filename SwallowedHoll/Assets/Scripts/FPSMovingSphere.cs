@@ -1,6 +1,4 @@
 using UnityEngine;
-
-[RequireComponent(typeof(Light))]
 public class FPSMovingSphere : MonoBehaviour { 
 	Grab grab;
 	[SerializeField]
@@ -183,21 +181,21 @@ public class FPSMovingSphere : MonoBehaviour {
 		}
 		ExplosiveForce();
 		// light that shows if youre on the ground or not
-		if (Swimming){
-			lt.color = Color.blue;
-		}
-		else if (OnGround){
-			lt.color = Color.red;
-		}
-		else if (ClimbingADJ){
-			lt.color = Color.white;
-		}
-		else if (OnSteep){
-			lt.color = Color.yellow;
-		}
-		else if (!OnSteep && !OnGround && !Swimming){
-			lt.color = Color.green;
-		}
+		//if (Swimming){
+		//	lt.color = Color.blue;
+		//}
+		//else if (OnGround){
+		//	lt.color = Color.red;
+		//}
+		//else if (ClimbingADJ){
+		//	lt.color = Color.white;
+		//}
+		//else if (OnSteep){
+		//	lt.color = Color.yellow;
+		//}
+		//else if (!OnSteep && !OnGround && !Swimming){
+		//	lt.color = Color.green;
+		//}
 	    playerInput.x = Input.GetAxis("Horizontal");
 		playerInput.y = Input.GetAxis("Vertical");
     	playerInput.z = Swimming ? Input.GetAxis("UpDown") : 0f;

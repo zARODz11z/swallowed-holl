@@ -33,7 +33,7 @@ public class AccelerationZone : MonoBehaviour {
 			if (velocity.y >= speed) {
 				return;
 			}
-			if (body.TryGetComponent(out MovingSphere sphere)) {
+			if (body.TryGetComponent(out FPSMovingSphere sphere)) {
 				sphere.PreventSnapToGround();
 			}
 

@@ -79,6 +79,7 @@ public class Grab : MonoBehaviour
 
 
     void detach(){
+        
         if( SmallMediumLarge == "MEDIUM"){
             speedController.setFactor(2f);
         }

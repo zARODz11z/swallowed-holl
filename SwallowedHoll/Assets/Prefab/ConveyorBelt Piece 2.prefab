@@ -357,7 +357,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3048781158148132757}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9cd17d45da5dd984899d6ac7d270e31e, type: 3}
+  m_Script: {fileID: 11500000, guid: e9357b370a76a46478a396db5b0d2665, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   isEndPiece: 0
@@ -1287,11 +1287,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 3048781158170216725}
   m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9cd17d45da5dd984899d6ac7d270e31e, type: 3}
+  m_Script: {fileID: 11500000, guid: e9357b370a76a46478a396db5b0d2665, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   isEndPiece: 0
-  speed: -2
+  speed: 2
   spinAmount: 0
 --- !u!64 &3048781158170216724
 MeshCollider:
@@ -2231,11 +2231,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 3937140142483815278}
   m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9cd17d45da5dd984899d6ac7d270e31e, type: 3}
+  m_Script: {fileID: 11500000, guid: e9357b370a76a46478a396db5b0d2665, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   isEndPiece: 0
-  speed: -2
+  speed: 2
   spinAmount: 0
 --- !u!64 &7217767776651404371
 MeshCollider:

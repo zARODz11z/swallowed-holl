@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 1013400868164274480}
   - component: {fileID: 1013400868164274481}
   - component: {fileID: 1013400868164274486}
-  - component: {fileID: 1013400868164274482}
   - component: {fileID: 1013400868164274493}
+  - component: {fileID: 6422717350177158413}
   - component: {fileID: 1013400868164274492}
   m_Layer: 0
   m_Name: Eatablepretzel
@@ -63,7 +63,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: efce8cd332448a843bd203cf228d87e4, type: 2}
+  - {fileID: 2100000, guid: ac2ff3619c54eea4f9ab207fad6f1349, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -98,20 +98,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.02, y: 0.015, z: 0.01}
   m_Center: {x: 0, y: -0.002, z: 0}
---- !u!114 &1013400868164274482
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1013400868164274487}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac6b095979809124b8591d5cc27e6317, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  food: 10
-  hunger: {fileID: 7197834583306505045, guid: 1512145aec4f6cc40ade6b6bed41d1a9, type: 3}
 --- !u!114 &1013400868164274493
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -121,10 +107,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 1013400868164274487}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f19c7f94c794c5097d8bd11e39c750d, type: 3}
+  m_Script: {fileID: 11500000, guid: 86a2f82399ff0ef4681c263de2fa459a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SpinSpeed: 35
+  food: 10
+--- !u!114 &6422717350177158413
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1013400868164274487}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5b32fccf71393045ad2ba7bf249a550, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpinSpeed: 5
   RotationRange: 15
   Motion: 0
 --- !u!114 &1013400868164274492
@@ -136,7 +135,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1013400868164274487}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 23126e83c73d073498641a86d65f0944, type: 3}
+  m_Script: {fileID: 11500000, guid: 0ec5ef7af62dc7646918a95923ad9b84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   degreesPerSecond: 15

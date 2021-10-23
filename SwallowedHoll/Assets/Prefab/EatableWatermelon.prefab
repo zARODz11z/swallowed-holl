@@ -63,7 +63,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: ca1ca7fc7b1453140add0329bcee4886, type: 2}
+  - {fileID: 2100000, guid: b14593d9205b3c040befe07e2c496ccd, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -94,7 +94,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 177631836960521855}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac6b095979809124b8591d5cc27e6317, type: 3}
+  m_Script: {fileID: 11500000, guid: 86a2f82399ff0ef4681c263de2fa459a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   food: 10
@@ -107,7 +107,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 177631836960521855}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f19c7f94c794c5097d8bd11e39c750d, type: 3}
+  m_Script: {fileID: 11500000, guid: b5b32fccf71393045ad2ba7bf249a550, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   SpinSpeed: 35
@@ -122,7 +122,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 177631836960521855}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 23126e83c73d073498641a86d65f0944, type: 3}
+  m_Script: {fileID: 11500000, guid: 0ec5ef7af62dc7646918a95923ad9b84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   degreesPerSecond: 15

@@ -135,12 +135,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 4351480569572548376}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 077c7c29210e3304f9426e5539d51fa6, type: 3}
+  m_Script: {fileID: 11500000, guid: 897cd8203c32840448b5a8ba7502fcf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Gate: 1
-  acceleration: 90
-  speed: 30
+  acceleration: 5
+  speed: 5
 --- !u!1 &5871555207634149454
 GameObject:
   m_ObjectHideFlags: 0
@@ -381,7 +381,7 @@ Animator:
   m_GameObject: {fileID: 7999437554386916127}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 26c13ad7a3aaa9d4fb8fd9962f23b2a3, type: 2}
+  m_Controller: {fileID: 9100000, guid: 2f13e53ad295c304a8e832370347b840, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -399,7 +399,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7999437554386916127}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8744c96a9e7e2804382d26df3e7efb1f, type: 3}
+  m_Script: {fileID: 11500000, guid: c229284625e2d24479a5b6cad32b3126, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bladeSpeed: 10
+  bladeSpeed: 3
