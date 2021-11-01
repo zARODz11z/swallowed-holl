@@ -508,7 +508,7 @@ public class FPSMovingSphere : MonoBehaviour {
 	void EvaluateCollision (Collision collision) {
 		int layer = collision.gameObject.layer;
 		float minDot = GetMinDot(layer);
-			for (int i = 0; i < collision.contactCount; i++) {
+		for (int i = 0; i < collision.contactCount; i++) {
 			Vector3 normal = collision.GetContact(i).normal;
 			float upDot = Vector3.Dot(upAxis, normal);
 			//This was just > than for conor and i, but on the tutorial it was changed to >= without any explanation so keep that in mind
