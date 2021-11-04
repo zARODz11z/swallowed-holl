@@ -9,7 +9,7 @@ public class Eat : MonoBehaviour
     void OnTriggerEnter(Collider other) {
         if (other.tag == "Player"){
 
-            other.gameObject.transform.root.gameObject.GetComponent<FPSMovingSphere>().hungerDive();
+            other.gameObject.transform.root.gameObject.GetComponent<Movement>().hungerDive();
             other.gameObject.transform.root.gameObject.GetComponent<playerHunger>().increaseHunger(food);    
 
             //hunger.GetComponent<FPSMovingSphere>().hungerDive();

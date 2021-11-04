@@ -7,18 +7,18 @@ public class EnableBarrage : MonoBehaviour
 
     [SerializeField]
     GameObject sphere;
-    FPSMovingSphere player;
+    Movement movement;
 
     // Start is called before the first frame update
     void Start()
     {
-        player = sphere.GetComponent<FPSMovingSphere>();
+        movement = sphere.GetComponent<Movement>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (player.isBarraging){
+        if (movement.isBarraging){
             this.transform.GetChild(0).gameObject.SetActive(true);
         }
         else {

@@ -1,19 +1,28 @@
 using UnityEngine;
-public class FPSMovingSphere : MonoBehaviour { 
+public class Movement : MonoBehaviour { 
+	//This script controls the movement of the character. 
+	//refrence to the grab script
 	Grab grab;
+
 	[SerializeField]
 	[Tooltip("How strong the force pushing you into the wall is while climbing")]
 	float climbStickyness = 5f;
+	//reference to the script that controls limits on your movement speed
 	MovementSpeedController speedController;
+	//bool checking if you are in a hunger dive
 	public bool Diving;
+	//the direction your jump goes in
 	Vector3 jumpDirection;
+	// bool to check if you are currently using the barrage attack
 	
 	[HideInInspector]
 	public bool isBarraging;
+	// at what point you are considered in submerged in water
 
 	[SerializeField, Range(0.01f, 1f)]
 	public float swimThreshold = 0.5f;
 	public bool Swimming => submergence >= swimThreshold;
+	//how far of an angle you can walk on that will still be considered ground
 
 	[SerializeField, Range(90, 180)]
 	float maxClimbAngle = 140f;
@@ -24,9 +33,6 @@ public class FPSMovingSphere : MonoBehaviour {
 	Light lt;
 	// this is so i can get a refrence to the empty that is a child of the main game object
 	public GameObject parent;
-	//these are for the booms
-	public float radius = 20.0F;
-    public float power = 100.0F;
 
 	[SerializeField]
 	[Tooltip("determines what rotation is relative to, ideally the camera")]
@@ -55,13 +61,15 @@ public class FPSMovingSphere : MonoBehaviour {
 	[Tooltip("controls the amount of jumps you can do while in the air")]
 	int maxAirJumps = 1;
 
+	//all the masks that determine what interactions are valid with the player
+
 	[SerializeField]
 	LayerMask probeMask = -1, stairsMask = -1, climbMask = -1, waterMask = 0;
 	
 	[HideInInspector]
 	public Rigidbody body, connectedBody; 
 	Rigidbody previousConnectedBody;
-
+	
 	bool desiredJump, desiresClimbing;
 
 	[HideInInspector]
@@ -179,7 +187,6 @@ public class FPSMovingSphere : MonoBehaviour {
 			desiredJump |= Input.GetButtonDown("Jump");
 			desiresClimbing = Input.GetButton("Duck");
 		}
-		//ExplosiveForce();
 		 //light that shows if youre on the ground or not
 		if (Swimming){
 			lt.color = Color.blue;
@@ -356,22 +363,6 @@ public class FPSMovingSphere : MonoBehaviour {
 		minGroundDotProduct = Mathf.Cos(maxGroundAngle * Mathf.Deg2Rad);
 		minStairsDotProduct = Mathf.Cos(maxStairsAngle * Mathf.Deg2Rad);
 		minClimbDotProduct = Mathf.Cos(maxClimbAngle * Mathf.Deg2Rad);
-	}
-
-	void ExplosiveForce(){
-		bool BoomPressed = Input.GetKeyDown("v");
-		if(BoomPressed){
-			Vector3 explosionPos = transform.position;
-        	Collider[] colliders = Physics.OverlapSphere(explosionPos, radius);
-        	foreach (Collider hit in colliders)
-        	{
-            	Rigidbody rb = hit.GetComponent<Rigidbody>();
-				if (rb != body){
-					if (rb != null)
-						rb.AddExplosionForce(power, explosionPos, radius);
-					}
-				}
-		}
 	}
 
 	void ClearState (){

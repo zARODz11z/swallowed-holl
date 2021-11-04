@@ -8350,22 +8350,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5bef2a05e61fd94987af2814b1681c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distance: 8
-  mask:
-    serializedVersion: 2
-    m_Bits: 8192
-  dummy: {fileID: 7197834583204667933}
-  origin: {fileID: 7197834582348623817}
   isHolding: 0
   throwingforce: 10
   LowthrowingPoint: {fileID: 1931791613396761421}
   HighthrowingPoint: {fileID: 7197834583313307631}
   highorLow: 1
+  throwingTemp: 0
   strength: 20
   maxThrowingForce: 30
   chargeRate: 0.3
   isgrabCharging: 0
-  SmallMediumLarge: NULL
+  sizes: 4
 --- !u!114 &7197834581697023860
 MonoBehaviour:
   m_ObjectHideFlags: 0
