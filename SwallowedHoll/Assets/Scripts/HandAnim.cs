@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+//this script controls all the animations tied to the character, such as when certain animations should be played and how they should be played.
 public class HandAnim : MonoBehaviour
 {
     MovementSpeedController speedController;

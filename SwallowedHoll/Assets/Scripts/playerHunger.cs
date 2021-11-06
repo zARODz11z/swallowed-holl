@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+//this script handles the players hunger and the rate at which it decays, assuming it decays at all. It also controls how it is increased. 
 public class playerHunger : MonoBehaviour
 {
     PlayerStats stats;

@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+//this script just allows you to use the "barrage" attack
 public class EnableBarrage : MonoBehaviour
 {
 

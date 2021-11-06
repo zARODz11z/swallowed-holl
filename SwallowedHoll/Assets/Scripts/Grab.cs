@@ -2,44 +2,29 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// This script deals with holding objects after you have interacted with an object that has a rigidbody, is tagged as pickupable, and isn't over your max carrying weight.
+// It pins that object to an empty tied to the player, creates a collider to represent that object while it is in your hands, and switches the player to an animation set to 
+// reflect that they are holding something. It also disables dynamic bones while you are holding something. This script also handles the logic for throwing objects, including charging up and releasing
 public class Grab : MonoBehaviour
 {
     MovementSpeedController speedController;
     Material mat;
-    //[SerializeField]
-    //float distance;
-    //[SerializeField]
-    //[Tooltip("what objects can be picked up by the player")]
-
-    //LayerMask mask = default;
-
-    //[SerializeField]
-    //Transform dummy;
-    //[SerializeField]
-    //[Tooltip("where the throwing force originates from")]
-
-    //GameObject origin;
-    //Transform prop;
-    //Rigidbody propRB;
     CustomGravityRigidbody body;
-    //Renderer renda;
+
     [HideInInspector]
     public bool isHolding = false;
     [SerializeField]
     public float throwingforce = 5;
     HandAnim hand;
     Movement movement;
-    //disableDynamicBone bone;
+
     [Tooltip("the point that a fully charged throw will head toward")]
 
     [SerializeField]
     Transform LowthrowingPoint;
     [SerializeField]
     [Tooltip("the point that a light toss will head toward")]
-
     Transform HighthrowingPoint;
-    //GameObject[] balls;
-    //int ballLength;
     [SerializeField]
     bool highorLow = true;
     public float throwingTemp;
@@ -60,6 +45,7 @@ public class Grab : MonoBehaviour
     public enum objectSizes{tiny, small, medium, large, none};
     
     public objectSizes sizes;
+    public bool justThrew;
 
     Interact interact;
 
@@ -72,6 +58,9 @@ public class Grab : MonoBehaviour
 
     void setisThrowingFalse(){
         hand.setisThrowing(false);
+    }
+    void resetJustThrew(){
+        justThrew = false;
     }
 
     public void pickUp(GameObject origin, Transform dummy, Transform prop, Rigidbody propRB, GameObject[] balls, RaycastHit hit){
@@ -117,7 +106,7 @@ public class Grab : MonoBehaviour
     }
     void Update()
     {   //THROW
-        if (Input.GetKeyUp("mouse 0") && isHolding && !hand.barragePrep && !movement.isBarraging ){
+        if (Input.GetKeyUp("mouse 0") && isHolding && !hand.barragePrep && !movement.isBarraging && !justThrew){
             interact.detach();
             if (highorLow){
                 interact.propRB.AddForce((HighthrowingPoint.position - interact.origin.transform.position ) * throwingforce, ForceMode.Impulse);
@@ -131,9 +120,11 @@ public class Grab : MonoBehaviour
             Invoke("setisThrowingFalse", .1f);
             throwingforce = throwingTemp;
             highorLow = true;
+            justThrew = true;
+            Invoke("resetJustThrew", .5f);
         }
         //throw charge
-        if (Input.GetKey("mouse 0") && isHolding && !hand.barragePrep && !movement.isBarraging ){
+        if (Input.GetKey("mouse 0") && isHolding && !hand.barragePrep && !movement.isBarraging && !justThrew){
             if (throwingforce <= maxThrowingForce){
                 isgrabCharging = true;
                 throwingforce = throwingforce + chargeRate;

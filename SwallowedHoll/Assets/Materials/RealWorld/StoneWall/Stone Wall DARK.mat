@@ -8,14 +8,14 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Stone Wall DARK
-  m_Shader: {fileID: 4800000, guid: f9ddd1f060103ff4ebbf0edf9f18c7e5, type: 3}
+  m_Shader: {fileID: 4800000, guid: 542a793d51893a34b88c0379e14af661, type: 3}
   m_ShaderKeywords: _SPECGLOSSMAP
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: 2000
   stringTagMap:
-    OptimizedShaderFolder: Stone Wall DARK-40250760
+    OptimizedShaderFolder: Stone Wall DARK-28781838
     OriginalShader: ".poiyomi/\u2022 Poiyomi Toon \u2022"
     RenderType: Opaque
   disabledShaderPasses: []
@@ -332,7 +332,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _SpecularMap:
         m_Texture: {fileID: 2800000, guid: 42fb96a5ca1257b43bcd997cc40d544f, type: 3}
-        m_Scale: {x: 1, y: 1}
+        m_Scale: {x: 0.03, y: 0.03}
         m_Offset: {x: 0, y: 0}
     - _SpecularMap1:
         m_Texture: {fileID: 0}
@@ -340,7 +340,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _SpecularMask:
         m_Texture: {fileID: 2800000, guid: 42fb96a5ca1257b43bcd997cc40d544f, type: 3}
-        m_Scale: {x: 1, y: 1}
+        m_Scale: {x: 0.03, y: 0.03}
         m_Offset: {x: 0, y: 0}
     - _SpecularMask1:
         m_Texture: {fileID: 0}
@@ -1711,7 +1711,7 @@ Material:
     - m_start_scrollingEmissionOptions: 0
     - m_start_scrollingEmissionOptions1: 0
     - m_start_shadowTexture: 0
-    - m_start_specular: 0
+    - m_start_specular: 1
     - m_start_specular1: 0
     - m_start_subsurface: 0
     - m_start_vertexManipulation: 0

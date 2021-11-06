@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+//this script handles interacting with various objects, such as a button, a lever, a pickupable object, etc. essentially just pressing e on something
 public class Interact : MonoBehaviour
 {
     Movement movement;
@@ -38,7 +38,7 @@ public class Interact : MonoBehaviour
         
     }
 
-
+    // this just makes you drop whatever you are holding
     public void detach(){
         grab.sizes = Grab.objectSizes.none;
         //opposite of the pick up section, just undoing all of that back to its default state
@@ -77,7 +77,7 @@ public class Interact : MonoBehaviour
             RaycastHit hit;
             if (Physics.SphereCast(origin.transform.position, 1, (dummy.position - origin.transform.position), out hit, distance, mask))
             {
-                if(hit.transform.gameObject.GetComponent<Rigidbody>() != null && hit.transform.gameObject.GetComponent<Rigidbody>().mass <= grab.strength){
+                if(hit.transform.gameObject.GetComponent<Rigidbody>() != null && hit.transform.gameObject.GetComponent<Rigidbody>().mass <= grab.strength && !grab.justThrew){
                     prop = hit.transform;
                     propRB = hit.rigidbody;
                     grab.pickUp(origin, dummy, prop, propRB, balls, hit);

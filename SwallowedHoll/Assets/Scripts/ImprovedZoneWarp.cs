@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+//this script controls the world shift mechanic and allows the player to shift between worlds. really you are just being teleported along the y axis, but there are dummy objects checking if you would end up colliding with something else
+//if youare in the clear and none of the dummies are colliding with anything, you will just teleport directly to the root dummy. if the root dummy is colliding with something, the script willl check and find a "sub dummy" that is not 
+//colliding with anything, and shift to that instead. if all of the dummies are colliding with something, you simply cant shift. 
 public class ImprovedZoneWarp : MonoBehaviour
 {
     Collider other = null;

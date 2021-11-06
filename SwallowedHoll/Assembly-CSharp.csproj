@@ -37,6 +37,7 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\ObjectSpin.cs" />
+     <Compile Include="Assets\Scripts\Interact.cs" />
      <Compile Include="Assets\Scripts\DetectionZonePlayerOnly.cs" />
      <Compile Include="Assets\Scripts\Die.cs" />
      <Compile Include="Assets\Scripts\Grab.cs" />
@@ -88,7 +89,6 @@
      <Compile Include="Assets\Scripts\Explode.cs" />
      <Compile Include="Assets\Scripts\DamageBox.cs" />
      <Compile Include="Assets\Scripts\Eat.cs" />
-     <Compile Include="Assets\Scripts\Interact.cs" />
      <None Include="Assets\Materials\Holl\HollWall\OptimizedShaders\HollWall Dark-80102879\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiFrag.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\Groceries-7df36488\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiGeomFur.cginc" />
      <None Include="Assets\Materials\Props\TV\OptimizedShaders\TV-463b829f\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiBackFace.cginc" />
@@ -122,8 +122,10 @@
      <None Include="Assets\Materials\Holl\Goop Decals\OptimizedShaders\GoopDecal4-63d50131\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiMetal.cginc" />
      <None Include="Assets\Materials\Props\Conveyor Belt\OptimizedShaders\Belt-fc19e4a8\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiPass.cginc" />
      <None Include="Assets\Materials\Holl\HollWood\OptimizedShaders\New Material-55d938bd\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiBackFace.cginc" />
+     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK-28781838\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiFur.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\Briefcase-8ffb802e\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_Poicludes.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\Explosive Box-d18a32ab\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiFur.cginc" />
+     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK 1-94275424\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiDepthColor.cginc" />
      <None Include="Assets\Materials\Props\Conveyor Belt\OptimizedShaders\Belt-fc19e4a8\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiMetal.cginc" />
      <None Include="Assets\Materials\Props\Conveyor Belt\OptimizedShaders\New Material-c359cebb\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiGlitter.cginc" />
      <None Include="Assets\Materials\Props\Trophy\OptimizedShaders\Trophy-20a04cbd\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiV2F.cginc" />
@@ -142,7 +144,6 @@
      <None Include="Assets\Materials\Props\LongBoard\OptimizedShaders\LongBoard-e325ca27\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiFrag.cginc" />
      <None Include="Assets\Shader\_PoiyomiShaders\Shaders\Includes\CGI_PoiMatcap.cginc" />
      <None Include="Assets\Materials\Holl\HollWall\OptimizedShaders\HollWall Dark-80102879\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiVert.cginc" />
-     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK-40250760\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiVert.cginc" />
      <None Include="Assets\Materials\Holl\MossWall\OptimizedShaders\smoller-71af66c2\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiMath.cginc" />
      <None Include="Assets\Materials\RealWorld\Wood\OptimizedShaders\New Material-dbec6789\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiMainTex.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\Tissue Box-bd9305fe\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Shaders\S_Poiyomi_Toon.shader" />
@@ -158,7 +159,9 @@
      <None Include="Assets\Materials\OptimizedShaders\Guitar Blue-36f31295\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiData.cginc" />
      <None Include="Assets\Materials\Holl\HollWall\OptimizedShaders\HollWall Dark-80102879\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiSpawnInVert.cginc" />
      <None Include="Assets\Materials\Holl\HollWall\OptimizedShaders\HollWall Dark-80102879\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Shaders\S_Poiyomi_Toon.shader" />
+     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK 1-94275424\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiPassOutline.cginc" />
      <None Include="Assets\Materials\Props\Fan\OptimizedShaders\New Material 1-ce614303\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiUVDistortion.cginc" />
+     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK 1-94275424\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiFur.cginc" />
      <None Include="Assets\Materials\Props\CRT\OptimizedShaders\CRT-540d50d2\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiPassOutline.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\Tissue Box-bd9305fe\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiOutlineVert.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\Guitar Blue-36f31295\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiShadowFrag.cginc" />
@@ -183,7 +186,7 @@
      <None Include="Assets\Materials\Props\LongBoard\OptimizedShaders\LongBoard-e325ca27\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiDepthColor.cginc" />
      <None Include="Assets\Materials\Props\VHS\OptimizedShaders\VHS-fe06393e\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiRNG.cginc" />
      <None Include="Assets\Shader\_PoiyomiShaders\Shaders\Includes\CGI_PoiGrab.cginc" />
-     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK-40250760\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiAlphaToCoverage.cginc" />
+     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK 1-94275424\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiAlphaToCoverage.cginc" />
      <None Include="Assets\Materials\Holl\Goop Decals\OptimizedShaders\GoopDecal3-d0d39233\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiBulge.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\Box-8f746ddc\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiEmission.cginc" />
      <None Include="Assets\Materials\Props\Fan\OptimizedShaders\New Material 1-ce614303\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiRimLighting.cginc" />
@@ -225,7 +228,10 @@
      <None Include="Assets\Materials\RealWorld\Wood\OptimizedShaders\New Material 1-c04b18c2\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiPass.cginc" />
      <None Include="Assets\Materials\Props\Dumpster\OptimizedShaders\Dumper-7f5bda72\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiDebug.cginc" />
      <None Include="Assets\Materials\Props\Conveyor Belt\OptimizedShaders\New Material-c359cebb\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiFlipbook.cginc" />
+     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK-28781838\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiSpawnInFrag.cginc" />
+     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK 1-94275424\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiMacros.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\Explosive Box-d18a32ab\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiShadowVert.cginc" />
+     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK 1-94275424\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiUVDistortion.cginc" />
      <None Include="Assets\Materials\Props\Trophy\OptimizedShaders\Trophy-20a04cbd\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiDebug.cginc" />
      <None Include="Assets\Materials\Holl\MossWall\OptimizedShaders\smoller-71af66c2\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiUVDistortion.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\Explosive Box-d18a32ab\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiV2F.cginc" />
@@ -258,6 +264,7 @@
      <None Include="Assets\Materials\Props\Barrel\OptimizedShaders\Barrel-960f9070\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiHelpers.cginc" />
      <None Include="Assets\Materials\Holl\Goop Decals\OptimizedShaders\GoopDecal2-5bc0aff4\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiBlackLight.cginc" />
      <None Include="Assets\Materials\Props\Trophy\OptimizedShaders\Trophy-20a04cbd\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiSpecular.cginc" />
+     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK-28781838\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiIridescence.cginc" />
      <None Include="Assets\Materials\Props\Conveyor Belt\OptimizedShaders\New Material-c359cebb\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiData.cginc" />
      <None Include="Assets\Materials\Props\LongBoard\OptimizedShaders\LongBoard-e325ca27\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiGlitter.cginc" />
      <None Include="Assets\Materials\Props\Fan\OptimizedShaders\New Material 1-ce614303\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiRandom.cginc" />
@@ -289,7 +296,6 @@
      <None Include="Assets\Materials\OptimizedShaders\Explosive Box-d18a32ab\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiSubsurfaceScattering.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\Briefcase-8ffb802e\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiVertexManipulations.cginc" />
      <None Include="Assets\Materials\Props\bball\OptimizedShaders\BBALL-ba910da8\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiBulge.cginc" />
-     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK-40250760\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiMatcap.cginc" />
      <None Include="Assets\Materials\Props\Dumpster\OptimizedShaders\Dumper-7f5bda72\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiClearCoat.cginc" />
      <None Include="Assets\Materials\Props\Dumpster\OptimizedShaders\Dumper-7f5bda72\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiGlitter.cginc" />
      <None Include="Assets\Materials\Props\CRT\OptimizedShaders\CRT Screen-d1ab9fe9\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiVertexManipulations.cginc" />
@@ -321,6 +327,7 @@
      <None Include="Assets\Materials\Props\TV\OptimizedShaders\TV-463b829f\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiDebug.cginc" />
      <None Include="Assets\Materials\RealWorld\Wood\OptimizedShaders\New Material 1-c04b18c2\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiDithering.cginc" />
      <None Include="Assets\Materials\Props\LongBoard\OptimizedShaders\LongBoard-e325ca27\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiWireframe.cginc" />
+     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK-28781838\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiWireframe.cginc" />
      <None Include="Assets\Materials\Props\Barrel\OptimizedShaders\Barrel-960f9070\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiClearCoat.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\Guitar Blue-36f31295\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiBlending.cginc" />
      <None Include="Assets\Materials\Props\Bench\OptimizedShaders\Bench-7721673f\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiOutlineVert.cginc" />
@@ -342,12 +349,14 @@
      <None Include="Assets\Materials\OptimizedShaders\Explosive Box-d18a32ab\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiAlphaToCoverage.cginc" />
      <None Include="Assets\Materials\Props\TV\OptimizedShaders\TV-463b829f\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiPassShadow.cginc" />
      <None Include="Assets\Materials\Holl\HollWood\OptimizedShaders\New Material 1-250e92c0\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiHologram.cginc" />
+     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK 1-94275424\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiV2F.cginc" />
      <None Include="Assets\Materials\Props\Conveyor Belt\OptimizedShaders\Belt-fc19e4a8\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiMSDF.cginc" />
      <None Include="Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiLighting.cginc" />
      <None Include="Assets\Materials\Props\bball\OptimizedShaders\BBALL-ba910da8\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiFlipbook.cginc" />
      <None Include="Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiDissolve.cginc" />
      <None Include="Assets\Materials\Props\Fan\OptimizedShaders\New Material-628401e4\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiClearCoat.cginc" />
      <None Include="Assets\Materials\Holl\HollWall\OptimizedShaders\HollWall Dark-80102879\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiPassOutline.cginc" />
+     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK 1-94275424\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiMetal.cginc" />
      <None Include="Assets\Materials\Props\VHS\OptimizedShaders\VHS-fe06393e\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiRandom.cginc" />
      <None Include="Assets\Materials\Props\bball\OptimizedShaders\BBALL-ba910da8\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiAlphaToCoverage.cginc" />
      <None Include="Assets\Materials\RealWorld\Wood\OptimizedShaders\New Material 1-c04b18c2\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiMatcap.cginc" />
@@ -357,11 +366,12 @@
      <None Include="Assets\Materials\Props\Conveyor Belt\OptimizedShaders\Belt-fc19e4a8\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiGrab.cginc" />
      <None Include="Assets\Materials\Holl\MuckWall\OptimizedShaders\smoller-ed18bb23\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiMSDF.cginc" />
      <None Include="Assets\Materials\RealWorld\Wood\OptimizedShaders\New Material-dbec6789\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiHologram.cginc" />
-     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK-40250760\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiFrag.cginc" />
      <None Include="Assets\Materials\RealWorld\Wood\OptimizedShaders\New Material 1-c04b18c2\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiMainTex.cginc" />
      <None Include="Assets\Materials\Holl\Goop Decals\OptimizedShaders\GoopDecal2-5bc0aff4\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiDithering.cginc" />
+     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK-28781838\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiDebug.cginc" />
      <None Include="Assets\Materials\Props\CRT\OptimizedShaders\CRT-540d50d2\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiUVDistortion.cginc" />
      <None Include="Assets\Materials\RealWorld\Wood\OptimizedShaders\New Material 1-c04b18c2\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiVoronoi.cginc" />
+     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK 1-94275424\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiVertexManipulations.cginc" />
      <None Include="Assets\Materials\Holl\Goop Decals\OptimizedShaders\GoopDecal2-5bc0aff4\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiRGBMask.cginc" />
      <None Include="Assets\Materials\Holl\Goop Decals\OptimizedShaders\GoopDecal4-63d50131\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiOutlineVert.cginc" />
      <None Include="Assets\Shader\_PoiyomiShaders\Shaders\Includes\CGI_Poicludes.cginc" />
@@ -371,6 +381,7 @@
      <None Include="Assets\Materials\OptimizedShaders\Guitar Blue-36f31295\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiVoronoi.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\Box-8f746ddc\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiOutlineVert.cginc" />
      <None Include="Assets\Materials\Props\Conveyor Belt\OptimizedShaders\Belt-fc19e4a8\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiPassShadow.cginc" />
+     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK 1-94275424\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiGeomFur.cginc" />
      <None Include="Assets\Materials\Holl\Goop Decals\OptimizedShaders\GoopDecal1-46229c22\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiDithering.cginc" />
      <None Include="Assets\Materials\RealWorld\Celing\OptimizedShaders\Celing-11f95611\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiV2F.cginc" />
      <None Include="Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiData.cginc" />
@@ -386,9 +397,11 @@
      <None Include="Assets\Materials\RealWorld\Wood\OptimizedShaders\New Material-dbec6789\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiDebug.cginc" />
      <None Include="Assets\Materials\RealWorld\Wood\OptimizedShaders\New Material 1-c04b18c2\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiFur.cginc" />
      <None Include="Assets\Materials\Holl\Goop Decals\OptimizedShaders\GoopDecal4-63d50131\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiSubsurfaceScattering.cginc" />
+     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK 1-94275424\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiBulge.cginc" />
      <None Include="Assets\Materials\RealWorld\Tile\OptimizedShaders\New Material 1-744480e1\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiRNG.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\Box-8f746ddc\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiPass.cginc" />
      <None Include="Assets\Materials\Props\Dumpster\OptimizedShaders\Dumper-7f5bda72\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiEnvironmentalRimLighting.cginc" />
+     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK-28781838\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiTessellation.cginc" />
      <None Include="Assets\Materials\Props\Conveyor Belt\OptimizedShaders\New Material-c359cebb\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiMSDF.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\CannonBall-9a75eb9a\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiVert.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\BALL HOOP-f66320b5\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiMSDF.cginc" />
@@ -398,6 +411,7 @@
      <None Include="Assets\Materials\Holl\Goop Decals\OptimizedShaders\GoopDecal3-d0d39233\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiOutlineVert.cginc" />
      <None Include="Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiFrag.cginc" />
      <None Include="Assets\Materials\Holl\Goop Decals\OptimizedShaders\GoopDecal4-63d50131\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiPassShadow.cginc" />
+     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK 1-94275424\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiPass.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\Gamer Chair-4075311c\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiGeomFur.cginc" />
      <None Include="Assets\Materials\Holl\Goop Decals\OptimizedShaders\GoopDecal2-5bc0aff4\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiPanosphere.cginc" />
      <None Include="Assets\Materials\Props\Bench\OptimizedShaders\Bench-7721673f\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiPanosphere.cginc" />
@@ -410,7 +424,6 @@
      <None Include="Assets\Materials\RealWorld\Wood\OptimizedShaders\New Material 1-c04b18c2\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiParallax.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\Tissue Box-bd9305fe\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiTessellation.cginc" />
      <None Include="Assets\Shader\_PoiyomiShaders\Shaders\Includes\CGI_PoiPass.cginc" />
-     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK-40250760\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiGeomFur.cginc" />
      <None Include="Assets\Materials\Holl\Goop Decals\OptimizedShaders\GoopDecal4-63d50131\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiBlending.cginc" />
      <None Include="Assets\Materials\Holl\HollWood\OptimizedShaders\New Material-55d938bd\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiMainTex.cginc" />
      <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\StoneWall Dark-9dc12d1f\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiLighting.cginc" />
@@ -437,7 +450,6 @@
      <None Include="Assets\Materials\Holl\PurpCheka\OptimizedShaders\New Material-a86b47f1\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiHologram.cginc" />
      <None Include="Assets\Materials\Props\Conveyor Belt\OptimizedShaders\Belt-fc19e4a8\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiWireframe.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\BALL HOOP-f66320b5\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiSpawnInVert.cginc" />
-     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK-40250760\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiBlackLight.cginc" />
      <None Include="Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiVert.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\Gamer Chair-4075311c\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiHologram.cginc" />
      <None Include="Assets\Materials\Props\Barrel\OptimizedShaders\Barrel-960f9070\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiAlphaToCoverage.cginc" />
@@ -506,6 +518,7 @@
      <None Include="Assets\Materials\RealWorld\Celing\OptimizedShaders\Celing-11f95611\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiLighting.cginc" />
      <None Include="Assets\Materials\Props\CRT\OptimizedShaders\CRT Screen-d1ab9fe9\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiGlitter.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\CannonBall-9a75eb9a\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiShadowIncludes.cginc" />
+     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK 1-94275424\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiVoronoi.cginc" />
      <None Include="Assets\Materials\Props\LongBoard\OptimizedShaders\LongBoard-e325ca27\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_Poicludes.cginc" />
      <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\StoneWall Dark-9dc12d1f\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiBlackLight.cginc" />
      <None Include="Assets\Materials\Holl\PurpCheka\OptimizedShaders\New Material-a86b47f1\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiSpecular.cginc" />
@@ -520,6 +533,7 @@
      <None Include="Assets\Materials\RealWorld\Tile\OptimizedShaders\New Material 1-744480e1\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiMath.cginc" />
      <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\StoneWall Dark-9dc12d1f\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiData.cginc" />
      <None Include="Assets\Materials\Holl\Goop Decals\OptimizedShaders\GoopDecal4-63d50131\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiMirror.cginc" />
+     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK-28781838\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiMainTex.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\BALL HOOP-f66320b5\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiOutlineVert.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\Table-cdc0163d\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiV2F.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\Table-cdc0163d\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiBlackLight.cginc" />
@@ -529,6 +543,7 @@
      <None Include="Assets\Materials\Props\Fan\OptimizedShaders\New Material-628401e4\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiShadowIncludes.cginc" />
      <None Include="Assets\Materials\Holl\MuckWall\OptimizedShaders\smoller-ed18bb23\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiOutlineVert.cginc" />
      <None Include="Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiColors.cginc" />
+     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK-28781838\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiDefines.cginc" />
      <None Include="Assets\Materials\Holl\HollWood\OptimizedShaders\New Material-55d938bd\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiWireframe.cginc" />
      <None Include="Assets\Materials\Props\TV\OptimizedShaders\TV-463b829f\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiOutlineVert.cginc" />
      <None Include="Assets\Materials\Holl\MossWall\OptimizedShaders\smoller-71af66c2\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiDebug.cginc" />
@@ -583,14 +598,11 @@
      <None Include="Assets\Materials\Holl\HollWall\OptimizedShaders\HollWall Dark-80102879\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiPanosphere.cginc" />
      <None Include="Assets\Materials\Props\Dumpster\OptimizedShaders\Dumper-7f5bda72\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiBlending.cginc" />
      <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\StoneWall Dark-9dc12d1f\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_Poicludes.cginc" />
-     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK-40250760\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiPass.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\Guitar Blue-36f31295\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiHelpers.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\BALL HOOP-f66320b5\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiShadowFrag.cginc" />
      <None Include="Assets\Materials\Holl\HollWood\OptimizedShaders\New Material 1-250e92c0\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiVideo.cginc" />
      <None Include="Assets\Materials\Props\Conveyor Belt\OptimizedShaders\New Material-c359cebb\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiMacros.cginc" />
      <None Include="Assets\Materials\Holl\MossWall\OptimizedShaders\smoller-71af66c2\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiShadowFrag.cginc" />
-     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK-40250760\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiPassOutline.cginc" />
-     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK-40250760\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiDithering.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\Tissue Box-bd9305fe\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiMacros.cginc" />
      <None Include="Assets\Materials\RealWorld\Celing\OptimizedShaders\Celing-11f95611\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiDebug.cginc" />
      <None Include="Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiRimLighting.cginc" />
@@ -607,17 +619,17 @@
      <None Include="Assets\Materials\OptimizedShaders\Box-8f746ddc\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiLighting.cginc" />
      <None Include="Assets\Materials\Props\VHS\OptimizedShaders\VHS-fe06393e\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiClearCoat.cginc" />
      <None Include="Assets\Materials\Props\VHS\OptimizedShaders\VHS-fe06393e\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiVertexManipulations.cginc" />
-     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK-40250760\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiDebug.cginc" />
      <None Include="Assets\Materials\Props\Dumpster\OptimizedShaders\Dumper-7f5bda72\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiMSDF.cginc" />
+     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK 1-94275424\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiMainTex.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\Explosive Box-d18a32ab\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiSpecular.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\Gamer Chair-4075311c\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiDissolve.cginc" />
      <None Include="Assets\Materials\Props\Barrel\OptimizedShaders\Barrel-960f9070\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiDithering.cginc" />
      <None Include="Assets\Materials\Props\TV\OptimizedShaders\TV-463b829f\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiV2F.cginc" />
      <None Include="Assets\Materials\Props\Fan\OptimizedShaders\New Material 1-ce614303\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiMacros.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\Calculator-06aedd48\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiSpawnInVert.cginc" />
-     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK-40250760\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiGlitter.cginc" />
      <None Include="Assets\Materials\RealWorld\Tile\OptimizedShaders\New Material 1-744480e1\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiEmission.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\CannonBall-9a75eb9a\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiMacros.cginc" />
+     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK-28781838\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiRandom.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\Groceries-7df36488\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiDithering.cginc" />
      <None Include="Assets\Materials\Holl\PurpCheka\OptimizedShaders\New Material-a86b47f1\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiDecal.cginc" />
      <None Include="Assets\Materials\Holl\HollWood\OptimizedShaders\New Material 1-250e92c0\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiAlphaToCoverage.cginc" />
@@ -631,11 +643,11 @@
      <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\StoneWall Dark-9dc12d1f\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiFrag.cginc" />
      <None Include="Assets\Materials\Props\LongBoard\OptimizedShaders\LongBoard-e325ca27\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiColors.cginc" />
      <None Include="Assets\Materials\Props\CRT\OptimizedShaders\CRT-540d50d2\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiPanosphere.cginc" />
+     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK-28781838\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiPassShadow.cginc" />
      <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\StoneWall Dark-9dc12d1f\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiGeomFur.cginc" />
      <None Include="Assets\Materials\Holl\HollWood\OptimizedShaders\New Material 1-250e92c0\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Shaders\S_Poiyomi_Toon.shader" />
      <None Include="Assets\Materials\OptimizedShaders\Gamer Chair-4075311c\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiMSDF.cginc" />
      <None Include="Assets\Materials\Props\LongBoard\OptimizedShaders\LongBoard-e325ca27\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiFlipbook.cginc" />
-     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK-40250760\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiSpawnInVert.cginc" />
      <None Include="Assets\Materials\Props\Kawaii Smart Fridge\OptimizedShaders\Fridge 4-605022bf\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiShadowFrag.cginc" />
      <None Include="Assets\Materials\Holl\HollWood\OptimizedShaders\New Material 1-250e92c0\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiDepthColor.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\CannonBall-9a75eb9a\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiFur.cginc" />
@@ -664,6 +676,7 @@
      <None Include="Assets\Materials\OptimizedShaders\Briefcase-8ffb802e\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiDissolve.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\Calculator-06aedd48\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiData.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\Explosive Box-d18a32ab\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_Poicludes.cginc" />
+     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK-28781838\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiPanosphere.cginc" />
      <None Include="Assets\Materials\RealWorld\Wood\OptimizedShaders\New Material 1-c04b18c2\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_Poicludes.cginc" />
      <None Include="Assets\Materials\Props\bball\OptimizedShaders\BBALL-ba910da8\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiRNG.cginc" />
      <None Include="Assets\Materials\Props\TV\OptimizedShaders\TV-463b829f\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiUVDistortion.cginc" />
@@ -673,6 +686,7 @@
      <None Include="Assets\Shader\_PoiyomiShaders\Shaders\Includes\CGI_PoiVideo.cginc" />
      <None Include="Assets\Materials\Props\CRT\OptimizedShaders\CRT-540d50d2\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiRimLighting.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\Explosive Box-d18a32ab\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiHelpers.cginc" />
+     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK-28781838\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiMacros.cginc" />
      <None Include="Assets\Materials\Holl\Goop Decals\OptimizedShaders\GoopDecal1-46229c22\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiShadowVert.cginc" />
      <None Include="Assets\Materials\Props\Fan\OptimizedShaders\New Material-628401e4\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiRNG.cginc" />
      <None Include="Assets\Materials\Holl\Goop Decals\OptimizedShaders\GoopDecal4-63d50131\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiPass.cginc" />
@@ -687,6 +701,7 @@
      <None Include="Assets\Materials\RealWorld\Celing\OptimizedShaders\Celing-11f95611\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiShadowIncludes.cginc" />
      <None Include="Assets\Materials\Props\Fan\OptimizedShaders\New Material 1-ce614303\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiClearCoat.cginc" />
      <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\StoneWall Dark-9dc12d1f\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiSpecular.cginc" />
+     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK-28781838\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiMetal.cginc" />
      <None Include="Assets\Materials\Props\bball\OptimizedShaders\BBALL-ba910da8\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiPass.cginc" />
      <None Include="Assets\Materials\Holl\HollWall\OptimizedShaders\HollWall Dark-80102879\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiLighting.cginc" />
      <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\StoneWall Dark-9dc12d1f\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiBulge.cginc" />
@@ -710,7 +725,6 @@
      <None Include="Assets\Materials\Props\Fan\OptimizedShaders\New Material 1-ce614303\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiDepthColor.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\Gamer Chair-4075311c\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiUVDistortion.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\Guitar Blue-36f31295\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiLighting.cginc" />
-     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK-40250760\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiDecal.cginc" />
      <None Include="Assets\Materials\Props\Dumpster\OptimizedShaders\Dumper-7f5bda72\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiDefines.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\Groceries-7df36488\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiHologram.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\Tissue Box-bd9305fe\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiRandom.cginc" />
@@ -737,6 +751,7 @@
      <None Include="Assets\Materials\OptimizedShaders\CannonBall-9a75eb9a\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiSpecular.cginc" />
      <None Include="Assets\Materials\Holl\Goop Decals\OptimizedShaders\GoopDecal4-63d50131\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiShadowVert.cginc" />
      <None Include="Assets\Materials\Holl\PurpCheka\OptimizedShaders\New Material-a86b47f1\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiUVDistortion.cginc" />
+     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK-28781838\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiSpawnInVert.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\Tissue Box-bd9305fe\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiShadowVert.cginc" />
      <None Include="Assets\Shader\_PoiyomiShaders\Shaders\Includes\CGI_PoiDepthColor.cginc" />
      <None Include="Assets\Materials\Props\Bench\OptimizedShaders\Bench-7721673f\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiMainTex.cginc" />
@@ -744,9 +759,11 @@
      <None Include="Assets\Materials\RealWorld\Wood\OptimizedShaders\New Material-dbec6789\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiShadowIncludes.cginc" />
      <None Include="Assets\Materials\RealWorld\Wood\OptimizedShaders\New Material-dbec6789\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiRNG.cginc" />
      <None Include="Assets\Materials\Props\TV\OptimizedShaders\TV-463b829f\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiDithering.cginc" />
+     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK-28781838\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiMirror.cginc" />
      <None Include="Assets\Materials\Props\Fan\OptimizedShaders\New Material 1-ce614303\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiRGBMask.cginc" />
      <None Include="Assets\Materials\RealWorld\Wood\OptimizedShaders\New Material-dbec6789\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiV2F.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\Box-8f746ddc\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiPassOutline.cginc" />
+     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK 1-94275424\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiShadowIncludes.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\Table-cdc0163d\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiDissolve.cginc" />
      <None Include="Assets\Materials\Holl\Goop Decals\OptimizedShaders\GoopDecal1-46229c22\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiTessellation.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\Groceries-7df36488\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiRandom.cginc" />
@@ -796,6 +813,7 @@
      <None Include="Assets\Materials\Holl\Goop Decals\OptimizedShaders\GoopDecal1-46229c22\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiVertexManipulations.cginc" />
      <None Include="Assets\Materials\Props\VHS\OptimizedShaders\VHS-fe06393e\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiBlending.cginc" />
      <None Include="Assets\Materials\Props\Conveyor Belt\OptimizedShaders\New Material-c359cebb\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiMirror.cginc" />
+     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK 1-94275424\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiEmission.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\Table-cdc0163d\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiBulge.cginc" />
      <None Include="Assets\Materials\Props\CRT\OptimizedShaders\CRT Screen-d1ab9fe9\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiShadowIncludes.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\Guitar Blue-36f31295\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiTessellation.cginc" />
@@ -806,12 +824,14 @@
      <None Include="Assets\Materials\OptimizedShaders\BALL HOOP-f66320b5\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiFrag.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\Calculator-06aedd48\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiDepthColor.cginc" />
      <None Include="Assets\Materials\Holl\MuckWall\OptimizedShaders\smoller-ed18bb23\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiParallax.cginc" />
+     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK-28781838\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiShadowIncludes.cginc" />
      <None Include="Assets\Materials\RealWorld\Tile\OptimizedShaders\New Material 1-744480e1\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiSubsurfaceScattering.cginc" />
      <None Include="Assets\Materials\Props\Kawaii Smart Fridge\OptimizedShaders\Fridge 4-605022bf\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiWireframe.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\Groceries-7df36488\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiWireframe.cginc" />
      <None Include="Assets\Materials\Holl\PurpCheka\OptimizedShaders\New Material-a86b47f1\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiShadowVert.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\Gamer Chair-4075311c\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiV2F.cginc" />
      <None Include="Assets\Materials\Props\Fan\OptimizedShaders\New Material 1-ce614303\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiPassOutline.cginc" />
+     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK 1-94275424\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiRGBMask.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\Explosive Box-d18a32ab\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiShadowIncludes.cginc" />
      <None Include="Assets\Materials\Holl\Goop Decals\OptimizedShaders\GoopDecal2-5bc0aff4\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiMirror.cginc" />
      <None Include="Assets\Materials\Props\Conveyor Belt\OptimizedShaders\Belt-fc19e4a8\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiSpecular.cginc" />
@@ -826,6 +846,7 @@
      <None Include="Assets\Materials\Props\Fan\OptimizedShaders\New Material-628401e4\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Shaders\S_Poiyomi_Toon.shader" />
      <None Include="Assets\Materials\Holl\Goop Decals\OptimizedShaders\GoopDecal1-46229c22\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiMainTex.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\Calculator-06aedd48\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiShadowVert.cginc" />
+     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK-28781838\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Shaders\S_Poiyomi_Toon.shader" />
      <None Include="Assets\Materials\Props\Trophy\OptimizedShaders\Trophy-20a04cbd\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiFrag.cginc" />
      <None Include="Assets\Materials\Holl\HollWood\OptimizedShaders\New Material-55d938bd\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiBulge.cginc" />
      <None Include="Assets\Materials\Props\Dumpster\OptimizedShaders\Dumper-7f5bda72\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiMainTex.cginc" />
@@ -837,7 +858,6 @@
      <None Include="Assets\Materials\OptimizedShaders\Explosive Box-d18a32ab\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiDecal.cginc" />
      <None Include="Assets\Materials\RealWorld\Wood\OptimizedShaders\New Material 1-c04b18c2\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiBlackLight.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\BALL HOOP-f66320b5\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiMacros.cginc" />
-     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK-40250760\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiClearCoat.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\Tissue Box-bd9305fe\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiClearCoat.cginc" />
      <None Include="Assets\Materials\Holl\PurpCheka\OptimizedShaders\New Material-a86b47f1\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiGrab.cginc" />
      <None Include="Assets\Materials\Props\Fan\OptimizedShaders\New Material 1-ce614303\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiDecal.cginc" />
@@ -858,6 +878,7 @@
      <None Include="Assets\Materials\RealWorld\Tile\OptimizedShaders\New Material 1-744480e1\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiData.cginc" />
      <None Include="Assets\Materials\RealWorld\Wood\OptimizedShaders\New Material 1-c04b18c2\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiBackFace.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\Briefcase-8ffb802e\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiColors.cginc" />
+     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK-28781838\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiBlending.cginc" />
      <None Include="Assets\Materials\Props\CRT\OptimizedShaders\CRT Screen-d1ab9fe9\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiFrag.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\Calculator-06aedd48\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiRNG.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\Calculator-06aedd48\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiShadowIncludes.cginc" />
@@ -874,11 +895,11 @@
      <None Include="Assets\Materials\RealWorld\Tile\OptimizedShaders\New Material 1-744480e1\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiMetal.cginc" />
      <None Include="Assets\Materials\Props\VHS\OptimizedShaders\VHS-fe06393e\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiShadowFrag.cginc" />
      <None Include="Assets\Materials\Holl\Goop Decals\OptimizedShaders\GoopDecal4-63d50131\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiRGBMask.cginc" />
-     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK-40250760\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiSpawnInFrag.cginc" />
      <None Include="Assets\Materials\RealWorld\Tile\OptimizedShaders\New Material 1-744480e1\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiPassShadow.cginc" />
      <None Include="Assets\Materials\Props\LongBoard\OptimizedShaders\LongBoard-e325ca27\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiHelpers.cginc" />
      <None Include="Assets\Materials\Holl\HollWood\OptimizedShaders\New Material-55d938bd\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiGlitter.cginc" />
      <None Include="Assets\Materials\Holl\Goop Decals\OptimizedShaders\GoopDecal2-5bc0aff4\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiVoronoi.cginc" />
+     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK 1-94275424\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiDithering.cginc" />
      <None Include="Assets\Materials\RealWorld\Wood\OptimizedShaders\New Material 1-c04b18c2\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiRGBMask.cginc" />
      <None Include="Assets\Materials\Holl\Goop Decals\OptimizedShaders\GoopDecal4-63d50131\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiDebug.cginc" />
      <None Include="Assets\Materials\RealWorld\Wood\OptimizedShaders\New Material 1-c04b18c2\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiEmission.cginc" />
@@ -894,6 +915,7 @@
      <None Include="Assets\Materials\RealWorld\Wood\OptimizedShaders\New Material-dbec6789\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiShadowFrag.cginc" />
      <None Include="Assets\Materials\Props\Barrel\OptimizedShaders\Barrel-960f9070\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiUVDistortion.cginc" />
      <None Include="Assets\Materials\Holl\MossWall\OptimizedShaders\smoller-71af66c2\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiBackFace.cginc" />
+     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK-28781838\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiUVDistortion.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\Tissue Box-bd9305fe\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiMatcap.cginc" />
      <None Include="Assets\Materials\Holl\HollWood\OptimizedShaders\New Material-55d938bd\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiShadowFrag.cginc" />
      <None Include="Assets\Materials\Holl\Goop Decals\OptimizedShaders\GoopDecal3-d0d39233\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiV2F.cginc" />
@@ -908,6 +930,7 @@
      <None Include="Assets\Materials\Props\Bench\OptimizedShaders\Bench-7721673f\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Shaders\S_Poiyomi_Toon.shader" />
      <None Include="Assets\Materials\OptimizedShaders\BALL HOOP-f66320b5\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiFlipbook.cginc" />
      <None Include="Assets\Materials\Props\Fan\OptimizedShaders\New Material 1-ce614303\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiParallax.cginc" />
+     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK 1-94275424\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiBlackLight.cginc" />
      <None Include="Assets\Materials\Holl\MuckWall\OptimizedShaders\smoller-ed18bb23\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiFlipbook.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\Tissue Box-bd9305fe\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiIridescence.cginc" />
      <None Include="Assets\Materials\Props\Conveyor Belt\OptimizedShaders\New Material-c359cebb\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiShadowIncludes.cginc" />
@@ -918,6 +941,7 @@
      <None Include="Assets\Materials\Holl\MossWall\OptimizedShaders\smoller-71af66c2\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiVert.cginc" />
      <None Include="Assets\Materials\Holl\MossWall\OptimizedShaders\smoller-71af66c2\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiMainTex.cginc" />
      <None Include="Assets\Materials\RealWorld\Celing\OptimizedShaders\Celing-11f95611\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiDepthColor.cginc" />
+     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK 1-94275424\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiWireframe.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\Gamer Chair-4075311c\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiMath.cginc" />
      <None Include="Assets\Materials\Props\Kawaii Smart Fridge\OptimizedShaders\Fridge 4-605022bf\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiSpecular.cginc" />
      <None Include="Assets\Shader\_PoiyomiShaders\Shaders\Includes\CGI_PoiMSDF.cginc" />
@@ -941,6 +965,7 @@
      <None Include="Assets\Materials\Holl\MuckWall\OptimizedShaders\smoller-ed18bb23\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiEnvironmentalRimLighting.cginc" />
      <None Include="Assets\Materials\Props\bball\OptimizedShaders\BBALL-ba910da8\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiGrab.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\BALL HOOP-f66320b5\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiShadowIncludes.cginc" />
+     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK-28781838\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiColors.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\Calculator-06aedd48\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiHelpers.cginc" />
      <None Include="Assets\Materials\Props\LongBoard\OptimizedShaders\LongBoard-e325ca27\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiVertexManipulations.cginc" />
      <None Include="Assets\Materials\RealWorld\Tile\OptimizedShaders\New Material 1-744480e1\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiBlending.cginc" />
@@ -967,6 +992,7 @@
      <None Include="Assets\Materials\OptimizedShaders\CannonBall-9a75eb9a\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiBackFace.cginc" />
      <None Include="Assets\Materials\Holl\HollWood\OptimizedShaders\New Material 1-250e92c0\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiRimLighting.cginc" />
      <None Include="Assets\Materials\Props\bball\OptimizedShaders\BBALL-ba910da8\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiHologram.cginc" />
+     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK 1-94275424\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiPanosphere.cginc" />
      <None Include="Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiRandom.cginc" />
      <None Include="Assets\Materials\Holl\MuckWall\OptimizedShaders\smoller-ed18bb23\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiMath.cginc" />
      <None Include="Assets\Materials\Props\TV\OptimizedShaders\TV-463b829f\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiVoronoi.cginc" />
@@ -983,8 +1009,10 @@
      <None Include="Assets\Materials\Holl\Goop Decals\OptimizedShaders\GoopDecal2-5bc0aff4\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiUVDistortion.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\CannonBall-9a75eb9a\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiAlphaToCoverage.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\Calculator-06aedd48\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiSpecular.cginc" />
+     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK 1-94275424\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiIridescence.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\CannonBall-9a75eb9a\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiRimLighting.cginc" />
      <None Include="Assets\Materials\RealWorld\Wood\OptimizedShaders\New Material-dbec6789\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiHelpers.cginc" />
+     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK-28781838\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiParallax.cginc" />
      <None Include="Assets\Materials\Holl\HollWall\OptimizedShaders\HollWall Dark-80102879\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiMacros.cginc" />
      <None Include="Assets\Materials\RealWorld\Wood\OptimizedShaders\New Material 1-c04b18c2\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiVert.cginc" />
      <None Include="Assets\Materials\Holl\HollWood\OptimizedShaders\New Material-55d938bd\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiOutlineVert.cginc" />
@@ -1034,6 +1062,7 @@
      <None Include="Assets\Materials\Props\Kawaii Smart Fridge\OptimizedShaders\Fridge 4-605022bf\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiClearCoat.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\Gamer Chair-4075311c\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiRandom.cginc" />
      <None Include="Assets\Materials\RealWorld\Wood\OptimizedShaders\New Material 1-c04b18c2\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiV2F.cginc" />
+     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK-28781838\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiDithering.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\Guitar Blue-36f31295\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_Poicludes.cginc" />
      <None Include="Assets\Materials\Props\LongBoard\OptimizedShaders\LongBoard-e325ca27\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiParallax.cginc" />
      <None Include="Assets\Materials\Props\CRT\OptimizedShaders\CRT Screen-d1ab9fe9\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiVert.cginc" />
@@ -1047,7 +1076,6 @@
      <None Include="Assets\Materials\Props\CRT\OptimizedShaders\CRT Screen-d1ab9fe9\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiDecal.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\Calculator-06aedd48\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiVideo.cginc" />
      <None Include="Assets\Materials\Props\Fan\OptimizedShaders\New Material 1-ce614303\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiMetal.cginc" />
-     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK-40250760\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiWireframe.cginc" />
      <None Include="Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiDecal.cginc" />
      <None Include="Assets\Materials\RealWorld\Wood\OptimizedShaders\New Material-dbec6789\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiEnvironmentalRimLighting.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\BALL HOOP-f66320b5\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiDithering.cginc" />
@@ -1064,7 +1092,6 @@
      <None Include="Assets\Materials\OptimizedShaders\CannonBall-9a75eb9a\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiMatcap.cginc" />
      <None Include="Assets\Materials\Holl\HollWood\OptimizedShaders\New Material-55d938bd\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiDecal.cginc" />
      <None Include="Assets\Materials\Props\CRT\OptimizedShaders\CRT Screen-d1ab9fe9\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiBulge.cginc" />
-     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK-40250760\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiRandom.cginc" />
      <None Include="Assets\Materials\Props\CRT\OptimizedShaders\CRT Screen-d1ab9fe9\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiMSDF.cginc" />
      <None Include="Assets\Materials\Props\Conveyor Belt\OptimizedShaders\Belt-fc19e4a8\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiDebug.cginc" />
      <None Include="Assets\Materials\Holl\HollWood\OptimizedShaders\New Material-55d938bd\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiDefines.cginc" />
@@ -1083,7 +1110,6 @@
      <None Include="Assets\Materials\Holl\PurpCheka\OptimizedShaders\New Material-a86b47f1\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiDepthColor.cginc" />
      <None Include="Assets\Materials\Holl\MuckWall\OptimizedShaders\smoller-ed18bb23\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiSubsurfaceScattering.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\Box-8f746ddc\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiMacros.cginc" />
-     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK-40250760\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiFur.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\Calculator-06aedd48\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiAlphaToCoverage.cginc" />
      <None Include="Assets\Materials\Holl\Goop Decals\OptimizedShaders\GoopDecal2-5bc0aff4\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Shaders\S_Poiyomi_Toon.shader" />
      <None Include="Assets\Materials\Holl\PurpCheka\OptimizedShaders\New Material-a86b47f1\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiParallax.cginc" />
@@ -1113,6 +1139,7 @@
      <None Include="Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiMacros.cginc" />
      <None Include="Assets\Materials\Props\Trophy\OptimizedShaders\Trophy-20a04cbd\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiFlipbook.cginc" />
      <None Include="Assets\Materials\Holl\HollWood\OptimizedShaders\New Material 1-250e92c0\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiMacros.cginc" />
+     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK 1-94275424\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiFrag.cginc" />
      <None Include="Assets\Materials\Props\Dumpster\OptimizedShaders\Dumper-7f5bda72\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiFlipbook.cginc" />
      <None Include="Assets\Materials\Props\Trophy\OptimizedShaders\Trophy-20a04cbd\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiPanosphere.cginc" />
      <None Include="Assets\Materials\Holl\PurpCheka\OptimizedShaders\New Material-a86b47f1\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiTessellation.cginc" />
@@ -1122,7 +1149,6 @@
      <None Include="Assets\Materials\OptimizedShaders\Calculator-06aedd48\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiOutlineVert.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\BALL HOOP-f66320b5\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiMainTex.cginc" />
      <None Include="Assets\Materials\Props\Bench\OptimizedShaders\Bench-7721673f\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiIridescence.cginc" />
-     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK-40250760\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiSubsurfaceScattering.cginc" />
      <None Include="Assets\Materials\Props\Conveyor Belt\OptimizedShaders\New Material-c359cebb\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiRGBMask.cginc" />
      <None Include="Assets\Materials\Holl\Goop Decals\OptimizedShaders\GoopDecal2-5bc0aff4\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiTessellation.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\Explosive Box-d18a32ab\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiBulge.cginc" />
@@ -1143,6 +1169,7 @@
      <None Include="Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiWireframe.cginc" />
      <None Include="Assets\Materials\Props\Dumpster\OptimizedShaders\Dumper-7f5bda72\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiColors.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\Groceries-7df36488\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiMath.cginc" />
+     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK-28781838\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiOutlineVert.cginc" />
      <None Include="Assets\Materials\Props\Kawaii Smart Fridge\OptimizedShaders\Fridge 4-605022bf\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiIridescence.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\Guitar Blue-36f31295\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiMath.cginc" />
      <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\StoneWall Dark-9dc12d1f\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiPanosphere.cginc" />
@@ -1151,6 +1178,7 @@
      <None Include="Assets\Materials\Props\Barrel\OptimizedShaders\Barrel-960f9070\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiSpawnInFrag.cginc" />
      <None Include="Assets\Materials\Props\VHS\OptimizedShaders\VHS-fe06393e\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiSubsurfaceScattering.cginc" />
      <None Include="Assets\Materials\Props\CRT\OptimizedShaders\CRT Screen-d1ab9fe9\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiRNG.cginc" />
+     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK 1-94275424\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiOutlineFrag.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\Guitar Blue-36f31295\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiMetal.cginc" />
      <None Include="Assets\Materials\Props\Fan\OptimizedShaders\New Material 1-ce614303\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiSpawnInVert.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\Guitar Blue-36f31295\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiPassOutline.cginc" />
@@ -1174,16 +1202,17 @@
      <None Include="Assets\Materials\Holl\Goop Decals\OptimizedShaders\GoopDecal1-46229c22\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiBackFace.cginc" />
      <None Include="Assets\Materials\Props\Conveyor Belt\OptimizedShaders\New Material-c359cebb\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiV2F.cginc" />
      <None Include="Assets\Materials\RealWorld\Wood\OptimizedShaders\New Material 1-c04b18c2\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiFrag.cginc" />
+     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK-28781838\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiGrab.cginc" />
      <None Include="Assets\Materials\Props\Fan\OptimizedShaders\New Material-628401e4\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiVert.cginc" />
      <None Include="Assets\Materials\Holl\HollWall\OptimizedShaders\HollWall Dark-80102879\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiGeomFur.cginc" />
      <None Include="Assets\Materials\Props\TV\OptimizedShaders\TV-463b829f\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiPassOutline.cginc" />
+     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK 1-94275424\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiMatcap.cginc" />
      <None Include="Assets\Materials\Props\VHS\OptimizedShaders\VHS-fe06393e\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiColors.cginc" />
      <None Include="Assets\Materials\Props\LongBoard\OptimizedShaders\LongBoard-e325ca27\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiRimLighting.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\Calculator-06aedd48\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiClearCoat.cginc" />
      <None Include="Assets\Materials\Props\Barrel\OptimizedShaders\Barrel-960f9070\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiTessellation.cginc" />
      <None Include="Assets\Materials\Props\Barrel\OptimizedShaders\Barrel-960f9070\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiGeomFur.cginc" />
      <None Include="Assets\Materials\Props\Kawaii Smart Fridge\OptimizedShaders\Fridge 4-605022bf\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiSpawnInVert.cginc" />
-     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK-40250760\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiLighting.cginc" />
      <None Include="Assets\Materials\Props\CRT\OptimizedShaders\CRT-540d50d2\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiV2F.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\BALL HOOP-f66320b5\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiPassShadow.cginc" />
      <None Include="Assets\Materials\Holl\Goop Decals\OptimizedShaders\GoopDecal2-5bc0aff4\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiRandom.cginc" />
@@ -1202,7 +1231,6 @@
      <None Include="Assets\Materials\Holl\Goop Decals\OptimizedShaders\GoopDecal3-d0d39233\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiDecal.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\Briefcase-8ffb802e\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiRimLighting.cginc" />
      <None Include="Assets\Materials\Props\Conveyor Belt\OptimizedShaders\New Material-c359cebb\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiPanosphere.cginc" />
-     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK-40250760\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiParallax.cginc" />
      <None Include="Assets\Shader\_PoiyomiShaders\Shaders\Includes\CGI_PoiShadowFrag.cginc" />
      <None Include="Assets\Shader\_PoiyomiShaders\Shaders\Includes\CGI_PoiDecal.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\Tissue Box-bd9305fe\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiLighting.cginc" />
@@ -1213,6 +1241,7 @@
      <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\StoneWall Dark-9dc12d1f\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiMSDF.cginc" />
      <None Include="Assets\Materials\Props\Conveyor Belt\OptimizedShaders\Belt-fc19e4a8\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiHelpers.cginc" />
      <None Include="Assets\Materials\RealWorld\Wood\OptimizedShaders\New Material-dbec6789\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiLighting.cginc" />
+     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK-28781838\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiVert.cginc" />
      <None Include="Assets\Materials\Holl\Goop Decals\OptimizedShaders\GoopDecal2-5bc0aff4\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiMath.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\Explosive Box-d18a32ab\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiVoronoi.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\Calculator-06aedd48\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_Poicludes.cginc" />
@@ -1240,7 +1269,6 @@
      <None Include="Assets\Materials\OptimizedShaders\Tissue Box-bd9305fe\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiSpecular.cginc" />
      <None Include="Assets\Materials\Props\Fan\OptimizedShaders\New Material 1-ce614303\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiSpecular.cginc" />
      <None Include="Assets\Materials\Props\Fan\OptimizedShaders\New Material 1-ce614303\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiGeomFur.cginc" />
-     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK-40250760\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiTessellation.cginc" />
      <None Include="Assets\Materials\Holl\HollWood\OptimizedShaders\New Material 1-250e92c0\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiGeomFur.cginc" />
      <None Include="Assets\Materials\Holl\Goop Decals\OptimizedShaders\GoopDecal2-5bc0aff4\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiShadowIncludes.cginc" />
      <None Include="Assets\Materials\Props\VHS\OptimizedShaders\VHS-fe06393e\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiLighting.cginc" />
@@ -1254,10 +1282,10 @@
      <None Include="Assets\Materials\Props\CRT\OptimizedShaders\CRT Screen-d1ab9fe9\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Shaders\S_Poiyomi_Toon.shader" />
      <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\StoneWall Dark-9dc12d1f\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiTessellation.cginc" />
      <None Include="Assets\Materials\Props\Barrel\OptimizedShaders\Barrel-960f9070\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiMath.cginc" />
-     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK-40250760\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_Poicludes.cginc" />
      <None Include="Assets\Materials\Props\Barrel\OptimizedShaders\Barrel-960f9070\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiDefines.cginc" />
      <None Include="Assets\Materials\Holl\PurpCheka\OptimizedShaders\New Material-a86b47f1\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiVert.cginc" />
      <None Include="Assets\Materials\Props\VHS\OptimizedShaders\VHS-fe06393e\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiOutlineFrag.cginc" />
+     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK-28781838\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiData.cginc" />
      <None Include="Assets\Materials\Props\bball\OptimizedShaders\BBALL-ba910da8\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiShadowFrag.cginc" />
      <None Include="Assets\Materials\Holl\MossWall\OptimizedShaders\smoller-71af66c2\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiClearCoat.cginc" />
      <None Include="Assets\Materials\Props\Trophy\OptimizedShaders\Trophy-20a04cbd\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiPassShadow.cginc" />
@@ -1287,7 +1315,6 @@
      <None Include="Assets\Materials\Props\Fan\OptimizedShaders\New Material-628401e4\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiMetal.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\Groceries-7df36488\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiVideo.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\BALL HOOP-f66320b5\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiBlending.cginc" />
-     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK-40250760\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiV2F.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\Briefcase-8ffb802e\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiWireframe.cginc" />
      <None Include="Assets\Materials\Props\Barrel\OptimizedShaders\Barrel-960f9070\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiShadowFrag.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\Gamer Chair-4075311c\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiOutlineFrag.cginc" />
@@ -1298,6 +1325,7 @@
      <None Include="Assets\Materials\Holl\Goop Decals\OptimizedShaders\GoopDecal4-63d50131\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiFlipbook.cginc" />
      <None Include="Assets\Materials\Props\Barrel\OptimizedShaders\Barrel-960f9070\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiOutlineVert.cginc" />
      <None Include="Assets\Materials\RealWorld\Celing\OptimizedShaders\Celing-11f95611\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiRNG.cginc" />
+     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK 1-94275424\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiHelpers.cginc" />
      <None Include="Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiDepthColor.cginc" />
      <None Include="Assets\Shader\_PoiyomiShaders\Shaders\Includes\CGI_PoiRNG.cginc" />
      <None Include="Assets\Materials\RealWorld\Wood\OptimizedShaders\New Material 1-c04b18c2\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiDebug.cginc" />
@@ -1308,12 +1336,14 @@
      <None Include="Assets\Materials\OptimizedShaders\Table-cdc0163d\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiPassShadow.cginc" />
      <None Include="Assets\Materials\Holl\Goop Decals\OptimizedShaders\GoopDecal1-46229c22\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiSubsurfaceScattering.cginc" />
      <None Include="Assets\Materials\Props\LongBoard\OptimizedShaders\LongBoard-e325ca27\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiV2F.cginc" />
+     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK 1-94275424\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiVideo.cginc" />
      <None Include="Assets\Materials\Props\Conveyor Belt\OptimizedShaders\Belt-fc19e4a8\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Shaders\S_Poiyomi_Toon.shader" />
      <None Include="Assets\Materials\Holl\MuckWall\OptimizedShaders\smoller-ed18bb23\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiMatcap.cginc" />
      <None Include="Assets\Materials\RealWorld\Wood\OptimizedShaders\New Material-dbec6789\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiMath.cginc" />
      <None Include="Assets\Materials\Props\bball\OptimizedShaders\BBALL-ba910da8\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiBackFace.cginc" />
      <None Include="Assets\Materials\Props\Bench\OptimizedShaders\Bench-7721673f\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiLighting.cginc" />
      <None Include="Assets\Materials\Props\Conveyor Belt\OptimizedShaders\New Material-c359cebb\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiSpawnInVert.cginc" />
+     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK 1-94275424\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiDecal.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\Gamer Chair-4075311c\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiBackFace.cginc" />
      <None Include="Assets\Materials\Props\LongBoard\OptimizedShaders\LongBoard-e325ca27\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiDissolve.cginc" />
      <None Include="Assets\Materials\Props\LongBoard\OptimizedShaders\LongBoard-e325ca27\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiDecal.cginc" />
@@ -1326,7 +1356,6 @@
      <None Include="Assets\Materials\RealWorld\Tile\OptimizedShaders\New Material 1-744480e1\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiVert.cginc" />
      <None Include="Assets\Materials\RealWorld\Tile\OptimizedShaders\New Material 1-744480e1\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiDecal.cginc" />
      <None Include="Assets\Materials\Holl\HollWall\OptimizedShaders\HollWall Dark-80102879\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiDepthColor.cginc" />
-     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK-40250760\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiHologram.cginc" />
      <None Include="Assets\Materials\Holl\PurpCheka\OptimizedShaders\New Material-a86b47f1\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiOutlineFrag.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\Calculator-06aedd48\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiDefines.cginc" />
      <None Include="Assets\Materials\RealWorld\Tile\OptimizedShaders\New Material 1-744480e1\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiShadowVert.cginc" />
@@ -1334,16 +1363,16 @@
      <None Include="Assets\Materials\OptimizedShaders\Tissue Box-bd9305fe\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiDissolve.cginc" />
      <None Include="Assets\csc.rsp" />
      <None Include="Assets\Materials\Holl\Goop Decals\OptimizedShaders\GoopDecal2-5bc0aff4\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiRimLighting.cginc" />
+     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK 1-94275424\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiOutlineVert.cginc" />
      <None Include="Assets\Materials\Holl\PurpCheka\OptimizedShaders\New Material-a86b47f1\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiV2F.cginc" />
      <None Include="Assets\Materials\RealWorld\Celing\OptimizedShaders\Celing-11f95611\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiFrag.cginc" />
-     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK-40250760\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiDepthColor.cginc" />
+     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK 1-94275424\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiMath.cginc" />
      <None Include="Assets\Shader\_PoiyomiShaders\Shaders\Includes\CGI_PoiBulge.cginc" />
      <None Include="Assets\Materials\Holl\MossWall\OptimizedShaders\smoller-71af66c2\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiDefines.cginc" />
      <None Include="Assets\Materials\Props\Fan\OptimizedShaders\New Material-628401e4\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiDefines.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\Table-cdc0163d\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiRGBMask.cginc" />
      <None Include="Assets\Materials\Props\Trophy\OptimizedShaders\Trophy-20a04cbd\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiOutlineVert.cginc" />
      <None Include="Assets\Materials\Props\Fan\OptimizedShaders\New Material 1-ce614303\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiBulge.cginc" />
-     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK-40250760\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiDefines.cginc" />
      <None Include="Assets\Materials\Props\Conveyor Belt\OptimizedShaders\New Material-c359cebb\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiDebug.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\Explosive Box-d18a32ab\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiMatcap.cginc" />
      <None Include="Assets\Materials\RealWorld\Wood\OptimizedShaders\New Material 1-c04b18c2\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiWireframe.cginc" />
@@ -1367,16 +1396,13 @@
      <None Include="Assets\Materials\Holl\HollWood\OptimizedShaders\New Material 1-250e92c0\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiBackFace.cginc" />
      <None Include="Assets\Shader\_PoiyomiShaders\Shaders\Includes\CGI_PoiAlphaToCoverage.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\Gamer Chair-4075311c\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiShadowVert.cginc" />
-     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK-40250760\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiShadowVert.cginc" />
      <None Include="Assets\Materials\Holl\Goop Decals\OptimizedShaders\GoopDecal2-5bc0aff4\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiSpawnInVert.cginc" />
      <None Include="Assets\Materials\Holl\Goop Decals\OptimizedShaders\GoopDecal4-63d50131\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiWireframe.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\Explosive Box-d18a32ab\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiShadowFrag.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\Calculator-06aedd48\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiShadowFrag.cginc" />
-     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK-40250760\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiMirror.cginc" />
      <None Include="Assets\Shader\_PoiyomiShaders\Shaders\Includes\CGI_PoiPanosphere.cginc" />
      <None Include="Assets\Materials\Props\VHS\OptimizedShaders\VHS-fe06393e\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiBackFace.cginc" />
-     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK-40250760\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiData.cginc" />
-     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK-40250760\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiVoronoi.cginc" />
+     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK-28781838\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiBulge.cginc" />
      <None Include="Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiFur.cginc" />
      <None Include="Assets\Materials\Props\bball\OptimizedShaders\BBALL-ba910da8\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiWireframe.cginc" />
      <None Include="Assets\Materials\Props\VHS\OptimizedShaders\VHS-fe06393e\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiSpecular.cginc" />
@@ -1431,6 +1457,7 @@
      <None Include="Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_Poicludes.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\Gamer Chair-4075311c\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiPassShadow.cginc" />
      <None Include="Assets\Materials\Props\Fan\OptimizedShaders\New Material 1-ce614303\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiGlitter.cginc" />
+     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK 1-94275424\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiDebug.cginc" />
      <None Include="Assets\Materials\Props\Barrel\OptimizedShaders\Barrel-960f9070\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiEmission.cginc" />
      <None Include="Assets\Materials\Holl\HollWood\OptimizedShaders\New Material 1-250e92c0\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiVertexManipulations.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\Calculator-06aedd48\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiV2F.cginc" />
@@ -1475,6 +1502,7 @@
      <None Include="Assets\Materials\OptimizedShaders\BALL HOOP-f66320b5\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiDebug.cginc" />
      <None Include="Assets\Materials\Holl\MossWall\OptimizedShaders\smoller-71af66c2\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiMatcap.cginc" />
      <None Include="Assets\Materials\Props\Dumpster\OptimizedShaders\Dumper-7f5bda72\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiPanosphere.cginc" />
+     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK-28781838\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiVideo.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\Calculator-06aedd48\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiRimLighting.cginc" />
      <None Include="Assets\Materials\Holl\Goop Decals\OptimizedShaders\GoopDecal3-d0d39233\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Shaders\S_Poiyomi_Toon.shader" />
      <None Include="Assets\Materials\Props\Fan\OptimizedShaders\New Material 1-ce614303\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiPassShadow.cginc" />
@@ -1492,7 +1520,6 @@
      <None Include="Assets\Materials\OptimizedShaders\Explosive Box-d18a32ab\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiVert.cginc" />
      <None Include="Assets\Materials\Props\LongBoard\OptimizedShaders\LongBoard-e325ca27\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiMainTex.cginc" />
      <None Include="Assets\Materials\Props\LongBoard\OptimizedShaders\LongBoard-e325ca27\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiOutlineVert.cginc" />
-     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK-40250760\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiRGBMask.cginc" />
      <None Include="Assets\Materials\Props\Conveyor Belt\OptimizedShaders\New Material-c359cebb\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiAlphaToCoverage.cginc" />
      <None Include="Assets\Materials\Holl\MossWall\OptimizedShaders\smoller-71af66c2\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiBlackLight.cginc" />
      <None Include="Assets\Materials\RealWorld\Wood\OptimizedShaders\New Material-dbec6789\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiBackFace.cginc" />
@@ -1502,6 +1529,7 @@
      <None Include="Assets\Materials\Props\VHS\OptimizedShaders\VHS-fe06393e\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiMatcap.cginc" />
      <None Include="Assets\Materials\Holl\Goop Decals\OptimizedShaders\GoopDecal2-5bc0aff4\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiPassShadow.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\Tissue Box-bd9305fe\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiRNG.cginc" />
+     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK-28781838\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiDepthColor.cginc" />
      <None Include="Assets\Materials\Holl\Goop Decals\OptimizedShaders\GoopDecal3-d0d39233\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiBlending.cginc" />
      <None Include="Assets\Materials\Props\Bench\OptimizedShaders\Bench-7721673f\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiTessellation.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\Tissue Box-bd9305fe\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiMainTex.cginc" />
@@ -1531,19 +1559,19 @@
      <None Include="Assets\Materials\RealWorld\Wood\OptimizedShaders\New Material 1-c04b18c2\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiFlipbook.cginc" />
      <None Include="Assets\Materials\Props\Kawaii Smart Fridge\OptimizedShaders\Fridge 4-605022bf\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiVertexManipulations.cginc" />
      <None Include="Assets\Materials\Props\TV\OptimizedShaders\TV-463b829f\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiMatcap.cginc" />
-     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK-40250760\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiEmission.cginc" />
      <None Include="Assets\Materials\RealWorld\Celing\OptimizedShaders\Celing-11f95611\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiMetal.cginc" />
      <None Include="Assets\Materials\Props\CRT\OptimizedShaders\CRT Screen-d1ab9fe9\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiEmission.cginc" />
-     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK-40250760\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiMSDF.cginc" />
      <None Include="Assets\Materials\Props\Fan\OptimizedShaders\New Material 1-ce614303\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiBlending.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\Groceries-7df36488\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiMirror.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\Groceries-7df36488\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_Poicludes.cginc" />
      <None Include="Assets\Materials\Props\Dumpster\OptimizedShaders\Dumper-7f5bda72\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiSpawnInFrag.cginc" />
      <None Include="Assets\Materials\Holl\HollWood\OptimizedShaders\New Material 1-250e92c0\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiBlending.cginc" />
      <None Include="Assets\Materials\RealWorld\Tile\OptimizedShaders\New Material 1-744480e1\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiUVDistortion.cginc" />
+     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK-28781838\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiMath.cginc" />
      <None Include="Assets\Materials\Props\Dumpster\OptimizedShaders\Dumper-7f5bda72\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiWireframe.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\Briefcase-8ffb802e\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiPassShadow.cginc" />
      <None Include="Assets\Materials\Props\LongBoard\OptimizedShaders\LongBoard-e325ca27\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiShadowIncludes.cginc" />
+     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK-28781838\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiPassOutline.cginc" />
      <None Include="Assets\Materials\Holl\Goop Decals\OptimizedShaders\GoopDecal1-46229c22\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiBlackLight.cginc" />
      <None Include="Assets\Shader\_PoiyomiShaders\Shaders\Toon\Shaders\7PlusLabels.txt" />
      <None Include="Assets\Materials\Props\VHS\OptimizedShaders\VHS-fe06393e\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiDissolve.cginc" />
@@ -1553,6 +1581,7 @@
      <None Include="Assets\Materials\Holl\Goop Decals\OptimizedShaders\GoopDecal1-46229c22\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiEnvironmentalRimLighting.cginc" />
      <None Include="Assets\Materials\Props\bball\OptimizedShaders\BBALL-ba910da8\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiVideo.cginc" />
      <None Include="Assets\Materials\Props\Barrel\OptimizedShaders\Barrel-960f9070\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiWireframe.cginc" />
+     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK-28781838\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiOutlineFrag.cginc" />
      <None Include="Assets\Materials\Props\CRT\OptimizedShaders\CRT-540d50d2\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiMatcap.cginc" />
      <None Include="Assets\Materials\Holl\MossWall\OptimizedShaders\smoller-71af66c2\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiRimLighting.cginc" />
      <None Include="Assets\Materials\Props\LongBoard\OptimizedShaders\LongBoard-e325ca27\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiIridescence.cginc" />
@@ -1586,7 +1615,6 @@
      <None Include="Assets\Materials\OptimizedShaders\Calculator-06aedd48\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiSpawnInFrag.cginc" />
      <None Include="Assets\Materials\Props\CRT\OptimizedShaders\CRT-540d50d2\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiMath.cginc" />
      <None Include="Assets\Materials\Holl\HollWood\OptimizedShaders\New Material 1-250e92c0\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiDebug.cginc" />
-     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK-40250760\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiSpecular.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\Box-8f746ddc\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiTessellation.cginc" />
      <None Include="Assets\Materials\Holl\Goop Decals\OptimizedShaders\GoopDecal2-5bc0aff4\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiDissolve.cginc" />
      <None Include="Assets\Materials\RealWorld\Celing\OptimizedShaders\Celing-11f95611\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiFur.cginc" />
@@ -1595,12 +1623,14 @@
      <None Include="Assets\Materials\Props\Conveyor Belt\OptimizedShaders\New Material-c359cebb\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiBulge.cginc" />
      <None Include="Assets\Materials\Props\Trophy\OptimizedShaders\Trophy-20a04cbd\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiHologram.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\Guitar Blue-36f31295\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiColors.cginc" />
+     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK-28781838\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiMSDF.cginc" />
      <None Include="Assets\Materials\Props\Dumpster\OptimizedShaders\Dumper-7f5bda72\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiParallax.cginc" />
      <None Include="Assets\Shader\_PoiyomiShaders\Shaders\Includes\CGI_PoiVert.cginc" />
      <None Include="Assets\Materials\Props\VHS\OptimizedShaders\VHS-fe06393e\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Shaders\S_Poiyomi_Toon.shader" />
      <None Include="Assets\Materials\OptimizedShaders\Groceries-7df36488\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiSpecular.cginc" />
      <None Include="Assets\Materials\Props\bball\OptimizedShaders\BBALL-ba910da8\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiOutlineFrag.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\Tissue Box-bd9305fe\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiAlphaToCoverage.cginc" />
+     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK 1-94275424\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiRandom.cginc" />
      <None Include="Assets\Materials\Props\CRT\OptimizedShaders\CRT Screen-d1ab9fe9\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiOutlineVert.cginc" />
      <None Include="Assets\Materials\Props\Conveyor Belt\OptimizedShaders\New Material-c359cebb\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiVertexManipulations.cginc" />
      <None Include="Assets\Materials\Holl\Goop Decals\OptimizedShaders\GoopDecal4-63d50131\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiMatcap.cginc" />
@@ -1629,10 +1659,9 @@
      <None Include="Assets\Materials\Props\Fan\OptimizedShaders\New Material-628401e4\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiTessellation.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\BALL HOOP-f66320b5\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiEmission.cginc" />
      <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\StoneWall Dark-9dc12d1f\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiGrab.cginc" />
+     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK-28781838\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiRNG.cginc" />
      <None Include="Assets\Materials\Props\Barrel\OptimizedShaders\Barrel-960f9070\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiData.cginc" />
      <None Include="Assets\Materials\RealWorld\Celing\OptimizedShaders\Celing-11f95611\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiVoronoi.cginc" />
-     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK-40250760\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiOutlineVert.cginc" />
-     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK-40250760\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiMetal.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\Calculator-06aedd48\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiPass.cginc" />
      <None Include="Assets\Materials\Props\Fan\OptimizedShaders\New Material-628401e4\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiPass.cginc" />
      <None Include="Assets\Materials\Holl\Goop Decals\OptimizedShaders\GoopDecal4-63d50131\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiFur.cginc" />
@@ -1683,19 +1712,22 @@
      <None Include="Assets\Materials\Props\CRT\OptimizedShaders\CRT Screen-d1ab9fe9\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiVoronoi.cginc" />
      <None Include="Assets\Materials\Props\bball\OptimizedShaders\BBALL-ba910da8\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiParallax.cginc" />
      <None Include="Assets\Materials\Props\Fan\OptimizedShaders\New Material-628401e4\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiPassShadow.cginc" />
+     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK 1-94275424\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiMSDF.cginc" />
      <None Include="Assets\Materials\Props\Trophy\OptimizedShaders\Trophy-20a04cbd\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiSpawnInVert.cginc" />
-     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK-40250760\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiPassShadow.cginc" />
      <None Include="Assets\Materials\Holl\HollWood\OptimizedShaders\New Material-55d938bd\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiGeomFur.cginc" />
+     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK 1-94275424\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiDissolve.cginc" />
      <None Include="Assets\Materials\Props\Conveyor Belt\OptimizedShaders\Belt-fc19e4a8\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiFur.cginc" />
      <None Include="Assets\Materials\Holl\HollWood\OptimizedShaders\New Material-55d938bd\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiDissolve.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\Groceries-7df36488\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiParallax.cginc" />
      <None Include="Assets\Materials\RealWorld\Tile\OptimizedShaders\New Material 1-744480e1\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiVideo.cginc" />
      <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\StoneWall Dark-9dc12d1f\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiEnvironmentalRimLighting.cginc" />
      <None Include="Assets\Materials\Holl\PurpCheka\OptimizedShaders\New Material-a86b47f1\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiClearCoat.cginc" />
+     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK 1-94275424\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiSpawnInVert.cginc" />
      <None Include="Assets\Shader\_PoiyomiShaders\Shaders\Includes\CGI_PoiEmission.cginc" />
      <None Include="Assets\Materials\Props\Bench\OptimizedShaders\Bench-7721673f\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiDebug.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\Calculator-06aedd48\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiMirror.cginc" />
      <None Include="Assets\Materials\RealWorld\Wood\OptimizedShaders\New Material 1-c04b18c2\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiSpawnInFrag.cginc" />
+     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK-28781838\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiEmission.cginc" />
      <None Include="Assets\Materials\Props\bball\OptimizedShaders\BBALL-ba910da8\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiClearCoat.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\Explosive Box-d18a32ab\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiRNG.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\Briefcase-8ffb802e\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiFur.cginc" />
@@ -1710,6 +1742,7 @@
      <None Include="Assets\Materials\OptimizedShaders\Calculator-06aedd48\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiFlipbook.cginc" />
      <None Include="Assets\Materials\Props\Barrel\OptimizedShaders\Barrel-960f9070\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiFrag.cginc" />
      <None Include="Assets\Materials\Props\CRT\OptimizedShaders\CRT Screen-d1ab9fe9\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiMath.cginc" />
+     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK-28781838\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiRimLighting.cginc" />
      <None Include="Assets\Materials\Props\TV\OptimizedShaders\TV-463b829f\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiFrag.cginc" />
      <None Include="Assets\Materials\Holl\PurpCheka\OptimizedShaders\New Material-a86b47f1\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiWireframe.cginc" />
      <None Include="Assets\Materials\Props\bball\OptimizedShaders\BBALL-ba910da8\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiGeomFur.cginc" />
@@ -1764,6 +1797,7 @@
      <None Include="Assets\Materials\Props\Kawaii Smart Fridge\OptimizedShaders\Fridge 4-605022bf\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiShadowVert.cginc" />
      <None Include="Assets\Materials\Props\Conveyor Belt\OptimizedShaders\Belt-fc19e4a8\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiVertexManipulations.cginc" />
      <None Include="Assets\Shader\_PoiyomiShaders\Shaders\Includes\CGI_PoiUVDistortion.cginc" />
+     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK-28781838\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiGlitter.cginc" />
      <None Include="Assets\Materials\Holl\HollWood\OptimizedShaders\New Material 1-250e92c0\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiFur.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\Tissue Box-bd9305fe\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiMirror.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\Groceries-7df36488\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiIridescence.cginc" />
@@ -1775,7 +1809,6 @@
      <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\StoneWall Dark-9dc12d1f\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiDepthColor.cginc" />
      <None Include="Assets\Materials\Holl\Goop Decals\OptimizedShaders\GoopDecal1-46229c22\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiDefines.cginc" />
      <None Include="Assets\Materials\Holl\Goop Decals\OptimizedShaders\GoopDecal2-5bc0aff4\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiGrab.cginc" />
-     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK-40250760\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiBackFace.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\CannonBall-9a75eb9a\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiFlipbook.cginc" />
      <None Include="Assets\Materials\Props\CRT\OptimizedShaders\CRT Screen-d1ab9fe9\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiIridescence.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\Explosive Box-d18a32ab\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiPanosphere.cginc" />
@@ -1788,11 +1821,14 @@
      <None Include="Assets\Materials\OptimizedShaders\Briefcase-8ffb802e\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiSpecular.cginc" />
      <None Include="Assets\Materials\Props\Dumpster\OptimizedShaders\Dumper-7f5bda72\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiMacros.cginc" />
      <None Include="Assets\Materials\Props\Fan\OptimizedShaders\New Material-628401e4\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiIridescence.cginc" />
+     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK 1-94275424\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiEnvironmentalRimLighting.cginc" />
+     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK-28781838\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiShadowVert.cginc" />
      <None Include="Assets\Materials\Holl\MossWall\OptimizedShaders\smoller-71af66c2\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiOutlineVert.cginc" />
      <None Include="Assets\Materials\RealWorld\Celing\OptimizedShaders\Celing-11f95611\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiDissolve.cginc" />
      <None Include="Assets\Materials\Holl\Goop Decals\OptimizedShaders\GoopDecal1-46229c22\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiClearCoat.cginc" />
      <None Include="Assets\Materials\Props\Fan\OptimizedShaders\New Material-628401e4\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiData.cginc" />
      <None Include="Assets\Materials\Holl\HollWood\OptimizedShaders\New Material-55d938bd\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiSubsurfaceScattering.cginc" />
+     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK 1-94275424\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiSubsurfaceScattering.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\Briefcase-8ffb802e\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiPass.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\Groceries-7df36488\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiColors.cginc" />
      <None Include="Assets\Materials\Holl\Goop Decals\OptimizedShaders\GoopDecal1-46229c22\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiMatcap.cginc" />
@@ -1800,7 +1836,6 @@
      <None Include="Assets\Materials\OptimizedShaders\Explosive Box-d18a32ab\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiPassOutline.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\Box-8f746ddc\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiParallax.cginc" />
      <None Include="Assets\Materials\Holl\PurpCheka\OptimizedShaders\New Material-a86b47f1\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiBulge.cginc" />
-     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK-40250760\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Shaders\S_Poiyomi_Toon.shader" />
      <None Include="Assets\Materials\OptimizedShaders\BALL HOOP-f66320b5\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiV2F.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\Box-8f746ddc\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiVideo.cginc" />
      <None Include="Assets\Materials\Holl\HollWall\OptimizedShaders\HollWall Dark-80102879\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiDissolve.cginc" />
@@ -1808,6 +1843,7 @@
      <None Include="Assets\Materials\Props\CRT\OptimizedShaders\CRT Screen-d1ab9fe9\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiBackFace.cginc" />
      <None Include="Assets\Materials\Holl\Goop Decals\OptimizedShaders\GoopDecal1-46229c22\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiRandom.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\Explosive Box-d18a32ab\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiColors.cginc" />
+     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK 1-94275424\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiRNG.cginc" />
      <None Include="Assets\Materials\Holl\Goop Decals\OptimizedShaders\GoopDecal3-d0d39233\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiEmission.cginc" />
      <None Include="Assets\Materials\Props\Barrel\OptimizedShaders\Barrel-960f9070\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiPass.cginc" />
      <None Include="Assets\Materials\Holl\Goop Decals\OptimizedShaders\GoopDecal2-5bc0aff4\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiHelpers.cginc" />
@@ -1818,6 +1854,7 @@
      <None Include="Assets\Materials\OptimizedShaders\Groceries-7df36488\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiSubsurfaceScattering.cginc" />
      <None Include="Assets\Materials\Holl\MossWall\OptimizedShaders\smoller-71af66c2\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiDepthColor.cginc" />
      <None Include="Assets\Materials\Holl\PurpCheka\OptimizedShaders\New Material-a86b47f1\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiGeomFur.cginc" />
+     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK 1-94275424\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiParallax.cginc" />
      <None Include="Assets\Materials\Props\Dumpster\OptimizedShaders\Dumper-7f5bda72\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiIridescence.cginc" />
      <None Include="Assets\Materials\Props\Trophy\OptimizedShaders\Trophy-20a04cbd\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiUVDistortion.cginc" />
      <None Include="Assets\Materials\Holl\Goop Decals\OptimizedShaders\GoopDecal1-46229c22\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiGeomFur.cginc" />
@@ -1826,6 +1863,9 @@
      <None Include="Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiBulge.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\Gamer Chair-4075311c\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiDithering.cginc" />
      <None Include="Assets\Materials\Props\Fan\OptimizedShaders\New Material 1-ce614303\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiFrag.cginc" />
+     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK-28781838\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiMatcap.cginc" />
+     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK 1-94275424\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiGrab.cginc" />
+     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK-28781838\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiPass.cginc" />
      <None Include="Assets\Materials\Props\Fan\OptimizedShaders\New Material-628401e4\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiLighting.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\Gamer Chair-4075311c\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiEnvironmentalRimLighting.cginc" />
      <None Include="Assets\Materials\Props\Bench\OptimizedShaders\Bench-7721673f\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiEmission.cginc" />
@@ -1845,7 +1885,6 @@
      <None Include="Assets\Materials\OptimizedShaders\Briefcase-8ffb802e\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiMSDF.cginc" />
      <None Include="Assets\Shader\_PoiyomiShaders\Shaders\Includes\CGI_PoiGlitter.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\CannonBall-9a75eb9a\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiBlackLight.cginc" />
-     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK-40250760\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiVertexManipulations.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\Calculator-06aedd48\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiMacros.cginc" />
      <None Include="Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiSubsurfaceScattering.cginc" />
      <None Include="Assets\Materials\Props\Bench\OptimizedShaders\Bench-7721673f\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiDefines.cginc" />
@@ -1885,7 +1924,6 @@
      <None Include="Assets\Materials\Props\Conveyor Belt\OptimizedShaders\New Material-c359cebb\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiHologram.cginc" />
      <None Include="Assets\Shader\_PoiyomiShaders\Shaders\Includes\CGI_PoiOutlineVert.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\Briefcase-8ffb802e\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiOutlineVert.cginc" />
-     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK-40250760\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiFlipbook.cginc" />
      <None Include="Assets\Materials\RealWorld\Wood\OptimizedShaders\New Material 1-c04b18c2\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiMath.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\Tissue Box-bd9305fe\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiFlipbook.cginc" />
      <None Include="Assets\Materials\Holl\HollWood\OptimizedShaders\New Material-55d938bd\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiRNG.cginc" />
@@ -1893,16 +1931,16 @@
      <None Include="Assets\Materials\OptimizedShaders\Gamer Chair-4075311c\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiVertexManipulations.cginc" />
      <None Include="Assets\Materials\Props\CRT\OptimizedShaders\CRT-540d50d2\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiSpawnInFrag.cginc" />
      <None Include="Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiBackFace.cginc" />
+     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK-28781838\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiShadowFrag.cginc" />
      <None Include="Assets\Materials\Props\TV\OptimizedShaders\TV-463b829f\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiIridescence.cginc" />
      <None Include="Assets\Materials\Props\Conveyor Belt\OptimizedShaders\Belt-fc19e4a8\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiEnvironmentalRimLighting.cginc" />
      <None Include="Assets\Materials\Props\TV\OptimizedShaders\TV-463b829f\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiSpawnInFrag.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\BALL HOOP-f66320b5\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiTessellation.cginc" />
-     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK-40250760\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiUVDistortion.cginc" />
      <None Include="Assets\Materials\Holl\Goop Decals\OptimizedShaders\GoopDecal4-63d50131\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiGeomFur.cginc" />
      <None Include="Assets\Materials\Props\Fan\OptimizedShaders\New Material-628401e4\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiPassOutline.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\Groceries-7df36488\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiBackFace.cginc" />
-     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK-40250760\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiRNG.cginc" />
      <None Include="Assets\Materials\Holl\HollWall\OptimizedShaders\HollWall Dark-80102879\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiSpecular.cginc" />
+     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK 1-94275424\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiRimLighting.cginc" />
      <None Include="Assets\Materials\Props\Bench\OptimizedShaders\Bench-7721673f\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiDissolve.cginc" />
      <None Include="Assets\Materials\Props\bball\OptimizedShaders\BBALL-ba910da8\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiVertexManipulations.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\Table-cdc0163d\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiParallax.cginc" />
@@ -1938,7 +1976,6 @@
      <None Include="Assets\Materials\OptimizedShaders\Tissue Box-bd9305fe\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiWireframe.cginc" />
      <None Include="Assets\Materials\Holl\MuckWall\OptimizedShaders\smoller-ed18bb23\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiRimLighting.cginc" />
      <None Include="Assets\Materials\Props\Trophy\OptimizedShaders\Trophy-20a04cbd\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiEmission.cginc" />
-     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK-40250760\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiBlending.cginc" />
      <None Include="Assets\Materials\RealWorld\Celing\OptimizedShaders\Celing-11f95611\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiSubsurfaceScattering.cginc" />
      <None Include="Assets\Materials\Props\Trophy\OptimizedShaders\Trophy-20a04cbd\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiTessellation.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\BALL HOOP-f66320b5\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Shaders\S_Poiyomi_Toon.shader" />
@@ -1970,13 +2007,13 @@
      <None Include="Assets\Shader\_PoiyomiShaders\Shaders\Includes\CGI_PoiIridescence.cginc" />
      <None Include="Assets\Materials\Holl\Goop Decals\OptimizedShaders\GoopDecal2-5bc0aff4\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_Poicludes.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\Explosive Box-d18a32ab\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiBlending.cginc" />
-     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK-40250760\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiPanosphere.cginc" />
      <None Include="Assets\Materials\Holl\HollWood\OptimizedShaders\New Material 1-250e92c0\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiDithering.cginc" />
      <None Include="Assets\Materials\Holl\HollWood\OptimizedShaders\New Material 1-250e92c0\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiClearCoat.cginc" />
      <None Include="Assets\Materials\Holl\HollWall\OptimizedShaders\HollWall Dark-80102879\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiShadowVert.cginc" />
      <None Include="Assets\Shader\_PoiyomiShaders\Shaders\Includes\CGI_PoiSpecular.cginc" />
      <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\StoneWall Dark-9dc12d1f\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiMath.cginc" />
      <None Include="Assets\Materials\Props\Fan\OptimizedShaders\New Material-628401e4\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiFlipbook.cginc" />
+     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK 1-94275424\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiBackFace.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\CannonBall-9a75eb9a\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Shaders\S_Poiyomi_Toon.shader" />
      <None Include="Assets\Materials\OptimizedShaders\BALL HOOP-f66320b5\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiAlphaToCoverage.cginc" />
      <None Include="Assets\Materials\Holl\PurpCheka\OptimizedShaders\New Material-a86b47f1\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiBackFace.cginc" />
@@ -1987,6 +2024,7 @@
      <None Include="Assets\Materials\Props\Kawaii Smart Fridge\OptimizedShaders\Fridge 4-605022bf\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiBlending.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\Box-8f746ddc\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiShadowIncludes.cginc" />
      <None Include="Assets\Materials\RealWorld\Tile\OptimizedShaders\New Material 1-744480e1\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiDefines.cginc" />
+     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK-28781838\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_Poicludes.cginc" />
      <None Include="Assets\Materials\Props\VHS\OptimizedShaders\VHS-fe06393e\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiMacros.cginc" />
      <None Include="Assets\Materials\Props\Conveyor Belt\OptimizedShaders\Belt-fc19e4a8\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiRandom.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\CannonBall-9a75eb9a\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiUVDistortion.cginc" />
@@ -2013,7 +2051,6 @@
      <None Include="Assets\Materials\Props\Fan\OptimizedShaders\New Material 1-ce614303\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiVoronoi.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\Tissue Box-bd9305fe\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiDebug.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\Box-8f746ddc\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiFur.cginc" />
-     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK-40250760\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiEnvironmentalRimLighting.cginc" />
      <None Include="Assets\Materials\Holl\HollWood\OptimizedShaders\New Material-55d938bd\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiBlackLight.cginc" />
      <None Include="Assets\Materials\Props\CRT\OptimizedShaders\CRT-540d50d2\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiBlackLight.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\BALL HOOP-f66320b5\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiSubsurfaceScattering.cginc" />
@@ -2038,14 +2075,16 @@
      <None Include="Assets\Materials\Props\Kawaii Smart Fridge\OptimizedShaders\Fridge 4-605022bf\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiUVDistortion.cginc" />
      <None Include="Assets\Materials\RealWorld\Wood\OptimizedShaders\New Material 1-c04b18c2\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiOutlineVert.cginc" />
      <None Include="Assets\Materials\Holl\HollWall\OptimizedShaders\HollWall Dark-80102879\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiBlackLight.cginc" />
-     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK-40250760\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiOutlineFrag.cginc" />
+     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK-28781838\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiHelpers.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\CannonBall-9a75eb9a\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiPassShadow.cginc" />
      <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\StoneWall Dark-9dc12d1f\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiDefines.cginc" />
      <None Include="Assets\Materials\Props\Fan\OptimizedShaders\New Material 1-ce614303\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiVertexManipulations.cginc" />
+     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK-28781838\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiBlackLight.cginc" />
      <None Include="Assets\Materials\Holl\HollWood\OptimizedShaders\New Material 1-250e92c0\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiMainTex.cginc" />
      <None Include="Assets\Materials\Props\Barrel\OptimizedShaders\Barrel-960f9070\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiDepthColor.cginc" />
      <None Include="Assets\Materials\Props\Conveyor Belt\OptimizedShaders\Belt-fc19e4a8\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiData.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\Calculator-06aedd48\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiTessellation.cginc" />
+     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK 1-94275424\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiGlitter.cginc" />
      <None Include="Assets\Materials\Props\Fan\OptimizedShaders\New Material-628401e4\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiDithering.cginc" />
      <None Include="Assets\Materials\Props\TV\OptimizedShaders\TV-463b829f\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiShadowIncludes.cginc" />
      <None Include="Assets\Materials\Holl\MuckWall\OptimizedShaders\smoller-ed18bb23\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Shaders\S_Poiyomi_Toon.shader" />
@@ -2065,8 +2104,8 @@
      <None Include="Assets\Materials\OptimizedShaders\Tissue Box-bd9305fe\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiData.cginc" />
      <None Include="Assets\Materials\Props\CRT\OptimizedShaders\CRT Screen-d1ab9fe9\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiSpawnInFrag.cginc" />
      <None Include="Assets\Materials\Props\Dumpster\OptimizedShaders\Dumper-7f5bda72\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiMirror.cginc" />
-     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK-40250760\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiMacros.cginc" />
      <None Include="Assets\Materials\Props\TV\OptimizedShaders\TV-463b829f\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiParallax.cginc" />
+     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK-28781838\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiAlphaToCoverage.cginc" />
      <None Include="Assets\Materials\Holl\Goop Decals\OptimizedShaders\GoopDecal3-d0d39233\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiRimLighting.cginc" />
      <None Include="Assets\Materials\RealWorld\Wood\OptimizedShaders\New Material 1-c04b18c2\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiRNG.cginc" />
      <None Include="Assets\Materials\Props\Conveyor Belt\OptimizedShaders\New Material-c359cebb\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiBlending.cginc" />
@@ -2114,6 +2153,7 @@
      <None Include="Assets\Materials\Props\CRT\OptimizedShaders\CRT Screen-d1ab9fe9\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiMetal.cginc" />
      <None Include="Assets\Materials\RealWorld\Wood\OptimizedShaders\New Material-dbec6789\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiVert.cginc" />
      <None Include="Assets\Materials\Holl\Goop Decals\OptimizedShaders\GoopDecal2-5bc0aff4\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiBackFace.cginc" />
+     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK 1-94275424\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiBlending.cginc" />
      <None Include="Assets\Materials\Props\Conveyor Belt\OptimizedShaders\New Material-c359cebb\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiDefines.cginc" />
      <None Include="Assets\Materials\Holl\HollWall\OptimizedShaders\HollWall Dark-80102879\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiRNG.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\Guitar Blue-36f31295\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiParallax.cginc" />
@@ -2144,7 +2184,6 @@
      <None Include="Assets\Materials\OptimizedShaders\Explosive Box-d18a32ab\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiMacros.cginc" />
      <None Include="Assets\Materials\Props\bball\OptimizedShaders\BBALL-ba910da8\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiMatcap.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\Guitar Blue-36f31295\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiPanosphere.cginc" />
-     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK-40250760\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiVideo.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\CannonBall-9a75eb9a\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiVoronoi.cginc" />
      <None Include="Assets\Materials\Props\bball\OptimizedShaders\BBALL-ba910da8\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_Poicludes.cginc" />
      <None Include="Assets\Materials\Props\Bench\OptimizedShaders\Bench-7721673f\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiMatcap.cginc" />
@@ -2165,19 +2204,22 @@
      <None Include="Assets\Materials\Props\Conveyor Belt\OptimizedShaders\Belt-fc19e4a8\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiPanosphere.cginc" />
      <None Include="Assets\Materials\Props\Barrel\OptimizedShaders\Barrel-960f9070\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiOutlineFrag.cginc" />
      <None Include="Assets\Materials\Holl\HollWall\OptimizedShaders\HollWall Dark-80102879\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiWireframe.cginc" />
+     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK 1-94275424\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiVert.cginc" />
      <None Include="Assets\Materials\Props\Conveyor Belt\OptimizedShaders\New Material-c359cebb\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiTessellation.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\Gamer Chair-4075311c\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiClearCoat.cginc" />
+     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK 1-94275424\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiSpecular.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\Gamer Chair-4075311c\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiEmission.cginc" />
      <None Include="Assets\Materials\Holl\HollWood\OptimizedShaders\New Material 1-250e92c0\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiMetal.cginc" />
-     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK-40250760\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiGrab.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\Tissue Box-bd9305fe\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiFur.cginc" />
      <None Include="Assets\Materials\Holl\Goop Decals\OptimizedShaders\GoopDecal2-5bc0aff4\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiDefines.cginc" />
      <None Include="Assets\Materials\Props\bball\OptimizedShaders\BBALL-ba910da8\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiFrag.cginc" />
+     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK 1-94275424\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiLighting.cginc" />
      <None Include="Assets\Materials\Props\Fan\OptimizedShaders\New Material 1-ce614303\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiDissolve.cginc" />
      <None Include="Assets\Materials\Props\Conveyor Belt\OptimizedShaders\New Material-c359cebb\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiMetal.cginc" />
      <None Include="Assets\Shader\_PoiyomiShaders\Shaders\Includes\CGI_PoiSpawnInFrag.cginc" />
      <None Include="Assets\Materials\Props\Bench\OptimizedShaders\Bench-7721673f\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiDithering.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\Groceries-7df36488\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiGrab.cginc" />
+     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK-28781838\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiSubsurfaceScattering.cginc" />
      <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\StoneWall Dark-9dc12d1f\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiHologram.cginc" />
      <None Include="Assets\Materials\Props\Trophy\OptimizedShaders\Trophy-20a04cbd\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiVert.cginc" />
      <None Include="Assets\Materials\Props\TV\OptimizedShaders\TV-463b829f\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiOutlineFrag.cginc" />
@@ -2195,6 +2237,7 @@
      <None Include="Assets\Materials\Props\Fan\OptimizedShaders\New Material 1-ce614303\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiHologram.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\Guitar Blue-36f31295\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiDecal.cginc" />
      <None Include="Assets\Materials\Props\CRT\OptimizedShaders\CRT Screen-d1ab9fe9\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiRimLighting.cginc" />
+     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK-28781838\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiRGBMask.cginc" />
      <None Include="Assets\Materials\Holl\Goop Decals\OptimizedShaders\GoopDecal2-5bc0aff4\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiDecal.cginc" />
      <None Include="Assets\Materials\Props\bball\OptimizedShaders\BBALL-ba910da8\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiDithering.cginc" />
      <None Include="Assets\Materials\Holl\Goop Decals\OptimizedShaders\GoopDecal4-63d50131\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiGlitter.cginc" />
@@ -2202,6 +2245,7 @@
      <None Include="Assets\Materials\Holl\MossWall\OptimizedShaders\smoller-71af66c2\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiGeomFur.cginc" />
      <None Include="Assets\Materials\Props\Fan\OptimizedShaders\New Material 1-ce614303\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiSubsurfaceScattering.cginc" />
      <None Include="Assets\Materials\Holl\HollWall\OptimizedShaders\HollWall Dark-80102879\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiRimLighting.cginc" />
+     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK-28781838\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiV2F.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\CannonBall-9a75eb9a\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiDepthColor.cginc" />
      <None Include="Assets\Materials\Props\Conveyor Belt\OptimizedShaders\New Material-c359cebb\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiWireframe.cginc" />
      <None Include="Assets\Materials\Props\CRT\OptimizedShaders\CRT-540d50d2\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiFlipbook.cginc" />
@@ -2213,12 +2257,15 @@
      <None Include="Assets\Materials\OptimizedShaders\Guitar Blue-36f31295\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Shaders\S_Poiyomi_Toon.shader" />
      <None Include="Assets\Materials\RealWorld\Wood\OptimizedShaders\New Material-dbec6789\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiPass.cginc" />
      <None Include="Assets\Materials\Props\Trophy\OptimizedShaders\Trophy-20a04cbd\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiDepthColor.cginc" />
+     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK-28781838\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiClearCoat.cginc" />
+     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK 1-94275424\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiFlipbook.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\Guitar Blue-36f31295\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiGrab.cginc" />
      <None Include="Assets\Materials\Holl\Goop Decals\OptimizedShaders\GoopDecal3-d0d39233\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiBlackLight.cginc" />
      <None Include="Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiMath.cginc" />
      <None Include="Assets\Materials\Props\Conveyor Belt\OptimizedShaders\Belt-fc19e4a8\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiFrag.cginc" />
      <None Include="Assets\Materials\Props\bball\OptimizedShaders\BBALL-ba910da8\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiPanosphere.cginc" />
      <None Include="Assets\Materials\RealWorld\Celing\OptimizedShaders\Celing-11f95611\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiIridescence.cginc" />
+     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK 1-94275424\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiColors.cginc" />
      <None Include="Assets\Materials\Props\Fan\OptimizedShaders\New Material-628401e4\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiBackFace.cginc" />
      <None Include="Assets\Materials\Props\Barrel\OptimizedShaders\Barrel-960f9070\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiShadowIncludes.cginc" />
      <None Include="Assets\Materials\Props\Dumpster\OptimizedShaders\Dumper-7f5bda72\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiDissolve.cginc" />
@@ -2233,10 +2280,12 @@
      <None Include="Assets\Materials\RealWorld\Tile\OptimizedShaders\New Material 1-744480e1\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiAlphaToCoverage.cginc" />
      <None Include="Assets\Materials\Holl\PurpCheka\OptimizedShaders\New Material-a86b47f1\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiFlipbook.cginc" />
      <None Include="Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiBlending.cginc" />
+     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK-28781838\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiVertexManipulations.cginc" />
      <None Include="Assets\Materials\Holl\Goop Decals\OptimizedShaders\GoopDecal4-63d50131\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiHologram.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\Groceries-7df36488\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiShadowFrag.cginc" />
      <None Include="Assets\Shader\_PoiyomiShaders\Shaders\Includes\CGI_PoiHologram.cginc" />
      <None Include="Assets\Materials\Holl\HollWood\OptimizedShaders\New Material 1-250e92c0\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiSpawnInFrag.cginc" />
+     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK 1-94275424\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiDefines.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\Tissue Box-bd9305fe\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiDepthColor.cginc" />
      <None Include="Assets\Materials\Props\TV\OptimizedShaders\TV-463b829f\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiData.cginc" />
      <None Include="Assets\Materials\Props\Barrel\OptimizedShaders\Barrel-960f9070\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiHologram.cginc" />
@@ -2276,6 +2325,7 @@
      <None Include="Assets\Materials\Holl\Goop Decals\OptimizedShaders\GoopDecal3-d0d39233\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiBackFace.cginc" />
      <None Include="Assets\Materials\Props\Fan\OptimizedShaders\New Material 1-ce614303\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiBlackLight.cginc" />
      <None Include="Assets\Materials\Holl\Goop Decals\OptimizedShaders\GoopDecal1-46229c22\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiMath.cginc" />
+     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK-28781838\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiLighting.cginc" />
      <None Include="Assets\Materials\Props\Bench\OptimizedShaders\Bench-7721673f\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiVideo.cginc" />
      <None Include="Assets\Materials\RealWorld\Celing\OptimizedShaders\Celing-11f95611\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiShadowFrag.cginc" />
      <None Include="Assets\Materials\Holl\Goop Decals\OptimizedShaders\GoopDecal2-5bc0aff4\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiSpawnInFrag.cginc" />
@@ -2285,7 +2335,6 @@
      <None Include="Assets\Materials\OptimizedShaders\Explosive Box-d18a32ab\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiOutlineFrag.cginc" />
      <None Include="Assets\Materials\Props\CRT\OptimizedShaders\CRT-540d50d2\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiBlending.cginc" />
      <None Include="Assets\Materials\Props\Dumpster\OptimizedShaders\Dumper-7f5bda72\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiAlphaToCoverage.cginc" />
-     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK-40250760\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiBulge.cginc" />
      <None Include="Assets\Materials\RealWorld\Tile\OptimizedShaders\New Material 1-744480e1\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiDissolve.cginc" />
      <None Include="Assets\Materials\Props\Trophy\OptimizedShaders\Trophy-20a04cbd\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiBlackLight.cginc" />
      <None Include="Assets\Materials\Holl\Goop Decals\OptimizedShaders\GoopDecal4-63d50131\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiVert.cginc" />
@@ -2293,6 +2342,7 @@
      <None Include="Assets\Materials\Props\Fan\OptimizedShaders\New Material 1-ce614303\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiEmission.cginc" />
      <None Include="Assets\Materials\Props\Barrel\OptimizedShaders\Barrel-960f9070\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiMatcap.cginc" />
      <None Include="Assets\Materials\Holl\Goop Decals\OptimizedShaders\GoopDecal4-63d50131\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiVoronoi.cginc" />
+     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK 1-94275424\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiData.cginc" />
      <None Include="Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiVideo.cginc" />
      <None Include="Assets\Materials\Holl\HollWall\OptimizedShaders\HollWall Dark-80102879\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiVertexManipulations.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\CannonBall-9a75eb9a\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiVertexManipulations.cginc" />
@@ -2302,6 +2352,7 @@
      <None Include="Assets\Materials\Props\Kawaii Smart Fridge\OptimizedShaders\Fridge 4-605022bf\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiGeomFur.cginc" />
      <None Include="Assets\Materials\Holl\Goop Decals\OptimizedShaders\GoopDecal1-46229c22\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiSpawnInFrag.cginc" />
      <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\StoneWall Dark-9dc12d1f\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiMetal.cginc" />
+     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK-28781838\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiDecal.cginc" />
      <None Include="Assets\Materials\Holl\Goop Decals\OptimizedShaders\GoopDecal3-d0d39233\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiVert.cginc" />
      <None Include="Assets\Materials\Props\CRT\OptimizedShaders\CRT Screen-d1ab9fe9\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiDithering.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\Explosive Box-d18a32ab\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiIridescence.cginc" />
@@ -2312,6 +2363,7 @@
      <None Include="Assets\Materials\OptimizedShaders\CannonBall-9a75eb9a\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiDecal.cginc" />
      <None Include="Assets\Materials\Props\Bench\OptimizedShaders\Bench-7721673f\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiPassShadow.cginc" />
      <None Include="Assets\Shader\_PoiyomiShaders\Shaders\Includes\CGI_PoiWireframe.cginc" />
+     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK-28781838\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiDissolve.cginc" />
      <None Include="Assets\Materials\Props\Fan\OptimizedShaders\New Material 1-ce614303\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiEnvironmentalRimLighting.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\Calculator-06aedd48\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiDebug.cginc" />
      <None Include="Assets\Materials\Props\Conveyor Belt\OptimizedShaders\New Material-c359cebb\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiGeomFur.cginc" />
@@ -2351,6 +2403,7 @@
      <None Include="Assets\Materials\OptimizedShaders\Guitar Blue-36f31295\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiPassShadow.cginc" />
      <None Include="Assets\Materials\Props\Fan\OptimizedShaders\New Material 1-ce614303\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiAlphaToCoverage.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\Guitar Blue-36f31295\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiClearCoat.cginc" />
+     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK 1-94275424\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiShadowVert.cginc" />
      <None Include="Assets\Materials\Props\CRT\OptimizedShaders\CRT Screen-d1ab9fe9\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiDissolve.cginc" />
      <None Include="Assets\Materials\Props\Conveyor Belt\OptimizedShaders\Belt-fc19e4a8\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiDefines.cginc" />
      <None Include="Assets\Materials\RealWorld\Tile\OptimizedShaders\New Material 1-744480e1\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiLighting.cginc" />
@@ -2382,12 +2435,14 @@
      <None Include="Assets\Materials\Holl\HollWood\OptimizedShaders\New Material 1-250e92c0\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiVert.cginc" />
      <None Include="Assets\Materials\Holl\Goop Decals\OptimizedShaders\GoopDecal3-d0d39233\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiMSDF.cginc" />
      <None Include="Assets\Materials\Holl\HollWood\OptimizedShaders\New Material 1-250e92c0\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiUVDistortion.cginc" />
+     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK 1-94275424\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_Poicludes.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\Table-cdc0163d\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiPass.cginc" />
      <None Include="Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiClearCoat.cginc" />
      <None Include="Assets\Materials\Props\CRT\OptimizedShaders\CRT-540d50d2\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiMainTex.cginc" />
      <None Include="Assets\Materials\Props\Conveyor Belt\OptimizedShaders\Belt-fc19e4a8\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiIridescence.cginc" />
      <None Include="Assets\Materials\Holl\Goop Decals\OptimizedShaders\GoopDecal1-46229c22\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiBulge.cginc" />
      <None Include="Assets\Materials\Holl\HollWood\OptimizedShaders\New Material-55d938bd\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiFrag.cginc" />
+     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK 1-94275424\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiTessellation.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\Tissue Box-bd9305fe\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiPassShadow.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\Tissue Box-bd9305fe\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiDecal.cginc" />
      <None Include="Assets\Materials\Props\TV\OptimizedShaders\TV-463b829f\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiGrab.cginc" />
@@ -2397,7 +2452,6 @@
      <None Include="Assets\Materials\Holl\Goop Decals\OptimizedShaders\GoopDecal3-d0d39233\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiLighting.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\Guitar Blue-36f31295\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiWireframe.cginc" />
      <None Include="Assets\Materials\Props\Conveyor Belt\OptimizedShaders\Belt-fc19e4a8\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiClearCoat.cginc" />
-     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK-40250760\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiDissolve.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\BALL HOOP-f66320b5\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiParallax.cginc" />
      <None Include="Assets\Materials\Props\bball\OptimizedShaders\BBALL-ba910da8\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiTessellation.cginc" />
      <None Include="Assets\Materials\Props\Kawaii Smart Fridge\OptimizedShaders\Fridge 4-605022bf\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiRNG.cginc" />
@@ -2441,10 +2495,8 @@
      <None Include="Assets\Materials\Props\Kawaii Smart Fridge\OptimizedShaders\Fridge 4-605022bf\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiVideo.cginc" />
      <None Include="Assets\Materials\Props\Fan\OptimizedShaders\New Material 1-ce614303\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiDefines.cginc" />
      <None Include="Assets\Materials\Holl\HollWall\OptimizedShaders\HollWall Dark-80102879\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiRGBMask.cginc" />
-     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK-40250760\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiColors.cginc" />
      <None Include="Assets\Materials\Holl\HollWood\OptimizedShaders\New Material-55d938bd\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiParallax.cginc" />
      <None Include="Assets\Materials\Props\CRT\OptimizedShaders\CRT-540d50d2\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiVertexManipulations.cginc" />
-     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK-40250760\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiHelpers.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\Gamer Chair-4075311c\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiIridescence.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\BALL HOOP-f66320b5\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiClearCoat.cginc" />
      <None Include="Assets\Materials\Holl\HollWood\OptimizedShaders\New Material-55d938bd\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiFur.cginc" />
@@ -2456,8 +2508,8 @@
      <None Include="Assets\Shader\_PoiyomiShaders\Shaders\Includes\CGI_PoiLighting.cginc" />
      <None Include="Assets\Materials\Holl\HollWood\OptimizedShaders\New Material 1-250e92c0\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiDefines.cginc" />
      <None Include="Assets\Materials\Props\VHS\OptimizedShaders\VHS-fe06393e\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiPanosphere.cginc" />
+     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK-28781838\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiGeomFur.cginc" />
      <None Include="Assets\Materials\Props\TV\OptimizedShaders\TV-463b829f\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiMetal.cginc" />
-     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK-40250760\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiIridescence.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\Gamer Chair-4075311c\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiSubsurfaceScattering.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\Guitar Blue-36f31295\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiGlitter.cginc" />
      <None Include="Assets\Materials\Props\Dumpster\OptimizedShaders\Dumper-7f5bda72\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Shaders\S_Poiyomi_Toon.shader" />
@@ -2472,12 +2524,13 @@
      <None Include="Assets\Materials\Props\TV\OptimizedShaders\TV-463b829f\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiDepthColor.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\Groceries-7df36488\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiUVDistortion.cginc" />
      <None Include="Assets\Materials\Props\Bench\OptimizedShaders\Bench-7721673f\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiBlending.cginc" />
+     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK 1-94275424\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiShadowFrag.cginc" />
      <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\StoneWall Dark-9dc12d1f\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiShadowVert.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\Groceries-7df36488\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiBlackLight.cginc" />
      <None Include="Assets\Materials\Props\Conveyor Belt\OptimizedShaders\New Material-c359cebb\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiShadowVert.cginc" />
      <None Include="Assets\Materials\Props\Fan\OptimizedShaders\New Material-628401e4\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiEnvironmentalRimLighting.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\Tissue Box-bd9305fe\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiOutlineFrag.cginc" />
-     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK-40250760\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiShadowFrag.cginc" />
+     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK 1-94275424\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiClearCoat.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\Briefcase-8ffb802e\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiDithering.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\Tissue Box-bd9305fe\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiColors.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\Calculator-06aedd48\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiBlackLight.cginc" />
@@ -2487,6 +2540,7 @@
      <None Include="Assets\Materials\Props\Conveyor Belt\OptimizedShaders\Belt-fc19e4a8\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiGeomFur.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\Box-8f746ddc\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiShadowFrag.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\Box-8f746ddc\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiVertexManipulations.cginc" />
+     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK 1-94275424\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiHologram.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\BALL HOOP-f66320b5\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiWireframe.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\Groceries-7df36488\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiPanosphere.cginc" />
      <None Include="Assets\Materials\Holl\HollWood\OptimizedShaders\New Material 1-250e92c0\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiVoronoi.cginc" />
@@ -2504,7 +2558,6 @@
      <None Include="Assets\Materials\Holl\HollWood\OptimizedShaders\New Material 1-250e92c0\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiBulge.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\Guitar Blue-36f31295\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiEmission.cginc" />
      <None Include="Assets\Materials\Holl\HollWood\OptimizedShaders\New Material 1-250e92c0\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiRGBMask.cginc" />
-     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK-40250760\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiMath.cginc" />
      <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\StoneWall Dark-9dc12d1f\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiAlphaToCoverage.cginc" />
      <None Include="Assets\Materials\Holl\Goop Decals\OptimizedShaders\GoopDecal4-63d50131\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiGrab.cginc" />
      <None Include="Assets\Materials\Holl\MuckWall\OptimizedShaders\smoller-ed18bb23\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiVert.cginc" />
@@ -2513,6 +2566,7 @@
      <None Include="Assets\Materials\Props\CRT\OptimizedShaders\CRT-540d50d2\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiShadowIncludes.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\Tissue Box-bd9305fe\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiUVDistortion.cginc" />
      <None Include="Assets\Materials\Holl\Goop Decals\OptimizedShaders\GoopDecal1-46229c22\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiDissolve.cginc" />
+     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK-28781838\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiEnvironmentalRimLighting.cginc" />
      <None Include="Assets\Materials\Holl\PurpCheka\OptimizedShaders\New Material-a86b47f1\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiMetal.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\Groceries-7df36488\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiLighting.cginc" />
      <None Include="Assets\Materials\Props\LongBoard\OptimizedShaders\LongBoard-e325ca27\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiVert.cginc" />
@@ -2535,10 +2589,10 @@
      <None Include="Assets\Materials\Props\Conveyor Belt\OptimizedShaders\Belt-fc19e4a8\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiDithering.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\Guitar Blue-36f31295\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiRimLighting.cginc" />
      <None Include="Assets\Materials\Props\bball\OptimizedShaders\BBALL-ba910da8\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiV2F.cginc" />
+     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK 1-94275424\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiPassShadow.cginc" />
      <None Include="Assets\Materials\Props\LongBoard\OptimizedShaders\LongBoard-e325ca27\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiRandom.cginc" />
      <None Include="Assets\Materials\Props\LongBoard\OptimizedShaders\LongBoard-e325ca27\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiMacros.cginc" />
      <None Include="Assets\Materials\Props\Conveyor Belt\OptimizedShaders\New Material-c359cebb\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiVideo.cginc" />
-     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK-40250760\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiShadowIncludes.cginc" />
      <None Include="Assets\Materials\Props\Kawaii Smart Fridge\OptimizedShaders\Fridge 4-605022bf\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiMirror.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\Table-cdc0163d\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiVert.cginc" />
      <None Include="Assets\Materials\Props\Kawaii Smart Fridge\OptimizedShaders\Fridge 4-605022bf\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiFlipbook.cginc" />
@@ -2548,6 +2602,7 @@
      <None Include="Assets\Materials\Props\TV\OptimizedShaders\TV-463b829f\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiHelpers.cginc" />
      <None Include="Assets\Materials\Props\Trophy\OptimizedShaders\Trophy-20a04cbd\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiBulge.cginc" />
      <None Include="Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiRNG.cginc" />
+     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK-28781838\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiSpecular.cginc" />
      <None Include="Assets\Materials\Holl\Goop Decals\OptimizedShaders\GoopDecal4-63d50131\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiIridescence.cginc" />
      <None Include="Assets\Materials\Props\VHS\OptimizedShaders\VHS-fe06393e\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiVoronoi.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\Briefcase-8ffb802e\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiGlitter.cginc" />
@@ -2566,6 +2621,7 @@
      <None Include="Assets\Materials\RealWorld\Celing\OptimizedShaders\Celing-11f95611\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiRGBMask.cginc" />
      <None Include="Assets\Materials\Holl\Goop Decals\OptimizedShaders\GoopDecal3-d0d39233\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiPassShadow.cginc" />
      <None Include="Assets\Materials\Props\Barrel\OptimizedShaders\Barrel-960f9070\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiFur.cginc" />
+     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK 1-94275424\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Shaders\S_Poiyomi_Toon.shader" />
      <None Include="Assets\Materials\OptimizedShaders\Groceries-7df36488\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiVert.cginc" />
      <None Include="Assets\Materials\Holl\MuckWall\OptimizedShaders\smoller-ed18bb23\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiWireframe.cginc" />
      <None Include="Assets\Materials\Holl\HollWood\OptimizedShaders\New Material 1-250e92c0\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiSpawnInVert.cginc" />
@@ -2574,6 +2630,7 @@
      <None Include="Assets\Materials\OptimizedShaders\Groceries-7df36488\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiEmission.cginc" />
      <None Include="Assets\Materials\Holl\HollWall\OptimizedShaders\HollWall Dark-80102879\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiMatcap.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\Box-8f746ddc\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiSpecular.cginc" />
+     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK-28781838\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiVoronoi.cginc" />
      <None Include="Assets\Materials\Props\TV\OptimizedShaders\TV-463b829f\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiBlending.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\Briefcase-8ffb802e\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiVert.cginc" />
      <None Include="Assets\Materials\RealWorld\Tile\OptimizedShaders\New Material 1-744480e1\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiRGBMask.cginc" />
@@ -2592,9 +2649,10 @@
      <None Include="Assets\Materials\Props\CRT\OptimizedShaders\CRT-540d50d2\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiGeomFur.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\Guitar Blue-36f31295\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiVertexManipulations.cginc" />
      <None Include="Assets\Materials\Holl\Goop Decals\OptimizedShaders\GoopDecal1-46229c22\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiVoronoi.cginc" />
-     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK-40250760\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiMainTex.cginc" />
+     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK-28781838\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiFrag.cginc" />
      <None Include="Assets\Shader\_PoiyomiShaders\Shaders\Includes\CGI_PoiPassOutline.cginc" />
      <None Include="Assets\Materials\Holl\HollWood\OptimizedShaders\New Material 1-250e92c0\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_Poicludes.cginc" />
+     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK-28781838\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiBackFace.cginc" />
      <None Include="Assets\Materials\RealWorld\Wood\OptimizedShaders\New Material-dbec6789\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiIridescence.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\Tissue Box-bd9305fe\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiShadowFrag.cginc" />
      <None Include="Assets\Materials\Holl\MuckWall\OptimizedShaders\smoller-ed18bb23\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiV2F.cginc" />
@@ -2645,6 +2703,7 @@
      <None Include="Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiEmission.cginc" />
      <None Include="Assets\Materials\Holl\Goop Decals\OptimizedShaders\GoopDecal2-5bc0aff4\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiHologram.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\CannonBall-9a75eb9a\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiClearCoat.cginc" />
+     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK-28781838\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiFlipbook.cginc" />
      <None Include="Assets\Materials\Props\Dumpster\OptimizedShaders\Dumper-7f5bda72\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiBackFace.cginc" />
      <None Include="Assets\Materials\Props\Dumpster\OptimizedShaders\Dumper-7f5bda72\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiV2F.cginc" />
      <None Include="Assets\Materials\Props\Trophy\OptimizedShaders\Trophy-20a04cbd\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiLighting.cginc" />
@@ -2654,6 +2713,7 @@
      <None Include="Assets\Materials\Props\CRT\OptimizedShaders\CRT Screen-d1ab9fe9\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiUVDistortion.cginc" />
      <None Include="Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiPassShadow.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\Table-cdc0163d\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiFur.cginc" />
+     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK 1-94275424\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiSpawnInFrag.cginc" />
      <None Include="Assets\Materials\Holl\HollWall\OptimizedShaders\HollWall Dark-80102879\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiGlitter.cginc" />
      <None Include="Assets\Materials\Holl\Goop Decals\OptimizedShaders\GoopDecal1-46229c22\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiFlipbook.cginc" />
      <None Include="Assets\Materials\Props\LongBoard\OptimizedShaders\LongBoard-e325ca27\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiSubsurfaceScattering.cginc" />
@@ -2721,6 +2781,7 @@
      <None Include="Assets\Materials\OptimizedShaders\Gamer Chair-4075311c\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiBlackLight.cginc" />
      <None Include="Assets\Materials\Holl\Goop Decals\OptimizedShaders\GoopDecal1-46229c22\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiData.cginc" />
      <None Include="Assets\Materials\Props\Trophy\OptimizedShaders\Trophy-20a04cbd\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiAlphaToCoverage.cginc" />
+     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK 1-94275424\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiMirror.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\Explosive Box-d18a32ab\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiClearCoat.cginc" />
      <None Include="Assets\Materials\Props\Trophy\OptimizedShaders\Trophy-20a04cbd\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiIridescence.cginc" />
      <None Include="Assets\Materials\Props\Conveyor Belt\OptimizedShaders\Belt-fc19e4a8\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiDissolve.cginc" />
@@ -2744,6 +2805,7 @@
      <None Include="Assets\Materials\Holl\HollWood\OptimizedShaders\New Material-55d938bd\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiGrab.cginc" />
      <None Include="Assets\Materials\Props\Kawaii Smart Fridge\OptimizedShaders\Fridge 4-605022bf\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiVoronoi.cginc" />
      <None Include="Assets\Materials\Props\Barrel\OptimizedShaders\Barrel-960f9070\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiBackFace.cginc" />
+     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK-28781838\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiHologram.cginc" />
      <None Include="Assets\Materials\Holl\HollWood\OptimizedShaders\New Material 1-250e92c0\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiMatcap.cginc" />
      <None Include="Assets\Materials\Props\LongBoard\OptimizedShaders\LongBoard-e325ca27\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiDithering.cginc" />
      <None Include="Assets\Materials\RealWorld\Tile\OptimizedShaders\New Material 1-744480e1\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiFur.cginc" />
@@ -2768,7 +2830,6 @@
      <None Include="Assets\Materials\Props\CRT\OptimizedShaders\CRT-540d50d2\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiRandom.cginc" />
      <None Include="Assets\Materials\Props\VHS\OptimizedShaders\VHS-fe06393e\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiPassOutline.cginc" />
      <None Include="Assets\Materials\Holl\Goop Decals\OptimizedShaders\GoopDecal1-46229c22\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiSpawnInVert.cginc" />
-     <None Include="Assets\Materials\RealWorld\StoneWall\OptimizedShaders\Stone Wall DARK-40250760\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiRimLighting.cginc" />
      <None Include="Assets\Materials\Props\Conveyor Belt\OptimizedShaders\New Material-c359cebb\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Shaders\S_Poiyomi_Toon.shader" />
      <None Include="Assets\Materials\RealWorld\Tile\OptimizedShaders\New Material 1-744480e1\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiMSDF.cginc" />
      <None Include="Assets\Materials\RealWorld\Celing\OptimizedShaders\Celing-11f95611\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiClearCoat.cginc" />

@@ -10,6 +10,7 @@ public class Movement : MonoBehaviour {
 	//reference to the script that controls limits on your movement speed
 	MovementSpeedController speedController;
 	//bool checking if you are in a hunger dive
+	[HideInInspector]
 	public bool Diving;
 	//the direction your jump goes in
 	Vector3 jumpDirection;
@@ -131,7 +132,6 @@ public class Movement : MonoBehaviour {
 	public bool divingPrep;
 
 	bool skip = true;
-
 	bool diveGate;
 
 	void Awake () {
@@ -354,7 +354,6 @@ public class Movement : MonoBehaviour {
 		if (dot > 0f) {
 		velocity = (velocity - hit.normal * dot).normalized * speed;
 		}
-
 		connectedBody = hit.rigidbody;
 		return true;
 	}
@@ -496,6 +495,8 @@ public class Movement : MonoBehaviour {
 	void OnCollisionStay (Collision collision) {
 		EvaluateCollision(collision);
 	}
+
+
 	void EvaluateCollision (Collision collision) {
 		int layer = collision.gameObject.layer;
 		float minDot = GetMinDot(layer);
@@ -559,6 +560,7 @@ public class Movement : MonoBehaviour {
 			speed = speedController.maxClimbSpeed;
 			xAxis = Vector3.Cross(contactNormal, upAxis);
 			zAxis = upAxis;
+			
 		}
 		else if (InWater) {
 			float swimFactor = Mathf.Min(1f, submergence / swimThreshold);

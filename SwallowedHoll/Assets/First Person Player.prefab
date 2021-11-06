@@ -27,8 +27,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1158044805}
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0.0000029504295}
-  m_LocalPosition: {x: 0.035043832, y: 0.052687407, z: -0.100590944}
-  m_LocalScale: {x: 0.36633083, y: 0.34062463, z: 0.32556042}
+  m_LocalPosition: {x: 0.035, y: 0.052687407, z: 0.437}
+  m_LocalScale: {x: 0.36633083, y: 0.34062463, z: 1.1501398}
   m_Children: []
   m_Father: {fileID: 7197834583204667933}
   m_RootOrder: 0
@@ -7071,7 +7071,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
+  near clip plane: 0.01
   far clip plane: 1000
   field of view: 92.5
   orthographic: 0
@@ -7408,8 +7408,6 @@ MonoBehaviour:
   swimThreshold: 0.5
   maxClimbAngle: 156
   parent: {fileID: 7197834583306505045}
-  radius: 5
-  power: 20000
   playerInputSpace: {fileID: 7197834582348623818}
   probeDistance: 1
   maxSnapSpeed: 72.2
@@ -7479,8 +7477,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cursorLock: 0
   playerCamera: {fileID: 7197834582348623818}
-  mouseSmoothTime: 0.03
-  sens: 4.78
+  mouseSmoothTime: 0
+  sens: 177
 --- !u!114 &8481454172899552393
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7666,8 +7664,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7258342022726807246}
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0.0000029504295}
-  m_LocalPosition: {x: 0.035043832, y: 0.052687407, z: -0.100590944}
-  m_LocalScale: {x: 0.6382949, y: 0.59350437, z: 0.5672565}
+  m_LocalPosition: {x: 0.035, y: 0.052687407, z: 0.364}
+  m_LocalScale: {x: 0.6382949, y: 0.59350437, z: 1.42977}
   m_Children: []
   m_Father: {fileID: 7197834583204667933}
   m_RootOrder: 1
@@ -8013,8 +8011,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7814535163594142430}
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0.0000029504295}
-  m_LocalPosition: {x: 0.035043832, y: 0.052687407, z: -0.100590944}
-  m_LocalScale: {x: 1.2462941, y: 1.1588391, z: 1.1075891}
+  m_LocalPosition: {x: 0.035, y: -0.075, z: 0.223}
+  m_LocalScale: {x: 1.2462941, y: 1.1588391, z: 1.6119852}
   m_Children: []
   m_Father: {fileID: 7197834583204667933}
   m_RootOrder: 2
@@ -8361,6 +8359,7 @@ MonoBehaviour:
   chargeRate: 0.3
   isgrabCharging: 0
   sizes: 4
+  justThrew: 0
 --- !u!114 &7197834581697023860
 MonoBehaviour:
   m_ObjectHideFlags: 0
