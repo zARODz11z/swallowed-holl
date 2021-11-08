@@ -140,7 +140,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4734274636079867787}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dcd8f62791add1a4dbe3052c1e028d36, type: 3}
+  m_Script: {fileID: 11500000, guid: 16f86a5e3c3f23645bae0f9e99a54e90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   shatterPrefab: {fileID: 8384142459413333977, guid: 3920ee56cdbdb8044a6934416cf9d4d5, type: 3}
@@ -155,7 +155,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4734274636079867787}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9e6fe35308d54744db558ae6ccc37ea9, type: 3}
+  m_Script: {fileID: 11500000, guid: 82afca58c8a95a54dbf84cc3b54351cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &-1149643358417826349
@@ -167,12 +167,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 4734274636079867787}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ce63cbfe659afae4e9728ca9c753e595, type: 3}
+  m_Script: {fileID: 11500000, guid: fd648e0587f96b64e89bd50c03e12cb5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isSmall: 0
-  isMedium: 0
-  isLarge: 1
+  sizes: 2
 --- !u!1 &5580782799703230387
 GameObject:
   m_ObjectHideFlags: 0

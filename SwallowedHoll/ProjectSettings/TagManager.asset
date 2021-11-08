@@ -4,11 +4,10 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Explosive
-  - Breakable
-  - wp
-  - Hitbox
   - bball
+  - Explosive
+  - wp
+  - Breakable
   layers:
   - Default
   - TransparentFX
@@ -23,7 +22,7 @@ TagManager:
   - Stairs
   - CameraIgnore
   - Climbable
-  - RigidBodies
+  - Interactable
   - heldItemCollider
   - Fists
   - NoCollideWithPlayer

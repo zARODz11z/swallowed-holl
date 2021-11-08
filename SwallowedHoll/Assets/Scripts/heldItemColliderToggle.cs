@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+// this script toggles on and off the colliders that represent a held object depending on its size. 
 public class heldItemColliderToggle : MonoBehaviour
 {
     [SerializeField]
@@ -21,13 +21,13 @@ public class heldItemColliderToggle : MonoBehaviour
     void Update()
     {
         if( grab.isHolding ){
-            if( grab.SmallMediumLarge == "LARGE"){
+            if(grab.sizes == Grab.objectSizes.large){
                 largeCollider.SetActive(true);
             }
-            if( grab.SmallMediumLarge == "MEDIUM"){
+            if(grab.sizes == Grab.objectSizes.medium){
                 medCollider.SetActive(true);
             }
-            if( grab.SmallMediumLarge == "SMALL"){
+            if(grab.sizes == Grab.objectSizes.small || grab.sizes == Grab.objectSizes.tiny){
                 smallCollider.SetActive(true);
             }
         }

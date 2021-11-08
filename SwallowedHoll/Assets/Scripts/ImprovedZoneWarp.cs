@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+//this script controls the world shift mechanic and allows the player to shift between worlds. really you are just being teleported along the y axis, but there are dummy objects checking if you would end up colliding with something else
+//if youare in the clear and none of the dummies are colliding with anything, you will just teleport directly to the root dummy. if the root dummy is colliding with something, the script willl check and find a "sub dummy" that is not 
+//colliding with anything, and shift to that instead. if all of the dummies are colliding with something, you simply cant shift. 
 public class ImprovedZoneWarp : MonoBehaviour
 {
     Collider other = null;
@@ -44,13 +46,13 @@ public class ImprovedZoneWarp : MonoBehaviour
                     if(dummy.gameObject.GetComponent<canShift>().getShiftable()){
                         
                         if(dummy.gameObject.GetComponent<canShift>().getCollider() != null){
-                            Debug.Log("Shifting to Breakable Object");
+                            //Debug.Log("Shifting to Breakable Object");
                             dummy.gameObject.GetComponent<canShift>().getCollider().GetComponent<Shatter>().oneShot(0);
                             transform.position = dummy.transform.position;
                             flipflop = false;
                         }
                         else{
-                            Debug.Log("Shifting to Main dummy");
+                            //Debug.Log("Shifting to Main dummy");
                             transform.position = dummy.transform.position;
                             flipflop = false;
                         }
@@ -59,7 +61,7 @@ public class ImprovedZoneWarp : MonoBehaviour
                     else {
                         foreach(GameObject d in dummies){
                             if(d.gameObject.GetComponent<canShift>().getShiftable()){
-                                Debug.Log("Shifting to subdummy "+ d);
+                                //Debug.Log("Shifting to subdummy "+ d);
                                 transform.position = d.transform.position;
                                 flipflop = false;
                                 subDummy = true;
@@ -72,11 +74,11 @@ public class ImprovedZoneWarp : MonoBehaviour
 
                     }
                     if(subDummy == false){
-                        Debug.Log("Cant Shift!");
+                        //Debug.Log("Cant Shift!");
                     }
                 }
                 else{
-                    Debug.Log("Shift Blocked!");
+                    //Debug.Log("Shift Blocked!");
                 }
             }          
             else if (!flipflop){ 
@@ -85,13 +87,13 @@ public class ImprovedZoneWarp : MonoBehaviour
                 if(dummy.gameObject.GetComponent<canShift>().getShiftable()){
                     
                     if(dummy.gameObject.GetComponent<canShift>().getCollider() != null){
-                        Debug.Log("Shifting to Breakable Object");
+                        //Debug.Log("Shifting to Breakable Object");
                         dummy.gameObject.GetComponent<canShift>().getCollider().GetComponent<Shatter>().oneShot(0);
                         transform.position = dummy.transform.position;
                         flipflop = true;
                     }
                     else{
-                        Debug.Log("Shifting to Main dummy");
+                        //Debug.Log("Shifting to Main dummy");
                         transform.position = dummy.transform.position;
                         flipflop = true;
                     }
@@ -100,7 +102,7 @@ public class ImprovedZoneWarp : MonoBehaviour
                 else {
                     foreach(GameObject d in dummies){
                         if(d.gameObject.GetComponent<canShift>().getShiftable()){
-                            Debug.Log("Shifting to subdummy "+ d);
+                            //Debug.Log("Shifting to subdummy "+ d);
                             transform.position = d.transform.position;
                             flipflop = true;
                             subDummy = true;
@@ -113,11 +115,11 @@ public class ImprovedZoneWarp : MonoBehaviour
 
                 }
                 if(subDummy == false){
-                    Debug.Log("Cant Shift!");
+                    //Debug.Log("Cant Shift!");
                         }
                     }   
                     else{
-                        Debug.Log("Shift Blocked");
+                        //Debug.Log("Shift Blocked");
                     }
                 }       
             }

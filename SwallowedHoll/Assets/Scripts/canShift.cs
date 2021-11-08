@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+//this script evaluates whether or not this dummy can currntly be shifted to or not
 public class canShift : MonoBehaviour
 {
     Collider dummyCollider = null;

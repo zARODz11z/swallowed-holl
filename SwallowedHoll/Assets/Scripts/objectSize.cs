@@ -1,16 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+//just acts as a tagging system for the grab code to know the size of an object it is picking up
 public class objectSize : MonoBehaviour
 {
-    [SerializeField]
-    [Tooltip ("Just pick one of these to determine the position of grab point, the size of the hit box, and more")]
-    public bool isSmall;
-    [SerializeField]
-    [Tooltip ("Just pick one of these to determine the position of grab point, the size of the hit box, and more")]
-    public bool isMedium;
-    [SerializeField]
-    [Tooltip ("Just pick one of these to determine the position of grab point, the size of the hit box, and more")]
-    public bool isLarge;
+    public enum objectSizes{tiny, small, medium, large};
+    public objectSizes sizes;
 }

@@ -42,8 +42,6 @@ Holographic Hamburger!
 
 Food Dispensers
 
-CONVEYOR BELTS!
-
 make conveyor belts or doors or whatever dependent on a battery, very dishonored styled
 
 MAKE SOME LEVELS
@@ -54,4 +52,5 @@ figure out how to make a material togglable transparent (Poyomi may make this ea
 
 need to make a death state
 
+running forward + sideways (strafing) seems to be faster than just running, should be patched
 */

@@ -1,13 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+//this script controls all the animations tied to the character, such as when certain animations should be played and how they should be played.
 public class HandAnim : MonoBehaviour
 {
     MovementSpeedController speedController;
     [SerializeField]
     GameObject sphere;
-    FPSMovingSphere player;
+    Movement movement;
     [HideInInspector]
     public bool barragePrep = false;
     bool flipflop = true;
@@ -29,13 +29,7 @@ public class HandAnim : MonoBehaviour
     [SerializeField]
     [Tooltip("how long you need to be in the air before the 'onGround' bool triggers")]
     float OnGroundBuffer = .5f;
-    [SerializeField]
-    [Tooltip("how long isJumping stays true after pressing it ( maybe should be in movingsphere?)")]
-    float JumpBuffer = .5f;
-
-    bool JumpSwitch = true;
     float Groundstopwatch = 0;
-    float Jumpstopwatch = 0;
     bool JumpPressed;
     Grab grab;
     // Start is called before the first frame update
@@ -45,14 +39,17 @@ public class HandAnim : MonoBehaviour
     public void setisHolding(bool plug){
         animator.SetBool("isHolding", plug);
     }
+    public bool getisHolding(){
+        return animator.GetBool("isHolding");
+    }
     public void setisThrowing(bool plug){
         animator.SetBool("grabCharge", !plug);
         animator.SetBool("isThrowing", plug);
     }
 
     void BoolAdjuster(){
-        isOnGround = player.OnGround;
-        isOnSteep = player.OnSteep;
+        isOnGround = movement.OnGround;
+        isOnSteep = movement.OnSteep;
         if (!isOnGround && !JumpPressed){
             Groundstopwatch += Time.deltaTime;
             if (Groundstopwatch >= OnGroundBuffer){
@@ -67,17 +64,24 @@ public class HandAnim : MonoBehaviour
             isOnGroundADJ = true;
         }
     }
+    void resetInteract(){
+        animator.SetBool("Interact", false);
+    }
+    public void interact(){
+        animator.SetBool("Interact", true);
+        Invoke("resetInteract", .1f);
+    }
     void Start()
     {
         speedController = sphere.GetComponent<MovementSpeedController>();
         animator = GetComponent<Animator>();
-        player = sphere.GetComponent<FPSMovingSphere>();
+        movement = sphere.GetComponent<Movement>();
         grab = GetComponent<Grab>();
     }
 
     void startBarrage(){
         animator.SetBool("barragePrep", false);
-        player.isBarraging = true;
+        movement.isBarraging = true;
         flipflop2 = true;
         speedController.setFactor(.5f);
         //movement change here
@@ -180,14 +184,14 @@ public class HandAnim : MonoBehaviour
             }
         }
         if(Input.GetKeyDown("mouse 1")){
-            if(flipflop2 && !player.isBarraging && !grab.isHolding){
+            if(flipflop2 && !movement.isBarraging && !grab.isHolding){
                 animator.SetBool("barragePrep", true);
                 barragePrep = true;
                 blocker = false;
                 flipflop2 = false;
             }
             else if (!flipflop2){
-                player.isBarraging = false;
+                movement.isBarraging = false;
                 animator.SetBool("barragePrep", false);
                 barragePrep = false;
                 blocker = true;
@@ -211,12 +215,12 @@ public class HandAnim : MonoBehaviour
             }
             else if (!barragePrep){
                 animator.SetBool("charging", false);
-                player.isBarraging = false;
+                movement.isBarraging = false;
             }
         }
         else if (!Input.GetKey("mouse 0") ){
             animator.SetBool("charging", false);
-            player.isBarraging = false;
+            movement.isBarraging = false;
         }
     }
 }
