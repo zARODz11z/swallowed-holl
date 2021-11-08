@@ -53,7 +53,7 @@
      <Compile Include="Assets\Scripts\BBallHoop.cs" />
      <Compile Include="Assets\Scripts\MovementSpeedController.cs" />
      <Compile Include="Assets\Scripts\GravitySource.cs" />
-     <Compile Include="Assets\hollOrReal.cs" />
+     <Compile Include="Assets\Scripts\hollOrReal.cs" />
      <Compile Include="Assets\Notes.cs" />
      <Compile Include="Assets\Scripts\AccelerationZone.cs" />
      <Compile Include="Assets\Scripts\ConveyorBelt.cs" />
@@ -71,12 +71,12 @@
      <Compile Include="Assets\Scripts\fanbladeSpeedController.cs" />
      <Compile Include="Assets\Scripts\Floater.cs" />
      <Compile Include="Assets\DynamicBone\Scripts\DynamicBoneColliderBase.cs" />
-     <Compile Include="Assets\Scripts\DetectionZone.cs" />
+     <Compile Include="Assets\Scripts\InteractableObject.cs" />
      <Compile Include="Assets\Scripts\PropBuster.cs" />
      <Compile Include="Assets\Scripts\ImprovedZoneWarp.cs" />
      <Compile Include="Assets\Scripts\EnableBarrage.cs" />
      <Compile Include="Assets\Scripts\objectSize.cs" />
-     <Compile Include="Assets\panner.cs" />
+     <Compile Include="Assets\Scripts\panner.cs" />
      <Compile Include="Assets\Scripts\CustomGravityRigidbody.cs" />
      <Compile Include="Assets\Scripts\canShift.cs" />
      <Compile Include="Assets\Scripts\CustomGravity.cs" />
@@ -89,6 +89,9 @@
      <Compile Include="Assets\Scripts\Explode.cs" />
      <Compile Include="Assets\Scripts\DamageBox.cs" />
      <Compile Include="Assets\Scripts\Eat.cs" />
+     <Compile Include="Assets\Scripts\DoorOpenandClose.cs" />
+     <Compile Include="Assets\Scripts\buttonPush.cs" />
+     <Compile Include="Assets\Scripts\shooter.cs" />
      <None Include="Assets\Materials\Holl\HollWall\OptimizedShaders\HollWall-ea432927\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiVert.cginc" />
      <None Include="Assets\Materials\OptimizedShaders\Groceries-7df36488\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiGeomFur.cginc" />
      <None Include="Assets\Materials\Props\TV\OptimizedShaders\TV-463b829f\Assets\Shader\_PoiyomiShaders\Shaders\Toon\Includes\CGI_PoiBackFace.cginc" />

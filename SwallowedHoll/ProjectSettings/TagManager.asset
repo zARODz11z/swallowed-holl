@@ -22,7 +22,7 @@ TagManager:
   - Stairs
   - CameraIgnore
   - Climbable
-  - RigidBodies
+  - Interactable
   - heldItemCollider
   - Fists
   - NoCollideWithPlayer

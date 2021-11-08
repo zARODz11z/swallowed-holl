@@ -75,12 +75,28 @@ public class Interact : MonoBehaviour
             // if you are not holding anything, and you are not preparing to barrage, and you are not barraging
             if(!grab.isHolding && !hand.barragePrep && !movement.isBarraging){
             RaycastHit hit;
-            if (Physics.SphereCast(origin.transform.position, 1, (dummy.position - origin.transform.position), out hit, distance, mask))
+            if (Physics.SphereCast(origin.transform.position, .5f, (dummy.position - origin.transform.position), out hit, distance, mask))
             {
                 if(hit.transform.gameObject.GetComponent<Rigidbody>() != null && hit.transform.gameObject.GetComponent<Rigidbody>().mass <= grab.strength && !grab.justThrew){
                     prop = hit.transform;
                     propRB = hit.rigidbody;
                     grab.pickUp(origin, dummy, prop, propRB, balls, hit);
+                }
+                if(hit.transform.gameObject.GetComponent<buttonPush>() != null){
+                    buttonPush button = hit.transform.gameObject.GetComponent<buttonPush>();
+                    if(button.oneTime){
+                        if(button.anim.GetBool("onePush") == false && button.door.subGate == false ){
+                            button.press();
+                        }
+                    }
+                    else if (button.door != null){
+                        if (button.door.subGate == false){
+                            button.press();
+                        }
+                    }
+                    else if (!button.blocker){
+                        button.press();
+                    }
                 }
             }
         }

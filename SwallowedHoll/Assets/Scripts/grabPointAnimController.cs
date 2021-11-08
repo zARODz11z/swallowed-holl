@@ -45,7 +45,6 @@ public class grabPointAnimController : MonoBehaviour
         else{
             anim.SetBool("isCharging", false);
         }
-        Debug.Log(grab.sizes);
         if (grab.sizes == Grab.objectSizes.none){
             anim.SetBool("Large", false);
             anim.SetBool("Medium", false);

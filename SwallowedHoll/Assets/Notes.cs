@@ -42,8 +42,6 @@ Holographic Hamburger!
 
 Food Dispensers
 
-CONVEYOR BELTS!
-
 make conveyor belts or doors or whatever dependent on a battery, very dishonored styled
 
 MAKE SOME LEVELS

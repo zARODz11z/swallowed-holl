@@ -64,6 +64,13 @@ public class HandAnim : MonoBehaviour
             isOnGroundADJ = true;
         }
     }
+    void resetInteract(){
+        animator.SetBool("Interact", false);
+    }
+    public void interact(){
+        animator.SetBool("Interact", true);
+        Invoke("resetInteract", .1f);
+    }
     void Start()
     {
         speedController = sphere.GetComponent<MovementSpeedController>();
