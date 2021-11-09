@@ -62,16 +62,6 @@ public class Interact : MonoBehaviour
 
     }
 
-    //removes the "thru hoop" status of any basketballs you pick up
-    void BBallClear(RaycastHit hit){
-        foreach(GameObject b in balls){
-            if (b.gameObject == hit.transform.gameObject){
-                b.gameObject.GetComponent<BBall>().setThruHoop(false);
-                break;
-            }
-        }
-    }
-
 
     // Update is called once per frame
     void Update()
@@ -87,11 +77,10 @@ public class Interact : MonoBehaviour
             RaycastHit hit;
             if (Physics.SphereCast(origin.transform.position, .5f, (dummy.position - origin.transform.position), out hit, distance, mask))
             {
-                propRB = hit.rigidbody;
-                prop = hit.transform;
                 if(hit.transform.gameObject.GetComponent<Rigidbody>() != null && hit.transform.gameObject.GetComponent<Rigidbody>().mass <= grab.strength && !grab.justThrew){
-                    grab.pickUp(origin, dummy, hit);
-                    BBallClear(hit);
+                    prop = hit.transform;
+                    propRB = hit.rigidbody;
+                    grab.pickUp(origin, dummy, prop, propRB, balls, hit);
                 }
                 if(hit.transform.gameObject.GetComponent<buttonPush>() != null){
                     buttonPush button = hit.transform.gameObject.GetComponent<buttonPush>();
@@ -113,7 +102,6 @@ public class Interact : MonoBehaviour
         }
             // if you are already holding something, drop it. 
             else if (grab.isHolding){
-                
                 detach();
                 //clear the temps for next loop
                 prop = null;
