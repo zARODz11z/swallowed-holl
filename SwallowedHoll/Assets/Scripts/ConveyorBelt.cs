@@ -5,12 +5,16 @@ using UnityEngine;
 public class ConveyorBelt : MonoBehaviour
 {
     [SerializeField]
+    bool isSideways;
+    [SerializeField]
     bool isEndPiece = false;
     [SerializeField]
     float speed;
     [SerializeField]
     [Tooltip("amount of spin added to objects on the conveyor belt")]
     float spinAmount;
+    [SerializeField]
+    GameObject grav;
     List<GameObject> pushingObjects = new List<GameObject>();
     void OnTriggerEnter(Collider other) {
         if(other.gameObject.GetComponent<Rigidbody>() != null && other.gameObject.GetComponent<Rigidbody>().isKinematic == false && other.gameObject.layer != 16 && other.gameObject.tag != "Breakable" && other.gameObject.tag != "Explosive"&& other.gameObject.tag != "Player" && pushingObjects.Contains(other.gameObject) == false){
@@ -66,6 +70,12 @@ public class ConveyorBelt : MonoBehaviour
         if(other.gameObject.tag == "Player" && pushingObjects.Contains(other.gameObject.transform.root.gameObject) == true){
             //Debug.Log("A player just got removed");
             pushingObjects.Remove(other.gameObject.transform.root.gameObject);
+            if(isSideways){
+                if(grav!=null){
+                    grav.GetComponent<GravityPlane>().gravity = 9.81f;
+                }
+
+            }
             if(isEndPiece){
                 //Debug.Log("Lil Speed Boost");
                 other.gameObject.transform.root.gameObject.GetComponent<Rigidbody>().velocity = other.gameObject.transform.root.gameObject.GetComponent<Rigidbody>().velocity + this.transform.right * (speed);
@@ -90,7 +100,18 @@ public class ConveyorBelt : MonoBehaviour
             }
             else{
                 if(speed != 0){
-                    pushingObjects[i].transform.position = pushingObjects[i].transform.position + this.transform.right * (speed * Time.deltaTime);
+                    if(!isSideways){
+                        pushingObjects[i].transform.position = pushingObjects[i].transform.position + this.transform.right * (speed * Time.deltaTime);
+                    }
+                    else if(pushingObjects[i].gameObject.tag == "Player" && isSideways){
+                        if(grav!= null){
+                            grav.GetComponent<GravityPlane>().gravity = 0f;
+                            pushingObjects[i].transform.position = pushingObjects[i].transform.position + this.transform.right * (speed * Time.deltaTime);
+                        }
+                        else{
+                            Debug.Log("No gravity source connected!");
+                        }
+                    }
                 }
                 if(spinAmount != 0){
                     pushingObjects[i].transform.Rotate(new Vector3(0f, Time.deltaTime * spinAmount), Space.World);
