@@ -45,6 +45,7 @@ public class ConveyorBelt : MonoBehaviour
         }
         if(other.gameObject.tag == "Player" && pushingObjects.Contains(other.gameObject.transform.root.gameObject) == false){
             //Debug.Log("A player just got added");
+            //other.transform.parent.GetChild(0).GetChild(0).GetChild(2).GetComponent<disableDynamicBone>().toggle(true);
             pushingObjects.Add(other.gameObject.transform.root.gameObject);
         }
     }
@@ -70,6 +71,7 @@ public class ConveyorBelt : MonoBehaviour
         if(other.gameObject.tag == "Player" && pushingObjects.Contains(other.gameObject.transform.root.gameObject) == true){
             //Debug.Log("A player just got removed");
             pushingObjects.Remove(other.gameObject.transform.root.gameObject);
+            //other.transform.parent.GetChild(0).GetChild(0).GetChild(2).GetComponent<disableDynamicBone>().toggle(false);
             if(isSideways){
                 if(grav!=null){
                     grav.GetComponent<GravityPlane>().gravity = 9.81f;
@@ -82,12 +84,14 @@ public class ConveyorBelt : MonoBehaviour
             }
         }
     }
+
+
     //void Update() {
         //foreach ( GameObject p in pushingObjects){
             //Debug.Log(p.name);
         //}
     //}
-    void FixedUpdate()
+      void FixedUpdate()
     {
         for (int i = 0; i < pushingObjects.Count; i++){
             if (pushingObjects[i] == null){
@@ -101,7 +105,15 @@ public class ConveyorBelt : MonoBehaviour
             else{
                 if(speed != 0){
                     if(!isSideways){
+                        //speed = 4;
+                        //for (float y = 0; y <= speed; y++)
+                        //{
+                            
+                        //    pushingObjects[i].transform.position = Vector3.Lerp(pushingObjects[i].transform.position, pushingObjects[i].transform.position + this.transform.right * (speed * Time.deltaTime), (y/speed));
+                        //    Debug.Log("Y is "+ y + " and y/speed is " + y/speed);  
+                        //}
                         pushingObjects[i].transform.position = pushingObjects[i].transform.position + this.transform.right * (speed * Time.deltaTime);
+                       
                     }
                     else if(pushingObjects[i].gameObject.tag == "Player" && isSideways){
                         if(grav!= null){
@@ -109,7 +121,7 @@ public class ConveyorBelt : MonoBehaviour
                             pushingObjects[i].transform.position = pushingObjects[i].transform.position + this.transform.right * (speed * Time.deltaTime);
                         }
                         else{
-                            Debug.Log("No gravity source connected!");
+                            Debug.Log("Tagged as sideways but no gravity source connected!");
                         }
                     }
                 }

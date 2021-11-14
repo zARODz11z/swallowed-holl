@@ -8,14 +8,14 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: BALL HOOP
-  m_Shader: {fileID: 4800000, guid: dad954e724de7a642b43bf6df6a0e5ba, type: 3}
+  m_Shader: {fileID: 4800000, guid: 6af477de02d356c4b80f1cbe332fd121, type: 3}
   m_ShaderKeywords: VIGNETTE_MASKED _SMOOTHNESS_TEXTURE_ALBEDO_CHANNEL_A
   m_LightmapFlags: 2
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: 2000
   stringTagMap:
-    OptimizedShaderFolder: BALL HOOP-f66320b5
+    OptimizedShaderFolder: BALL HOOP-4a23cd05
     OriginalShader: ".poiyomi/\u2022 Poiyomi Toon \u2022"
     RenderType: Opaque
   disabledShaderPasses: []
