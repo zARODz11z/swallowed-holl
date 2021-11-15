@@ -3045,19 +3045,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 5299334708804420200, guid: c252902556a12bc4d89d3f468e17c480, type: 3}
---- !u!114 &231468746
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 231468741}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1688e4f42420eb8459e0e6b831e2e437, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 1.2
 --- !u!4 &231726098 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1273319202950287856, guid: 60751fdef2154a44baafd4356b479c26, type: 3}
@@ -6521,6 +6508,10 @@ PrefabInstance:
       propertyPath: dummy
       value: 
       objectReference: {fileID: 1151146526}
+    - target: {fileID: 2230072923298899475, guid: 6bb6677300d607d488e6ee96dc019bb8, type: 3}
+      propertyPath: shiftCost
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 2230072923298899475, guid: 6bb6677300d607d488e6ee96dc019bb8, type: 3}
       propertyPath: warpOffset
       value: 286.5

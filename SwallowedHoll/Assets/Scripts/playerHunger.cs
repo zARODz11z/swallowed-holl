@@ -30,26 +30,26 @@ public class playerHunger : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
+   // void Update()
+    //{
         //Debug.Log(stats.hunger);
-        if (stats.hunger <= 0){
-            stats.hunger = 0;
+        //if (stats.hunger <= 0){
+       //     stats.hunger = 0;
            // Debug.Log("STARVED");
             //script
-        }
-        if (interval > 1)
-        {
-            if (stats.hunger > 0)
-                stats.hunger -= hungerRate;
-            else
-            {
-                stats.hp -= 1;
-            }
+       // }
+       // if (interval > 1)
+      //  {
+      //      if (stats.hunger > 0)
+     //           stats.hunger -= hungerRate;
+     //       else
+     //       {
+     //           stats.hp -= 1;
+    //        }
 
-            interval = 0;
-        }
-        interval += UnityEngine.Time.deltaTime;
+     //       interval = 0;
+     //   }
+     //   interval += UnityEngine.Time.deltaTime;
         
-    }
+   // }
 }

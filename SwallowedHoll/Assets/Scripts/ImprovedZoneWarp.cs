@@ -6,6 +6,8 @@ using UnityEngine;
 //colliding with anything, and shift to that instead. if all of the dummies are colliding with something, you simply cant shift. 
 public class ImprovedZoneWarp : MonoBehaviour
 {
+    [SerializeField]
+    float shiftCost;
     Collider other = null;
     [SerializeField]
     GameObject dummy;
@@ -40,21 +42,68 @@ public class ImprovedZoneWarp : MonoBehaviour
                 dummy.transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z + warpOffset);
         }
         if (Input.GetKeyDown(KeyCode.R)){
-            if (flipflop){ 
-                desiresShift = true;
-                if(!shiftBlocked){   
+            if(GetComponent<PlayerStats>().hunger > shiftCost){
+                if (flipflop){ 
+                    desiresShift = true;
+                    if(!shiftBlocked){   
+                        if(dummy.gameObject.GetComponent<canShift>().getShiftable()){
+                            
+                            if(dummy.gameObject.GetComponent<canShift>().getCollider() != null){
+                                //Debug.Log("Shifting to Breakable Object");
+                                dummy.gameObject.GetComponent<canShift>().getCollider().GetComponent<Shatter>().oneShot(0);
+                                transform.position = dummy.transform.position;
+                                flipflop = false;
+                                GetComponent<PlayerStats>().hunger = GetComponent<PlayerStats>().hunger - shiftCost;
+                            }
+                            else{
+                                //Debug.Log("Shifting to Main dummy");
+                                transform.position = dummy.transform.position;
+                                flipflop = false;
+                                GetComponent<PlayerStats>().hunger = GetComponent<PlayerStats>().hunger - shiftCost;
+                            }
+
+                        }    
+                        else {
+                            foreach(GameObject d in dummies){
+                                if(d.gameObject.GetComponent<canShift>().getShiftable()){
+                                    //Debug.Log("Shifting to subdummy "+ d);
+                                    transform.position = d.transform.position;
+                                    GetComponent<PlayerStats>().hunger = GetComponent<PlayerStats>().hunger - shiftCost;
+                                    flipflop = false;
+                                    subDummy = true;
+                                    return;
+                                }
+                                else{
+                                    subDummy = false;
+                                }
+                            }
+
+                        }
+                        if(subDummy == false){
+                            //Debug.Log("Cant Shift!");
+                        }
+                    }
+                    else{
+                        //Debug.Log("Shift Blocked!");
+                    }
+                }          
+                else if (!flipflop){ 
+                    desiresShift = true; 
+                    if(!shiftBlocked){   
                     if(dummy.gameObject.GetComponent<canShift>().getShiftable()){
                         
                         if(dummy.gameObject.GetComponent<canShift>().getCollider() != null){
                             //Debug.Log("Shifting to Breakable Object");
                             dummy.gameObject.GetComponent<canShift>().getCollider().GetComponent<Shatter>().oneShot(0);
                             transform.position = dummy.transform.position;
-                            flipflop = false;
+                            GetComponent<PlayerStats>().hunger = GetComponent<PlayerStats>().hunger - shiftCost;
+                            flipflop = true;
                         }
                         else{
                             //Debug.Log("Shifting to Main dummy");
                             transform.position = dummy.transform.position;
-                            flipflop = false;
+                            GetComponent<PlayerStats>().hunger = GetComponent<PlayerStats>().hunger - shiftCost;
+                            flipflop = true;
                         }
 
                     }    
@@ -63,7 +112,8 @@ public class ImprovedZoneWarp : MonoBehaviour
                             if(d.gameObject.GetComponent<canShift>().getShiftable()){
                                 //Debug.Log("Shifting to subdummy "+ d);
                                 transform.position = d.transform.position;
-                                flipflop = false;
+                                GetComponent<PlayerStats>().hunger = GetComponent<PlayerStats>().hunger - shiftCost;
+                                flipflop = true;
                                 subDummy = true;
                                 return;
                             }
@@ -75,53 +125,16 @@ public class ImprovedZoneWarp : MonoBehaviour
                     }
                     if(subDummy == false){
                         //Debug.Log("Cant Shift!");
-                    }
-                }
-                else{
-                    //Debug.Log("Shift Blocked!");
-                }
-            }          
-            else if (!flipflop){ 
-                desiresShift = true; 
-                if(!shiftBlocked){   
-                if(dummy.gameObject.GetComponent<canShift>().getShiftable()){
-                    
-                    if(dummy.gameObject.GetComponent<canShift>().getCollider() != null){
-                        //Debug.Log("Shifting to Breakable Object");
-                        dummy.gameObject.GetComponent<canShift>().getCollider().GetComponent<Shatter>().oneShot(0);
-                        transform.position = dummy.transform.position;
-                        flipflop = true;
-                    }
-                    else{
-                        //Debug.Log("Shifting to Main dummy");
-                        transform.position = dummy.transform.position;
-                        flipflop = true;
-                    }
-
-                }    
-                else {
-                    foreach(GameObject d in dummies){
-                        if(d.gameObject.GetComponent<canShift>().getShiftable()){
-                            //Debug.Log("Shifting to subdummy "+ d);
-                            transform.position = d.transform.position;
-                            flipflop = true;
-                            subDummy = true;
-                            return;
-                        }
+                            }
+                        }   
                         else{
-                            subDummy = false;
+                            //Debug.Log("Shift Blocked");
                         }
-                    }
-
-                }
-                if(subDummy == false){
-                    //Debug.Log("Cant Shift!");
-                        }
-                    }   
-                    else{
-                        //Debug.Log("Shift Blocked");
-                    }
-                }       
+                    } 
+                }  
+                else{
+                    Debug.Log("Not enough hunger to shift!");
+                }    
             }
         else{
             desiresShift = false;
