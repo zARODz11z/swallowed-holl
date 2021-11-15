@@ -8,14 +8,14 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Stone Wall Dark
-  m_Shader: {fileID: 4800000, guid: 59c4bf8123130f24483425166b29e164, type: 3}
+  m_Shader: {fileID: 4800000, guid: c655b340bcb7c074c9afaa7e9d3e3396, type: 3}
   m_ShaderKeywords: VIGNETTE_MASKED _SMOOTHNESS_TEXTURE_ALBEDO_CHANNEL_A _SPECGLOSSMAP
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: 2000
   stringTagMap:
-    OptimizedShaderFolder: Stone Wall Dark-f9ccac43
+    OptimizedShaderFolder: Stone Wall Dark-6a8e687f
     OriginalShader: ".poiyomi/\u2022 Poiyomi Toon \u2022"
     RenderType: Opaque
   disabledShaderPasses: []
@@ -941,9 +941,9 @@ Material:
     - _LightingAdditiveGradientEndAnimated: 0
     - _LightingAdditiveGradientStart: 0
     - _LightingAdditiveGradientStartAnimated: 0
-    - _LightingAdditiveLimitIntensity: 0
+    - _LightingAdditiveLimitIntensity: 1
     - _LightingAdditiveLimitIntensityAnimated: 0
-    - _LightingAdditiveMaxIntensity: 1
+    - _LightingAdditiveMaxIntensity: 0
     - _LightingAdditiveMaxIntensityAnimated: 0
     - _LightingAdditivePassthrough: 0.5
     - _LightingAdditivePassthroughAnimated: 0
@@ -977,7 +977,7 @@ Material:
     - _LightingMinLightBrightnessAnimated: 0
     - _LightingMinShadowBrightnessRatio: 0
     - _LightingMinShadowBrightnessRatioAnimated: 0
-    - _LightingMode: 0
+    - _LightingMode: 1
     - _LightingModeAnimated: 0
     - _LightingMonochromatic: 0
     - _LightingMonochromaticAnimated: 0

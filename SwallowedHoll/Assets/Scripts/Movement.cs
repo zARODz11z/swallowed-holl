@@ -2,6 +2,7 @@ using UnityEngine;
 public class Movement : MonoBehaviour { 
 	//This script controls the movement of the character. 
 	//refrence to the grab script
+	bool canClimb;
 	Grab grab;
 
 	[SerializeField]
@@ -134,6 +135,10 @@ public class Movement : MonoBehaviour {
 	bool skip = true;
 	bool diveGate;
 
+	public void setCanClimb(bool plug){
+		canClimb = plug;
+	}
+
 	void Awake () {
 		grab = transform.GetChild(0).GetChild(0).GetChild(2).GetComponent<Grab>();
 		speedController = GetComponent<MovementSpeedController>();
@@ -170,7 +175,7 @@ public class Movement : MonoBehaviour {
 			divingPrep = false;
         }
 		// this is so i can prevent the player from entering a climbing state while standing on the ground
-		if(Climbing && !OnGround){
+		if(Climbing && !OnGround && canClimb){
 			ClimbingADJ = true;
 		}
 		else{

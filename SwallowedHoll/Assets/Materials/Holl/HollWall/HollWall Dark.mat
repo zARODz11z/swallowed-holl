@@ -8,14 +8,14 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: HollWall Dark
-  m_Shader: {fileID: 4800000, guid: 5023df885ee0af249bc7111f42bd8198, type: 3}
+  m_Shader: {fileID: 4800000, guid: 8c6cb373cf061b348af9670721c08d3e, type: 3}
   m_ShaderKeywords: VIGNETTE_MASKED _SPECGLOSSMAP
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: 2000
   stringTagMap:
-    OptimizedShaderFolder: HollWall Dark-f0d61e96
+    OptimizedShaderFolder: HollWall Dark-af35b2b8
     OriginalShader: ".poiyomi/\u2022 Poiyomi Toon \u2022"
     RenderType: Opaque
   disabledShaderPasses: []
@@ -1693,7 +1693,7 @@ Material:
     - m_start_glitterRandom: 0
     - m_start_glowInDarkEmissionOptions: 0
     - m_start_glowInDarkEmissionOptions1: 0
-    - m_start_lightingAdvanced: 1
+    - m_start_lightingAdvanced: 0
     - m_start_lightingHSL: 0
     - m_start_lightingModifiers: 0
     - m_start_manualFlipbookControl: 0
