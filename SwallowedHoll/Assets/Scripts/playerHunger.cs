@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+//Brian Meginness and Travis Parks
 //this script handles the players hunger and the rate at which it decays, assuming it decays at all. It also controls how it is increased. 
 public class playerHunger : MonoBehaviour
 {
@@ -8,24 +9,20 @@ public class playerHunger : MonoBehaviour
     float maxHunger = 100f;
     [SerializeField]
     float hungerRate;
-    float interval;
+
     // Start is called before the first frame update
     void Start()
     {
         stats = GetComponent<PlayerStats>();
     }
 
+    
     public void increaseHunger(float food){
-        if (stats.hunger < 100){
-            if (stats.hunger + food > maxHunger){
-                stats.hunger = 100f;
-            }
-            else{
-                stats.hunger = stats.hunger + food;
-            }
+        if (stats.hunger + food >= maxHunger){
+            stats.hunger = maxHunger;
         }
-        else {
-           // Debug.Log("Not Hungry!");
+        else{
+            stats.hunger = stats.hunger + food;
         }
     }
 

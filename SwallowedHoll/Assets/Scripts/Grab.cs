@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//Travis Parks and Brian Meginness
 // This script deals with holding objects after you have interacted with an object that has a rigidbody, is tagged as pickupable, and isn't over your max carrying weight.
 // It pins that object to an empty tied to the player, creates a collider to represent that object while it is in your hands, and switches the player to an animation set to 
 // reflect that they are holding something. It also disables dynamic bones while you are holding something. This script also handles the logic for throwing objects, including charging up and releasing
@@ -49,6 +50,8 @@ public class Grab : MonoBehaviour
 
     Interact interact;
 
+    private bool isFood;
+
     void Start() {
         interact = GetComponent<Interact>();
         throwingTemp = throwingforce;
@@ -79,6 +82,9 @@ public class Grab : MonoBehaviour
         if(propGame.GetComponent<objectSize>().sizes == objectSize.objectSizes.tiny){
             sizes = objectSizes.tiny;
         }                   
+        if(propGame.GetComponent<Eat>()){
+            isFood = true;
+        }
         //disable dynamic bones
         interact.bone.toggle(true);
         //trigger animation
@@ -132,6 +138,10 @@ public class Grab : MonoBehaviour
             }
         }
 
+        if(Input.GetKey("mouse 1") && isHolding && !hand.barragePrep && !movement.isBarraging && !justThrew){
+            interact.prop.gameObject.GetComponent<Eat>().eatFood();
+            interact.detach();
+        }
 
     }
 }
