@@ -85,6 +85,9 @@ public class Grab : MonoBehaviour
         if(propGame.GetComponent<Eat>()){
             isFood = true;
         }
+        else{
+            isFood = false;
+        }
         //disable dynamic bones
         interact.bone.toggle(true);
         //trigger animation
