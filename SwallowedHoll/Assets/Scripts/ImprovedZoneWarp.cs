@@ -6,6 +6,7 @@ using UnityEngine;
 //colliding with anything, and shift to that instead. if all of the dummies are colliding with something, you simply cant shift. 
 public class ImprovedZoneWarp : MonoBehaviour
 {
+
     [SerializeField]
     float shiftCost;
     Collider other = null;
@@ -19,7 +20,8 @@ public class ImprovedZoneWarp : MonoBehaviour
     bool desiresShift;
     bool subDummy = false;
     bool possibleShift;
-
+    [Tooltip("True = holl, false = realWorld")]
+    bool hollOrReal;
     bool shiftBlocked = false;
     public void setShiftBlocked(bool plug){
         shiftBlocked = plug;
@@ -54,12 +56,15 @@ public class ImprovedZoneWarp : MonoBehaviour
                                 transform.position = dummy.transform.position;
                                 flipflop = false;
                                 GetComponent<PlayerStats>().hunger = GetComponent<PlayerStats>().hunger - shiftCost;
+                                hollOrReal = false;
+                                
                             }
                             else{
                                 //Debug.Log("Shifting to Main dummy");
                                 transform.position = dummy.transform.position;
                                 flipflop = false;
                                 GetComponent<PlayerStats>().hunger = GetComponent<PlayerStats>().hunger - shiftCost;
+                                hollOrReal = false;
                             }
 
                         }    
@@ -71,6 +76,7 @@ public class ImprovedZoneWarp : MonoBehaviour
                                     GetComponent<PlayerStats>().hunger = GetComponent<PlayerStats>().hunger - shiftCost;
                                     flipflop = false;
                                     subDummy = true;
+                                    hollOrReal = false;
                                     return;
                                 }
                                 else{
@@ -98,12 +104,14 @@ public class ImprovedZoneWarp : MonoBehaviour
                             transform.position = dummy.transform.position;
                             GetComponent<PlayerStats>().hunger = GetComponent<PlayerStats>().hunger - shiftCost;
                             flipflop = true;
+                            hollOrReal = true;
                         }
                         else{
                             //Debug.Log("Shifting to Main dummy");
                             transform.position = dummy.transform.position;
                             GetComponent<PlayerStats>().hunger = GetComponent<PlayerStats>().hunger - shiftCost;
                             flipflop = true;
+                            hollOrReal = true;
                         }
 
                     }    
@@ -115,6 +123,7 @@ public class ImprovedZoneWarp : MonoBehaviour
                                 GetComponent<PlayerStats>().hunger = GetComponent<PlayerStats>().hunger - shiftCost;
                                 flipflop = true;
                                 subDummy = true;
+                                hollOrReal = true;
                                 return;
                             }
                             else{
