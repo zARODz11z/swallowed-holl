@@ -1,13 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+//Travis Parks
 //this script handles interacting with various objects, such as a button, a lever, a pickupable object, etc. essentially just pressing e on something
 public class Interact : MonoBehaviour
 {
+    //Components
     Movement movement;
     Grab grab;
     HandAnim hand;
-    int ballLength;
     GameObject[] balls;
     [HideInInspector]
     public Transform prop;
@@ -21,15 +22,19 @@ public class Interact : MonoBehaviour
     [SerializeField]
     [Tooltip("where the throwing force originates from")]
     public GameObject origin;
+
+    //Variables
     [SerializeField]
     float distance;
+    int ballLength;
     [SerializeField]
     [Tooltip("what objects can be picked up by the player")]
-
     LayerMask mask = default;
+
     // Start is called before the first frame update
     void Start()
     {  
+        //Assign components
         movement = transform.root.GetComponent<Movement>();
         grab = GetComponent<Grab>();
         hand = GetComponent<HandAnim>();
@@ -80,22 +85,30 @@ public class Interact : MonoBehaviour
             balls = GameObject.FindGameObjectsWithTag("bball");
             ballLength = balls.Length;
         }
+        //IF e pressed
         if (Input.GetKeyDown("e"))
         {
             // if you are not holding anything, and you are not preparing to barrage, and you are not barraging
             if(!grab.isHolding && !hand.barragePrep && !movement.isBarraging){
             RaycastHit hit;
+            //IF a raycast hits something
             if (Physics.SphereCast(origin.transform.position, .5f, (dummy.position - origin.transform.position), out hit, distance, mask))
             {
+                //Get the properties of the something you hit
                 propRB = hit.rigidbody;
                 prop = hit.transform;
+                //IF the thing you hit has a rigidbody that is light enough for the player to hold
                 if(hit.transform.gameObject.GetComponent<Rigidbody>() != null && hit.transform.gameObject.GetComponent<Rigidbody>().mass <= grab.strength && !grab.justThrew){
+                    //Pick it up
                     grab.pickUp(origin, dummy, hit);
                     BBallClear(hit);
                 }
+                //IF the the thing you hit is a button
                 if(hit.transform.gameObject.GetComponent<buttonPush>() != null){
+                    //Get the button object
                     buttonPush button = hit.transform.gameObject.GetComponent<buttonPush>();
-                    if(button.oneTime){
+                    //--------- TALK TO TRAVIS ABOUT THIS. THEY ALL DO THE SAME THING ---------
+                    if (button.oneTime){
                         if(button.anim.GetBool("onePush") == false && button.door.subGate == false ){
                             button.press();
                         }

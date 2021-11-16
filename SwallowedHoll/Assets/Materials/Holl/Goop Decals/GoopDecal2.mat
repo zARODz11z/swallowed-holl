@@ -8,14 +8,14 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: GoopDecal2
-  m_Shader: {fileID: 4800000, guid: 04cbe71fd83efe34f9c0235de13b196c, type: 3}
+  m_Shader: {fileID: 4800000, guid: ac97c3a4ef683a2499a9fe7914d77ed3, type: 3}
   m_ShaderKeywords: VIGNETTE_MASKED _SMOOTHNESS_TEXTURE_ALBEDO_CHANNEL_A _SPECGLOSSMAP
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: 2000
   stringTagMap:
-    OptimizedShaderFolder: GoopDecal2-53ef37fc
+    OptimizedShaderFolder: GoopDecal2-f3a83a4e
     OriginalShader: ".poiyomi/\u2022 Poiyomi Toon \u2022"
     RenderType: Opaque
   disabledShaderPasses: []
