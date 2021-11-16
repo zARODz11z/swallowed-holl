@@ -10,3 +10,5 @@ To run demo build:
 Tools: Nothing but the executable
 Steps:
 Run the executable
+![gif of instructions](https://github.com/zARODz11z/swallowed-holl/blob/SwallowedHoll/readMeGif.gif)
+
