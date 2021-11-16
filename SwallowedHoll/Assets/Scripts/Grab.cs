@@ -153,7 +153,7 @@ public class Grab : MonoBehaviour
         }
 
         //IF Right Mouse pressed and is holding food
-        if(Input.GetKey("mouse 1") && isHolding && !hand.barragePrep && !movement.isBarraging && !isFood){
+        if(Input.GetKey("mouse 1") && isHolding && !hand.barragePrep && !movement.isBarraging && isFood){
             //Eat food and remove from hands
             interact.prop.gameObject.GetComponent<Eat>().eatFood();
             interact.detach();
