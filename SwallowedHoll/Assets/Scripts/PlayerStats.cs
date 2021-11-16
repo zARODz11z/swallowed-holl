@@ -14,6 +14,24 @@ public class PlayerStats : MonoBehaviour
     public HungerBar hungerBar;
     //calls the HealthBar class and assigns it to healthBar to use its methods
     public HealthBar healthBar;
+    public KeyCode saveKey = KeyCode.V;
+    public KeyCode loadGameKey = KeyCode.B;
+
+    public void SavePlayer()
+    {
+        SaveSystem.SavePlayer(this);
+    }
+    public void LoadPlayer()
+    {
+        PlayerData data = SaveSystem.LoadPlayerStats();
+        hunger = data.hunger;
+        hp = data.health;
+        Vector3 position;
+        position.x = data.position[0];
+        position.y = data.position[1];
+        position.z = data.position[2];
+        transform.position = position;
+    }
 
     void Start()
     {
@@ -29,6 +47,15 @@ public class PlayerStats : MonoBehaviour
       hungerBar.SetHunger(hunger);
       //updates the slider value to match the current hp value
       healthBar.SetHealth(hp);
+
+        if (Input.GetKeyDown(saveKey))
+        {
+            SavePlayer();
+        }
+        else if (Input.GetKey(loadGameKey))
+        {
+            LoadPlayer();
+        }
     }
 
 }
