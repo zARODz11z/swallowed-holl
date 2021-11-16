@@ -8,19 +8,20 @@ using UnityEngine;
 // reflect that they are holding something. It also disables dynamic bones while you are holding something. This script also handles the logic for throwing objects, including charging up and releasing
 public class Grab : MonoBehaviour
 {
+    //Components
     MovementSpeedController speedController;
     Material mat;
     CustomGravityRigidbody body;
+    HandAnim hand;
+    Movement movement;
 
     [HideInInspector]
     public bool isHolding = false;
     [SerializeField]
     public float throwingforce = 5;
-    HandAnim hand;
-    Movement movement;
-
+    
+    //Throwing variables
     [Tooltip("the point that a fully charged throw will head toward")]
-
     [SerializeField]
     Transform LowthrowingPoint;
     [SerializeField]
@@ -28,10 +29,11 @@ public class Grab : MonoBehaviour
     Transform HighthrowingPoint;
     [SerializeField]
     bool highorLow = true;
+
     public float throwingTemp;
+
     [SerializeField]
     [Tooltip("the heaviest possible object the player can pick up")]
-
     public float strength;
     
     [SerializeField]
@@ -43,16 +45,19 @@ public class Grab : MonoBehaviour
     float chargeRate;
     public bool isgrabCharging = false;
 
+    //Object sizes
     public enum objectSizes{tiny, small, medium, large, none};
-    
     public objectSizes sizes;
-    public bool justThrew;
 
     Interact interact;
 
+    //Is held object food
     private bool isFood;
+    public bool justThrew;
+
 
     void Start() {
+        //Set components
         interact = GetComponent<Interact>();
         throwingTemp = throwingforce;
         movement = transform.root.GetComponent<Movement>();
@@ -70,6 +75,8 @@ public class Grab : MonoBehaviour
         Transform prop = hit.transform;
         Rigidbody propRB = hit.rigidbody;
         GameObject propGame = hit.transform.gameObject;
+
+        //Get size of held object
         if(propGame.GetComponent<objectSize>().sizes == objectSize.objectSizes.large){
             sizes = objectSizes.large;
         }
@@ -81,7 +88,8 @@ public class Grab : MonoBehaviour
         }     
         if(propGame.GetComponent<objectSize>().sizes == objectSize.objectSizes.tiny){
             sizes = objectSizes.tiny;
-        }                   
+        }              
+        //Is the held object something you can eat?
         if(propGame.GetComponent<Eat>()){
             isFood = true;
         }
@@ -111,9 +119,11 @@ public class Grab : MonoBehaviour
 
     }
     void Update()
-    {   //THROW
+    {   //IF Left Mouse released and is holding an object
         if (Input.GetKeyUp("mouse 0") && isHolding && !hand.barragePrep && !movement.isBarraging && !justThrew){
+            //Remove from grip
             interact.detach();
+            //Add appropriate force to object
             if (highorLow){
                 interact.propRB.AddForce((HighthrowingPoint.position - interact.origin.transform.position ) * throwingforce, ForceMode.Impulse);
             }
@@ -129,8 +139,9 @@ public class Grab : MonoBehaviour
             justThrew = true;
             Invoke("resetJustThrew", .5f);
         }
-        //throw charge
+        //IF Left Mouse pressed and is holding an object
         if (Input.GetKey("mouse 0") && isHolding && !hand.barragePrep && !movement.isBarraging && !justThrew){
+            // Start incrementing throwing force
             if (throwingforce <= maxThrowingForce){
                 isgrabCharging = true;
                 throwingforce = throwingforce + chargeRate;
@@ -141,7 +152,9 @@ public class Grab : MonoBehaviour
             }
         }
 
-        if(Input.GetKey("mouse 1") && isHolding && !hand.barragePrep && !movement.isBarraging && !justThrew){
+        //IF Right Mouse pressed and is holding food
+        if(Input.GetKey("mouse 1") && isHolding && !hand.barragePrep && !movement.isBarraging && !isFood){
+            //Eat food and remove from hands
             interact.prop.gameObject.GetComponent<Eat>().eatFood();
             interact.detach();
         }

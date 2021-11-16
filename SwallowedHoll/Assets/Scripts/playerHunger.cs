@@ -16,16 +16,21 @@ public class playerHunger : MonoBehaviour
         stats = GetComponent<PlayerStats>();
     }
 
-    
+    //Increases player's hunger by specified value
     public void increaseHunger(float food){
+        //IF increase would put player at or over the max value
         if (stats.hunger + food >= maxHunger){
+            //Set to max value
             stats.hunger = maxHunger;
         }
         else{
-            stats.hunger = stats.hunger + food;
+            //ELSE add value to current
+            stats.hunger += food;
         }
     }
 
+    //Old method, may be useful in the future
+    //Decrease player hunger on a set interval
     // Update is called once per frame
    // void Update()
     //{
