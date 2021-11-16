@@ -16,12 +16,11 @@ public class ImprovedZoneWarp : MonoBehaviour
     GameObject[] dummies;
     [SerializeField]
     float warpOffset;
-    bool flipflop;
     bool desiresShift;
     bool subDummy = false;
     bool possibleShift;
     [Tooltip("True = holl, false = realWorld")]
-    bool hollOrReal;
+    public bool hollOrReal;
     bool shiftBlocked = false;
     public void setShiftBlocked(bool plug){
         shiftBlocked = plug;
@@ -37,7 +36,7 @@ public class ImprovedZoneWarp : MonoBehaviour
     }
     void Update()
     {
-        if(flipflop){
+        if(hollOrReal){
                 dummy.transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z - warpOffset);
         }
         else{
@@ -45,7 +44,7 @@ public class ImprovedZoneWarp : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.R)){
             if(GetComponent<PlayerStats>().hunger > shiftCost){
-                if (flipflop){ 
+                if (hollOrReal){ 
                     desiresShift = true;
                     if(!shiftBlocked){   
                         if(dummy.gameObject.GetComponent<canShift>().getShiftable()){
@@ -54,7 +53,6 @@ public class ImprovedZoneWarp : MonoBehaviour
                                 //Debug.Log("Shifting to Breakable Object");
                                 dummy.gameObject.GetComponent<canShift>().getCollider().GetComponent<Shatter>().oneShot(0);
                                 transform.position = dummy.transform.position;
-                                flipflop = false;
                                 GetComponent<PlayerStats>().hunger = GetComponent<PlayerStats>().hunger - shiftCost;
                                 hollOrReal = false;
                                 
@@ -62,7 +60,6 @@ public class ImprovedZoneWarp : MonoBehaviour
                             else{
                                 //Debug.Log("Shifting to Main dummy");
                                 transform.position = dummy.transform.position;
-                                flipflop = false;
                                 GetComponent<PlayerStats>().hunger = GetComponent<PlayerStats>().hunger - shiftCost;
                                 hollOrReal = false;
                             }
@@ -74,7 +71,6 @@ public class ImprovedZoneWarp : MonoBehaviour
                                     //Debug.Log("Shifting to subdummy "+ d);
                                     transform.position = d.transform.position;
                                     GetComponent<PlayerStats>().hunger = GetComponent<PlayerStats>().hunger - shiftCost;
-                                    flipflop = false;
                                     subDummy = true;
                                     hollOrReal = false;
                                     return;
@@ -93,7 +89,7 @@ public class ImprovedZoneWarp : MonoBehaviour
                         //Debug.Log("Shift Blocked!");
                     }
                 }          
-                else if (!flipflop){ 
+                else if (!hollOrReal){ 
                     desiresShift = true; 
                     if(!shiftBlocked){   
                     if(dummy.gameObject.GetComponent<canShift>().getShiftable()){
@@ -103,14 +99,12 @@ public class ImprovedZoneWarp : MonoBehaviour
                             dummy.gameObject.GetComponent<canShift>().getCollider().GetComponent<Shatter>().oneShot(0);
                             transform.position = dummy.transform.position;
                             GetComponent<PlayerStats>().hunger = GetComponent<PlayerStats>().hunger - shiftCost;
-                            flipflop = true;
                             hollOrReal = true;
                         }
                         else{
                             //Debug.Log("Shifting to Main dummy");
                             transform.position = dummy.transform.position;
                             GetComponent<PlayerStats>().hunger = GetComponent<PlayerStats>().hunger - shiftCost;
-                            flipflop = true;
                             hollOrReal = true;
                         }
 
@@ -121,7 +115,6 @@ public class ImprovedZoneWarp : MonoBehaviour
                                 //Debug.Log("Shifting to subdummy "+ d);
                                 transform.position = d.transform.position;
                                 GetComponent<PlayerStats>().hunger = GetComponent<PlayerStats>().hunger - shiftCost;
-                                flipflop = true;
                                 subDummy = true;
                                 hollOrReal = true;
                                 return;

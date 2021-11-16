@@ -8,7 +8,7 @@ public class PlayerData
     public float health;
     public float hunger;
     public float[] position;
-
+    public bool hollOrReal;
     public PlayerData (PlayerStats playerStats)
     {
         health = playerStats.hp;
@@ -17,6 +17,6 @@ public class PlayerData
         position[0] = playerStats.transform.position.x;
         position[1] = playerStats.transform.position.y;
         position[2] = playerStats.transform.position.z;
-
+        hollOrReal = playerStats.gameObject.GetComponent<ImprovedZoneWarp>().hollOrReal;
     }
 }

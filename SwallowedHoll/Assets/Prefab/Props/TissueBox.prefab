@@ -284,7 +284,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Root: {fileID: 303949749063010331}
   m_UpdateRate: 60
-  m_UpdateMode: 3
+  m_UpdateMode: 2
   m_Damping: 0.482
   m_DampingDistrib:
     serializedVersion: 2
