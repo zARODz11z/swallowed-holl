@@ -1,7 +1,7 @@
 using System.IO;
 using UnityEngine;
 using System.Runtime.Serialization.Formatters.Binary;
-
+//Made by Andrew Rodriguez with the help of https://www.youtube.com/watch?v=XOjd_qU2Ido&ab_channel=Brackeys
 public static class SaveSystem
 {
     public static void SavePlayer(PlayerStats player)
