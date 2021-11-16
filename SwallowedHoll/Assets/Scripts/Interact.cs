@@ -107,18 +107,7 @@ public class Interact : MonoBehaviour
                 if(hit.transform.gameObject.GetComponent<buttonPush>() != null){
                     //Get the button object
                     buttonPush button = hit.transform.gameObject.GetComponent<buttonPush>();
-                    //--------- TALK TO TRAVIS ABOUT THIS. THEY ALL DO THE SAME THING ---------
-                    if (button.oneTime){
-                        if(button.anim.GetBool("onePush") == false && button.door.subGate == false ){
-                            button.press();
-                        }
-                    }
-                    else if (button.door != null){
-                        if (button.door.subGate == false){
-                            button.press();
-                        }
-                    }
-                    else if (!button.blocker){
+                    if ((button.oneTime && button.anim.GetBool("onePush") == false && button.door.subGate == false) || (button.door != null && button.door.subGate == false) || !button.blocker){
                         button.press();
                     }
                 }
