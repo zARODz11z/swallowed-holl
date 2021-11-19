@@ -42,6 +42,18 @@ public class HandAnim : MonoBehaviour
     public bool getisHolding(){
         return animator.GetBool("isHolding");
     }
+    public void setisCrouching(bool plug){
+        animator.SetBool("isCrouched", plug);
+    }
+    public bool getisCrouching(){
+        return animator.GetBool("isCrouched");
+    }
+    public void setisClimbing(bool plug){
+        animator.SetBool("isClimbing", plug);
+    }
+    public bool getisClimbing(){
+        return animator.GetBool("isClimbing");
+    }
     public void setisThrowing(bool plug){
         animator.SetBool("grabCharge", !plug);
         animator.SetBool("isThrowing", plug);
@@ -125,6 +137,12 @@ public class HandAnim : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(Input.GetButtonDown("Duck")){
+            setisCrouching(true);
+        }
+        if(Input.GetButtonUp("Duck")){
+            setisCrouching(false);
+        }
         if(grab.isgrabCharging){
             animator.SetBool("grabCharge", true);
         }

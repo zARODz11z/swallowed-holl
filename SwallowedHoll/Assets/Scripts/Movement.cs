@@ -124,7 +124,6 @@ public class Movement : MonoBehaviour {
 
 	[SerializeField, Min(0f)]
 	float buoyancy = 1f;
-	Animator camanim;
 	
 	// this is so i can prevent the player from entering a climbing state while standing on the ground
 	[HideInInspector]
@@ -142,7 +141,7 @@ public class Movement : MonoBehaviour {
 	void Awake () {
 		grab = transform.GetChild(0).GetChild(0).GetChild(2).GetComponent<Grab>();
 		speedController = GetComponent<MovementSpeedController>();
-		camanim = transform.GetChild(0).GetComponent<Animator>();
+
 		// this is so i can prevent the player from entering a climbing state while standing on the ground
 		if(Climbing && !OnGround){
 			ClimbingADJ = true;
@@ -170,12 +169,14 @@ public class Movement : MonoBehaviour {
 		}
 		//responds to the duck keybind by playing the appripriate animation and setting the dive prep bool
         if(Input.GetButtonDown("Duck")){
-            camanim.SetBool("divePrep", true);
 			divingPrep = true;
+			transform.GetChild(1).gameObject.SetActive(false);
+			transform.GetChild(4).gameObject.SetActive(true);
         }
         if(Input.GetButtonUp("Duck")){
-            camanim.SetBool("divePrep", false);
 			divingPrep = false;
+			transform.GetChild(1).gameObject.SetActive(true);
+			transform.GetChild(4).gameObject.SetActive(false);
         }
 		// this is so we can prevent the player from entering a climbing state while standing on the ground
 		if(Climbing && !OnGround && canClimb){
