@@ -32,7 +32,7 @@ public class Movement : MonoBehaviour {
 	Vector3 lastContactNormal, lastSteepNormal;
 
 	// this is used to edit the light on the fly
-	Light lt;
+	//Light lt;
 	// this is so i can get a refrence to the empty that is a child of the main game object
 	public GameObject parent;
 
@@ -151,7 +151,7 @@ public class Movement : MonoBehaviour {
 		}
 		// gets a refrence to the animation state controller, its pinned to the mesh thats a child of the main player thats why it looks weird
 		//get the light
-		lt = GetComponent<Light>();
+		//lt = GetComponent<Light>();
 		//get the rigidbody
 		body = GetComponent<Rigidbody>();
 		//turn gravity off for the rigid body

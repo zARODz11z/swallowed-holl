@@ -9,9 +9,6 @@ using UnityEngine;
 public class Grab : MonoBehaviour
 {
     //Components
-    MovementSpeedController speedController;
-    Material mat;
-    CustomGravityRigidbody body;
     HandAnim hand;
     Movement movement;
 
