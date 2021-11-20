@@ -31,7 +31,7 @@ public class PlayerStats : MonoBehaviour
         position.y = data.position[1];
         position.z = data.position[2];
         transform.position = position;
-        GetComponent<ImprovedZoneWarp>().hollOrReal = data.hollOrReal;
+        GetComponent<ZoneWarp>().hollOrReal = data.hollOrReal;
     }
 
     void Start()

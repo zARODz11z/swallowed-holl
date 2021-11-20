@@ -6,12 +6,12 @@ public class NoShiftZone : MonoBehaviour
 {
     void OnTriggerEnter(Collider other) {
         if(other.gameObject.tag == "Player"){
-            other.gameObject.transform.root.gameObject.GetComponent<ImprovedZoneWarp>().setShiftBlocked(true);
+            other.gameObject.transform.root.gameObject.GetComponent<ZoneWarp>().setShiftBlocked(true);
         }
     }
     void OnTriggerExit(Collider other) {
             if(other.gameObject.tag == "Player"){
-        other.gameObject.transform.root.gameObject.GetComponent<ImprovedZoneWarp>().setShiftBlocked(false);
+        other.gameObject.transform.root.gameObject.GetComponent<ZoneWarp>().setShiftBlocked(false);
     }
     }
     // Start is called before the first frame update

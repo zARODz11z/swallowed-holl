@@ -17,6 +17,6 @@ public class PlayerData
         position[0] = playerStats.transform.position.x;
         position[1] = playerStats.transform.position.y;
         position[2] = playerStats.transform.position.z;
-        hollOrReal = playerStats.gameObject.GetComponent<ImprovedZoneWarp>().hollOrReal;
+        hollOrReal = playerStats.gameObject.GetComponent<ZoneWarp>().hollOrReal;
     }
 }
