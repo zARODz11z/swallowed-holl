@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-//Travis Parks
+//Travis Parks and Brian Meginness
 //this script handles interacting with various objects, such as a button, a lever, a pickupable object, etc. essentially just pressing e on something
 public class Interact : MonoBehaviour
 {
@@ -41,6 +41,15 @@ public class Interact : MonoBehaviour
         balls = GameObject.FindGameObjectsWithTag("bball");
         bone = GetComponent<disableDynamicBone>();
         
+    }
+
+    //If not already holding an object, get object components, pass to Grab to do the work
+    public void pickUp(GameObject obj){
+        if (!grab.isHolding) { 
+            prop = obj.GetComponent<Transform>();
+            propRB = obj.GetComponent<Rigidbody>();
+            grab.pickUp(dummy, prop, propRB, obj);
+        }
     }
 
     // this just makes you drop whatever you are holding
@@ -100,7 +109,7 @@ public class Interact : MonoBehaviour
                 //IF the thing you hit has a rigidbody that is light enough for the player to hold
                 if(hit.transform.gameObject.GetComponent<Rigidbody>() != null && hit.transform.gameObject.GetComponent<Rigidbody>().mass <= grab.strength && !grab.justThrew){
                     //Pick it up
-                    grab.pickUp(origin, dummy, hit);
+                    pickUp(prop.gameObject);
                     BBallClear(hit);
                 }
                 //IF the the thing you hit is a button

@@ -54,7 +54,6 @@ public class ConveyorBelt : MonoBehaviour
             //Debug.Log("An object just got removed");
             pushingObjects.Remove(other.gameObject);
             if(isEndPiece){
-                Debug.Log("Lil Speed Boost");
                 other.gameObject.GetComponent<Rigidbody>().velocity = other.gameObject.GetComponent<Rigidbody>().velocity + this.transform.right * (speed);
             }
         }

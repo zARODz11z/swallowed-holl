@@ -444,7 +444,7 @@ public class Movement : MonoBehaviour {
 		diveGate = false;
 	}
 
-	public void hungerDive(){
+	public bool hungerDive(){
 		if(!OnGround && Diving &&!ClimbingADJ){
 			PreventSnapToGround();
 			jumpDirection = contactNormal + transform.forward * 3f;
@@ -452,7 +452,9 @@ public class Movement : MonoBehaviour {
 			//body.velocity += new Vector3( 0f, -body.velocity.y, 0f);
 			body.velocity += (jumpDirection.normalized * 6f) + (-CustomGravity.GetGravity(body.position, out upAxis).normalized * 7f);
 			skip = false;
+            return true;
 		}
+        return false;
 	}
 	
 	void Jump(Vector3 gravity) {

@@ -71,10 +71,8 @@ public class Grab : MonoBehaviour
         justThrew = false;
     }
 
-    public void pickUp(GameObject origin, Transform dummy, RaycastHit hit){
-        Transform prop = hit.transform;
-        Rigidbody propRB = hit.rigidbody;
-        GameObject propGame = hit.transform.gameObject;
+    public void pickUp(Transform dummy, Transform prop, Rigidbody propRB, GameObject propGame)
+    {      
 
         //Get size of held object
         if(propGame.GetComponent<objectSize>().sizes == objectSize.objectSizes.large){

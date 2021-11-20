@@ -7,34 +7,59 @@ public class Eat : MonoBehaviour
 {
     [SerializeField]
     float food = default;
+    [SerializeField]
+    bool respawn = true;
+    [SerializeField]
+    float respawnDur = 5;
 
-    //Eats the object, destroying it and adding the appropriate value to player's hunger
     public void respawnFood(){
         this.GetComponent<Renderer>().enabled = true;
         this.GetComponent<BoxCollider>().enabled = true;
     }
-    public void hideFood(Collider other){
-        other.transform.root.GetComponent<playerHunger>().increaseHunger(food);
+
+    public void hideFood(){
         this.GetComponent<Renderer>().enabled = false;
         this.GetComponent<BoxCollider>().enabled = false;
-        Invoke("respawnFood", 5f);
+        if (respawn){ 
+            Invoke("respawnFood", respawnDur);
+        }
     }
-    public void eatFood()
+
+    //Eats the object, destroying it and adding the appropriate value to player's hunger
+    public void eatFood(playerHunger ph)
     {
+        hideFood();
+        ph.increaseHunger(food);
+        
+    }
+
+    //For being called in external methods, such as when eating from held (See Grab.cs)
+    public void eatFood(){
         GetComponentInParent<playerHunger>().increaseHunger(food);
         Destroy(gameObject);
     }
+    
 
-    //If the food item is a floating object instead of a physical one, consume on contact
-    void OnTriggerEnter(Collider other) {
-        if (other.tag == "Player" &&( ((other.transform.root.GetComponent<PlayerStats>().hunger + food) < 100) || other.gameObject.transform.root.gameObject.GetComponent<Movement>().Diving)){
-            //Call the player's hungerDive() method to see if they should bounce on contant
-            other.gameObject.transform.root.gameObject.GetComponent<Movement>().hungerDive();
-            //Increase the player's hunger value
-            hideFood(other);
+    public void OnTriggerEnter(Collider other){
+        if (other.tag == "Player"){
 
-        }
+            if (other.transform.parent.GetComponentInChildren<Movement>().hungerDive()){
+                eatFood(other.transform.parent.GetComponentInChildren<playerHunger>());
+            }
+            else {
+            GameObject copy = Instantiate(this.gameObject);
+            if (this.GetComponent<BoxCollider>() && this.GetComponent<BoxCollider>().isTrigger){ 
+            hideFood();
+            }
+            Interact playerInteract = other.transform.parent.GetComponentInChildren<Interact>();
+
+            copy.GetComponent<Floater>().enabled = false;
+            copy.GetComponent<BoxCollider>().isTrigger = false;
+            copy.GetComponent<Rigidbody>().useGravity = true;
+            playerInteract.pickUp(copy);
+            }
         
+        }
     }
 
 }
