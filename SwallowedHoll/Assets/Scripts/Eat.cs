@@ -13,12 +13,12 @@ public class Eat : MonoBehaviour
     float respawnDur = 5;
 
     public void respawnFood(){
-        this.GetComponent<Renderer>().enabled = true;
+        this.transform.GetChild(0).GetComponent<Renderer>().enabled = true;
         this.GetComponent<BoxCollider>().enabled = true;
     }
 
     public void hideFood(){
-        this.GetComponent<Renderer>().enabled = false;
+        this.transform.GetChild(0).GetComponent<Renderer>().enabled = false;
         this.GetComponent<BoxCollider>().enabled = false;
         if (respawn){ 
             Invoke("respawnFood", respawnDur);
@@ -35,7 +35,7 @@ public class Eat : MonoBehaviour
 
     //For being called in external methods, such as when eating from held (See Grab.cs)
     public void eatFood(){
-        GetComponentInParent<playerHunger>().increaseHunger(food);
+        GameObject.FindGameObjectWithTag("Player").GetComponent<playerHunger>().increaseHunger(food);
         Destroy(gameObject);
     }
     

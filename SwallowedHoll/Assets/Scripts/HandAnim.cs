@@ -31,6 +31,8 @@ public class HandAnim : MonoBehaviour
     float OnGroundBuffer = .5f;
     float Groundstopwatch = 0;
     bool JumpPressed;
+    bool holdingDummy;
+
     Grab grab;
     // Start is called before the first frame update
     public bool getisThrowing(){
@@ -85,6 +87,7 @@ public class HandAnim : MonoBehaviour
     }
     void Start()
     {
+        
         speedController = sphere.GetComponent<MovementSpeedController>();
         animator = GetComponent<Animator>();
         movement = sphere.GetComponent<Movement>();
@@ -134,9 +137,59 @@ public class HandAnim : MonoBehaviour
        
     }
 
+    public void setIsHoldingFoodTrue(){
+        animator.SetFloat("isHoldingFood", 1);
+    }
+    public void setIsHoldingFoodFalse(){
+        animator.SetFloat("isHoldingFood", 0);
+    }
+    void resetHoldingChange(){
+        animator.SetBool("holdingChange", false);
+    }
+    void resetEatFood(){
+        animator.SetBool("EatFood", false);
+    }
+    public void setEatFood(){
+        animator.SetBool("EatFood", true);
+        Invoke("resetEatFood", .1f);
+    }
+
     // Update is called once per frame
     void Update()
     {
+        if((grab.isHolding && grab.isFood) != holdingDummy){
+            animator.SetBool("holdingChange", true);
+            Invoke("resetHoldingChange", .1f);
+            holdingDummy = (grab.isHolding && grab.isFood);
+        }
+
+        if(grab.isFood){
+            animator.SetBool("isFood", true);
+        }
+        else if(!grab.isFood){
+            animator.SetBool("isFood", false);
+        }
+        Debug.Log(" is food "+ grab.isFood+" holding "+ grab.isHolding);
+        if(grab.isFood && grab.isHolding){
+            animator.SetFloat("isHoldingFood", 1);
+        }
+        else if(!grab.isFood || !grab.isHolding){
+            animator.SetFloat("isHoldingFood", 0);
+        }
+        if(movement.ClimbingADJ){
+            animator.SetFloat("ClimbingX", movement.velocity.x );
+            animator.SetFloat("ClimbingY", movement.velocity.y );
+            animator.SetBool("isClimbing", true);
+        }
+        else if(!movement.ClimbingADJ){
+            animator.SetBool("isClimbing", false);
+        }
+        if(movement.Diving){
+            animator.SetBool("HungerDive", true);
+        }
+        else if(!movement.Diving){
+            animator.SetBool("HungerDive", false);
+        }
         if(Input.GetButtonDown("Duck")){
             setisCrouching(true);
         }
@@ -152,12 +205,12 @@ public class HandAnim : MonoBehaviour
         BoolAdjuster();
         bool JumpPressed = Input.GetKey("space");
         isOnGround = isOnGroundADJ;
-
+        //this OnGround stays true for a little bit after you leave the ground, hence ADJ
         if(isOnGround){
-            animator.SetBool("isOnGround", true);
+            animator.SetBool("isOnGroundADJ", true);
         }
         else if (!isOnGround){
-            animator.SetBool("isOnGround", false);
+            animator.SetBool("isOnGroundADJ", false);
         }
 
         if (Input.GetKey("w") || Input.GetKey("a") || Input.GetKey("s") || Input.GetKey("d") ){

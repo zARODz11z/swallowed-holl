@@ -30,6 +30,7 @@ public class Interact : MonoBehaviour
     [SerializeField]
     [Tooltip("what objects can be picked up by the player")]
     LayerMask mask = default;
+    Transform propParent;
 
     // Start is called before the first frame update
     void Start()
@@ -47,11 +48,27 @@ public class Interact : MonoBehaviour
     public void pickUp(GameObject obj){
         if (!grab.isHolding) { 
             prop = obj.GetComponent<Transform>();
+            propParent = prop.transform.root;
             propRB = obj.GetComponent<Rigidbody>();
             grab.pickUp(dummy, prop, propRB, obj);
         }
     }
 
+    public void foodDetach(){
+        propParent.transform.localScale = new Vector3(.005f, .005f, .005f);
+        //opposite of the pick up section, just undoing all of that back to its default state
+        hand.setisHolding(false);
+        grab.foodHoldingPoint.GetChild(0).SetParent(null);
+        grab.isHolding = false;
+        propRB.isKinematic=(false);
+        prop.transform.gameObject.layer = 13;
+        foreach ( Transform child in prop.transform){
+            child.transform.gameObject.layer = 13;
+            foreach ( Transform child2 in child.transform){
+                child2.transform.gameObject.layer = 13;
+            }
+        }
+    }
     // this just makes you drop whatever you are holding
     public void detach(){
         grab.sizes = Grab.objectSizes.none;
@@ -72,8 +89,6 @@ public class Interact : MonoBehaviour
                 child2.transform.gameObject.layer = 13;
             }
         }
-
-
     }
 
     //removes the "thru hoop" status of any basketballs you pick up
@@ -123,13 +138,17 @@ public class Interact : MonoBehaviour
             }
         }
             // if you are already holding something, drop it. 
-            else if (grab.isHolding){
-                
+            else if (grab.isHolding && !grab.isFood){
                 detach();
                 //clear the temps for next loop
                 prop = null;
                 propRB = null;
                 grab.throwingforce = grab.throwingTemp;
+            }
+            else if (grab.isHolding && grab.isFood){
+                foodDetach();
+                prop = null;
+                propRB = null;
             }
         
         }

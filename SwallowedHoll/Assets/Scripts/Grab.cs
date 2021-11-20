@@ -52,9 +52,10 @@ public class Grab : MonoBehaviour
     Interact interact;
 
     //Is held object food
-    private bool isFood;
+    public bool isFood;
     public bool justThrew;
-
+    [SerializeField]
+    public Transform foodHoldingPoint;
 
     void Start() {
         //Set components
@@ -73,20 +74,6 @@ public class Grab : MonoBehaviour
 
     public void pickUp(Transform dummy, Transform prop, Rigidbody propRB, GameObject propGame)
     {      
-
-        //Get size of held object
-        if(propGame.GetComponent<objectSize>().sizes == objectSize.objectSizes.large){
-            sizes = objectSizes.large;
-        }
-        if(propGame.GetComponent<objectSize>().sizes == objectSize.objectSizes.medium){
-            sizes = objectSizes.medium;
-        }
-        if(propGame.GetComponent<objectSize>().sizes == objectSize.objectSizes.small){
-            sizes = objectSizes.small;                
-        }     
-        if(propGame.GetComponent<objectSize>().sizes == objectSize.objectSizes.tiny){
-            sizes = objectSizes.tiny;
-        }              
         //Is the held object something you can eat?
         if(propGame.GetComponent<Eat>()){
             isFood = true;
@@ -94,31 +81,69 @@ public class Grab : MonoBehaviour
         else{
             isFood = false;
         }
-        //disable dynamic bones
-        interact.bone.toggle(true);
-        //trigger animation
-        hand.setisHolding(true);
-        // move the hit object to the grab point
-        prop.position = dummy.transform.position;
-        // set the hit object to be a child of the grab point
-        prop.SetParent(dummy);
-        // get a reference to the custom gravity rigidbody to disable gravity and sleeping
-        propRB.isKinematic=(true);
-        isHolding = true;
-        // set the held object to the "nocollidewithplayer" layer to prevent clipping with the player
-        propGame.layer = 16;
-        // do the same for all children and childrens children 
-        foreach ( Transform child in prop){
-            child.transform.gameObject.layer = 16;
-            foreach ( Transform child2 in child.transform){
-                child2.transform.gameObject.layer = 16;
+        if(!isFood){
+            //Get size of held object
+            if(propGame.GetComponent<objectSize>().sizes == objectSize.objectSizes.large){
+                sizes = objectSizes.large;
             }
+            if(propGame.GetComponent<objectSize>().sizes == objectSize.objectSizes.medium){
+                sizes = objectSizes.medium;
+            }
+            if(propGame.GetComponent<objectSize>().sizes == objectSize.objectSizes.small){
+                sizes = objectSizes.small;                
+            }     
+            if(propGame.GetComponent<objectSize>().sizes == objectSize.objectSizes.tiny){
+                sizes = objectSizes.tiny;
+            }              
+            //disable dynamic bones
+            interact.bone.toggle(true);
+            //trigger animation
+            hand.setisHolding(true);
+            // move the hit object to the grab point
+            prop.position = dummy.transform.position;
+            // set the hit object to be a child of the grab point
+            prop.SetParent(dummy);
+            // get a reference to the custom gravity rigidbody to disable gravity and sleeping
+            propRB.isKinematic=(true);
+            isHolding = true;
+            // set the held object to the "nocollidewithplayer" layer to prevent clipping with the player
+            propGame.layer = 16;
+            // do the same for all children and childrens children 
+            foreach ( Transform child in prop){
+                child.transform.gameObject.layer = 16;
+                foreach ( Transform child2 in child.transform){
+                    child2.transform.gameObject.layer = 16;
+                }
+            }
+        }
+        else{
+            propRB.isKinematic=(true);
+            prop = prop.transform.root.transform;
+            propGame = propGame.transform.root.gameObject;
+            prop.localScale = new Vector3 (.25f, .25f, .25f);
+            propGame.GetComponent<Floater>().enabled = false;
+            hand.setisHolding(true);
+            prop.position = foodHoldingPoint.position;
+            isHolding = true;
+            propGame.layer = 15;
+            foreach ( Transform child in prop){
+                child.transform.gameObject.layer = 15;
+                foreach ( Transform child2 in child.transform){
+                    child2.transform.gameObject.layer = 15;
+                }
+            }
+            prop.SetParent(foodHoldingPoint);
         }
 
     }
+    //called in eating animation
+    public void eatFood(){
+        interact.foodDetach();
+        interact.prop.gameObject.GetComponent<Eat>().eatFood();
+    }
     void Update()
     {   //IF Left Mouse released and is holding an object
-        if (Input.GetKeyUp("mouse 0") && isHolding && !hand.barragePrep && !movement.isBarraging && !justThrew){
+        if (Input.GetKeyUp("mouse 0") && isHolding && !hand.barragePrep && !movement.isBarraging && !justThrew && !isFood){
             //Remove from grip
             interact.detach();
             //Add appropriate force to object
@@ -138,7 +163,7 @@ public class Grab : MonoBehaviour
             Invoke("resetJustThrew", .5f);
         }
         //IF Left Mouse pressed and is holding an object
-        if (Input.GetKey("mouse 0") && isHolding && !hand.barragePrep && !movement.isBarraging && !justThrew){
+        if (Input.GetKey("mouse 0") && isHolding && !hand.barragePrep && !movement.isBarraging && !justThrew&& !isFood){
             // Start incrementing throwing force
             if (throwingforce <= maxThrowingForce){
                 isgrabCharging = true;
@@ -149,12 +174,18 @@ public class Grab : MonoBehaviour
                 highorLow = false;
             }
         }
+        else if(Input.GetKey("mouse 0") && isHolding && !hand.barragePrep && !movement.isBarraging && !justThrew && isFood){
+            interact.foodDetach();
+            interact.propRB.AddForce((LowthrowingPoint.position - interact.origin.transform.position ) * throwingforce, ForceMode.Impulse);
+            hand.setisThrowing(true);
+            Invoke("setisThrowingFalse", .1f);
+            justThrew = true;
+            Invoke("resetJustThrew", .5f);
+        }
 
         //IF Right Mouse pressed and is holding food
         if(Input.GetKey("mouse 1") && isHolding && !hand.barragePrep && !movement.isBarraging && isFood){
-            //Eat food and remove from hands
-            interact.prop.gameObject.GetComponent<Eat>().eatFood();
-            interact.detach();
+            hand.setEatFood();
         }
 
     }
