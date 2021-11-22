@@ -7554,7 +7554,7 @@ GameObject:
   - component: {fileID: 130062652677496377}
   - component: {fileID: 8997915682440978713}
   - component: {fileID: 2336594995385906158}
-  - component: {fileID: 6719173130565875612}
+  - component: {fileID: 8449227078109447589}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -7782,7 +7782,7 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
---- !u!114 &6719173130565875612
+--- !u!114 &8449227078109447589
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -7791,13 +7791,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 7197834583306505045}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 00876d0060967f741b452bf67248bee5, type: 3}
+  m_Script: {fileID: 11500000, guid: 560db07b3c2139144b613cc5c7ce72c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shiftCost: 0
+  shiftCost: 10
   dummy: {fileID: 0}
   dummies: []
-  warpOffset: 0
+  warpOffset: 10
   hollOrReal: 0
 --- !u!1 &7197834583313307630
 GameObject:

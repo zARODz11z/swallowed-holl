@@ -106,14 +106,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 7241064207448674545}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6792cdf290de2a34b8dd29d4b1297b7a, type: 3}
+  m_Script: {fileID: 11500000, guid: 6cc05b41d02af2444aa7e05aa33a9064, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ammo: {fileID: 3198707054581729232, guid: b257a33e7100c1c47ae163ef2be25ee2, type: 3}
-  ammo2: {fileID: 4006010104854525645, guid: 07f0e5d61dfc9ae429044e702f8486cc, type: 3}
-  ammo3: {fileID: 4513524172366342225, guid: f4381a716b5889d469966020f672ec0c, type: 3}
-  ammo4: {fileID: 2193805337791747105, guid: 60341dd852488ec4ca62868643e79e78, type: 3}
-  spawnPos: {fileID: 7241064208636424004}
+  ammo: {fileID: 0}
+  ammo2: {fileID: 0}
+  ammo3: {fileID: 0}
+  ammo4: {fileID: 0}
+  spawnPos: {fileID: 0}
 --- !u!1 &7241064208636424011
 GameObject:
   m_ObjectHideFlags: 0
