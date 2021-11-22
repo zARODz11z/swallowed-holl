@@ -7553,7 +7553,7 @@ GameObject:
   - component: {fileID: 8481454172899552393}
   - component: {fileID: 130062652677496377}
   - component: {fileID: 8997915682440978713}
-  - component: {fileID: 2230072923298899475}
+  - component: {fileID: 1252590958535378267}
   - component: {fileID: 2336594995385906158}
   m_Layer: 8
   m_Name: Player
@@ -7720,7 +7720,7 @@ MonoBehaviour:
   walkSpeed: 5
   currentSpeed: 0
   factor: 1
---- !u!114 &2230072923298899475
+--- !u!114 &1252590958535378267
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -7729,18 +7729,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 7197834583306505045}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 38eb4d6bc6375f04c92bc375a1188074, type: 3}
+  m_Script: {fileID: 11500000, guid: 00876d0060967f741b452bf67248bee5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shiftCost: 10
+  shiftCost: 0
   dummy: {fileID: 0}
-  dummies:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  warpOffset: 286.5
+  dummies: []
+  warpOffset: 0
   hollOrReal: 0
 --- !u!108 &2336594995385906158
 Light:
