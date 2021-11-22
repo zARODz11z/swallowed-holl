@@ -34,6 +34,22 @@ public class PlayerStats : MonoBehaviour
         GetComponent<ZoneWarp>().hollOrReal = data.hollOrReal;
     }
 
+    public void Die(){
+        LoadPlayer();
+    }
+    public void takeDamage(float damage){
+        if (hp - damage < 0){
+            Debug.Log("Went from "+hp+" to 0");
+            hp = 0;
+            Die();
+            
+        }
+        else {
+            Debug.Log("Went from "+hp+" to "+ Mathf.Round(hp-damage));
+            hp = Mathf.Round(hp-damage);
+        }
+    }
+
     void Start()
     {
       //when game is started, it sets the slider max value to hunger value

@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 6825600342278182083}
   - component: {fileID: -5976540215014863953}
   - component: {fileID: -4896562069346936862}
-  - component: {fileID: 2122857306204997062}
   m_Layer: 13
   m_Name: Pizza Box
   m_TagString: Untagged
@@ -127,19 +126,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sizes: 1
---- !u!114 &2122857306204997062
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5468481455330052217}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 86a2f82399ff0ef4681c263de2fa459a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  food: 25
 --- !u!1 &6006247882335329412
 GameObject:
   m_ObjectHideFlags: 0

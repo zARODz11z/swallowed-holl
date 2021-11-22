@@ -1759,7 +1759,8 @@ MonoBehaviour:
   power: 3500
   upModifier: 0
   isBomb: 1
-  otherExplosive: {fileID: 0}
+  playerDamageMax: 30
+  playerDamageMin: 0
 --- !u!1 &5429628454282808524
 GameObject:
   m_ObjectHideFlags: 0

@@ -4,15 +4,17 @@ using UnityEngine;
 
 public class Bomb : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+    GameObject player;
+    private void Start() {
+        foreach (GameObject G in GameObject.FindGameObjectsWithTag("Player")){
+            if(G.GetComponent<Movement>() != null){
+                player = G;
+            }
+        }
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+    private void Update() {
+        if(player.GetComponent<ZoneWarp>().hollOrReal == true && GetComponent<Rigidbody>().isKinematic == true){
+            GetComponent<Shatter>().oneShot(0);
+        }
     }
 }
