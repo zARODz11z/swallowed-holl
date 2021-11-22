@@ -66028,6 +66028,34 @@ PrefabInstance:
       propertyPath: dummies.Array.data[4]
       value: 
       objectReference: {fileID: 244226849}
+    - target: {fileID: 6719173130565875612, guid: 6bb6677300d607d488e6ee96dc019bb8, type: 3}
+      propertyPath: dummy
+      value: 
+      objectReference: {fileID: 1151146526}
+    - target: {fileID: 6719173130565875612, guid: 6bb6677300d607d488e6ee96dc019bb8, type: 3}
+      propertyPath: dummies.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6719173130565875612, guid: 6bb6677300d607d488e6ee96dc019bb8, type: 3}
+      propertyPath: dummies.Array.data[0]
+      value: 
+      objectReference: {fileID: 1976735422}
+    - target: {fileID: 6719173130565875612, guid: 6bb6677300d607d488e6ee96dc019bb8, type: 3}
+      propertyPath: dummies.Array.data[1]
+      value: 
+      objectReference: {fileID: 1634667343}
+    - target: {fileID: 6719173130565875612, guid: 6bb6677300d607d488e6ee96dc019bb8, type: 3}
+      propertyPath: dummies.Array.data[2]
+      value: 
+      objectReference: {fileID: 1532864260}
+    - target: {fileID: 6719173130565875612, guid: 6bb6677300d607d488e6ee96dc019bb8, type: 3}
+      propertyPath: dummies.Array.data[3]
+      value: 
+      objectReference: {fileID: 1147331258}
+    - target: {fileID: 6719173130565875612, guid: 6bb6677300d607d488e6ee96dc019bb8, type: 3}
+      propertyPath: dummies.Array.data[4]
+      value: 
+      objectReference: {fileID: 244226849}
     - target: {fileID: 7197834583306505045, guid: 6bb6677300d607d488e6ee96dc019bb8, type: 3}
       propertyPath: m_Name
       value: Player
