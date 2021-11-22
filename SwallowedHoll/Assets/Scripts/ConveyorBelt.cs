@@ -94,11 +94,11 @@ public class ConveyorBelt : MonoBehaviour
     {
         for (int i = 0; i < pushingObjects.Count; i++){
             if (pushingObjects[i] == null){
-                Debug.Log("REMOVED VIA DESTRUCTION");
+                //Debug.Log("REMOVED VIA DESTRUCTION");
                 pushingObjects.Remove(pushingObjects[i].gameObject);
             }
             else if(pushingObjects[i].gameObject.layer == 16){
-                Debug.Log("REMOVED VIA LAYER");
+                //Debug.Log("REMOVED VIA LAYER");
                 pushingObjects.Remove(pushingObjects[i].gameObject);
             }
             else{

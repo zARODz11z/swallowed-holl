@@ -46,6 +46,7 @@ GameObject:
   - component: {fileID: 994924694592998483}
   - component: {fileID: 994924694592998482}
   - component: {fileID: -9210241052052732437}
+  - component: {fileID: 5340878956738130801}
   m_Layer: 13
   m_Name: Bomb
   m_TagString: Explosive
@@ -186,3 +187,16 @@ MonoBehaviour:
   shatterPrefab: {fileID: 5205990996850592250, guid: 34a526d8b6e1c9845b8ad9e1db42d8e5, type: 3}
   shatterSpawnPos: {fileID: 1605385266}
   hitPoints: 0
+  breakSpeed: 5
+--- !u!114 &5340878956738130801
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 76498989124435409}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0305320c37d9b54388aeed8c5acf112, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
