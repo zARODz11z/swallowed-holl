@@ -31,7 +31,7 @@ public class PlayerStats : MonoBehaviour
         position.y = data.position[1];
         position.z = data.position[2];
         transform.position = position;
-        GetComponent<ZoneWarp>().hollOrReal = data.hollOrReal;
+        GetComponent<WorldShift>().hollOrReal = data.hollOrReal;
     }
 
     public void Die(){
@@ -52,6 +52,8 @@ public class PlayerStats : MonoBehaviour
 
     void Start()
     {
+        //Test line to see if we can set a default start point
+      SaveSystem.SavePlayer(this);
       //when game is started, it sets the slider max value to hunger value
       hungerBar.SetMaxHunger(hunger);
       //when game is started, it sets the slider max value to hp value

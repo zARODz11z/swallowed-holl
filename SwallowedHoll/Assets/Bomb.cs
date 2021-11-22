@@ -13,7 +13,7 @@ public class Bomb : MonoBehaviour
         }
     }
     private void Update() {
-        if(player.GetComponent<ZoneWarp>().hollOrReal == true && GetComponent<Rigidbody>().isKinematic == true){
+        if(player.GetComponent<WorldShift>().hollOrReal == true && GetComponent<Rigidbody>().isKinematic == true){
             GetComponent<Shatter>().oneShot(0);
         }
     }
