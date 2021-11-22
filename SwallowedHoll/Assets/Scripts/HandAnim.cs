@@ -169,7 +169,7 @@ public class HandAnim : MonoBehaviour
         else if(!grab.isFood){
             animator.SetBool("isFood", false);
         }
-        Debug.Log(" is food "+ grab.isFood+" holding "+ grab.isHolding);
+        //Debug.Log(" is food "+ grab.isFood+" holding "+ grab.isHolding);
         if(grab.isFood && grab.isHolding){
             animator.SetFloat("isHoldingFood", 1);
         }

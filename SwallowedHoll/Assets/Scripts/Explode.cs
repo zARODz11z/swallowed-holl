@@ -14,7 +14,7 @@ public class Explode : MonoBehaviour
     [SerializeField]
     bool isBomb;
     [SerializeField]
-    float otherExplosiveTime = 1f;
+    //float otherExplosiveTime = 1f;
     Shatter otherExplosive;
     // Start is called before the first frame update
     void Start()
@@ -35,10 +35,10 @@ public class Explode : MonoBehaviour
                 }
                 else{
                     if (rb != null){
-                        if (rb.gameObject.tag == "Explosive"){
-                            otherExplosive = rb.gameObject.GetComponent<Shatter>();
-                            otherExplosive.oneShot(otherExplosiveTime);
-                        }
+                        //if (rb.gameObject.tag == "Explosive"){
+                        //    otherExplosive = rb.gameObject.GetComponent<Shatter>();
+                        //    otherExplosive.oneShot(otherExplosiveTime);
+                       // }
                     rb.AddExplosionForce(power, explosionPos, radius, upModifier);
                     }
                 }

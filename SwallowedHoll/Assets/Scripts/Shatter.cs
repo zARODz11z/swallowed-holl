@@ -15,17 +15,24 @@ public class Shatter : MonoBehaviour
     [Tooltip("How many hits a prop will take before breaking")]
     float hitPoints = 2;
     int Damagestate = 0;
-
+    [SerializeField]
     float breakSpeed = 40f;
+    GameObject player;
 
     void OnCollisionEnter(Collision other) {
         // does this object have a ridigbody? is the object colliding with another object past the breaking speed? if so, break it. dont let that object be a player. that colliding objects mass must be greater than or equal to the current obejcts mass
         //consider doing better calculations here, ie dot product of collision normal and collision velocity(relative velocity of both bodies) times the mass of the other collider
-        if (((other.gameObject.GetComponent<Rigidbody>() != null) && other.gameObject.GetComponent<Rigidbody>().velocity.magnitude > breakSpeed) || this.gameObject.GetComponent<Rigidbody>().velocity.magnitude > breakSpeed && other.gameObject.tag != "Player" && other.gameObject.GetComponent<Rigidbody>().mass >= this.gameObject.GetComponent<Rigidbody>().mass){
+        if((other.gameObject.GetComponent<Rigidbody>() != null && (other.gameObject.GetComponent<Rigidbody>().velocity.magnitude > breakSpeed) || (this.gameObject.GetComponent<Rigidbody>().velocity.magnitude > breakSpeed && other.gameObject.tag != "Player")) ){
             oneShot(0);
         }
     }
     void Start() {
+        foreach(GameObject g in GameObject.FindGameObjectsWithTag("Player")){
+            if(g.GetComponent<Movement>()!=null){
+                player = g.transform.GetChild(0).GetChild(0).GetChild(2).gameObject;
+                Debug.Log(player);
+            }
+        }
         color = GetComponent<Renderer>();
     }
     public void oneShot(float time){
@@ -47,6 +54,9 @@ public class Shatter : MonoBehaviour
     void spawnShatter(){
         Instantiate(shatterPrefab, shatterSpawnPos.transform.position, shatterSpawnPos.transform.rotation);
         Destroy(this.gameObject);
+        if(player.GetComponent<Grab>().isHolding){
+            player.GetComponent<Interact>().detach();
+        }
     }
    // public void Break(Collision other){
        // if(other.gameObject.tag == "Player" ){
