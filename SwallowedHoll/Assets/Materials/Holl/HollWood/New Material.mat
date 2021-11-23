@@ -8,14 +8,14 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: New Material
-  m_Shader: {fileID: 4800000, guid: 20c3beb02d3e6db45b2b19452bca4e5c, type: 3}
+  m_Shader: {fileID: 4800000, guid: 2f9a9bf0c8582654aa07e4e436da3138, type: 3}
   m_ShaderKeywords: VIGNETTE_MASKED _SMOOTHNESS_TEXTURE_ALBEDO_CHANNEL_A
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: 2000
   stringTagMap:
-    OptimizedShaderFolder: New Material-9d26075d
+    OptimizedShaderFolder: New Material-70907c1b
     OriginalShader: ".poiyomi/\u2022 Poiyomi Toon \u2022"
     RenderType: Opaque
   disabledShaderPasses: []
@@ -192,7 +192,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _MainTex:
         m_Texture: {fileID: 2800000, guid: 42026d1b446d79a4e8158df85e0ebb94, type: 3}
-        m_Scale: {x: 0.1, y: 0.1}
+        m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Matcap:
         m_Texture: {fileID: 0}
@@ -977,7 +977,7 @@ Material:
     - _LightingMinLightBrightnessAnimated: 0
     - _LightingMinShadowBrightnessRatio: 0
     - _LightingMinShadowBrightnessRatioAnimated: 0
-    - _LightingMode: 0
+    - _LightingMode: 1
     - _LightingModeAnimated: 0
     - _LightingMonochromatic: 0
     - _LightingMonochromaticAnimated: 0
@@ -1659,7 +1659,7 @@ Material:
     - m_start_CenterOutEmission1: 0
     - m_start_DecalSection: 0
     - m_start_DetailOptions: 0
-    - m_start_Lighting: 0
+    - m_start_Lighting: 1
     - m_start_MainHueShift: 0
     - m_start_MainVertexColors: 0
     - m_start_Matcap2: 0
@@ -1693,7 +1693,7 @@ Material:
     - m_start_glitterRandom: 0
     - m_start_glowInDarkEmissionOptions: 0
     - m_start_glowInDarkEmissionOptions1: 0
-    - m_start_lightingAdvanced: 0
+    - m_start_lightingAdvanced: 1
     - m_start_lightingHSL: 0
     - m_start_lightingModifiers: 0
     - m_start_manualFlipbookControl: 0
@@ -1711,7 +1711,7 @@ Material:
     - m_start_scrollingEmissionOptions: 0
     - m_start_scrollingEmissionOptions1: 0
     - m_start_shadowTexture: 0
-    - m_start_specular: 1
+    - m_start_specular: 0
     - m_start_specular1: 0
     - m_start_subsurface: 0
     - m_start_vertexManipulation: 0

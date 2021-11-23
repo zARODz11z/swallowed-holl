@@ -8,14 +8,14 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Stone Wall Dark
-  m_Shader: {fileID: 4800000, guid: 77cc6fe9ac8e585488db0a41d789e4a8, type: 3}
+  m_Shader: {fileID: 4800000, guid: c655b340bcb7c074c9afaa7e9d3e3396, type: 3}
   m_ShaderKeywords: VIGNETTE_MASKED _SMOOTHNESS_TEXTURE_ALBEDO_CHANNEL_A _SPECGLOSSMAP
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: 2000
   stringTagMap:
-    OptimizedShaderFolder: Stone Wall Dark-cd1053d3
+    OptimizedShaderFolder: Stone Wall Dark-6a8e687f
     OriginalShader: ".poiyomi/\u2022 Poiyomi Toon \u2022"
     RenderType: Opaque
   disabledShaderPasses: []
@@ -44,7 +44,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
         m_Texture: {fileID: 2800000, guid: f642ff70f25686b4ab88c9d01b39d75f, type: 3}
-        m_Scale: {x: 0.05, y: 0.05}
+        m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _ClearCoatCubeMap:
         m_Texture: {fileID: 8900000, guid: 1f79f71b84fc2844bb81e9ae4f5bc384, type: 3}
@@ -192,7 +192,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _MainTex:
         m_Texture: {fileID: 2800000, guid: a63170ba8bff48741abf34f37a9de26b, type: 3}
-        m_Scale: {x: 0.05, y: 0.05}
+        m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Matcap:
         m_Texture: {fileID: 0}
@@ -332,7 +332,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _SpecularMap:
         m_Texture: {fileID: 2800000, guid: 42fb96a5ca1257b43bcd997cc40d544f, type: 3}
-        m_Scale: {x: 0.05, y: 0.05}
+        m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SpecularMap1:
         m_Texture: {fileID: 0}
@@ -340,7 +340,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _SpecularMask:
         m_Texture: {fileID: 2800000, guid: 42fb96a5ca1257b43bcd997cc40d544f, type: 3}
-        m_Scale: {x: 0.05, y: 0.05}
+        m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SpecularMask1:
         m_Texture: {fileID: 0}
@@ -941,9 +941,9 @@ Material:
     - _LightingAdditiveGradientEndAnimated: 0
     - _LightingAdditiveGradientStart: 0
     - _LightingAdditiveGradientStartAnimated: 0
-    - _LightingAdditiveLimitIntensity: 0
+    - _LightingAdditiveLimitIntensity: 1
     - _LightingAdditiveLimitIntensityAnimated: 0
-    - _LightingAdditiveMaxIntensity: 1
+    - _LightingAdditiveMaxIntensity: 0
     - _LightingAdditiveMaxIntensityAnimated: 0
     - _LightingAdditivePassthrough: 0.5
     - _LightingAdditivePassthroughAnimated: 0
@@ -977,7 +977,7 @@ Material:
     - _LightingMinLightBrightnessAnimated: 0
     - _LightingMinShadowBrightnessRatio: 0
     - _LightingMinShadowBrightnessRatioAnimated: 0
-    - _LightingMode: 0
+    - _LightingMode: 1
     - _LightingModeAnimated: 0
     - _LightingMonochromatic: 0
     - _LightingMonochromaticAnimated: 0

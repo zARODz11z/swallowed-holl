@@ -5,12 +5,16 @@ using UnityEngine;
 public class ConveyorBelt : MonoBehaviour
 {
     [SerializeField]
+    bool isSideways;
+    [SerializeField]
     bool isEndPiece = false;
     [SerializeField]
     float speed;
     [SerializeField]
     [Tooltip("amount of spin added to objects on the conveyor belt")]
     float spinAmount;
+    [SerializeField]
+    GameObject grav;
     List<GameObject> pushingObjects = new List<GameObject>();
     void OnTriggerEnter(Collider other) {
         if(other.gameObject.GetComponent<Rigidbody>() != null && other.gameObject.GetComponent<Rigidbody>().isKinematic == false && other.gameObject.layer != 16 && other.gameObject.tag != "Breakable" && other.gameObject.tag != "Explosive"&& other.gameObject.tag != "Player" && pushingObjects.Contains(other.gameObject) == false){
@@ -41,6 +45,7 @@ public class ConveyorBelt : MonoBehaviour
         }
         if(other.gameObject.tag == "Player" && pushingObjects.Contains(other.gameObject.transform.root.gameObject) == false){
             //Debug.Log("A player just got added");
+            //other.transform.parent.GetChild(0).GetChild(0).GetChild(2).GetComponent<disableDynamicBone>().toggle(true);
             pushingObjects.Add(other.gameObject.transform.root.gameObject);
         }
     }
@@ -49,7 +54,6 @@ public class ConveyorBelt : MonoBehaviour
             //Debug.Log("An object just got removed");
             pushingObjects.Remove(other.gameObject);
             if(isEndPiece){
-                Debug.Log("Lil Speed Boost");
                 other.gameObject.GetComponent<Rigidbody>().velocity = other.gameObject.GetComponent<Rigidbody>().velocity + this.transform.right * (speed);
             }
         }
@@ -66,31 +70,59 @@ public class ConveyorBelt : MonoBehaviour
         if(other.gameObject.tag == "Player" && pushingObjects.Contains(other.gameObject.transform.root.gameObject) == true){
             //Debug.Log("A player just got removed");
             pushingObjects.Remove(other.gameObject.transform.root.gameObject);
+            //other.transform.parent.GetChild(0).GetChild(0).GetChild(2).GetComponent<disableDynamicBone>().toggle(false);
+            if(isSideways){
+                if(grav!=null){
+                    grav.GetComponent<GravityPlane>().gravity = 9.81f;
+                }
+
+            }
             if(isEndPiece){
                 //Debug.Log("Lil Speed Boost");
                 other.gameObject.transform.root.gameObject.GetComponent<Rigidbody>().velocity = other.gameObject.transform.root.gameObject.GetComponent<Rigidbody>().velocity + this.transform.right * (speed);
             }
         }
     }
+
+
     //void Update() {
         //foreach ( GameObject p in pushingObjects){
             //Debug.Log(p.name);
         //}
     //}
-    void FixedUpdate()
+      void FixedUpdate()
     {
         for (int i = 0; i < pushingObjects.Count; i++){
             if (pushingObjects[i] == null){
-                Debug.Log("REMOVED VIA DESTRUCTION");
+                //Debug.Log("REMOVED VIA DESTRUCTION");
                 pushingObjects.Remove(pushingObjects[i].gameObject);
             }
             else if(pushingObjects[i].gameObject.layer == 16){
-                Debug.Log("REMOVED VIA LAYER");
+                //Debug.Log("REMOVED VIA LAYER");
                 pushingObjects.Remove(pushingObjects[i].gameObject);
             }
             else{
                 if(speed != 0){
-                    pushingObjects[i].transform.position = pushingObjects[i].transform.position + this.transform.right * (speed * Time.deltaTime);
+                    if(!isSideways){
+                        //speed = 4;
+                        //for (float y = 0; y <= speed; y++)
+                        //{
+                            
+                        //    pushingObjects[i].transform.position = Vector3.Lerp(pushingObjects[i].transform.position, pushingObjects[i].transform.position + this.transform.right * (speed * Time.deltaTime), (y/speed));
+                        //    Debug.Log("Y is "+ y + " and y/speed is " + y/speed);  
+                        //}
+                        pushingObjects[i].transform.position = pushingObjects[i].transform.position + this.transform.right * (speed * Time.deltaTime);
+                       
+                    }
+                    else if(pushingObjects[i].gameObject.tag == "Player" && isSideways){
+                        if(grav!= null){
+                            grav.GetComponent<GravityPlane>().gravity = 0f;
+                            pushingObjects[i].transform.position = pushingObjects[i].transform.position + this.transform.right * (speed * Time.deltaTime);
+                        }
+                        else{
+                            Debug.Log("Tagged as sideways but no gravity source connected!");
+                        }
+                    }
                 }
                 if(spinAmount != 0){
                     pushingObjects[i].transform.Rotate(new Vector3(0f, Time.deltaTime * spinAmount), Space.World);

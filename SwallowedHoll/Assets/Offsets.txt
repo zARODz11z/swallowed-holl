@@ -1,0 +1,2 @@
+Demolevel Shift Offset:286.5
+BombLevel Shift Offset: 348.05

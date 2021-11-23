@@ -92,6 +92,47 @@ public class buttonPush : MonoBehaviour
                 }
             }
         }
+        else if(door == null){
+            if(oneTime){
+                if(!anim.GetBool("onePush")){
+                    anim.SetBool("onePush", true);
+                    intObj.Press();
+                    hand.interact();
+                }
+            }
+            else{
+                if(!blocker){
+                    if(!flipflopButton){
+                        anim.SetBool("Pushed", true);
+                        Invoke("resetPushed", .05f);
+                        intObj.Press();
+                        hand.interact();
+                        blocker = true;
+                        Invoke("resetblocker", 2f);
+                    }
+                    else {
+                        if(flipflop){
+                            anim.SetBool("Pushed", true);
+                            Invoke("resetPushed", .05f);
+                            flipflop = false;
+                            intObj.Press();
+                            hand.interact();
+                            blocker = true;
+                            Invoke("resetblocker", 2f);
+                        }
+                        else{
+                            anim.SetBool("Pushed", true);
+                            Invoke("resetPushed", .05f);
+                            flipflop = true;
+                            intObj.Release();
+                            hand.interact();
+                            blocker = true;
+                            Invoke("resetblocker", 2f);
+                        }
+                    }
+                }
+            }
+        }
     }
 
 }

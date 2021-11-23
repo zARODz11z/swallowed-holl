@@ -8,14 +8,14 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: New Material
-  m_Shader: {fileID: 4800000, guid: 54b4557c925ad90468342eaa8f61068f, type: 3}
-  m_ShaderKeywords: VIGNETTE_MASKED _METALLICGLOSSMAP _SMOOTHNESS_TEXTURE_ALBEDO_CHANNEL_A
+  m_Shader: {fileID: 4800000, guid: be650cb11ad6daa4eba1568963eff600, type: 3}
+  m_ShaderKeywords: VIGNETTE_MASKED _SMOOTHNESS_TEXTURE_ALBEDO_CHANNEL_A
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: 2450
   stringTagMap:
-    OptimizedShaderFolder: New Material-628401e4
+    OptimizedShaderFolder: New Material-fb815852
     OriginalShader: ".poiyomi/\u2022 Poiyomi Toon \u2022"
     RenderType: TransparentCutout
   disabledShaderPasses: []
@@ -754,7 +754,7 @@ Material:
     - _EnableIridescenceAnimated: 0
     - _EnableLighting: 1
     - _EnableLightingAnimated: 0
-    - _EnableMetallic: 1
+    - _EnableMetallic: 0
     - _EnableMetallicAnimated: 0
     - _EnableMirrorOptions: 0
     - _EnableMirrorOptionsAnimated: 0
@@ -977,7 +977,7 @@ Material:
     - _LightingMinLightBrightnessAnimated: 0
     - _LightingMinShadowBrightnessRatio: 0
     - _LightingMinShadowBrightnessRatioAnimated: 0
-    - _LightingMode: 0
+    - _LightingMode: 1
     - _LightingModeAnimated: 0
     - _LightingMonochromatic: 0
     - _LightingMonochromaticAnimated: 0
@@ -1013,7 +1013,7 @@ Material:
     - _MainAlphaToCoverage: 0
     - _MainAlphaToCoverageAnimated: 0
     - _MainDistanceFadeAnimated: 0
-    - _MainEmissionStrength: 2.01
+    - _MainEmissionStrength: 0.1
     - _MainEmissionStrengthAnimated: 0
     - _MainFadeTextureAnimated: 0
     - _MainFadeTexturePanAnimated: 0
@@ -1659,7 +1659,7 @@ Material:
     - m_start_CenterOutEmission1: 0
     - m_start_DecalSection: 0
     - m_start_DetailOptions: 0
-    - m_start_Lighting: 0
+    - m_start_Lighting: 1
     - m_start_MainHueShift: 0
     - m_start_MainVertexColors: 0
     - m_start_Matcap2: 0
@@ -1731,7 +1731,7 @@ Material:
     - _ClearCoatMaskPan: {r: 0, g: 0, b: 0, a: 0}
     - _ClearCoatSmoothnessMapPan: {r: 0, g: 0, b: 0, a: 0}
     - _ClearCoatTint: {r: 1, g: 1, b: 1, a: 1}
-    - _Color: {r: 0.5377358, g: 0.5377358, b: 0.5377358, a: 1}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _DecalColor: {r: 1, g: 1, b: 1, a: 1}
     - _DecalMaskPan: {r: 0, g: 0, b: 0, a: 0}
     - _DecalPosition: {r: 0.5, g: 0.5, b: 0, a: 0}

@@ -7,14 +7,14 @@ public class canShift : MonoBehaviour
     Collider dummyCollider = null;
     [SerializeField]
     GameObject player;
-    ImprovedZoneWarp warp;
+    WorldShift warp;
     bool shiftable = true;
 
 
     void Start()
     {
         //gameObject.GetComponent<MaterialSelector>().Select(1);
-        warp = player.GetComponent<ImprovedZoneWarp>();
+        warp = player.GetComponent<WorldShift>();
 
     }
     void OnTriggerExit(Collider other) {

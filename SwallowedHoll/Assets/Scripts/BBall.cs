@@ -6,9 +6,6 @@ public class BBall : MonoBehaviour
 {
     bool thruHoop = false;
 
-    public void FindGameObjectsWithTag(string tag){
-
-    }
     public bool getThruHoop(){
         return thruHoop;
     }

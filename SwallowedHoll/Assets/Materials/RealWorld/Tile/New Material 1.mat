@@ -8,14 +8,14 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: New Material 1
-  m_Shader: {fileID: 4800000, guid: 521f109284573ba4a8a265fcefb4a44b, type: 3}
+  m_Shader: {fileID: 4800000, guid: 92b20189239aada4bb9d1ee46817df58, type: 3}
   m_ShaderKeywords: VIGNETTE_MASKED _SMOOTHNESS_TEXTURE_ALBEDO_CHANNEL_A _SPECGLOSSMAP
   m_LightmapFlags: 2
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: 2000
   stringTagMap:
-    OptimizedShaderFolder: New Material 1-744480e1
+    OptimizedShaderFolder: New Material 1-3554fc4c
     OriginalShader: ".poiyomi/\u2022 Poiyomi Toon \u2022"
     RenderType: Opaque
   disabledShaderPasses: []
@@ -44,7 +44,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
         m_Texture: {fileID: 2800000, guid: dcc0241ecdf6ca74b9dd17e65498b7bf, type: 3}
-        m_Scale: {x: 0.07, y: 0.07}
+        m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _ClearCoatCubeMap:
         m_Texture: {fileID: 8900000, guid: 1f79f71b84fc2844bb81e9ae4f5bc384, type: 3}
@@ -191,8 +191,8 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: ef6f8313768894049a613a7f981be3e7, type: 3}
-        m_Scale: {x: 0.07, y: 0.07}
+        m_Texture: {fileID: 2800000, guid: 46b095182c9e48d43851f599ec5659d8, type: 3}
+        m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Matcap:
         m_Texture: {fileID: 0}
@@ -312,7 +312,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _SmoothnessMask:
         m_Texture: {fileID: 2800000, guid: b066deee3b5e69f429cc76cafb0dc871, type: 3}
-        m_Scale: {x: 0.07, y: 0.07}
+        m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SpecularAnisoJitterMacro:
         m_Texture: {fileID: 0}
@@ -332,7 +332,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _SpecularMap:
         m_Texture: {fileID: 2800000, guid: b066deee3b5e69f429cc76cafb0dc871, type: 3}
-        m_Scale: {x: 0.07, y: 0.07}
+        m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SpecularMap1:
         m_Texture: {fileID: 0}
@@ -1013,7 +1013,7 @@ Material:
     - _MainAlphaToCoverage: 0
     - _MainAlphaToCoverageAnimated: 0
     - _MainDistanceFadeAnimated: 0
-    - _MainEmissionStrength: 7.62
+    - _MainEmissionStrength: 0.1
     - _MainEmissionStrengthAnimated: 0
     - _MainFadeTextureAnimated: 0
     - _MainFadeTexturePanAnimated: 0
@@ -1659,11 +1659,11 @@ Material:
     - m_start_CenterOutEmission1: 0
     - m_start_DecalSection: 0
     - m_start_DetailOptions: 0
-    - m_start_Lighting: 0
+    - m_start_Lighting: 1
     - m_start_MainHueShift: 0
     - m_start_MainVertexColors: 0
     - m_start_Matcap2: 0
-    - m_start_Metallic: 1
+    - m_start_Metallic: 0
     - m_start_OutlineStencil: 0
     - m_start_RGBMask: 0
     - m_start_ShadowMix: 0
@@ -1731,7 +1731,7 @@ Material:
     - _ClearCoatMaskPan: {r: 0, g: 0, b: 0, a: 0}
     - _ClearCoatSmoothnessMapPan: {r: 0, g: 0, b: 0, a: 0}
     - _ClearCoatTint: {r: 1, g: 1, b: 1, a: 1}
-    - _Color: {r: 0.3679245, g: 0.3679245, b: 0.3679245, a: 1}
+    - _Color: {r: 0.8490566, g: 0.8490566, b: 0.8490566, a: 1}
     - _DecalColor: {r: 1, g: 1, b: 1, a: 1}
     - _DecalMaskPan: {r: 0, g: 0, b: 0, a: 0}
     - _DecalPosition: {r: 0.5, g: 0.5, b: 0, a: 0}

@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class BarrageSpeed : MonoBehaviour
 {
-    bool gate;
     float speed = .7f;
     Animator animator;
     // Start is called before the first frame update

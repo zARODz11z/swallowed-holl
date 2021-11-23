@@ -1,7 +1,8 @@
 using UnityEngine;
 public class Movement : MonoBehaviour { 
-	//This script controls the movement of the character. 
+	//This script controls the movement of the character. Adapted from https://catlikecoding.com/unity/tutorials/movement/ by Travis Parks
 	//refrence to the grab script
+	bool canClimb;
 	Grab grab;
 
 	[SerializeField]
@@ -31,7 +32,7 @@ public class Movement : MonoBehaviour {
 	Vector3 lastContactNormal, lastSteepNormal;
 
 	// this is used to edit the light on the fly
-	Light lt;
+	//Light lt;
 	// this is so i can get a refrence to the empty that is a child of the main game object
 	public GameObject parent;
 
@@ -123,7 +124,6 @@ public class Movement : MonoBehaviour {
 
 	[SerializeField, Min(0f)]
 	float buoyancy = 1f;
-	Animator camanim;
 	
 	// this is so i can prevent the player from entering a climbing state while standing on the ground
 	[HideInInspector]
@@ -134,10 +134,14 @@ public class Movement : MonoBehaviour {
 	bool skip = true;
 	bool diveGate;
 
+	public void setCanClimb(bool plug){
+		canClimb = plug;
+	}
+	//runs when object becomes active
 	void Awake () {
 		grab = transform.GetChild(0).GetChild(0).GetChild(2).GetComponent<Grab>();
 		speedController = GetComponent<MovementSpeedController>();
-		camanim = transform.GetChild(0).GetComponent<Animator>();
+
 		// this is so i can prevent the player from entering a climbing state while standing on the ground
 		if(Climbing && !OnGround){
 			ClimbingADJ = true;
@@ -147,7 +151,7 @@ public class Movement : MonoBehaviour {
 		}
 		// gets a refrence to the animation state controller, its pinned to the mesh thats a child of the main player thats why it looks weird
 		//get the light
-		lt = GetComponent<Light>();
+		//lt = GetComponent<Light>();
 		//get the rigidbody
 		body = GetComponent<Rigidbody>();
 		//turn gravity off for the rigid body
@@ -155,71 +159,85 @@ public class Movement : MonoBehaviour {
 		//call validate ?
 		OnValidate();
 	}
+	//runs every frame
 	void Update () {
-		if(OnGround || ClimbingADJ){
+		//resets the diving status if you touch the ground, climb, or swim
+		if(OnGround || ClimbingADJ ||Swimming){
 			if (!diveGate){
 				Diving = false;
 			}
 		}
+		//responds to the duck keybind by playing the appripriate animation and setting the dive prep bool
         if(Input.GetButtonDown("Duck")){
-            camanim.SetBool("divePrep", true);
 			divingPrep = true;
+			transform.GetChild(1).gameObject.SetActive(false);
+			transform.GetChild(4).gameObject.SetActive(true);
         }
         if(Input.GetButtonUp("Duck")){
-            camanim.SetBool("divePrep", false);
 			divingPrep = false;
+			transform.GetChild(1).gameObject.SetActive(true);
+			transform.GetChild(4).gameObject.SetActive(false);
         }
-		// this is so i can prevent the player from entering a climbing state while standing on the ground
-		if(Climbing && !OnGround){
+		// this is so we can prevent the player from entering a climbing state while standing on the ground
+		if(Climbing && !OnGround && canClimb){
 			ClimbingADJ = true;
 		}
 		else{
 			ClimbingADJ = false;
 		}
+		//no climbing while swimming
 		if (Swimming) {
 			desiresClimbing = false;
 		}
+		//responds to the jump keybind to allow jumping
+		desiredJump |= Input.GetButtonDown("Jump");
+		//no climbing while holding 
 		if(grab.isHolding){
 			desiresClimbing = false;
-			desiredJump |= Input.GetButtonDown("Jump");
 		}
 		else {
-			desiredJump |= Input.GetButtonDown("Jump");
 			desiresClimbing = Input.GetButton("Duck");
 		}
-		 //light that shows if youre on the ground or not
-		if (Swimming){
-			lt.color = Color.blue;
-		}
-		else if (OnGround){
-			lt.color = Color.red;
-		}
-		else if (ClimbingADJ){
-			lt.color = Color.white;
-		}
-		else if (OnSteep){
-			lt.color = Color.yellow;
-		}
-		else if (!OnSteep && !OnGround && !Swimming){
-			lt.color = Color.green;
-		}
+
+		//light that shows which state you are in
+
+		//if (Swimming){
+		//	lt.color = Color.blue;
+		//}
+		//else if (OnGround){
+		//	lt.color = Color.red;
+		//}
+		//else if (ClimbingADJ){
+		//	lt.color = Color.white;
+		//}
+		//else if (OnSteep){
+		//	lt.color = Color.yellow;
+		//}
+		//else if (!OnSteep && !OnGround && !Swimming){
+		//	lt.color = Color.green;
+		//}
+
+		//stores the horizontal and vertical input axes
 	    playerInput.x = Input.GetAxis("Horizontal");
 		playerInput.y = Input.GetAxis("Vertical");
+		//allows you to move up or down while swimming
     	playerInput.z = Swimming ? Input.GetAxis("UpDown") : 0f;
-		playerInput = Vector3.ClampMagnitude(playerInput, 1f);
 
+		playerInput = Vector3.ClampMagnitude(playerInput, 1f);
+		//redirects the characters input to be relative to a "playerinputspace" object, if it is given. usually, this will be the camera
 		if (playerInputSpace) {
 			rightAxis = ProjectDirectionOnPlane(playerInputSpace.right, upAxis);
 			forwardAxis =
 				ProjectDirectionOnPlane(playerInputSpace.forward, upAxis);
 		}
+		//if there is no playerinputspace object it will just be relative to the world
 		else	{
 			rightAxis = ProjectDirectionOnPlane(Vector3.right, upAxis);
 			forwardAxis = ProjectDirectionOnPlane(Vector3.forward, upAxis);
 		}
 		//UpdateRotation();
 	}
-
+	//updates the "Swimming" state
 	bool CheckSwimming () {
 		if (Swimming) {
 			groundContactCount = 0;
@@ -234,13 +252,12 @@ public class Movement : MonoBehaviour {
 			EvaluateSubmergence(other);
 		}
 	}
-
 	void OnTriggerStay (Collider other) {
 		if ((waterMask & (1 << other.gameObject.layer)) != 0) {
 			EvaluateSubmergence(other);
 		}
 	}
-
+	//calculates how submerged a player is in liquid
 	void EvaluateSubmergence (Collider collider) {
 		if (Physics.Raycast(
 			body.position + upAxis * submergenceOffset,
@@ -258,7 +275,9 @@ public class Movement : MonoBehaviour {
 	}
 // Climbing
 	bool CheckClimbing () {
+		//the player wants to can is able to climb
 		if (ClimbingADJ) {
+			//the player is colliding with at least one object that is considered a climb contact
 			if (climbContactCount > 1) {
 				climbNormal.Normalize();
 				float upDot = Vector3.Dot(upAxis, climbNormal);
@@ -272,7 +291,7 @@ public class Movement : MonoBehaviour {
 		}
 		return false;
 	}
-
+	
 	void FixedUpdate() {
 		Vector3 gravity = CustomGravity.GetGravity(body.position, out upAxis);
 		UpdateState();
@@ -425,7 +444,7 @@ public class Movement : MonoBehaviour {
 		diveGate = false;
 	}
 
-	public void hungerDive(){
+	public bool hungerDive(){
 		if(!OnGround && Diving &&!ClimbingADJ){
 			PreventSnapToGround();
 			jumpDirection = contactNormal + transform.forward * 3f;
@@ -433,7 +452,9 @@ public class Movement : MonoBehaviour {
 			//body.velocity += new Vector3( 0f, -body.velocity.y, 0f);
 			body.velocity += (jumpDirection.normalized * 6f) + (-CustomGravity.GetGravity(body.position, out upAxis).normalized * 7f);
 			skip = false;
+            return true;
 		}
+        return false;
 	}
 	
 	void Jump(Vector3 gravity) {
