@@ -5,7 +5,7 @@ Steps:
 - Go to File > Build Settings
 - Set Target Platform and Target Architecture to reflect your system
 - Select "Build and Run"
-:
+
 To run demo build:
 Tools: Nothing but the executable
 Steps:
