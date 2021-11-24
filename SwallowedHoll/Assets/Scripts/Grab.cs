@@ -46,7 +46,7 @@ public class Grab : MonoBehaviour
     public enum objectSizes{tiny, small, medium, large, none};
     public objectSizes sizes;
 
-    Interact interact;
+    public Interact interact;
 
     //Is held object food
     public bool isFood;

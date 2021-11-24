@@ -23,6 +23,9 @@ public class PlayerStats : MonoBehaviour
     }
     public void LoadPlayer()
     {
+        if(GetComponent<Movement>().grab.isHolding){
+            GetComponent<Movement>().grab.interact.detach();
+        }
         PlayerData data = SaveSystem.LoadPlayerStats();
         hunger = data.hunger;
         hp = data.health;
@@ -32,6 +35,7 @@ public class PlayerStats : MonoBehaviour
         position.z = data.position[2];
         transform.position = position;
         GetComponent<WorldShift>().hollOrReal = data.hollOrReal;
+
     }
 
     public void Die(){
