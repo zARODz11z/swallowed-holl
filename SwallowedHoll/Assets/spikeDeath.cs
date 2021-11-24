@@ -5,16 +5,15 @@ using UnityEngine;
 // Author: Lizbeth Solis
 public class spikeDeath : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    
+    [SerializeField]
+    public float damageSpikes = 1.0f;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    private void OnCollisionEnter(Collision other) {
+        if (other.gameObject.tag == "Player"){
+             //health -= damageSpikes;
+            other.transform.root.GetComponent<PlayerStats>().takeDamage(damageSpikes);
+         }
     }
 }
 
