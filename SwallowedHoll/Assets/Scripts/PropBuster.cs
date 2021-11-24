@@ -18,13 +18,17 @@ public class PropBuster : MonoBehaviour
             }
             if (other.gameObject.tag == "Breakable" || other.gameObject.tag == "Explosive"){
                 if(!oneShot){
-                    other.gameObject.GetComponent<Rigidbody>().AddExplosionForce(power, transform.root.position, radius);
                     otherExplosive = other.gameObject.GetComponent<Shatter>();
-                    otherExplosive.takeDamage();
+                    if(otherExplosive.punchAble){
+                        other.gameObject.GetComponent<Rigidbody>().AddExplosionForce(power, transform.root.position, radius);
+                        otherExplosive.takeDamage();
+                    }
                 }
                 else{
-                    otherExplosive = other.gameObject.GetComponent<Shatter>();
-                    otherExplosive.oneShot(0);
+                    if(otherExplosive.punchAble){
+                        otherExplosive = other.gameObject.GetComponent<Shatter>();
+                        otherExplosive.oneShot(0);
+                    }
                 }
             }
         }

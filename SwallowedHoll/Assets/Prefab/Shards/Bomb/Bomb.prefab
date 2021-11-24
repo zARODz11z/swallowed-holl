@@ -188,6 +188,9 @@ MonoBehaviour:
   shatterSpawnPos: {fileID: 1605385266}
   hitPoints: 0
   breakSpeed: 5
+  punchAble: 1
+  throwableBreak: 1
+  bombBreak: 1
 --- !u!114 &5340878956738130801
 MonoBehaviour:
   m_ObjectHideFlags: 0
