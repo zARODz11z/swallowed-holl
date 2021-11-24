@@ -52,6 +52,9 @@ public class Explode : MonoBehaviour
                         }
                 }
                 else{
+                    if(hit.gameObject.GetComponent<Shatter>() != null && hit.gameObject.GetComponent<Shatter>().bombBreak && isBomb){
+                        hit.gameObject.GetComponent<Shatter>().takeDamage();
+                    }
                     if (rb != null){
                         //if (rb.gameObject.tag == "Explosive"){
                         //    otherExplosive = rb.gameObject.GetComponent<Shatter>();
