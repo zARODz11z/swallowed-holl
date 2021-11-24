@@ -146,6 +146,10 @@ MonoBehaviour:
   shatterPrefab: {fileID: 8569911948955233868, guid: e0987b37bc2399d418c9be30b96c4c01, type: 3}
   shatterSpawnPos: {fileID: 4332264250645280431}
   hitPoints: 0
+  breakSpeed: 40
+  punchAble: 1
+  throwableBreak: 1
+  bombBreak: 1
 --- !u!114 &-6762724650588394846
 MonoBehaviour:
   m_ObjectHideFlags: 0
