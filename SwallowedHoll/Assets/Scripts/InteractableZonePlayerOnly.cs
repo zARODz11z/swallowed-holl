@@ -2,8 +2,8 @@ using UnityEngine;
 using UnityEngine.Events;
 using System.Collections.Generic;
 
-public class DetectionZonePlayerOnly : MonoBehaviour {
-
+public class InteractableZonePlayerOnly : MonoBehaviour
+{
 	Movement movement = default;
 	public GameObject player = default;
 	public bool isPlayerOnly;

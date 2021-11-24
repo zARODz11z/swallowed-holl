@@ -3,7 +3,7 @@ public class Movement : MonoBehaviour {
 	//This script controls the movement of the character. Adapted from https://catlikecoding.com/unity/tutorials/movement/ by Travis Parks
 	//refrence to the grab script
 	bool canClimb;
-	Grab grab;
+	public Grab grab;
 
 	[SerializeField]
 	[Tooltip("How strong the force pushing you into the wall is while climbing")]
