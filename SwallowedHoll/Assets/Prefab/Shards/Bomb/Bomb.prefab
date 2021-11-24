@@ -184,6 +184,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16f86a5e3c3f23645bae0f9e99a54e90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  explosionEffect: {fileID: 1121192042590650, guid: e1b08032bec16ba4eb1ae23cbd572664, type: 3}
   shatterPrefab: {fileID: 5205990996850592250, guid: 34a526d8b6e1c9845b8ad9e1db42d8e5, type: 3}
   shatterSpawnPos: {fileID: 1605385266}
   hitPoints: 0
