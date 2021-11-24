@@ -13,6 +13,7 @@ public class PortalTeleporter : MonoBehaviour
     public Transform receiver;
 
     private bool playerIsOverlapping = false;
+    bool justWarped;
 
     void Update()
     {
@@ -32,16 +33,21 @@ public class PortalTeleporter : MonoBehaviour
 
             Vector3 positionOffset = Quaternion.Euler(0f, rotationDiff, 0f) * portalToPlayer;
             player.position = receiver.position + positionOffset;
-
+            player.GetComponent<PlayerStats>().portalWarp = true;
             playerIsOverlapping = false;
+            Invoke("resetJustWarped", .5f);
           }
         }
+    }
+
+    void resetJustWarped(){
+      player.GetComponent<PlayerStats>().portalWarp = false;
     }
 
     //This method checks whether player is colliding with the portal
     void OnTriggerEnter(Collider other)
     {
-      if (other.tag == "Player")
+      if (other.tag == "Player" && !player.GetComponent<PlayerStats>().portalWarp)
       {
         playerIsOverlapping = true;
       }
@@ -50,7 +56,7 @@ public class PortalTeleporter : MonoBehaviour
     //This method checks when the player is not colliding with the portal
     void OnTriggerExit (Collider other)
     {
-      if (other.tag == "Player")
+      if (other.tag == "Player" && !player.GetComponent<PlayerStats>().portalWarp)
       {
         playerIsOverlapping = false;
       }
