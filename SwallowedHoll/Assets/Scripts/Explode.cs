@@ -63,8 +63,8 @@ public class Explode : MonoBehaviour
                     rb.AddExplosionForce(power, explosionPos, radius, upModifier);
                     if(!gate){
                         player.GetComponent<PlayerStats>().takeDamage(Mathf.Lerp(playerDamageMax, playerDamageMin, damage));
-                        Debug.Log("Lerping from "+ damage);
-                        Debug.Log("Reduce"+ Mathf.Lerp(playerDamageMax, playerDamageMin, damage));
+                        //Debug.Log("Lerping from "+ damage);
+                        //Debug.Log("Reduce"+ Mathf.Lerp(playerDamageMax, playerDamageMin, damage));
                         gate = true;
                     }
                 }

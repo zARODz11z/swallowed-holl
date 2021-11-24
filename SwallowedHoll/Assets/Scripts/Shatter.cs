@@ -60,7 +60,7 @@ public class Shatter : MonoBehaviour
     void spawnShatter(){
         Instantiate(shatterPrefab, shatterSpawnPos.transform.position, shatterSpawnPos.transform.rotation);
         Destroy(this.gameObject);
-        if(player.GetComponent<Grab>().isHolding){
+        if(player.GetComponent<Grab>().isHolding && player.transform.GetChild(2).GetChild(0).GetChild(5).gameObject == this.gameObject){
             player.GetComponent<Interact>().detach();
         }
     }

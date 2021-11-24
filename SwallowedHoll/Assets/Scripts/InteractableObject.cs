@@ -6,7 +6,11 @@ public class InteractableObject : MonoBehaviour {
 	
 	[SerializeField]
 	public bool isVolume;
-
+	[SerializeField]
+	bool playerOnly;
+	[SerializeField]
+	bool isStay;
+	bool gate;
 
 	[SerializeField]
 	UnityEvent onFirstEnter = default, onLastExit = default;
@@ -40,7 +44,12 @@ public class InteractableObject : MonoBehaviour {
 				}
 			}
 		}
+		if(gate){
+			Press();
+		}
 	}
+
+
 
 	public void Press(){
 		onFirstEnter.Invoke();
@@ -49,23 +58,56 @@ public class InteractableObject : MonoBehaviour {
 		onLastExit.Invoke();
 	}
 
-    void OnTriggerEnter (Collider other) {
-		if(isVolume){
-			if (colliders.Count == 0) {
-				onFirstEnter.Invoke();
-				enabled = true;
-			}
-			colliders.Add(other);
+	private void OnTriggerStay(Collider other) {
+		if(isStay){
+			gate = true;
 		}
+	}
 
+    void OnTriggerEnter (Collider other) {
+		if(playerOnly){
+			if(other.gameObject.tag == "Player"){
+				if(isVolume){
+					if (colliders.Count == 0) {
+						onFirstEnter.Invoke();
+						enabled = true;
+					}
+					colliders.Add(other);
+				}
+			}
+		}
+		else{
+			if(isVolume){
+				if (colliders.Count == 0) {
+					onFirstEnter.Invoke();
+					enabled = true;
+				}
+				colliders.Add(other);
+			}
+		}
 	}
 
 	void OnTriggerExit (Collider other) {
-		if(isVolume){
-			if (colliders.Remove(other) && colliders.Count == 0) {
-				onLastExit.Invoke();
-				enabled = false;
+		if(playerOnly){
+			if(other.gameObject.tag == "Player"){
+				if(isVolume){
+					if (colliders.Remove(other) && colliders.Count == 0) {
+						onLastExit.Invoke();
+						enabled = false;
+					}
+				}
 			}
+		}
+		else{
+			if(isVolume){
+				if (colliders.Remove(other) && colliders.Count == 0) {
+					onLastExit.Invoke();
+					enabled = false;
+				}
+			}
+		}
+		if(isStay){
+			gate = false;
 		}
 	}
 }
