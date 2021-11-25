@@ -569,6 +569,9 @@ MonoBehaviour:
   speed: 3
   spinAmount: 0
   grav: {fileID: 0}
+  tempFlip: 1
+  reverseTime: 5
+  Belt: {fileID: 5361184109797053050}
 --- !u!1 &7853095851643170525
 GameObject:
   m_ObjectHideFlags: 0
@@ -874,3 +877,6 @@ MonoBehaviour:
   speed: -3
   spinAmount: 0
   grav: {fileID: 0}
+  tempFlip: 1
+  reverseTime: 5
+  Belt: {fileID: 5361184109797053050}

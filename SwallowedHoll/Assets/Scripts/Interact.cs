@@ -134,6 +134,9 @@ public class Interact : MonoBehaviour
                     if ((button.oneTime && button.anim.GetBool("onePush") == false && button.door.subGate == false) || (button.door != null && button.door.subGate == false) || !button.blocker){
                         button.press();
                     }
+                    if ((button.oneTime && button.anim.GetBool("onePush") == false && button.belt.subGate == false) || (button.belt != null && button.belt.subGate == false) || !button.blocker){
+                        button.press();
+                    }
                 }
             }
         }

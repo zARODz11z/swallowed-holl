@@ -19,9 +19,16 @@ public class WorldShift : MonoBehaviour
     bool possibleShift;
     [Tooltip("True = holl, false = realWorld")]
     public bool hollOrReal;
+    [SerializeField]
     bool shiftBlocked = false;
     public void setShiftBlocked(bool plug){
         shiftBlocked = plug;
+    }
+    public void setShiftBlockedTrue(){
+        shiftBlocked = true;
+    }
+    public void setShiftBlockedFalse(){
+        shiftBlocked = false;
     }
     public void setOther(Collider oth){
         other = oth;

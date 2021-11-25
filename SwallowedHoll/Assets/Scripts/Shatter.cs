@@ -5,6 +5,7 @@ using UnityEngine;
 // the effect of a shatter. if its explosive, this force also effects the environment as well as the shards. after that, the shards despawn after a set amount of time 
 public class Shatter : MonoBehaviour
 {
+    public GameObject explosionEffect;
     public GameObject shatterPrefab;
     [Tooltip("What shattered mesh spawns")]
     public GameObject shatterSpawnPos;
@@ -18,12 +19,19 @@ public class Shatter : MonoBehaviour
     [SerializeField]
     float breakSpeed = 40f;
     GameObject player;
-
+    [SerializeField]
+    public bool punchAble;
+    [SerializeField]
+    bool throwableBreak;
+    [SerializeField]
+    public bool bombBreak;
     void OnCollisionEnter(Collision other) {
         // does this object have a ridigbody? is the object colliding with another object past the breaking speed? if so, break it. dont let that object be a player. that colliding objects mass must be greater than or equal to the current obejcts mass
         //consider doing better calculations here, ie dot product of collision normal and collision velocity(relative velocity of both bodies) times the mass of the other collider
-        if((other.gameObject.GetComponent<Rigidbody>() != null && (other.gameObject.GetComponent<Rigidbody>().velocity.magnitude > breakSpeed && other.gameObject.tag != "Player") || (this.gameObject.GetComponent<Rigidbody>().velocity.magnitude > breakSpeed && other.gameObject.tag != "Player")) ){
-            oneShot(0);
+        if(throwableBreak){
+            if((other.gameObject.GetComponent<Rigidbody>() != null && (other.gameObject.GetComponent<Rigidbody>().velocity.magnitude > breakSpeed && other.gameObject.tag != "Player") || (this.gameObject.GetComponent<Rigidbody>().velocity.magnitude > breakSpeed && other.gameObject.tag != "Player")) ){
+                oneShot(0);
+            }
         }
     }
     void Start() {
@@ -52,19 +60,12 @@ public class Shatter : MonoBehaviour
     }
     void spawnShatter(){
         Instantiate(shatterPrefab, shatterSpawnPos.transform.position, shatterSpawnPos.transform.rotation);
+        if(explosionEffect != null){
+            Instantiate(explosionEffect, transform.position, transform.rotation);
+        }
         Destroy(this.gameObject);
-        if(player.GetComponent<Grab>().isHolding){
+        if(player.GetComponent<Grab>().isHolding && player.transform.GetChild(2).GetChild(0).GetChild(5).gameObject == this.gameObject){
             player.GetComponent<Interact>().detach();
         }
     }
-   // public void Break(Collision other){
-       // if(other.gameObject.tag == "Player" ){
-        //    takeDamage();
-            
-       // }
-
-   // }
-    //void OnCollisionEnter(Collision other) {
-      //  Break(other);
-    //}
 }
