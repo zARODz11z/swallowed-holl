@@ -8,14 +8,14 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Stone Wall Dark
-  m_Shader: {fileID: 4800000, guid: c655b340bcb7c074c9afaa7e9d3e3396, type: 3}
+  m_Shader: {fileID: 4800000, guid: 98a852e97e39c2142bb326c88cc4cc10, type: 3}
   m_ShaderKeywords: VIGNETTE_MASKED _SMOOTHNESS_TEXTURE_ALBEDO_CHANNEL_A _SPECGLOSSMAP
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: 2000
   stringTagMap:
-    OptimizedShaderFolder: Stone Wall Dark-6a8e687f
+    OptimizedShaderFolder: Stone Wall Dark-94b3188a
     OriginalShader: ".poiyomi/\u2022 Poiyomi Toon \u2022"
     RenderType: Opaque
   disabledShaderPasses: []
@@ -941,13 +941,13 @@ Material:
     - _LightingAdditiveGradientEndAnimated: 0
     - _LightingAdditiveGradientStart: 0
     - _LightingAdditiveGradientStartAnimated: 0
-    - _LightingAdditiveLimitIntensity: 1
+    - _LightingAdditiveLimitIntensity: 0
     - _LightingAdditiveLimitIntensityAnimated: 0
-    - _LightingAdditiveMaxIntensity: 0
+    - _LightingAdditiveMaxIntensity: 3
     - _LightingAdditiveMaxIntensityAnimated: 0
     - _LightingAdditivePassthrough: 0.5
     - _LightingAdditivePassthroughAnimated: 0
-    - _LightingAdditiveType: 1
+    - _LightingAdditiveType: 0
     - _LightingAdditiveTypeAnimated: 0
     - _LightingDetailShadowsAnimated: 0
     - _LightingDetailShadowsEnabled: 0
@@ -1693,7 +1693,7 @@ Material:
     - m_start_glitterRandom: 0
     - m_start_glowInDarkEmissionOptions: 0
     - m_start_glowInDarkEmissionOptions1: 0
-    - m_start_lightingAdvanced: 0
+    - m_start_lightingAdvanced: 1
     - m_start_lightingHSL: 0
     - m_start_lightingModifiers: 0
     - m_start_manualFlipbookControl: 0
@@ -1731,7 +1731,7 @@ Material:
     - _ClearCoatMaskPan: {r: 0, g: 0, b: 0, a: 0}
     - _ClearCoatSmoothnessMapPan: {r: 0, g: 0, b: 0, a: 0}
     - _ClearCoatTint: {r: 1, g: 1, b: 1, a: 1}
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Color: {r: 0.745283, g: 0.745283, b: 0.745283, a: 1}
     - _DecalColor: {r: 1, g: 1, b: 1, a: 1}
     - _DecalMaskPan: {r: 0, g: 0, b: 0, a: 0}
     - _DecalPosition: {r: 0.5, g: 0.5, b: 0, a: 0}
