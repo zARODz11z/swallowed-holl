@@ -16,6 +16,7 @@ public class PlayerStats : MonoBehaviour
     public HealthBar healthBar;
     public KeyCode saveKey = KeyCode.V;
     public KeyCode loadGameKey = KeyCode.B;
+    public bool portalWarp;
 
     public void SavePlayer()
     {
@@ -23,6 +24,9 @@ public class PlayerStats : MonoBehaviour
     }
     public void LoadPlayer()
     {
+        if(GetComponent<Movement>().grab.isHolding){
+            GetComponent<Movement>().grab.interact.detach();
+        }
         PlayerData data = SaveSystem.LoadPlayerStats();
         hunger = data.hunger;
         hp = data.health;
@@ -32,6 +36,7 @@ public class PlayerStats : MonoBehaviour
         position.z = data.position[2];
         transform.position = position;
         GetComponent<WorldShift>().hollOrReal = data.hollOrReal;
+
     }
 
     public void Die(){
@@ -53,19 +58,20 @@ public class PlayerStats : MonoBehaviour
     void Start()
     {
         //Test line to see if we can set a default start point
-      SaveSystem.SavePlayer(this);
-      //when game is started, it sets the slider max value to hunger value
-      hungerBar.SetMaxHunger(hunger);
-      //when game is started, it sets the slider max value to hp value
-      healthBar.SetMaxHealth(hp);
+        SaveSystem.SavePlayer(this);
+        //when game is started, it sets the slider max value to hunger value
+        hungerBar.SetMaxHunger(hunger);
+        //when game is started, it sets the slider max value to hp value
+        healthBar.SetMaxHealth(hp);
     }
 
     void Update()
     {
-      //updates the slider value to match the current hunger value
-      hungerBar.SetHunger(hunger);
-      //updates the slider value to match the current hp value
-      healthBar.SetHealth(hp);
+        Debug.Log(portalWarp);
+        //updates the slider value to match the current hunger value
+        hungerBar.SetHunger(hunger);
+        //updates the slider value to match the current hp value
+        healthBar.SetHealth(hp);
 
         if (Input.GetKeyDown(saveKey))
         {

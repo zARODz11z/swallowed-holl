@@ -13,6 +13,8 @@ public class buttonPush : MonoBehaviour
     [SerializeField]
     bool flipflopButton;
     [SerializeField]
+    public ConveyorBelt belt;
+    [SerializeField]
     public DoorOpenandClose door;
     [HideInInspector]
     public bool blocker = false;
@@ -51,7 +53,7 @@ public class buttonPush : MonoBehaviour
 
 
     public void press(){
-        if(door != null && !door.subGate){
+        if(door != null && !door.subGate || belt != null && !belt.subGate){
             if(oneTime){
                 if(!anim.GetBool("onePush")){
                     anim.SetBool("onePush", true);
@@ -92,7 +94,7 @@ public class buttonPush : MonoBehaviour
                 }
             }
         }
-        else if(door == null){
+        else if(door == null && belt == null){
             if(oneTime){
                 if(!anim.GetBool("onePush")){
                     anim.SetBool("onePush", true);

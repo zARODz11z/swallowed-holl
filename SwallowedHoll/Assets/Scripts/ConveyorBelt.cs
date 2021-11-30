@@ -16,6 +16,17 @@ public class ConveyorBelt : MonoBehaviour
     [SerializeField]
     GameObject grav;
     List<GameObject> pushingObjects = new List<GameObject>();
+    [SerializeField]
+    bool tempFlip;
+    [SerializeField]
+    float reverseTime;
+    [SerializeField]
+    GameObject Belt;
+    BeltSpeedController speedController;
+    public bool subGate;
+    private void Start() {
+        speedController = Belt.GetComponent<BeltSpeedController>();
+    }
     void OnTriggerEnter(Collider other) {
         if(other.gameObject.GetComponent<Rigidbody>() != null && other.gameObject.GetComponent<Rigidbody>().isKinematic == false && other.gameObject.layer != 16 && other.gameObject.tag != "Breakable" && other.gameObject.tag != "Explosive"&& other.gameObject.tag != "Player" && pushingObjects.Contains(other.gameObject) == false){
             //Debug.Log("an object with a rigidbody just got added");
@@ -80,6 +91,22 @@ public class ConveyorBelt : MonoBehaviour
             if(isEndPiece){
                 //Debug.Log("Lil Speed Boost");
                 other.gameObject.transform.root.gameObject.GetComponent<Rigidbody>().velocity = other.gameObject.transform.root.gameObject.GetComponent<Rigidbody>().velocity + this.transform.right * (speed);
+            }
+        }
+    }
+    public void reReverseDirection(){
+        speed = -speed;
+        speedController.reverseDirection();
+        subGate = false;
+    }
+
+    public void reverseDirection(){
+        if(!subGate){
+            speed = -speed;
+            speedController.reverseDirection();
+            if(tempFlip){
+                Invoke("reReverseDirection", reverseTime);
+                subGate = true;
             }
         }
     }

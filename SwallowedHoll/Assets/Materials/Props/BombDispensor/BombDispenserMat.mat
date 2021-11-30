@@ -8,14 +8,14 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: BombDispenserMat
-  m_Shader: {fileID: 4800000, guid: 757b98293d8c5bf41a56220b64a2cf64, type: 3}
+  m_Shader: {fileID: 4800000, guid: f3db20163ba65fd48bf7c943f41d791b, type: 3}
   m_ShaderKeywords: VIGNETTE_MASKED _SMOOTHNESS_TEXTURE_ALBEDO_CHANNEL_A _SPECGLOSSMAP
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: 2000
   stringTagMap:
-    OptimizedShaderFolder: BombDispenserMat-3a403911
+    OptimizedShaderFolder: BombDispenserMat-11431387
     OriginalShader: ".poiyomi/\u2022 Poiyomi Toon \u2022"
     RenderType: Opaque
   disabledShaderPasses: []

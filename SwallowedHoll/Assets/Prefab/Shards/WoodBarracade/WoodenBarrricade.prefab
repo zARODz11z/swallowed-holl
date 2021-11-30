@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 6212345319440639350}
   - component: {fileID: 7472725272162123081}
   - component: {fileID: 14338590905630993}
-  m_Layer: 13
+  m_Layer: 0
   m_Name: WoodenBarrricade
   m_TagString: Breakable
   m_Icon: {fileID: 0}
@@ -187,7 +187,7 @@ GameObject:
   - component: {fileID: 4083940417500840072}
   - component: {fileID: 4083940417500840071}
   - component: {fileID: 4083940417500840070}
-  m_Layer: 13
+  m_Layer: 0
   m_Name: ShatterSpawnPos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
