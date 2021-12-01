@@ -1,0 +1,35 @@
+# Blender MTL File: 'Launcher.blend'
+# Material Count: 3
+
+newmtl Material.001
+Ns 323.999994
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 1
+map_Kd C:\\Users\\travp\\Desktop\\SwallowedHoll\\swallowed-holl\\SwallowedHoll\\Assets\\Materials\\Props\\Fan\\FAN.001.png
+
+newmtl Material.002
+Ns 225.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 1
+map_Kd C:\\Users\\travp\\Desktop\\SwallowedHoll\\swallowed-holl\\SwallowedHoll\\Assets\\Materials\\Tex\\greentile.png
+
+newmtl Material.004
+Ns 225.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 1
+map_Kd C:\\Users\\travp\\Desktop\\SwallowedHoll\\swallowed-holl\\SwallowedHoll\\Assets\\Materials\\RealWorld\\mETAL\\Metal.png

@@ -7,16 +7,14 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: New Material 2
-  m_Shader: {fileID: 4800000, guid: 917b37092bae034459c28c00a3a19b54, type: 3}
-  m_ShaderKeywords: VIGNETTE_MASKED _SMOOTHNESS_TEXTURE_ALBEDO_CHANNEL_A _SPECGLOSSMAP
+  m_Name: Earh
+  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
+  m_ShaderKeywords: VIGNETTE_MASKED _EMISSION
   m_LightmapFlags: 2
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
-  stringTagMap:
-    OptimizedShaderFolder: New Material 2-6036c125
-    OriginalShader: ".poiyomi/\u2022 Poiyomi Toon \u2022"
+  stringTagMap: {}
   disabledShaderPasses: []
   m_SavedProperties:
     serializedVersion: 3
@@ -42,7 +40,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
-        m_Texture: {fileID: 2800000, guid: dcc0241ecdf6ca74b9dd17e65498b7bf, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _ClearCoatCubeMap:
@@ -118,8 +116,8 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _EmissionMap:
-        m_Texture: {fileID: 2800000, guid: 1fffa4859dead0548ad550256b086d34, type: 3}
-        m_Scale: {x: 0.07, y: 0.07}
+        m_Texture: {fileID: 2800000, guid: b3a62dbd2f6fcaa4785b0d497bf3f784, type: 3}
+        m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _EmissionMap1:
         m_Texture: {fileID: 0}
@@ -190,7 +188,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: ef6f8313768894049a613a7f981be3e7, type: 3}
+        m_Texture: {fileID: 2800000, guid: b3a62dbd2f6fcaa4785b0d497bf3f784, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Matcap:
@@ -210,7 +208,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
-        m_Texture: {fileID: 2800000, guid: b066deee3b5e69f429cc76cafb0dc871, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicMask:
@@ -310,7 +308,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SmoothnessMask:
-        m_Texture: {fileID: 2800000, guid: b066deee3b5e69f429cc76cafb0dc871, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SpecularAnisoJitterMacro:
@@ -330,7 +328,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SpecularMap:
-        m_Texture: {fileID: 2800000, guid: b066deee3b5e69f429cc76cafb0dc871, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SpecularMap1:
@@ -444,7 +442,7 @@ Material:
     - _BumpMapPanAnimated: 0
     - _BumpMapUV: 0
     - _BumpMapUVAnimated: 0
-    - _BumpScale: 0.96
+    - _BumpScale: 0
     - _BumpScaleAnimated: 0
     - _CameraAngleMax: 90
     - _CameraAngleMaxAnimated: 0
@@ -766,7 +764,7 @@ Material:
     - _EnableSSS: 0
     - _EnableSSSAnimated: 0
     - _EnableScifiSpawnInAnimated: 0
-    - _EnableSpecular: 1
+    - _EnableSpecular: 0
     - _EnableSpecular1: 0
     - _EnableSpecular1Animated: 0
     - _EnableSpecularAnimated: 0
@@ -890,8 +888,8 @@ Material:
     - _GlitterTextureRotationAnimated: 0
     - _GlitterUseSurfaceColor: 0
     - _GlitterUseSurfaceColorAnimated: 0
-    - _GlossMapScale: 0.477
-    - _Glossiness: 1
+    - _GlossMapScale: 1
+    - _Glossiness: 0
     - _GlossyReflections: 1
     - _GrabBlurDirectionsAnimated: 0
     - _GrabBlurDistanceAnimated: 0
@@ -976,7 +974,7 @@ Material:
     - _LightingMinLightBrightnessAnimated: 0
     - _LightingMinShadowBrightnessRatio: 0
     - _LightingMinShadowBrightnessRatioAnimated: 0
-    - _LightingMode: 1
+    - _LightingMode: 0
     - _LightingModeAnimated: 0
     - _LightingMonochromatic: 0
     - _LightingMonochromaticAnimated: 0
@@ -1006,13 +1004,13 @@ Material:
     - _LightingUncapped: 0
     - _LightingUncappedAnimated: 0
     - _LineColorAnimated: 0
-    - _LineWidth: 1.96
+    - _LineWidth: 0
     - _LineWidthAnimated: 0
     - _LockTooltip: 0
     - _MainAlphaToCoverage: 0
     - _MainAlphaToCoverageAnimated: 0
     - _MainDistanceFadeAnimated: 0
-    - _MainEmissionStrength: 0
+    - _MainEmissionStrength: 9.3
     - _MainEmissionStrengthAnimated: 0
     - _MainFadeTextureAnimated: 0
     - _MainFadeTexturePanAnimated: 0
@@ -1317,13 +1315,13 @@ Material:
     - _SSSThicknessModAnimated: 0
     - _SampleWorld: 0
     - _SampleWorldAnimated: 0
-    - _Saturation: 0.311
+    - _Saturation: -0.567
     - _SaturationAnimated: 0
     - _ScrollingEmission: 0
     - _ScrollingEmission1: 0
     - _ScrollingEmission1Animated: 0
     - _ScrollingEmissionAnimated: 0
-    - _ShaderOptimizerEnabled: 1
+    - _ShaderOptimizerEnabled: 0
     - _ShadowMix: 0
     - _ShadowMixAnimated: 0
     - _ShadowMixThreshold: 0.5
@@ -1334,9 +1332,9 @@ Material:
     - _ShadowOffsetAnimated: 0
     - _ShadowStrength: 1
     - _ShadowStrengthAnimated: 0
-    - _Smoothness: 0.221
+    - _Smoothness: 0
     - _SmoothnessAnimated: 0
-    - _SmoothnessFrom: 0
+    - _SmoothnessFrom: 1
     - _SmoothnessFrom1: 1
     - _SmoothnessFrom1Animated: 0
     - _SmoothnessFromAnimated: 0
@@ -1394,7 +1392,7 @@ Material:
     - _SpecularAnisoJitterMirrored1: 0
     - _SpecularAnisoJitterMirrored1Animated: 0
     - _SpecularAnisoJitterMirroredAnimated: 0
-    - _SpecularHighlights: 0
+    - _SpecularHighlights: 1
     - _SpecularInvertSmoothness: 0
     - _SpecularInvertSmoothness1: 0
     - _SpecularInvertSmoothness1Animated: 0
@@ -1425,7 +1423,7 @@ Material:
     - _SpecularNormal1: 1
     - _SpecularNormal1Animated: 0
     - _SpecularNormalAnimated: 0
-    - _SpecularSmoothness: 0.532
+    - _SpecularSmoothness: 1
     - _SpecularSmoothness1: 0.75
     - _SpecularSmoothness1Animated: 0
     - _SpecularSmoothnessAnimated: 0
@@ -1583,7 +1581,7 @@ Material:
     - footer_patreon: 0
     - footer_twitter: 0
     - footer_youtube: 0
-    - m_LockingInfo: 0
+    - m_LockingInfo: 1
     - m_ParallaxMap: 0
     - m_Special_Effects: 0
     - m_end_Alpha: 0
@@ -1648,7 +1646,7 @@ Material:
     - m_end_specular1: 0
     - m_end_subsurface: 0
     - m_end_vertexManipulation: 0
-    - m_lightingOptions: 1
+    - m_lightingOptions: 0
     - m_mainOptions: 1
     - m_outlineOptions: 0
     - m_renderingOptions: 0
@@ -1658,7 +1656,7 @@ Material:
     - m_start_CenterOutEmission1: 0
     - m_start_DecalSection: 0
     - m_start_DetailOptions: 0
-    - m_start_Lighting: 1
+    - m_start_Lighting: 0
     - m_start_MainHueShift: 0
     - m_start_MainVertexColors: 0
     - m_start_Matcap2: 0
@@ -1692,7 +1690,7 @@ Material:
     - m_start_glitterRandom: 0
     - m_start_glowInDarkEmissionOptions: 0
     - m_start_glowInDarkEmissionOptions1: 0
-    - m_start_lightingAdvanced: 1
+    - m_start_lightingAdvanced: 0
     - m_start_lightingHSL: 0
     - m_start_lightingModifiers: 0
     - m_start_manualFlipbookControl: 0
@@ -1710,7 +1708,7 @@ Material:
     - m_start_scrollingEmissionOptions: 0
     - m_start_scrollingEmissionOptions1: 0
     - m_start_shadowTexture: 0
-    - m_start_specular: 1
+    - m_start_specular: 0
     - m_start_specular1: 0
     - m_start_subsurface: 0
     - m_start_vertexManipulation: 0
@@ -1751,7 +1749,7 @@ Material:
     - _DistortionMaskPan: {r: 0, g: 0, b: 0, a: 0}
     - _DistortionSpeed: {r: 0.5, g: 0.5, b: 0, a: 0}
     - _DistortionSpeed1: {r: 0.5, g: 0.5, b: 0, a: 0}
-    - _EmissionColor: {r: 0.6226415, g: 0.6226415, b: 0.6226415, a: 1}
+    - _EmissionColor: {r: 4.867144, g: 4.867144, b: 4.867144, a: 1}
     - _EmissionColor1: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionMap1Pan: {r: 0, g: 0, b: 0, a: 0}
     - _EmissionMapPan: {r: 0, g: 0, b: 0, a: 0}
@@ -1777,7 +1775,7 @@ Material:
     - _LightingShadowColor: {r: 1, g: 1, b: 1, a: 1}
     - _LightingShadowMaskPan: {r: 0, g: 0, b: 0, a: 0}
     - _LightingShadowTexturePan: {r: 0, g: 0, b: 0, a: 0}
-    - _LineColor: {r: 0, g: 0, b: 0, a: 1}
+    - _LineColor: {r: 1, g: 1, b: 1, a: 1}
     - _MainDistanceFade: {r: 0, g: 0, b: 0, a: 0}
     - _MainFadeTexturePan: {r: 0, g: 0, b: 0, a: 0}
     - _MainHueShiftMaskPan: {r: 0, g: 0, b: 0, a: 0}
