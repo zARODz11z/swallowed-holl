@@ -6,7 +6,7 @@ public class WorldShift : MonoBehaviour
 {
 
     [SerializeField]
-    float shiftCost;
+    public float shiftCost;
     Collider other = null;
     [SerializeField]
     GameObject dummy;
@@ -16,11 +16,11 @@ public class WorldShift : MonoBehaviour
     float warpOffset;
     bool desiresShift;
     bool subDummy = false;
-    bool possibleShift;
+    public bool possibleShift;
     [Tooltip("True = holl, false = realWorld")]
     public bool hollOrReal;
     [SerializeField]
-    bool shiftBlocked = false;
+    public bool shiftBlocked = false;
     public void setShiftBlocked(bool plug){
         shiftBlocked = plug;
     }
@@ -49,18 +49,18 @@ public class WorldShift : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.R)){
             if(GetComponent<PlayerStats>().hunger > shiftCost){
-                if (hollOrReal){ 
+                if (hollOrReal){
                     desiresShift = true;
-                    if(!shiftBlocked){   
+                    if(!shiftBlocked){
                         if(dummy.gameObject.GetComponent<canShift>().getShiftable()){
-                            
+
                             if(dummy.gameObject.GetComponent<canShift>().getCollider() != null){
                                 //Debug.Log("Shifting to Breakable Object");
                                 dummy.gameObject.GetComponent<canShift>().getCollider().GetComponent<Shatter>().oneShot(0);
                                 transform.position = dummy.transform.position;
                                 GetComponent<PlayerStats>().hunger = GetComponent<PlayerStats>().hunger - shiftCost;
                                 hollOrReal = false;
-                                
+
                             }
                             else{
                                 //Debug.Log("Shifting to Main dummy");
@@ -69,7 +69,7 @@ public class WorldShift : MonoBehaviour
                                 hollOrReal = false;
                             }
 
-                        }    
+                        }
                         else {
                             foreach(GameObject d in dummies){
                                 if(d.gameObject.GetComponent<canShift>().getShiftable()){
@@ -93,12 +93,12 @@ public class WorldShift : MonoBehaviour
                     else{
                         //Debug.Log("Shift Blocked!");
                     }
-                }          
-                else if (!hollOrReal){ 
-                    desiresShift = true; 
-                    if(!shiftBlocked){   
+                }
+                else if (!hollOrReal){
+                    desiresShift = true;
+                    if(!shiftBlocked){
                     if(dummy.gameObject.GetComponent<canShift>().getShiftable()){
-                        
+
                         if(dummy.gameObject.GetComponent<canShift>().getCollider() != null){
                             //Debug.Log("Shifting to Breakable Object");
                             dummy.gameObject.GetComponent<canShift>().getCollider().GetComponent<Shatter>().oneShot(0);
@@ -113,7 +113,7 @@ public class WorldShift : MonoBehaviour
                             hollOrReal = true;
                         }
 
-                    }    
+                    }
                     else {
                         foreach(GameObject d in dummies){
                             if(d.gameObject.GetComponent<canShift>().getShiftable()){
@@ -133,15 +133,15 @@ public class WorldShift : MonoBehaviour
                     if(subDummy == false){
                         //Debug.Log("Cant Shift!");
                             }
-                        }   
+                        }
                         else{
                             //Debug.Log("Shift Blocked");
                         }
-                    } 
-                }  
+                    }
+                }
                 else{
                     Debug.Log("Not enough hunger to shift!");
-                }    
+                }
             }
         else{
             desiresShift = false;
