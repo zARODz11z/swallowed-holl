@@ -41,7 +41,8 @@ public class Explode : MonoBehaviour
                         }
                 }
                 else{
-                    if (rb != null){
+                    if (rb != null){ // checks to see if the object has a rigid body
+                        //checks to see if the object is an explosive
                         if (rb.gameObject.tag == "Explosive"){
                             otherExplosive = rb.gameObject.GetComponent<Shatter>();
                             otherExplosive.oneShot(otherExplosiveTime);
