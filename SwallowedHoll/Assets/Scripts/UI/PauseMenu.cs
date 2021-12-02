@@ -11,7 +11,7 @@ public class PauseMenu : MonoBehaviour {
     GameObject helpUI;
 
     //Flipflop bool to pause and unpause with the same button
-    bool isPaused = false;
+   public bool isPaused = false;
 
 
     // Start is called before the first frame update
