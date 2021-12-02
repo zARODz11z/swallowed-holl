@@ -44,13 +44,16 @@ public class PauseMenu : MonoBehaviour {
         Time.timeScale = 0;
         pauseUI.SetActive(true);
         isPaused = true;
+        Cursor.lockState = CursorLockMode.None;
     }
 
     //Unfreeze time, hide the menu
     public void resume(){
+        Debug.Log("resume");
         Time.timeScale = 1;
         pauseUI.SetActive(false);
         isPaused = false;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     //Show settings menu
