@@ -2,8 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
-//Travis Parks, modified to pause by Brian Meginness
 public class WorldShift : MonoBehaviour
 {
 
@@ -49,7 +47,7 @@ public class WorldShift : MonoBehaviour
         else{
                 dummy.transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z + warpOffset);
         }
-        if (Input.GetKeyDown(KeyCode.R) && !FindObjectOfType<PauseMenu>().isPaused){
+        if (Input.GetKeyDown(KeyCode.R)){
             if(GetComponent<PlayerStats>().hunger > shiftCost){
                 if (hollOrReal){
                     desiresShift = true;

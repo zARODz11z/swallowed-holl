@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-//Travis Parks, Update() pausing by Brian Meginness
 //this script controls all the animations tied to the character, such as when certain animations should be played and how they should be played.
 public class HandAnim : MonoBehaviour
 {
@@ -158,145 +157,141 @@ public class HandAnim : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //IF not paused
-        if (!FindObjectOfType<PauseMenu>().isPaused) {
+        if((grab.isHolding && grab.isFood) != holdingDummy){
+            animator.SetBool("holdingChange", true);
+            Invoke("resetHoldingChange", .1f);
+            holdingDummy = (grab.isHolding && grab.isFood);
+        }
 
-            if ((grab.isHolding && grab.isFood) != holdingDummy) {
-                animator.SetBool("holdingChange", true);
-                Invoke("resetHoldingChange", .1f);
-                holdingDummy = (grab.isHolding && grab.isFood);
-            }
+        if(grab.isFood){
+            animator.SetBool("isFood", true);
+        }
+        else if(!grab.isFood){
+            animator.SetBool("isFood", false);
+        }
+        //Debug.Log(" is food "+ grab.isFood+" holding "+ grab.isHolding);
+        if(grab.isFood && grab.isHolding){
+            animator.SetFloat("isHoldingFood", 1);
+        }
+        else if(!grab.isFood || !grab.isHolding){
+            animator.SetFloat("isHoldingFood", 0);
+        }
+        if(movement.ClimbingADJ){
+            animator.SetFloat("ClimbingX", movement.velocity.x );
+            animator.SetFloat("ClimbingY", movement.velocity.y );
+            animator.SetBool("isClimbing", true);
+        }
+        else if(!movement.ClimbingADJ){
+            animator.SetBool("isClimbing", false);
+        }
+        if(movement.Diving){
+            animator.SetBool("HungerDive", true);
+        }
+        else if(!movement.Diving){
+            animator.SetBool("HungerDive", false);
+        }
+        if(Input.GetButtonDown("Duck")){
+            setisCrouching(true);
+        }
+        if(Input.GetButtonUp("Duck")){
+            setisCrouching(false);
+        }
+        if(grab.isgrabCharging){
+            animator.SetBool("grabCharge", true);
+        }
+        else if (!grab.isgrabCharging){
+            animator.SetBool("grabCharge", false);
+        }
+        BoolAdjuster();
+        bool JumpPressed = Input.GetKey("space");
+        isOnGround = isOnGroundADJ;
+        //this OnGround stays true for a little bit after you leave the ground, hence ADJ
+        if(isOnGround){
+            animator.SetBool("isOnGroundADJ", true);
+        }
+        else if (!isOnGround){
+            animator.SetBool("isOnGroundADJ", false);
+        }
 
-            if (grab.isFood) {
-                animator.SetBool("isFood", true);
-            }
-            else if (!grab.isFood) {
-                animator.SetBool("isFood", false);
-            }
-            //Debug.Log(" is food "+ grab.isFood+" holding "+ grab.isHolding);
-            if (grab.isFood && grab.isHolding) {
-                animator.SetFloat("isHoldingFood", 1);
-            }
-            else if (!grab.isFood || !grab.isHolding) {
-                animator.SetFloat("isHoldingFood", 0);
-            }
-            if (movement.ClimbingADJ) {
-                animator.SetFloat("ClimbingX", movement.velocity.x);
-                animator.SetFloat("ClimbingY", movement.velocity.y);
-                animator.SetBool("isClimbing", true);
-            }
-            else if (!movement.ClimbingADJ) {
-                animator.SetBool("isClimbing", false);
-            }
-            if (movement.Diving) {
-                animator.SetBool("HungerDive", true);
-            }
-            else if (!movement.Diving) {
-                animator.SetBool("HungerDive", false);
-            }
-            if (Input.GetButtonDown("Duck")){
-                setisCrouching(true);
-            }
-            if (Input.GetButtonUp("Duck")){
-                setisCrouching(false);
-            }
-            if (grab.isgrabCharging) {
-                animator.SetBool("grabCharge", true);
-            }
-            else if (!grab.isgrabCharging) {
-                animator.SetBool("grabCharge", false);
-            }
-            BoolAdjuster();
-            bool JumpPressed = Input.GetKey("space");
-            isOnGround = isOnGroundADJ;
-            //this OnGround stays true for a little bit after you leave the ground, hence ADJ
-            if (isOnGround) {
-                animator.SetBool("isOnGroundADJ", true);
-            }
-            else if (!isOnGround) {
-                animator.SetBool("isOnGroundADJ", false);
-            }
+        if (Input.GetKey("w") || Input.GetKey("a") || Input.GetKey("s") || Input.GetKey("d") ){
+            animator.SetBool("isMoving", true);
+        }
+        else{
+            animator.SetBool("isMoving", false);
+        }
+        if (Input.GetKey("left shift")){
+            animator.SetBool("isSprinting", true);
+        }
+        else {
+            animator.SetBool("isSprinting", false);
+        }
+        if (Input.GetKey("c")){
+            animator.SetBool("walkPressed", true);
+        }
+        else {
+            animator.SetBool("walkPressed", false);
+        }
 
-            if (Input.GetKey("w") || Input.GetKey("a") || Input.GetKey("s") || Input.GetKey("d")) {
-                animator.SetBool("isMoving", true);
+        playerSpeed = sphere.GetComponent<Rigidbody>().velocity.magnitude;
+        if (playerSpeed < .001f){
+            animator.SetFloat("Blend", 0f);
+        }
+        else{
+            if(playerSpeed >= 15f){
+                animator.SetFloat("Blend", 1f);
             }
             else {
-                animator.SetBool("isMoving", false);
-            }
-            if (Input.GetKey("left shift")) {
-                animator.SetBool("isSprinting", true);
-            }
-            else {
-                animator.SetBool("isSprinting", false);
-            }
-            if (Input.GetKey("c")) {
-                animator.SetBool("walkPressed", true);
-            }
-            else {
-                animator.SetBool("walkPressed", false);
-            }
+                playerSpeed2 = playerSpeed / 15f;
+                animator.SetFloat("Blend", playerSpeed2);
 
-            playerSpeed = sphere.GetComponent<Rigidbody>().velocity.magnitude;
-            if (playerSpeed < .001f) {
-                animator.SetFloat("Blend", 0f);
+                if(playerSpeed >= 10f){
+                    animator.SetFloat("walkBlend", 1f);
+                }
+                if (playerSpeed < .001f){
+                    animator.SetFloat("walkBlend", 0f);
+                }
+                playerSpeed = playerSpeed / 10f;
+                animator.SetFloat("walkBlend", playerSpeed);
             }
-            else {
-                if (playerSpeed >= 15f) {
-                    animator.SetFloat("Blend", 1f);
-                }
-                else {
-                    playerSpeed2 = playerSpeed / 15f;
-                    animator.SetFloat("Blend", playerSpeed2);
-
-                    if (playerSpeed >= 10f) {
-                        animator.SetFloat("walkBlend", 1f);
-                    }
-                    if (playerSpeed < .001f) {
-                        animator.SetFloat("walkBlend", 0f);
-                    }
-                    playerSpeed = playerSpeed / 10f;
-                    animator.SetFloat("walkBlend", playerSpeed);
-                }
+        }
+        if(Input.GetKeyDown("mouse 1")){
+            if(flipflop2 && !movement.isBarraging && !grab.isHolding){
+                animator.SetBool("barragePrep", true);
+                barragePrep = true;
+                blocker = false;
+                flipflop2 = false;
             }
-            if (Input.GetKeyDown("mouse 1")) {
-                if (flipflop2 && !movement.isBarraging && !grab.isHolding) {
-                    animator.SetBool("barragePrep", true);
-                    barragePrep = true;
-                    blocker = false;
-                    flipflop2 = false;
+            else if (!flipflop2){
+                movement.isBarraging = false;
+                animator.SetBool("barragePrep", false);
+                barragePrep = false;
+                blocker = true;
+                flipflop2 = true;
+            }
+        }
+        if ( Input.GetKeyDown("mouse 0") ){
+            if(blocker && !grab.isHolding){
+                if(flipflop){
+                    Invoke("waveStartL", .1f);
                 }
-                else if (!flipflop2) {
-                    movement.isBarraging = false;
-                    animator.SetBool("barragePrep", false);
-                    barragePrep = false;
-                    blocker = true;
-                    flipflop2 = true;
+                else if (!flipflop){
+                    Invoke("waveStartR", .1f);
                 }
             }
-            if (Input.GetKeyDown("mouse 0")) {
-                if (blocker && !grab.isHolding) {
-                    if (flipflop) {
-                        Invoke("waveStartL", .1f);
-                    }
-                    else if (!flipflop) {
-                        Invoke("waveStartR", .1f);
-                    }
-                }
+        }
+        if ( Input.GetKey("mouse 0") ){
+            if(barragePrep){
+                animator.SetBool("charging", true);
+                
             }
-            if (Input.GetKey("mouse 0")) {
-                if (barragePrep) {
-                    animator.SetBool("charging", true);
-
-                }
-                else if (!barragePrep) {
-                    animator.SetBool("charging", false);
-                    movement.isBarraging = false;
-                }
-            }
-            else if (!Input.GetKey("mouse 0")) {
+            else if (!barragePrep){
                 animator.SetBool("charging", false);
                 movement.isBarraging = false;
             }
+        }
+        else if (!Input.GetKey("mouse 0") ){
+            animator.SetBool("charging", false);
+            movement.isBarraging = false;
         }
     }
 }

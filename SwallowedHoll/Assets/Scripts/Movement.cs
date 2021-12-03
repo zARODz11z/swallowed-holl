@@ -168,14 +168,12 @@ public class Movement : MonoBehaviour {
 			}
 		}
 		//responds to the duck keybind by playing the appripriate animation and setting the dive prep bool
-        if(Input.GetButtonDown("Duck") && !FindObjectOfType<PauseMenu>().isPaused)
-        {
+        if(Input.GetButtonDown("Duck")){
 			divingPrep = true;
 			transform.GetChild(1).gameObject.SetActive(false);
 			transform.GetChild(4).gameObject.SetActive(true);
         }
-        if(Input.GetButtonUp("Duck") && !FindObjectOfType<PauseMenu>().isPaused)
-        {
+        if(Input.GetButtonUp("Duck")){
 			divingPrep = false;
 			transform.GetChild(1).gameObject.SetActive(true);
 			transform.GetChild(4).gameObject.SetActive(false);
@@ -192,7 +190,7 @@ public class Movement : MonoBehaviour {
 			desiresClimbing = false;
 		}
 		//responds to the jump keybind to allow jumping
-		desiredJump |= Input.GetButtonDown("Jump") && !FindObjectOfType<PauseMenu>().isPaused;
+		desiredJump |= Input.GetButtonDown("Jump");
 		//no climbing while holding 
 		if(grab.isHolding){
 			desiresClimbing = false;
