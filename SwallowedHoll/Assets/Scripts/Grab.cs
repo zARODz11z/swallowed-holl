@@ -26,7 +26,7 @@ public class Grab : MonoBehaviour
     Transform HighthrowingPoint;
     [SerializeField]
     bool highorLow = true;
-
+    [HideInInspector]
     public float throwingTemp;
 
     [SerializeField]
@@ -40,16 +40,20 @@ public class Grab : MonoBehaviour
     [SerializeField]
     [Tooltip("the rate at which the players throw charges")]
     float chargeRate;
+    [HideInInspector]
     public bool isgrabCharging = false;
 
     //Object sizes
     public enum objectSizes{tiny, small, medium, large, none};
+    [HideInInspector]
     public objectSizes sizes;
 
     public Interact interact;
 
     //Is held object food
+    [HideInInspector]
     public bool isFood;
+    [HideInInspector]
     public bool justThrew;
     [SerializeField]
     public Transform foodHoldingPoint;
@@ -79,7 +83,7 @@ public class Grab : MonoBehaviour
             isFood = false;
         }
         if(!isFood){
-            Debug.Log("Holding not food");
+            //Debug.Log("Holding not food");
             //Get size of held object
             if(propGame.GetComponent<objectSize>().sizes == objectSize.objectSizes.large){
                 sizes = objectSizes.large;

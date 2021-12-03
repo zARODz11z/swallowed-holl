@@ -16,6 +16,7 @@ public class PlayerStats : MonoBehaviour
     public HealthBar healthBar;
     public KeyCode saveKey = KeyCode.V;
     public KeyCode loadGameKey = KeyCode.B;
+    [HideInInspector]
     public bool portalWarp;
 
     public void SavePlayer()
@@ -44,13 +45,13 @@ public class PlayerStats : MonoBehaviour
     }
     public void takeDamage(float damage){
         if (hp - damage < 0){
-            Debug.Log("Went from "+hp+" to 0");
+            //Debug.Log("Went from "+hp+" to 0");
             hp = 0;
             Die();
             
         }
         else {
-            Debug.Log("Went from "+hp+" to "+ Mathf.Round(hp-damage));
+            //Debug.Log("Went from "+hp+" to "+ Mathf.Round(hp-damage));
             hp = Mathf.Round(hp-damage);
         }
     }
