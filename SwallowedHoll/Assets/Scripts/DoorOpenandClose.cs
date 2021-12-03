@@ -46,6 +46,12 @@ public class DoorOpenandClose : MonoBehaviour
             }
         }
     }
+
+    public void timedOpenDoor(){
+        Invoke("openSlidingDoor", 30f);
+    }
+
+
     public void openSlidingDoor(){
         if(!subGate){
             gate = true;

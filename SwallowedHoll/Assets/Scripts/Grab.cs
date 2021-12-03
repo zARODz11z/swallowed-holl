@@ -79,7 +79,7 @@ public class Grab : MonoBehaviour
             isFood = false;
         }
         if(!isFood){
-            Debug.Log("Holding not food");
+            //Debug.Log("Holding not food");
             //Get size of held object
             if(propGame.GetComponent<objectSize>().sizes == objectSize.objectSizes.large){
                 sizes = objectSizes.large;

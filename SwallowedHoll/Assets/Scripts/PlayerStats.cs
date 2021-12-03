@@ -44,13 +44,13 @@ public class PlayerStats : MonoBehaviour
     }
     public void takeDamage(float damage){
         if (hp - damage < 0){
-            Debug.Log("Went from "+hp+" to 0");
+            //Debug.Log("Went from "+hp+" to 0");
             hp = 0;
             Die();
             
         }
         else {
-            Debug.Log("Went from "+hp+" to "+ Mathf.Round(hp-damage));
+            //Debug.Log("Went from "+hp+" to "+ Mathf.Round(hp-damage));
             hp = Mathf.Round(hp-damage);
         }
     }
@@ -67,7 +67,7 @@ public class PlayerStats : MonoBehaviour
 
     void Update()
     {
-        Debug.Log(portalWarp);
+        //Debug.Log(portalWarp);
         //updates the slider value to match the current hunger value
         hungerBar.SetHunger(hunger);
         //updates the slider value to match the current hp value
