@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 //this script is meant to handle a button or lever or whatever that is interacted with by the player. it will play an animation to reflect that it has been interacted with, then run whatever script is linked in the InteractableObject Component
+//Travis Parks
 public class buttonPush : MonoBehaviour
 {
     [SerializeField]
