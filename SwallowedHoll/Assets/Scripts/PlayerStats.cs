@@ -67,7 +67,6 @@ public class PlayerStats : MonoBehaviour
 
     void Update()
     {
-        Debug.Log(portalWarp);
         //updates the slider value to match the current hunger value
         hungerBar.SetHunger(hunger);
         //updates the slider value to match the current hp value
