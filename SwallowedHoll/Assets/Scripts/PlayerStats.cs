@@ -16,6 +16,7 @@ public class PlayerStats : MonoBehaviour
     public HealthBar healthBar;
     public KeyCode saveKey = KeyCode.V;
     public KeyCode loadGameKey = KeyCode.B;
+    [HideInInspector]
     public bool portalWarp;
 
     public void SavePlayer()
