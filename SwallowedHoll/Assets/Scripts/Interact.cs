@@ -126,7 +126,7 @@ public class Interact : MonoBehaviour
                         propRB = hit.rigidbody;
                         prop = hit.transform;
                         //IF the thing you hit has a rigidbody that is light enough for the player to hold
-                        if (hit.transform.gameObject.GetComponent<Rigidbody>() != null && hit.transform.gameObject.GetComponent<Rigidbody>().mass <= grab.strength && !grab.justThrew)
+                        if (hit.transform.gameObject.GetComponent<Rigidbody>() != null && hit.transform.gameObject.GetComponent<Rigidbody>().isKinematic == false && hit.transform.gameObject.GetComponent<Rigidbody>().mass <= grab.strength && !grab.justThrew)
                         {
                             //Pick it up
                             pickUp(prop.gameObject);
