@@ -1,6 +1,6 @@
 //adapted and modified from video "How to make a HEALTH BAR in Unity!" by Brackeys
 //https://www.youtube.com/watch?v=BLfNP4Sc_iA
-//Author: Sandeep and Travis
+//Author: Sandeep, Travis, Andrew
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -17,11 +17,14 @@ public class PlayerStats : MonoBehaviour
     public KeyCode saveKey = KeyCode.V;
     public KeyCode loadGameKey = KeyCode.B;
     public bool portalWarp;
-
+    
+    //Created by Andrew Rodriguez: This function simply calls the static SavePlayer function in our save system class
     public void SavePlayer()
     {
         SaveSystem.SavePlayer(this);
     }
+    //Created by Andrew Rodriguez & Travis Parks: This function calls the load player stats function in our save system then loads the player stats
+    //into the current players data. So their hunger, hp, and position are updated to whatever was last saved.
     public void LoadPlayer()
     {
         if(GetComponent<Movement>().grab.isHolding){

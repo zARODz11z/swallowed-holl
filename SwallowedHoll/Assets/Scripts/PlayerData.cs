@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//Made by Andrew Rodriguez with the help of https://www.youtube.com/watch?v=XOjd_qU2Ido&ab_channel=Brackeys
+//This class is what is serialized into binary in our save system class
 [System.Serializable]
 public class PlayerData
 {
