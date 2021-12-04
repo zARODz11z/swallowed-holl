@@ -100,14 +100,16 @@ public class HandAnim : MonoBehaviour
         animator.SetBool("barragePrep", false);
         movement.isBarraging = true;
         flipflop2 = true;
-        speedController.setFactor(.5f);
+        //speedController.setFactor(.5f);
+        //Debug.Log("SPEED CUT");
         //movement change here
 
     }
 
     void resetbarragePrep(){
         barragePrep = false;
-        speedController.setFactor(2f);
+        //speedController.setFactor(2f);
+        //Debug.Log("SPEED BOOSTED");
         //movement restoration here
     }
 

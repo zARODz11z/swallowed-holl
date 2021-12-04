@@ -20,6 +20,7 @@ public class Shatter : MonoBehaviour
     [SerializeField]
     float breakSpeed = 40f;
     GameObject player;
+    GameObject sounds;
     [SerializeField]
     public bool punchAble;
     [SerializeField]
@@ -42,6 +43,7 @@ public class Shatter : MonoBehaviour
         foreach(GameObject g in GameObject.FindGameObjectsWithTag("Player")){
             if(g.GetComponent<Movement>()!=null){
                 player = g.transform.GetChild(0).GetChild(0).GetChild(2).gameObject;
+                sounds = g.transform.GetChild(5).gameObject;
             }
         }
         color = GetComponent<Renderer>();
@@ -52,6 +54,20 @@ public class Shatter : MonoBehaviour
         }
     }
     public void takeDamage(){
+        if (Damagestate < hitPoints){
+            foreach(Material m in color.materials ){
+                m.SetColor("_EmissionColor", Color.grey * darken);
+                m.SetColor("_Color", Color.grey * darken);
+                Damagestate++;
+                darken -= .2f;
+            }
+        }
+        else if ( Damagestate >= hitPoints){
+            Invoke("spawnShatter", 0);
+        }
+    }
+    public void takeDamagePUNCH(){
+        sounds.gameObject.GetComponent<SoundCaller>().playPunch();
         if (Damagestate < hitPoints){
             foreach(Material m in color.materials ){
                 m.SetColor("_EmissionColor", Color.grey * darken);
