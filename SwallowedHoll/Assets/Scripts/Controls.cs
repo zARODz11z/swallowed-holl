@@ -36,7 +36,7 @@ public class Controls : MonoBehaviour
                 inUse.Add(key, false);
             } catch
             {
-                Debug.Log(key + " gave an error");
+
             }
             
         }
