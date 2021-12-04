@@ -11,6 +11,7 @@ public class Grab : MonoBehaviour
     //Components
     HandAnim hand;
     Movement movement;
+    Controls controls;
 
     [HideInInspector]
     public bool isHolding = false;
@@ -60,6 +61,7 @@ public class Grab : MonoBehaviour
 
     void Start() {
         //Set components
+        controls = GameObject.Find("Player").GetComponentInChildren<Controls>();
         interact = GetComponent<Interact>();
         throwingTemp = throwingforce;
         movement = transform.root.GetComponent<Movement>();
@@ -150,7 +152,7 @@ public class Grab : MonoBehaviour
         if (!FindObjectOfType<PauseMenu>().isPaused)
         {
             //IF Left Mouse released and is holding an object
-            if (Input.GetKeyUp("mouse 0") && isHolding && !hand.barragePrep && !movement.isBarraging && !justThrew && !isFood)
+            if (Input.GetKeyUp(controls.keys["throw"]) && isHolding && !hand.barragePrep && !movement.isBarraging && !justThrew && !isFood)
             {
                 //Remove from grip
                 interact.detach();
@@ -173,7 +175,7 @@ public class Grab : MonoBehaviour
                 Invoke("resetJustThrew", .5f);
             }
             //IF Left Mouse pressed and is holding an object
-            if (Input.GetKey("mouse 0") && isHolding && !hand.barragePrep && !movement.isBarraging && !justThrew && !isFood)
+            if (Input.GetKey(controls.keys["throw"]) && isHolding && !hand.barragePrep && !movement.isBarraging && !justThrew && !isFood)
             {
                 // Start incrementing throwing force
                 if (throwingforce <= maxThrowingForce)
@@ -187,7 +189,7 @@ public class Grab : MonoBehaviour
                     highorLow = false;
                 }
             }
-            else if (Input.GetKey("mouse 0") && isHolding && !hand.barragePrep && !movement.isBarraging && !justThrew && isFood)
+            else if (Input.GetKey(controls.keys["throw"]) && isHolding && !hand.barragePrep && !movement.isBarraging && !justThrew && isFood)
             {
                 interact.foodDetach();
                 interact.propRB.AddForce((LowthrowingPoint.position - interact.origin.transform.position) * throwingforce, ForceMode.Impulse);
@@ -198,7 +200,7 @@ public class Grab : MonoBehaviour
             }
 
             //IF Right Mouse pressed and is holding food
-            if (Input.GetKey("mouse 1") && isHolding && !hand.barragePrep && !movement.isBarraging && isFood)
+            if (Input.GetKey(controls.keys["eat"]) && isHolding && !hand.barragePrep && !movement.isBarraging && isFood)
             {
                 hand.setEatFood();
             }

@@ -9,13 +9,15 @@ public class MainMenu : MonoBehaviour
     //Menu components
     GameObject mainMenu;
     GameObject settingsMenu;
-    
+    GameObject levelsMenu;
+
     // Start is called before the first frame update
     void Start()
     {
         //Get menu components
         mainMenu = gameObject.transform.Find("Main").gameObject;
         settingsMenu = gameObject.transform.Find("Settings").gameObject;
+        levelsMenu = gameObject.transform.Find("LevelSelect").gameObject;
 
         //Make sure it starts on the main menu
         back();
@@ -37,6 +39,13 @@ public class MainMenu : MonoBehaviour
         Debug.Log("Dummy until save system is up and running");
     }
 
+    //Starts the game from the specified level
+    public void levelSelect()
+    {
+        levelsMenu.SetActive(true);
+        mainMenu.SetActive(false);
+    }
+
     //Quits the game
     public void quitGame()
     {
@@ -54,7 +63,9 @@ public class MainMenu : MonoBehaviour
     //Returns to main menu
     public void back()
     {
+        levelsMenu.SetActive(false);
         settingsMenu.SetActive(false);
         mainMenu.SetActive(true);
     }
+
 }

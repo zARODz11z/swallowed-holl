@@ -6,6 +6,7 @@ using UnityEngine;
 public class Interact : MonoBehaviour
 {
     //Components
+    Controls controls;
     Movement movement;
     Grab grab;
     HandAnim hand;
@@ -34,8 +35,9 @@ public class Interact : MonoBehaviour
 
     // Start is called before the first frame update
     void Start()
-    {  
+    {
         //Assign components
+        controls = GameObject.Find("Player").GetComponentInChildren<Controls>();
         movement = transform.root.GetComponent<Movement>();
         grab = GetComponent<Grab>();
         hand = GetComponent<HandAnim>();
@@ -113,7 +115,7 @@ public class Interact : MonoBehaviour
         //IF not paused
         if (!FindObjectOfType<PauseMenu>().isPaused) {
             //IF e pressed
-            if (Input.GetKeyDown("e"))
+            if (Input.GetKeyDown(controls.keys["interact"]))
             {
                 // if you are not holding anything, and you are not preparing to barrage, and you are not barraging
                 if (!grab.isHolding && !hand.barragePrep && !movement.isBarraging)
