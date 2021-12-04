@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+//Brian Meginness
 public class HelpMenu : MonoBehaviour
 {
     //Menu images
@@ -20,23 +21,12 @@ public class HelpMenu : MonoBehaviour
     Image diveCrouch;
     Image diveJump;
 
-    // Start is called before the first frame update
-    void Start()
+    Controls controls;
+
+    private void Start()
     {
-        //Temporary assignment until keybinding is done
-        KeyCode leftKey = KeyCode.A;
-        KeyCode rightKey = KeyCode.D;
-        KeyCode upKey = KeyCode.W;
-        KeyCode downKey = KeyCode.S;
-        KeyCode jumpKey = KeyCode.Space;
-        KeyCode duckKey = KeyCode.LeftControl;
-        KeyCode runKey = KeyCode.LeftShift;
-        KeyCode interKey = KeyCode.E;
-        KeyCode warpKey = KeyCode.R;
-        KeyCode throwKey = KeyCode.Mouse0;
-        KeyCode eatKey = KeyCode.Mouse1;
-        
         //Assign components
+        controls = GameObject.Find("Player").GetComponentInChildren<Controls>();
         moveLeft = GameObject.Find("WalkLeft").GetComponent<Image>();
         moveRight = GameObject.Find("WalkRight").GetComponent<Image>();
         moveUp = GameObject.Find("WalkForward").GetComponent<Image>();
@@ -50,7 +40,65 @@ public class HelpMenu : MonoBehaviour
         eat = GameObject.Find("Eat").GetComponent<Image>();
         diveCrouch = GameObject.Find("DiveCrouch").GetComponent<Image>();
         diveJump = GameObject.Find("DiveJump").GetComponent<Image>();
+    }
 
+    private void OnEnable()
+    {
+        if (controls)
+        {
+            draw();
+        }
+    }
+
+    //When a control button is pressed
+    public void changeControl(string action)
+    {
+        StartCoroutine(WaitForKeyPress(action));
+    }
+
+    //Coroutine to wait for user input
+    private IEnumerator WaitForKeyPress(string action)
+    {
+        //Save previous key for the specified action, set to not in use
+        KeyCode oldKey = controls.keys[action];
+        controls.inUse[oldKey] = false;
+
+        // Wait for key press
+        while (!Input.anyKeyDown)
+        {
+            yield return null;
+        }
+
+        //Figure out what key was pressed
+        foreach (KeyCode key in System.Enum.GetValues(typeof(KeyCode)))
+        {
+            
+            if (Input.GetKey(key) && !controls.inUse[key])
+            {
+                Debug.Log(action + " changed to " + key);
+                //Update controls with new key
+                controls.keys[action] = key;
+                controls.inUse[key] = true;
+                draw();
+            }
+        }
+
+    }
+
+    private void draw()
+    {
+        //Get Keys
+        KeyCode leftKey = controls.keys["walkLeft"];
+        KeyCode rightKey = controls.keys["walkRight"];
+        KeyCode upKey = controls.keys["walkUp"];
+        KeyCode downKey = controls.keys["walkDown"];
+        KeyCode jumpKey = controls.keys["jump"];
+        KeyCode duckKey = controls.keys["duck"];
+        KeyCode runKey = controls.keys["sprint"];
+        KeyCode interKey = controls.keys["interact"];
+        KeyCode warpKey = controls.keys["warp"];
+        KeyCode throwKey = controls.keys["throw"];
+        KeyCode eatKey = controls.keys["eat"];
 
         //Set images to associated key sprite
         moveLeft.sprite = Resources.Load<Sprite>(leftKey.ToString());
@@ -67,5 +115,4 @@ public class HelpMenu : MonoBehaviour
         diveCrouch.sprite = Resources.Load<Sprite>(duckKey.ToString());
         diveJump.sprite = Resources.Load<Sprite>(jumpKey.ToString());
     }
-
 }

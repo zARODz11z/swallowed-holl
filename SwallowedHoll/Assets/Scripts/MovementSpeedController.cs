@@ -5,6 +5,7 @@ using UnityEngine;
 public class MovementSpeedController : MonoBehaviour
 {
     Movement movement;
+    Controls controls;
 
     [SerializeField, Range(0f, 100f)]
 	[Tooltip("speeds of the character, these states represent the speed when your character is jogging, sprinting, walking, swimming, and climbing")]
@@ -30,12 +31,13 @@ public class MovementSpeedController : MonoBehaviour
 
     void Start() {
         movement = GetComponent<Movement>();
+        controls = GetComponent<Controls>();
     }
     void MovementState(float factor){
 		//change movement speeds universally
         bool duckPressed = movement.divingPrep;
-		bool SprintPressed = Input.GetButton("Sprint");
-		bool moving = Input.GetButton("Up") || Input.GetButton("Down") || Input.GetButton("Left") || Input.GetButton("Right");
+		bool SprintPressed = Input.GetKey(controls.keys["sprint"]);
+		bool moving = Input.GetKey(controls.keys["walkUp"]) || Input.GetKey(controls.keys["walkDown"]) || Input.GetKey(controls.keys["walkLeft"]) || Input.GetKey(controls.keys["walkRight"]);
 		// default situation
 		if ((!SprintPressed) && moving && !duckPressed ){
 			currentSpeed = baseSpeed;

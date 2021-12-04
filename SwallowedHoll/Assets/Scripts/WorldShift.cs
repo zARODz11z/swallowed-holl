@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-//Travis Parks, modified to pause by Brian Meginness
+//Travis Parks, modified to pause and rebind controls by Brian Meginness
 public class WorldShift : MonoBehaviour
 {
-
+    Controls controls;
     [SerializeField]
     public float shiftCost;
     Collider other = null;
@@ -41,6 +41,12 @@ public class WorldShift : MonoBehaviour
     public void setDesiresShift(bool plug){
         desiresShift = plug;
     }
+
+    private void Start()
+    {
+        controls = GameObject.Find("Player").GetComponentInChildren<Controls>();
+    }
+
     void Update()
     {
         if(hollOrReal){
@@ -49,7 +55,7 @@ public class WorldShift : MonoBehaviour
         else{
                 dummy.transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z + warpOffset);
         }
-        if (Input.GetKeyDown(KeyCode.R) && !FindObjectOfType<PauseMenu>().isPaused){
+        if (Input.GetKeyDown(controls.keys["warp"]) && !FindObjectOfType<PauseMenu>().isPaused){
             if(GetComponent<PlayerStats>().hunger > shiftCost){
                 if (hollOrReal){
                     desiresShift = true;

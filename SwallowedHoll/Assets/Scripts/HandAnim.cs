@@ -5,6 +5,7 @@ using UnityEngine;
 //this script controls all the animations tied to the character, such as when certain animations should be played and how they should be played.
 public class HandAnim : MonoBehaviour
 {
+    Controls controls;
     MovementSpeedController speedController;
     [SerializeField]
     GameObject sphere;
@@ -88,7 +89,7 @@ public class HandAnim : MonoBehaviour
     }
     void Start()
     {
-        
+        controls = GameObject.Find("Player").GetComponentInChildren<Controls>();
         speedController = sphere.GetComponent<MovementSpeedController>();
         animator = GetComponent<Animator>();
         movement = sphere.GetComponent<Movement>();
@@ -194,10 +195,10 @@ public class HandAnim : MonoBehaviour
             else if (!movement.Diving) {
                 animator.SetBool("HungerDive", false);
             }
-            if (Input.GetButtonDown("Duck")){
+            if (Input.GetKeyDown(controls.keys["duck"])){
                 setisCrouching(true);
             }
-            if (Input.GetButtonUp("Duck")){
+            if (Input.GetKeyUp(controls.keys["duck"])){
                 setisCrouching(false);
             }
             if (grab.isgrabCharging) {
@@ -207,7 +208,7 @@ public class HandAnim : MonoBehaviour
                 animator.SetBool("grabCharge", false);
             }
             BoolAdjuster();
-            bool JumpPressed = Input.GetKey("space");
+            bool JumpPressed = Input.GetKey(controls.keys["jump"]);
             isOnGround = isOnGroundADJ;
             //this OnGround stays true for a little bit after you leave the ground, hence ADJ
             if (isOnGround) {
@@ -217,13 +218,13 @@ public class HandAnim : MonoBehaviour
                 animator.SetBool("isOnGroundADJ", false);
             }
 
-            if (Input.GetKey("w") || Input.GetKey("a") || Input.GetKey("s") || Input.GetKey("d")) {
+            if (Input.GetKey(controls.keys["walkUp"]) || Input.GetKey(controls.keys["walkLeft"]) || Input.GetKey(controls.keys["walkDown"]) || Input.GetKey(controls.keys["walkRight"])) {
                 animator.SetBool("isMoving", true);
             }
             else {
                 animator.SetBool("isMoving", false);
             }
-            if (Input.GetKey("left shift")) {
+            if (Input.GetKey(controls.keys["sprint"])) {
                 animator.SetBool("isSprinting", true);
             }
             else {
@@ -273,7 +274,7 @@ public class HandAnim : MonoBehaviour
                     flipflop2 = true;
                 }
             }
-            if (Input.GetKeyDown("mouse 0")) {
+            if (Input.GetKeyDown(controls.keys["throw"])) {
                 if (blocker && !grab.isHolding) {
                     if (flipflop) {
                         Invoke("waveStartL", .1f);
@@ -283,7 +284,7 @@ public class HandAnim : MonoBehaviour
                     }
                 }
             }
-            if (Input.GetKey("mouse 0")) {
+            if (Input.GetKey(controls.keys["throw"])) {
                 if (barragePrep) {
                     animator.SetBool("charging", true);
 
@@ -293,7 +294,7 @@ public class HandAnim : MonoBehaviour
                     movement.isBarraging = false;
                 }
             }
-            else if (!Input.GetKey("mouse 0")) {
+            else if (!Input.GetKey(controls.keys["throw"])) {
                 animator.SetBool("charging", false);
                 movement.isBarraging = false;
             }
