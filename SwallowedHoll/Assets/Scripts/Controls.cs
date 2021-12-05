@@ -8,44 +8,61 @@ public class Controls : MonoBehaviour
     public Dictionary<string, KeyCode> keys;
     public Dictionary<KeyCode, bool> inUse;
 
-    public void Start()
-    {
-        //A dictionary containing game actions and associated keys
-        keys = new Dictionary<string, KeyCode>()
-        {
-            {"walkUp",KeyCode.W},
-            {"walkDown",KeyCode.S},
-            {"walkLeft",KeyCode.A},
-            {"walkRight",KeyCode.D},
-            {"jump",KeyCode.Space},
-            {"duck",KeyCode.LeftControl},
-            {"sprint",KeyCode.LeftShift},
-            {"interact",KeyCode.E},
-            {"warp",KeyCode.R},
-            {"throw",KeyCode.Mouse0},
-            {"eat",KeyCode.Mouse1}
-        };
+    public static bool exists = false;
 
-        //Dictionary for what keys on the keyboard are in use
-        inUse = new Dictionary<KeyCode, bool>();
-        
-        //FOR all possible keys, set to not in use
-        foreach (KeyCode key in System.Enum.GetValues(typeof(KeyCode)))
+    private void Start()
+    {
+        exists = true;
+    }
+
+    private void Awake()
+    {
+        if (!exists)
         {
-            try {
-                inUse.Add(key, false);
-            } catch
+            GameObject.DontDestroyOnLoad(this);
+            //A dictionary containing game actions and associated keys
+            keys = new Dictionary<string, KeyCode>()
             {
+                {"walkUp",KeyCode.W},
+                {"walkDown",KeyCode.S},
+                {"walkLeft",KeyCode.A},
+                {"walkRight",KeyCode.D},
+                {"jump",KeyCode.Space},
+                {"duck",KeyCode.LeftControl},
+                {"sprint",KeyCode.LeftShift},
+                {"interact",KeyCode.E},
+                {"warp",KeyCode.R},
+                {"throw",KeyCode.Mouse0},
+                {"eat",KeyCode.Mouse1}
+            };
+
+            //Dictionary for what keys on the keyboard are in use
+            inUse = new Dictionary<KeyCode, bool>();
+
+            //FOR all possible keys, set to not in use
+            foreach (KeyCode key in System.Enum.GetValues(typeof(KeyCode)))
+            {
+                try
+                {
+                    inUse.Add(key, false);
+                }
+                catch
+                {
+
+                }
 
             }
-            
-        }
 
-        //FOR each key being used, set in use to true
-        foreach (KeyCode key in keys.Values)
+            //FOR each key being used, set in use to true
+            foreach (KeyCode key in keys.Values)
+            {
+                inUse[key] = true;
+            }
+
+        }
+        else
         {
-            inUse[key] = true;
+            Destroy(this);
         }
-
     }
 }

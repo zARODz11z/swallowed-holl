@@ -44,7 +44,7 @@ public class WorldShift : MonoBehaviour
 
     private void Start()
     {
-        controls = GameObject.Find("Player").GetComponentInChildren<Controls>();
+        controls = GameObject.Find("Data").GetComponentInChildren<Controls>();
     }
 
     void Update()
