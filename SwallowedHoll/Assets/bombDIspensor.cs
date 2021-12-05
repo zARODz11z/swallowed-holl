@@ -25,6 +25,7 @@ public class bombDIspensor : MonoBehaviour
             if(interval > 5){
                 interval = 0;
                 if(bom != null){
+                    bom.GetComponent<Shatter>().setBoomBlocked(false);
                     bom.GetComponent<Shatter>().oneShot(0);
                 }
                 bom = Instantiate(bomb, bombSpawn.position, Quaternion.identity);

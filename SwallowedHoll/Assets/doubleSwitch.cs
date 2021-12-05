@@ -20,21 +20,21 @@ public class doubleSwitch : MonoBehaviour
     }
     void resetSwitch1(){
         if(!gate){
-            Debug.Log("Reset Switch1");
+            //Debug.Log("Reset Switch1");
             switch1Hit = false;
             light1.color = Color.red;
         }
     }
     void resetSwitch2(){
         if(!gate){
-            Debug.Log("Reset Switch2");
+            //Debug.Log("Reset Switch2");
             switch2Hit = false;
             light2.color = Color.red;
         }
     }
     public void hitSwitch1(){
         if(!gate){
-            Debug.Log("Hit Switch1");
+            //Debug.Log("Hit Switch1");
             switch1Hit = true;
             Invoke("resetSwitch1", timer);
             light1.color = Color.yellow;
@@ -42,7 +42,7 @@ public class doubleSwitch : MonoBehaviour
     }
     public void hitSwitch2(){
         if(!gate){
-            Debug.Log("Hit Switch2");
+            //Debug.Log("Hit Switch2");
             switch2Hit = true;
             Invoke("resetSwitch2", timer);
             light2.color = Color.yellow;
@@ -50,7 +50,7 @@ public class doubleSwitch : MonoBehaviour
     }
     public void hitSwitch(){
         if(switch1Hit && switch2Hit && !gate){
-            Debug.Log("Hit both Switches!");
+            //Debug.Log("Hit both Switches!");
             GetComponent<InteractableObject>().Press();
             light1.color = Color.green;
             light2.color = Color.green;

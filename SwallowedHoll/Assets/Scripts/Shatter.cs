@@ -5,6 +5,7 @@ using UnityEngine;
 // the effect of a shatter. if its explosive, this force also effects the environment as well as the shards. after that, the shards despawn after a set amount of time 
 public class Shatter : MonoBehaviour
 {
+    bool boomBlocked;
     public GameObject explosionEffect;
     public GameObject shatterPrefab;
     [Tooltip("What shattered mesh spawns")]
@@ -19,12 +20,16 @@ public class Shatter : MonoBehaviour
     [SerializeField]
     float breakSpeed = 40f;
     GameObject player;
+    GameObject sounds;
     [SerializeField]
     public bool punchAble;
     [SerializeField]
     bool throwableBreak;
     [SerializeField]
     public bool bombBreak;
+    public void setBoomBlocked(bool plug){
+        boomBlocked = plug;
+    }
     void OnCollisionEnter(Collision other) {
         // does this object have a ridigbody? is the object colliding with another object past the breaking speed? if so, break it. dont let that object be a player. that colliding objects mass must be greater than or equal to the current obejcts mass
         //consider doing better calculations here, ie dot product of collision normal and collision velocity(relative velocity of both bodies) times the mass of the other collider
@@ -38,14 +43,31 @@ public class Shatter : MonoBehaviour
         foreach(GameObject g in GameObject.FindGameObjectsWithTag("Player")){
             if(g.GetComponent<Movement>()!=null){
                 player = g.transform.GetChild(0).GetChild(0).GetChild(2).gameObject;
+                sounds = g.transform.GetChild(5).gameObject;
             }
         }
         color = GetComponent<Renderer>();
     }
     public void oneShot(float time){
-        Invoke("spawnShatter", time);
+        if(!boomBlocked){
+            Invoke("spawnShatter", time);
+        }
     }
     public void takeDamage(){
+        if (Damagestate < hitPoints){
+            foreach(Material m in color.materials ){
+                m.SetColor("_EmissionColor", Color.grey * darken);
+                m.SetColor("_Color", Color.grey * darken);
+                Damagestate++;
+                darken -= .2f;
+            }
+        }
+        else if ( Damagestate >= hitPoints){
+            Invoke("spawnShatter", 0);
+        }
+    }
+    public void takeDamagePUNCH(){
+        sounds.gameObject.GetComponent<SoundCaller>().playPunch();
         if (Damagestate < hitPoints){
             foreach(Material m in color.materials ){
                 m.SetColor("_EmissionColor", Color.grey * darken);

@@ -5,6 +5,8 @@ using UnityEngine;
 public class PropBuster : MonoBehaviour
 {
     [SerializeField]
+    bool isPunch;
+    [SerializeField]
     float power;
     [SerializeField]
     float radius;
@@ -21,7 +23,12 @@ public class PropBuster : MonoBehaviour
                     otherExplosive = other.gameObject.GetComponent<Shatter>();
                     if(otherExplosive.punchAble){
                         other.gameObject.GetComponent<Rigidbody>().AddExplosionForce(power, transform.root.position, radius);
-                        otherExplosive.takeDamage();
+                        if(isPunch){
+                            otherExplosive.takeDamagePUNCH();
+                        }
+                        else{
+                            otherExplosive.takeDamage();
+                        }
                     }
                 }
                 else{

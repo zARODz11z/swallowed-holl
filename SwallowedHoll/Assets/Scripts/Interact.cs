@@ -6,6 +6,7 @@ using UnityEngine;
 public class Interact : MonoBehaviour
 {
     //Components
+    Controls controls;
     Movement movement;
     Grab grab;
     HandAnim hand;
@@ -34,8 +35,9 @@ public class Interact : MonoBehaviour
 
     // Start is called before the first frame update
     void Start()
-    {  
+    {
         //Assign components
+        controls = GameObject.Find("Player").GetComponentInChildren<Controls>();
         movement = transform.root.GetComponent<Movement>();
         grab = GetComponent<Grab>();
         hand = GetComponent<HandAnim>();
@@ -109,51 +111,61 @@ public class Interact : MonoBehaviour
             balls = GameObject.FindGameObjectsWithTag("bball");
             ballLength = balls.Length;
         }
-        //IF e pressed
-        if (Input.GetKeyDown("e"))
-        {
-            // if you are not holding anything, and you are not preparing to barrage, and you are not barraging
-            if(!grab.isHolding && !hand.barragePrep && !movement.isBarraging){
-            RaycastHit hit;
-            //IF a raycast hits something
-            if (Physics.SphereCast(origin.transform.position, .5f, (dummy.position - origin.transform.position), out hit, distance, mask))
+
+        //IF not paused
+        if (!FindObjectOfType<PauseMenu>().isPaused) {
+            //IF e pressed
+            if (Input.GetKeyDown(controls.keys["interact"]))
             {
-                //Get the properties of the something you hit
-                propRB = hit.rigidbody;
-                prop = hit.transform;
-                //IF the thing you hit has a rigidbody that is light enough for the player to hold
-                if(hit.transform.gameObject.GetComponent<Rigidbody>() != null && hit.transform.gameObject.GetComponent<Rigidbody>().mass <= grab.strength && !grab.justThrew){
-                    //Pick it up
-                    pickUp(prop.gameObject);
-                    BBallClear(hit);
-                }
-                //IF the the thing you hit is a button
-                if(hit.transform.gameObject.GetComponent<buttonPush>() != null){
-                    //Get the button object
-                    buttonPush button = hit.transform.gameObject.GetComponent<buttonPush>();
-                    if ((button.oneTime && button.anim.GetBool("onePush") == false && button.door.subGate == false) || (button.door != null && button.door.subGate == false) || !button.blocker){
-                        button.press();
+                // if you are not holding anything, and you are not preparing to barrage, and you are not barraging
+                if (!grab.isHolding && !hand.barragePrep && !movement.isBarraging)
+                {
+                    RaycastHit hit;
+                    //IF a raycast hits something
+                    if (Physics.SphereCast(origin.transform.position, .5f, (dummy.position - origin.transform.position), out hit, distance, mask))
+                    {
+                        //Get the properties of the something you hit
+                        propRB = hit.rigidbody;
+                        prop = hit.transform;
+                        //IF the thing you hit has a rigidbody that is light enough for the player to hold
+                        if (hit.transform.gameObject.GetComponent<Rigidbody>() != null && hit.transform.gameObject.GetComponent<Rigidbody>().isKinematic == false && hit.transform.gameObject.GetComponent<Rigidbody>().mass <= grab.strength && !grab.justThrew)
+                        {
+                            //Pick it up
+                            pickUp(prop.gameObject);
+                            BBallClear(hit);
+                        }
+                        //IF the the thing you hit is a button
+                        if (hit.transform.gameObject.GetComponent<buttonPush>() != null)
+                        {
+                            //Get the button object
+                            buttonPush button = hit.transform.gameObject.GetComponent<buttonPush>();
+                            if ((button.oneTime && button.anim.GetBool("onePush") == false && button.door.subGate == false) || (button.door != null && button.door.subGate == false) || !button.blocker)
+                            {
+                                button.press();
+                            }
+                            if ((button.oneTime && button.anim.GetBool("onePush") == false && button.belt.subGate == false) || (button.belt != null && button.belt.subGate == false) || !button.blocker)
+                            {
+                                button.press();
+                            }
+                        }
                     }
-                    if ((button.oneTime && button.anim.GetBool("onePush") == false && button.belt.subGate == false) || (button.belt != null && button.belt.subGate == false) || !button.blocker){
-                        button.press();
-                    }
+                }
+                // if you are already holding something, drop it. 
+                else if (grab.isHolding && !grab.isFood)
+                {
+                    detach();
+                    //clear the temps for next loop
+                    prop = null;
+                    propRB = null;
+                    grab.throwingforce = grab.throwingTemp;
+                }
+                else if (grab.isHolding && grab.isFood)
+                {
+                    foodDetach();
+                    prop = null;
+                    propRB = null;
                 }
             }
-        }
-            // if you are already holding something, drop it. 
-            else if (grab.isHolding && !grab.isFood){
-                detach();
-                //clear the temps for next loop
-                prop = null;
-                propRB = null;
-                grab.throwingforce = grab.throwingTemp;
-            }
-            else if (grab.isHolding && grab.isFood){
-                foodDetach();
-                prop = null;
-                propRB = null;
-            }
-        
         }
     }
 }

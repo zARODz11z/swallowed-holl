@@ -137,9 +137,13 @@ public class Movement : MonoBehaviour {
 	public void setCanClimb(bool plug){
 		canClimb = plug;
 	}
+
+    Controls controls;
 	//runs when object becomes active
 	void Awake () {
-		grab = transform.GetChild(0).GetChild(0).GetChild(2).GetComponent<Grab>();
+        controls = GameObject.Find("Player").GetComponentInChildren<Controls>();
+
+        grab = transform.GetChild(0).GetChild(0).GetChild(2).GetComponent<Grab>();
 		speedController = GetComponent<MovementSpeedController>();
 
 		// this is so i can prevent the player from entering a climbing state while standing on the ground
@@ -168,12 +172,14 @@ public class Movement : MonoBehaviour {
 			}
 		}
 		//responds to the duck keybind by playing the appripriate animation and setting the dive prep bool
-        if(Input.GetButtonDown("Duck")){
+        if(Input.GetKeyDown(controls.keys["duck"]) && !FindObjectOfType<PauseMenu>().isPaused)
+        {
 			divingPrep = true;
 			transform.GetChild(1).gameObject.SetActive(false);
 			transform.GetChild(4).gameObject.SetActive(true);
         }
-        if(Input.GetButtonUp("Duck")){
+        if(Input.GetKeyUp(controls.keys["duck"]) && !FindObjectOfType<PauseMenu>().isPaused)
+        {
 			divingPrep = false;
 			transform.GetChild(1).gameObject.SetActive(true);
 			transform.GetChild(4).gameObject.SetActive(false);
@@ -190,13 +196,13 @@ public class Movement : MonoBehaviour {
 			desiresClimbing = false;
 		}
 		//responds to the jump keybind to allow jumping
-		desiredJump |= Input.GetButtonDown("Jump");
+		desiredJump |= Input.GetKeyDown(controls.keys["jump"]) && !FindObjectOfType<PauseMenu>().isPaused;
 		//no climbing while holding 
 		if(grab.isHolding){
 			desiresClimbing = false;
 		}
 		else {
-			desiresClimbing = Input.GetButton("Duck");
+			desiresClimbing = Input.GetKey(controls.keys["duck"]);
 		}
 
 		//light that shows which state you are in
@@ -218,10 +224,11 @@ public class Movement : MonoBehaviour {
 		//}
 
 		//stores the horizontal and vertical input axes
-	    playerInput.x = Input.GetAxis("Horizontal");
-		playerInput.y = Input.GetAxis("Vertical");
-		//allows you to move up or down while swimming
-    	playerInput.z = Swimming ? Input.GetAxis("UpDown") : 0f;
+	    playerInput.x = (Input.GetKey(controls.keys["walkRight"])? 1 : 0) - (Input.GetKey(controls.keys["walkLeft"])? 1: 0);
+		playerInput.y = (Input.GetKey(controls.keys["walkUp"]) ? 1 : 0) - (Input.GetKey(controls.keys["walkDown"]) ? 1 : 0);
+
+        //allows you to move up or down while swimming
+        playerInput.z = Swimming ? Input.GetAxis("UpDown") : 0f;
 
 		playerInput = Vector3.ClampMagnitude(playerInput, 1f);
 		//redirects the characters input to be relative to a "playerinputspace" object, if it is given. usually, this will be the camera
