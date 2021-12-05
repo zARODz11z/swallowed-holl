@@ -16,7 +16,7 @@ public class PlayerStats : MonoBehaviour
     public KeyCode loadGameKey = KeyCode.B;
     [HideInInspector]
     public bool portalWarp;
-    public Die die;
+    public PlayerDeath playerDeath;
 
 
     public void SavePlayer()
@@ -40,14 +40,11 @@ public class PlayerStats : MonoBehaviour
 
     }
 
-    //public void Die(){
-        //LoadPlayer();
-    //}
     public void takeDamage(float damage){
         if (hp - damage < 0){
             //Debug.Log("Went from "+hp+" to 0");
             hp = 0;
-            die.Death();
+            playerDeath.Death();
 
         }
         else {

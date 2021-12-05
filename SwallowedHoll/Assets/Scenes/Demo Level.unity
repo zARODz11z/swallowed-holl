@@ -38872,6 +38872,10 @@ PrefabInstance:
       propertyPath: hungerBar
       value: 
       objectReference: {fileID: 927458051}
+    - target: {fileID: 8481454172899552393, guid: 6bb6677300d607d488e6ee96dc019bb8, type: 3}
+      propertyPath: playerDeath
+      value: 
+      objectReference: {fileID: 7197834583113946802}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6bb6677300d607d488e6ee96dc019bb8, type: 3}
 --- !u!1 &7197834583113946800 stripped
@@ -38899,7 +38903,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7197834583113946800}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2f6e2f15f1eda9b41a1b9c6b45d71b8d, type: 3}
+  m_Script: {fileID: 11500000, guid: 19c1f740eefe97a43b1a606525cf6a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   deathScreen: {fileID: 1420531208}
