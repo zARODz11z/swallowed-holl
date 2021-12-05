@@ -10,14 +10,14 @@ public class PlayerStats : MonoBehaviour
     public float hunger = 100;
     public float hp = 100;
 
-    //calls the HungerBar class and assigns it to hungerBar to use its methods
     public HungerBar hungerBar;
-    //calls the HealthBar class and assigns it to healthBar to use its methods
     public HealthBar healthBar;
     public KeyCode saveKey = KeyCode.V;
     public KeyCode loadGameKey = KeyCode.B;
     [HideInInspector]
     public bool portalWarp;
+    public Die die;
+
 
     public void SavePlayer()
     {
@@ -40,15 +40,15 @@ public class PlayerStats : MonoBehaviour
 
     }
 
-    public void Die(){
-        LoadPlayer();
-    }
+    //public void Die(){
+        //LoadPlayer();
+    //}
     public void takeDamage(float damage){
         if (hp - damage < 0){
             //Debug.Log("Went from "+hp+" to 0");
             hp = 0;
-            Die();
-            
+            die.Death();
+
         }
         else {
             //Debug.Log("Went from "+hp+" to "+ Mathf.Round(hp-damage));
