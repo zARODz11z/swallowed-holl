@@ -17,6 +17,8 @@ public class DeathMenu : MonoBehaviour
       this.gameObject.SetActive(false);
       //unpauses time
       Time.timeScale = 1;
+      //locks the cursor 
+      Cursor.lockState = CursorLockMode.Locked;
     }
 
     //used for the Back to Main Menu Button
