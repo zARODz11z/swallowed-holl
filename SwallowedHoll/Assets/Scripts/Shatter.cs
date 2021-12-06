@@ -86,7 +86,7 @@ public class Shatter : MonoBehaviour
             Instantiate(explosionEffect, transform.position, transform.rotation);
         }
         Destroy(this.gameObject);
-        if(player.GetComponent<Grab>().isHolding && player.transform.GetChild(2).GetChild(0).GetChild(5).gameObject == this.gameObject){
+        if(player.GetComponent<Grab>().isHolding && player.transform.GetChild(2).GetChild(0).GetChild(5).gameObject != null && player.transform.GetChild(2).GetChild(0).GetChild(5).gameObject == this.gameObject){
             player.GetComponent<Interact>().detach();
         }
     }
