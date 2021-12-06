@@ -7,6 +7,14 @@ using UnityEngine.UI;
 //This class manages most of the logic for our dialogue system. It connects the NpcDialoge and Dialogue script together.
 public class DialogueManager : MonoBehaviour
 {
+    [SerializeField]
+    Grab grab;
+    [SerializeField]
+    HandAnim hand;
+    [SerializeField]
+    Movement movement;
+    [SerializeField]
+    SimpleCameraMovement cameraMovement;
     public Text nameText; //npc name text object
     public Text dialogueText; //dialogue text object
     private Queue<string> sentences; 
@@ -21,7 +29,11 @@ public class DialogueManager : MonoBehaviour
     public void StartDialogue(Dialogue dialogue) //creates our queue of sentences, locks the player, enables the cursor, and activates dialogue UI
     {
         Debug.Log("Starting conversation with "+dialogue.name);
-        Time.timeScale = 0; //Freezes the game
+        movement.blockMovement();
+        hand.forceIdle();
+        grab.enabled = false;
+        hand.enabled = false;
+        cameraMovement.enabled = false;
         Cursor.visible = true; //makes cursor visible
         Cursor.lockState = CursorLockMode.None;//makes cursor moveable
         nameText.text = dialogue.name;
@@ -58,8 +70,13 @@ public class DialogueManager : MonoBehaviour
 
     public void EndDialogue()
     {
+        grab.enabled = true;
+        movement.unblockMovement();
+        hand.enabled = true;
+        hand.setisCrouching(false);
+        cameraMovement.enabled = true;
+
         dialogueBox.SetActive(false); //makes dialogue box disapear
-        Time.timeScale = 1;
         Cursor.lockState = CursorLockMode.Locked;
     }
     

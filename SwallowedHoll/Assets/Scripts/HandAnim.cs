@@ -157,6 +157,13 @@ public class HandAnim : MonoBehaviour
         animator.SetBool("EatFood", true);
         Invoke("resetEatFood", .1f);
     }
+    public void forceIdle(){
+        animator.SetBool("isMoving", false);
+        animator.SetBool("isClimbing", false);
+        animator.SetBool("HungerDive", false);
+        animator.SetBool("isSprinting", false);
+        animator.SetBool("walkPressed", false);
+    }
 
     // Update is called once per frame
     void Update()

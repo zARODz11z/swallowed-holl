@@ -137,7 +137,19 @@ public class Movement : MonoBehaviour {
 	public void setCanClimb(bool plug){
 		canClimb = plug;
 	}
-
+	public bool moveBlocked;
+	public void blockMovement(){
+		moveBlocked = true;
+		playerInput.x = 0f;
+		playerInput.y = 0f;
+		velocity = Vector3.zero;
+	}
+	public void unblockMovement(){
+		moveBlocked = false;
+		divingPrep = false;
+		transform.GetChild(1).gameObject.SetActive(true);
+		transform.GetChild(4).gameObject.SetActive(false);
+	}
     Controls controls;
 	//runs when object becomes active
 	void Awake () {
@@ -172,20 +184,20 @@ public class Movement : MonoBehaviour {
 			}
 		}
 		//responds to the duck keybind by playing the appripriate animation and setting the dive prep bool
-        if(Input.GetKeyDown(controls.keys["duck"]) && !FindObjectOfType<PauseMenu>().isPaused)
+        if(Input.GetKeyDown(controls.keys["duck"]) && !FindObjectOfType<PauseMenu>().isPaused && !moveBlocked)
         {
 			divingPrep = true;
 			transform.GetChild(1).gameObject.SetActive(false);
 			transform.GetChild(4).gameObject.SetActive(true);
         }
-        if(Input.GetKeyUp(controls.keys["duck"]) && !FindObjectOfType<PauseMenu>().isPaused)
+        if(Input.GetKeyUp(controls.keys["duck"]) && !FindObjectOfType<PauseMenu>().isPaused && !moveBlocked)
         {
 			divingPrep = false;
 			transform.GetChild(1).gameObject.SetActive(true);
 			transform.GetChild(4).gameObject.SetActive(false);
         }
 		// this is so we can prevent the player from entering a climbing state while standing on the ground
-		if(Climbing && !OnGround && canClimb){
+		if(Climbing && !OnGround && canClimb&& !moveBlocked){
 			ClimbingADJ = true;
 		}
 		else{
@@ -196,7 +208,7 @@ public class Movement : MonoBehaviour {
 			desiresClimbing = false;
 		}
 		//responds to the jump keybind to allow jumping
-		desiredJump |= Input.GetKeyDown(controls.keys["jump"]) && !FindObjectOfType<PauseMenu>().isPaused;
+		desiredJump |= Input.GetKeyDown(controls.keys["jump"]) && !FindObjectOfType<PauseMenu>().isPaused && !moveBlocked;
 		//no climbing while holding 
 		if(grab.isHolding){
 			desiresClimbing = false;
@@ -224,13 +236,15 @@ public class Movement : MonoBehaviour {
 		//}
 
 		//stores the horizontal and vertical input axes
-	    playerInput.x = (Input.GetKey(controls.keys["walkRight"])? 1 : 0) - (Input.GetKey(controls.keys["walkLeft"])? 1: 0);
-		playerInput.y = (Input.GetKey(controls.keys["walkUp"]) ? 1 : 0) - (Input.GetKey(controls.keys["walkDown"]) ? 1 : 0);
+		if(!moveBlocked){
+			playerInput.x = (Input.GetKey(controls.keys["walkRight"])? 1 : 0) - (Input.GetKey(controls.keys["walkLeft"])? 1: 0);
+			playerInput.y = (Input.GetKey(controls.keys["walkUp"]) ? 1 : 0) - (Input.GetKey(controls.keys["walkDown"]) ? 1 : 0);
 
-        //allows you to move up or down while swimming
-        playerInput.z = Swimming ? Input.GetAxis("UpDown") : 0f;
+			//allows you to move up or down while swimming
+			playerInput.z = Swimming ? Input.GetAxis("UpDown") : 0f;
 
-		playerInput = Vector3.ClampMagnitude(playerInput, 1f);
+			playerInput = Vector3.ClampMagnitude(playerInput, 1f);
+		}
 		//redirects the characters input to be relative to a "playerinputspace" object, if it is given. usually, this will be the camera
 		if (playerInputSpace) {
 			rightAxis = ProjectDirectionOnPlane(playerInputSpace.right, upAxis);
