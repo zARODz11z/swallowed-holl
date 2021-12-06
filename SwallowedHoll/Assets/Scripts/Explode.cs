@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Explode : MonoBehaviour
 {
+   
     Rigidbody body; 
     [SerializeField]
     float radius;
@@ -56,11 +57,12 @@ public class Explode : MonoBehaviour
                         hit.gameObject.GetComponent<Shatter>().oneShot(0);
                     }
                     if (rb != null){
-                        //if (rb.gameObject.tag == "Explosive"){
+                       // if (rb.gameObject.tag == "Explosive"){
+      
                         //    otherExplosive = rb.gameObject.GetComponent<Shatter>();
                         //    otherExplosive.oneShot(otherExplosiveTime);
-                       // }
-                    rb.AddExplosionForce(power, explosionPos, radius, upModifier);
+                        //}
+                        rb.AddExplosionForce(power, explosionPos, radius, upModifier);
                     if(!gate){
                         player.GetComponent<PlayerStats>().takeDamage(Mathf.Lerp(playerDamageMax, playerDamageMin, damage));
                         //Debug.Log("Lerping from "+ damage);
