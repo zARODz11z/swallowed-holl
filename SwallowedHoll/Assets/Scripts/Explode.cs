@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Explode : MonoBehaviour
 {
-   
+    [SerializeField] 
+    private AudioSource[] bombAudioSource = null;
     Rigidbody body; 
     [SerializeField]
     float radius;
@@ -25,6 +26,12 @@ public class Explode : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if(this.gameObject.tag == "Explosive"){
+            
+            int index = Random.Range(0, bombAudioSource.Length);
+            Debug.Log(index);
+            bombAudioSource[index].Play();
+        }
         foreach (GameObject G in GameObject.FindGameObjectsWithTag("Player")){
             if(G.GetComponent<Movement>() != null){
                 player = G;

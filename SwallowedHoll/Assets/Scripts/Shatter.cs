@@ -5,8 +5,6 @@ using UnityEngine;
 // the effect of a shatter. if its explosive, this force also effects the environment as well as the shards. after that, the shards despawn after a set amount of time 
 public class Shatter : MonoBehaviour
 {
-    [Header("Audio Effect")]
-    [SerializeField] private AudioSource bombAudioSource = null;
 
     bool boomBlocked;
     public GameObject explosionEffect;
@@ -44,10 +42,7 @@ public class Shatter : MonoBehaviour
 
             }
         }
-        if (other.tag == "Explosive")
-        {
-            bombAudioSource.Play();
-           }
+    }
 
     void Start() {
         foreach(GameObject g in GameObject.FindGameObjectsWithTag("Player")){
