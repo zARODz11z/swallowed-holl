@@ -7,8 +7,6 @@ public class Eat : MonoBehaviour
 {
 
     [SerializeField]
-    private AudioSource[] eatingAudioSource = null;
-    [SerializeField]
     float food = default;
     [SerializeField]
     bool respawn = true;

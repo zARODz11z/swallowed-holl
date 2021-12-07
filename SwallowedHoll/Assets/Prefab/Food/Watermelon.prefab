@@ -521,6 +521,7 @@ GameObject:
   - component: {fileID: 4088275749897975862}
   - component: {fileID: 998498401834106824}
   - component: {fileID: 6246508588431123021}
+  - component: {fileID: 7123941530581496388}
   m_Layer: 0
   m_Name: Watermelon
   m_TagString: food
@@ -573,12 +574,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86a2f82399ff0ef4681c263de2fa459a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  eatingAudioSource:
-  - {fileID: 5586827865897655794}
-  - {fileID: 7801451202171912287}
-  - {fileID: 6059285594206024512}
-  - {fileID: 7047885343702600114}
-  - {fileID: 2569424663750710929}
   food: 10
   respawn: 1
   respawnDur: 5
@@ -612,6 +607,39 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   degreesPerSecond: 15
   independent: 0
+--- !u!114 &7123941530581496388
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8707888770731076956}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5bef2a05e61fd94987af2814b1681c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eatingAudioSource:
+  - {fileID: 5586827865897655794}
+  - {fileID: 7801451202171912287}
+  - {fileID: 6059285594206024512}
+  - {fileID: 7047885343702600114}
+  - {fileID: 2569424663750710929}
+  isHolding: 0
+  throwingforce: 5
+  LowthrowingPoint: {fileID: 0}
+  HighthrowingPoint: {fileID: 0}
+  highorLow: 1
+  throwingTemp: 0
+  strength: 0
+  maxThrowingForce: 0
+  chargeRate: 0
+  isgrabCharging: 0
+  sizes: 0
+  interact: {fileID: 0}
+  isFood: 0
+  justThrew: 0
+  foodHoldingPoint: {fileID: 0}
 --- !u!1 &8806671180720712441
 GameObject:
   m_ObjectHideFlags: 0
