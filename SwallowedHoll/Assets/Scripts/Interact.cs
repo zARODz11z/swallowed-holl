@@ -37,7 +37,7 @@ public class Interact : MonoBehaviour
     void Start()
     {
         //Assign components
-        controls = GameObject.Find("Player").GetComponentInChildren<Controls>();
+        controls = GameObject.Find("Data").GetComponentInChildren<Controls>();
         movement = transform.root.GetComponent<Movement>();
         grab = GetComponent<Grab>();
         hand = GetComponent<HandAnim>();

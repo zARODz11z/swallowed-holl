@@ -89,7 +89,7 @@ public class HandAnim : MonoBehaviour
     }
     void Start()
     {
-        controls = GameObject.Find("Player").GetComponentInChildren<Controls>();
+        controls = GameObject.Find("Data").GetComponentInChildren<Controls>();
         speedController = sphere.GetComponent<MovementSpeedController>();
         animator = GetComponent<Animator>();
         movement = sphere.GetComponent<Movement>();
