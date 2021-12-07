@@ -27,6 +27,8 @@ public class SettingsMenu : MonoBehaviour
 
         //Get available, current resolutions for resolutions dropdown
         GetResolutions();
+
+        GetQuality();
     }
 
     //On volume slider change
