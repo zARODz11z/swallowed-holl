@@ -75,6 +75,7 @@ public class SettingsMenu : MonoBehaviour
     //Set whether window is fullscreen
     public void SetFullscreen(bool fullscreen)
     {
+        Debug.Log(fullscreen);
         Screen.fullScreen = fullscreen;
     }
 
