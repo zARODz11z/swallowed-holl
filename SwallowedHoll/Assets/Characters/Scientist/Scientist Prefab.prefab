@@ -1020,7 +1020,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6766651333825255979}
-  m_LocalRotation: {x: -0, y: -0.70710677, z: -0, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -432.0107, y: -285.57, z: -245.3}
   m_LocalScale: {x: 0.77, y: 0.77, z: 0.77}
   m_Children:
@@ -1063,9 +1063,17 @@ MonoBehaviour:
   dialogue:
     name: Dr. Moon
     sentences:
-    - Hello Patient, I am Dr. Moon (sentence 0) dadlahdkjahdjkashndjkmacnsjkdandjkand
-    - Sentence 1
-    - Sentence 2
+    - Hello Test subject! Welcome to today's test!
+    - Today you will be participating in a bomb-themed test
+    - Your overall goal is to carry a bomb to the end of the test chamber
+    - Be careful though! This bomb can be quite fragile!
+    - 'Be sure not to drop, punch, kick, or assault the bomb in any way. '
+    - On top of that however, We believe the bomb will not survive a shift into the
+      "Holl" realm
+    - We haven't yet fully tested that hypothesis, so feel free to give it a shot!
+    - as a result of this limitation you will need to find a way to get this bomb
+      to the end of this chamber without bringing it into Holl at all!
+    - Good Luck!
   dialogueBox: {fileID: 0}
 --- !u!1 &6766651333830948453
 GameObject:
