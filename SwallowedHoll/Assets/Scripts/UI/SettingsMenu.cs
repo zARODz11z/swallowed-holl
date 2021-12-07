@@ -9,6 +9,7 @@ public class SettingsMenu : MonoBehaviour
     //Menu components
     Slider volSlide;
     Dropdown resDrop;
+    Toggle fullToggle;
 
     Resolution[] resolutions;
 
@@ -19,6 +20,8 @@ public class SettingsMenu : MonoBehaviour
         volSlide = GameObject.Find("VolumeSlide").GetComponent<Slider>();
         resDrop = GameObject.Find("Resolution").GetComponent<Dropdown>();
         resolutions = Screen.resolutions;
+        fullToggle = GameObject.Find("Fullscreen").GetComponent<Toggle>();
+        fullToggle.isOn = Screen.fullScreen;
 
         //Find current resolution by index
         int currentResIndex = 0;
@@ -58,5 +61,10 @@ public class SettingsMenu : MonoBehaviour
         Resolution resolution = resolutions[resolutionIndex];
         //Set screen resolution
         Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
+    }
+
+    public void SetFullscreen(bool fullscreen)
+    {
+        Screen.fullScreen = fullscreen;
     }
 }

@@ -64,7 +64,6 @@ public class PauseMenu : MonoBehaviour
     //Unfreeze time, hide the menu
     public void resume()
     {
-        Debug.Log("resume");
         Time.timeScale = 1;
         pauseUI.SetActive(false);
         helpUI.SetActive(false);
