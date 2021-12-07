@@ -95,6 +95,7 @@ public class SettingsMenu : MonoBehaviour
     //Set graphics engine quality preset
     public void setQuality(int quality)
     {
+        Debug.Log("Qual");
         QualitySettings.SetQualityLevel(quality);
     }
 }
