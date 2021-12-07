@@ -76,7 +76,7 @@ public class Grab : MonoBehaviour
     }
 
     public void pickUp(Transform dummy, Transform prop, Rigidbody propRB, GameObject propGame)
-    {      
+    {     
         //Is the held object something you can eat?
         if(propGame.GetComponent<Eat>()){
             isFood = true;
@@ -121,7 +121,7 @@ public class Grab : MonoBehaviour
             }
         }
         else{
-            Debug.Log("Holding Food");
+            //Debug.Log("Holding Food");
             propRB.isKinematic=(true);
             prop = prop.transform.root.transform;
             propGame = propGame.transform.root.gameObject;
@@ -145,9 +145,11 @@ public class Grab : MonoBehaviour
     public void eatFood(){
         interact.foodDetach();
         interact.prop.gameObject.GetComponent<Eat>().eatFood();
+
     }
     void Update()
     {
+        //Debug.Log(hand.barragePrep);
         //IF not paused
         if (!FindObjectOfType<PauseMenu>().isPaused)
         {
