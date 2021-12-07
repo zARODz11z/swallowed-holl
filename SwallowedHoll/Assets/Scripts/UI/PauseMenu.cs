@@ -59,6 +59,7 @@ public class PauseMenu : MonoBehaviour
         backgrnd.SetActive(true);
         isPaused = true;
         Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 
     //Unfreeze time, hide the menu
@@ -71,6 +72,7 @@ public class PauseMenu : MonoBehaviour
         backgrnd.SetActive(false);
         isPaused = false;
         Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
     //Show settings menu
