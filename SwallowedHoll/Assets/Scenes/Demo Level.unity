@@ -37681,56 +37681,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 16b8cf7b6eefe6c41b5922f302fbc40f, type: 3}
---- !u!1 &2117190979
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2117190981}
-  - component: {fileID: 2117190980}
-  m_Layer: 0
-  m_Name: DialogueManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &2117190980
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2117190979}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d32fded2ae1127c4097af53248a2f614, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  grab: {fileID: 1200263034}
-  hand: {fileID: 1200263035}
-  movement: {fileID: 7197834583113946803}
-  cameraMovement: {fileID: 7197834583113946802}
-  nameText: {fileID: 0}
-  dialogueText: {fileID: 0}
-  dialogueBox: {fileID: 1155095060}
---- !u!4 &2117190981
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2117190979}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &2118506534 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 283398427677186009, guid: 16b8cf7b6eefe6c41b5922f302fbc40f, type: 3}
@@ -38373,6 +38323,83 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!1001 &345571641122437814
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 345571642165755890, guid: c84570257524cbf4fba6d5f1c40d1290, type: 3}
+      propertyPath: grab
+      value: 
+      objectReference: {fileID: 1200263034}
+    - target: {fileID: 345571642165755890, guid: c84570257524cbf4fba6d5f1c40d1290, type: 3}
+      propertyPath: hand
+      value: 
+      objectReference: {fileID: 1200263035}
+    - target: {fileID: 345571642165755890, guid: c84570257524cbf4fba6d5f1c40d1290, type: 3}
+      propertyPath: movement
+      value: 
+      objectReference: {fileID: 7197834583113946803}
+    - target: {fileID: 345571642165755890, guid: c84570257524cbf4fba6d5f1c40d1290, type: 3}
+      propertyPath: dialogueBox
+      value: 
+      objectReference: {fileID: 1155095060}
+    - target: {fileID: 345571642165755890, guid: c84570257524cbf4fba6d5f1c40d1290, type: 3}
+      propertyPath: cameraMovement
+      value: 
+      objectReference: {fileID: 7197834583113946802}
+    - target: {fileID: 345571642165755891, guid: c84570257524cbf4fba6d5f1c40d1290, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 345571642165755891, guid: c84570257524cbf4fba6d5f1c40d1290, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 345571642165755891, guid: c84570257524cbf4fba6d5f1c40d1290, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 345571642165755891, guid: c84570257524cbf4fba6d5f1c40d1290, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 345571642165755891, guid: c84570257524cbf4fba6d5f1c40d1290, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 345571642165755891, guid: c84570257524cbf4fba6d5f1c40d1290, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 345571642165755891, guid: c84570257524cbf4fba6d5f1c40d1290, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 345571642165755891, guid: c84570257524cbf4fba6d5f1c40d1290, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 345571642165755891, guid: c84570257524cbf4fba6d5f1c40d1290, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 345571642165755891, guid: c84570257524cbf4fba6d5f1c40d1290, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 345571642165755891, guid: c84570257524cbf4fba6d5f1c40d1290, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 345571642165755893, guid: c84570257524cbf4fba6d5f1c40d1290, type: 3}
+      propertyPath: m_Name
+      value: DialogueManager
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c84570257524cbf4fba6d5f1c40d1290, type: 3}
 --- !u!4 &543450652299521918 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8057942580343731394, guid: 2cd2107402da9f04e9a9fe5af8d36e93, type: 3}

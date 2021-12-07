@@ -132,6 +132,9 @@ public class Interact : MonoBehaviour
                             if(FindObjectOfType<DialogueManager>().dialogueBox.activeInHierarchy == false){
                                 hit.transform.parent.gameObject.GetComponent<NpcDialogue>().Begin();
                             }
+                            else{
+                                FindObjectOfType<DialogueManager>().DisplayNextSentence();
+                            }
                         }
                         if (hit.transform.gameObject.GetComponent<Rigidbody>() != null && hit.transform.gameObject.GetComponent<Rigidbody>().isKinematic == false && hit.transform.gameObject.GetComponent<Rigidbody>().mass <= grab.strength && !grab.justThrew)
                         {
