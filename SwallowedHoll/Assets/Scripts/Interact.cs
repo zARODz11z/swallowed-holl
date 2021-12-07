@@ -32,6 +32,7 @@ public class Interact : MonoBehaviour
     [Tooltip("what objects can be picked up by the player")]
     LayerMask mask = default;
     Transform propParent;
+    Transform ragdollParent;
 
     // Start is called before the first frame update
     void Start()
@@ -52,8 +53,22 @@ public class Interact : MonoBehaviour
             prop = obj.GetComponent<Transform>();
             propParent = prop.transform.root;
             propRB = obj.GetComponent<Rigidbody>();
+
+            if(prop.gameObject.tag == "ragdoll"){
+                ragdollParent = prop.parent;
+                this.transform.root.gameObject.GetComponent<WorldShift>().setShiftBlockedTrue();
+                foreach (GameObject G in GameObject.FindGameObjectsWithTag("ragdoll")){
+                        G.layer = 16;
+                        foreach (Rigidbody R in G.GetComponentsInChildren<Rigidbody>()){
+                            R.gameObject.layer = 16;
+                        }
+                    }
+            }
+
             grab.pickUp(dummy, prop, propRB, obj);
+ 
         }
+
     }
 
     public void foodDetach(){
@@ -73,12 +88,20 @@ public class Interact : MonoBehaviour
     }
     // this just makes you drop whatever you are holding
     public void detach(){
+
+        if(prop.gameObject.tag == "ragdoll"){
+            dummy.GetChild(5).SetParent(ragdollParent);
+            this.transform.root.gameObject.GetComponent<WorldShift>().setShiftBlockedFalse();
+        }
+        else{
+            dummy.GetChild(5).SetParent(null);
+        }
         grab.sizes = Grab.objectSizes.none;
         //opposite of the pick up section, just undoing all of that back to its default state
         grab.isgrabCharging = false;
         bone.toggle(false);
         hand.setisHolding(false);
-        dummy.GetChild(5).SetParent(null);
+        
        // body = prop.gameObject.GetComponent<CustomGravityRigidbody>();
        // body.enabled = true;
         propRB.isKinematic=(false);
@@ -89,6 +112,12 @@ public class Interact : MonoBehaviour
             child.transform.gameObject.layer = 13;
             foreach ( Transform child2 in child.transform){
                 child2.transform.gameObject.layer = 13;
+            }
+        }
+        foreach (GameObject G in GameObject.FindGameObjectsWithTag("ragdoll")){
+            G.layer = 13;
+            foreach (Rigidbody R in G.GetComponentsInChildren<Rigidbody>()){
+                R.gameObject.layer = 13;
             }
         }
     }
@@ -122,12 +151,20 @@ public class Interact : MonoBehaviour
                 {
                     RaycastHit hit;
                     //IF a raycast hits something
-                    if (Physics.SphereCast(origin.transform.position, .5f, (dummy.position - origin.transform.position), out hit, distance, mask))
+                    if (Physics.SphereCast(origin.transform.position, .001f, (dummy.position - origin.transform.position), out hit, distance, mask))
                     {
                         //Get the properties of the something you hit
                         propRB = hit.rigidbody;
                         prop = hit.transform;
                         //IF the thing you hit has a rigidbody that is light enough for the player to hold
+                        if(hit.transform.gameObject.tag == "NPC" && hit.transform.gameObject.GetComponent<Rigidbody>() == null){
+                            if(FindObjectOfType<DialogueManager>().dialogueBox.activeInHierarchy == false){
+                                hit.transform.parent.gameObject.GetComponent<NpcDialogue>().Begin();
+                            }
+                            else{
+                                FindObjectOfType<DialogueManager>().DisplayNextSentence();
+                            }
+                        }
                         if (hit.transform.gameObject.GetComponent<Rigidbody>() != null && hit.transform.gameObject.GetComponent<Rigidbody>().isKinematic == false && hit.transform.gameObject.GetComponent<Rigidbody>().mass <= grab.strength && !grab.justThrew)
                         {
                             //Pick it up
