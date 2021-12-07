@@ -168,6 +168,7 @@ public class HandAnim : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        barragePrep = animator.GetBool("barragePrep");
         //IF not paused
         if (!FindObjectOfType<PauseMenu>().isPaused) {
 
@@ -271,14 +272,12 @@ public class HandAnim : MonoBehaviour
             if (Input.GetKeyDown("mouse 1")) {
                 if (flipflop2 && !movement.isBarraging && !grab.isHolding) {
                     animator.SetBool("barragePrep", true);
-                    barragePrep = true;
                     blocker = false;
                     flipflop2 = false;
                 }
                 else if (!flipflop2) {
                     movement.isBarraging = false;
                     animator.SetBool("barragePrep", false);
-                    barragePrep = false;
                     blocker = true;
                     flipflop2 = true;
                 }
