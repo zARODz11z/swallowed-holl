@@ -141,7 +141,7 @@ public class Movement : MonoBehaviour {
     Controls controls;
 	//runs when object becomes active
 	void Awake () {
-        controls = GameObject.Find("Player").GetComponentInChildren<Controls>();
+        controls = GameObject.Find("Data").GetComponentInChildren<Controls>();
 
         grab = transform.GetChild(0).GetChild(0).GetChild(2).GetComponent<Grab>();
 		speedController = GetComponent<MovementSpeedController>();

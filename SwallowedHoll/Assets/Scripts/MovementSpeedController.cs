@@ -31,7 +31,7 @@ public class MovementSpeedController : MonoBehaviour
 
     void Start() {
         movement = GetComponent<Movement>();
-        controls = GetComponent<Controls>();
+        controls = GameObject.Find("Data").GetComponent<Controls>();
     }
     void MovementState(float factor){
 		//change movement speeds universally
