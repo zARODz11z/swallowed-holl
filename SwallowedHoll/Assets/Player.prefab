@@ -7527,7 +7527,6 @@ GameObject:
   - component: {fileID: 8997915682440978713}
   - component: {fileID: 2336594995385906158}
   - component: {fileID: 8449227078109447589}
-  - component: {fileID: 1284499773352540620}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -7782,18 +7781,6 @@ MonoBehaviour:
   possibleShift: 0
   hollOrReal: 0
   shiftBlocked: 0
---- !u!114 &1284499773352540620
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7197834583306505045}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 085f7d8351487f247892ca4bac0775cc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &7197834583313307630
 GameObject:
   m_ObjectHideFlags: 0
@@ -8321,6 +8308,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0e4b1e972c01cd4ab00af92c811765a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isPunch: 0
   power: 0
   radius: 0
   oneShot: 0
@@ -8463,6 +8451,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0e4b1e972c01cd4ab00af92c811765a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isPunch: 0
   power: 0
   radius: 0
   oneShot: 0
@@ -8636,6 +8625,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0e4b1e972c01cd4ab00af92c811765a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isPunch: 0
   power: 0
   radius: 0
   oneShot: 0
@@ -8778,6 +8768,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0e4b1e972c01cd4ab00af92c811765a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isPunch: 0
   power: 0
   radius: 0
   oneShot: 0
@@ -8920,6 +8911,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0e4b1e972c01cd4ab00af92c811765a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isPunch: 0
   power: 0
   radius: 0
   oneShot: 0
@@ -9062,6 +9054,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0e4b1e972c01cd4ab00af92c811765a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isPunch: 0
   power: 0
   radius: 0
   oneShot: 0
@@ -9235,6 +9228,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0e4b1e972c01cd4ab00af92c811765a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isPunch: 0
   power: 0
   radius: 0
   oneShot: 0
@@ -9377,6 +9371,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0e4b1e972c01cd4ab00af92c811765a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isPunch: 0
   power: 0
   radius: 0
   oneShot: 0
@@ -9519,6 +9514,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0e4b1e972c01cd4ab00af92c811765a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isPunch: 0
   power: 0
   radius: 0
   oneShot: 0
@@ -9661,6 +9657,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0e4b1e972c01cd4ab00af92c811765a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isPunch: 0
   power: 0
   radius: 0
   oneShot: 0
@@ -9803,6 +9800,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0e4b1e972c01cd4ab00af92c811765a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isPunch: 0
   power: 0
   radius: 0
   oneShot: 0
@@ -10788,6 +10786,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0e4b1e972c01cd4ab00af92c811765a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isPunch: 0
   power: 0
   radius: 0
   oneShot: 0
