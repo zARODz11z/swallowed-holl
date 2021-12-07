@@ -9,6 +9,7 @@ TagManager:
   - wp
   - Breakable
   - Gravity
+  - food
   layers:
   - Default
   - TransparentFX

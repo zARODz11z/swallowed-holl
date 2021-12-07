@@ -5,6 +5,9 @@ using UnityEngine;
 //Brian Meginness and Travis Parks
 public class Eat : MonoBehaviour
 {
+
+    [SerializeField]
+    private AudioSource[] eatingAudioSource = null;
     [SerializeField]
     float food = default;
     [SerializeField]
@@ -22,6 +25,7 @@ public class Eat : MonoBehaviour
         this.GetComponent<BoxCollider>().enabled = false;
         if (respawn){ 
             Invoke("respawnFood", respawnDur);
+
         }
     }
 
@@ -30,6 +34,7 @@ public class Eat : MonoBehaviour
     {
         hideFood();
         ph.increaseHunger(food);
+        
         
     }
 
@@ -59,7 +64,8 @@ public class Eat : MonoBehaviour
             playerInteract.pickUp(copy);
             }
         
-        }
+        } 
+        
     }
 
 }
