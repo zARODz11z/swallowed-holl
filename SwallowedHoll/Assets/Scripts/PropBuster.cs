@@ -24,6 +24,7 @@ public class PropBuster : MonoBehaviour
                     if(otherExplosive.punchAble){
                         other.gameObject.GetComponent<Rigidbody>().AddExplosionForce(power, transform.root.position, radius);
                         if(isPunch){
+                            
                             otherExplosive.takeDamagePUNCH();
                         }
                         else{
