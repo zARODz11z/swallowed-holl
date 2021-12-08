@@ -150,6 +150,7 @@ public class Grab : MonoBehaviour
         int index = Random.Range(0, eatingAudioSource.Length - 1);
         Debug.Log(index);
         eatingAudioSource[index].Play();
+        eatingAudioSource[5].Play();
     }
     void Update()
     {
