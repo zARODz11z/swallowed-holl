@@ -5,6 +5,7 @@ using UnityEngine;
 //this script handles the players hunger and the rate at which it decays, assuming it decays at all. It also controls how it is increased. 
 public class playerHunger : MonoBehaviour
 {
+    [SerializeField] private AudioSource[] eatingAudioSource;
     PlayerStats stats;
     float maxHunger = 100f;
     [SerializeField]
@@ -18,6 +19,12 @@ public class playerHunger : MonoBehaviour
 
     //Increases player's hunger by specified value
     public void increaseHunger(float food){
+
+        int index = Random.Range(0, eatingAudioSource.Length - 1);
+        Debug.Log(index);
+        eatingAudioSource[index].Play();
+        eatingAudioSource[5].Play();
+
         //IF increase would put player at or over the max value
         if (stats.hunger + food >= maxHunger){
             //Set to max value
