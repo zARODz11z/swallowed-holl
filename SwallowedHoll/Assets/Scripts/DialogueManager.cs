@@ -8,6 +8,8 @@ using UnityEngine.UI;
 public class DialogueManager : MonoBehaviour
 {
     [SerializeField]
+    PauseMenu pause;
+    [SerializeField]
     Grab grab;
     [SerializeField]
     HandAnim hand;
@@ -48,14 +50,16 @@ public class DialogueManager : MonoBehaviour
     }
     public void DisplayNextSentence() //displays next sentence in queue
     {
-        if (sentences.Count==0)
-        {
-            EndDialogue();
-            return;
+        if(!pause.isPaused){
+            if (sentences.Count==0)
+            {
+                EndDialogue();
+                return;
+            }
+            string curSentence = sentences.Dequeue();
+            StopAllCoroutines(); //This makes sure the animating stops if the player clicks the continue button
+            StartCoroutine(TypeSentence(curSentence)); //We call our coroutine to display each word at a delay
         }
-        string curSentence = sentences.Dequeue();
-        StopAllCoroutines(); //This makes sure the animating stops if the player clicks the continue button
-        StartCoroutine(TypeSentence(curSentence)); //We call our coroutine to display each word at a delay
     }
 
     IEnumerator TypeSentence (string sentence)//displays words in sentence with a delay
