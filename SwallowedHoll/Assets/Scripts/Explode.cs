@@ -39,7 +39,6 @@ public class Explode : MonoBehaviour
     void Start()
     {
         if(this.gameObject.tag == "Explosive"){
-            
             int index = Random.Range(0, bombAudioSource.Length);
             Debug.Log(index);
             bombAudioSource[index].Play();
