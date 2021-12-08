@@ -6,6 +6,9 @@ using UnityEngine;
 //Travis Parks, modified to pause and rebind controls by Brian Meginness
 public class WorldShift : MonoBehaviour
 {
+    //Lizbeth Solis
+    [SerializeField] private AudioSource[] shiftWorldAudio = null;
+
     Controls controls;
     [SerializeField]
     public float shiftCost;
@@ -51,9 +54,11 @@ public class WorldShift : MonoBehaviour
     {
         if(hollOrReal){
                 dummy.transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z - warpOffset);
+                //shiftWorldAudio[1].Play();
         }
         else{
                 dummy.transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z + warpOffset);
+                shiftWorldAudio[0].Play();
         }
         if (Input.GetKeyDown(controls.keys["warp"]) && !FindObjectOfType<PauseMenu>().isPaused){
             if(GetComponent<PlayerStats>().hunger > shiftCost){
@@ -68,6 +73,7 @@ public class WorldShift : MonoBehaviour
                                 transform.position = dummy.transform.position;
                                 GetComponent<PlayerStats>().hunger = GetComponent<PlayerStats>().hunger - shiftCost;
                                 hollOrReal = false;
+                              
 
                             }
                             else{
