@@ -8,6 +8,7 @@ using UnityEngine;
 // reflect that they are holding something. It also disables dynamic bones while you are holding something. This script also handles the logic for throwing objects, including charging up and releasing
 public class Grab : MonoBehaviour
 {
+    [SerializeField] private AudioSource[] eatingAudioSource;
     //Components
     HandAnim hand;
     Movement movement;
@@ -61,7 +62,7 @@ public class Grab : MonoBehaviour
 
     void Start() {
         //Set components
-        controls = GameObject.Find("Data").GetComponentInChildren<Controls>();
+        controls = GameObject.Find("Player").GetComponentInChildren<Controls>();
         interact = GetComponent<Interact>();
         throwingTemp = throwingforce;
         movement = transform.root.GetComponent<Movement>();
@@ -76,7 +77,7 @@ public class Grab : MonoBehaviour
     }
 
     public void pickUp(Transform dummy, Transform prop, Rigidbody propRB, GameObject propGame)
-    {     
+    {      
         //Is the held object something you can eat?
         if(propGame.GetComponent<Eat>()){
             isFood = true;
@@ -121,7 +122,7 @@ public class Grab : MonoBehaviour
             }
         }
         else{
-            //Debug.Log("Holding Food");
+            Debug.Log("Holding Food");
             propRB.isKinematic=(true);
             prop = prop.transform.root.transform;
             propGame = propGame.transform.root.gameObject;
@@ -146,10 +147,13 @@ public class Grab : MonoBehaviour
         interact.foodDetach();
         interact.prop.gameObject.GetComponent<Eat>().eatFood();
 
+        int index = Random.Range(0, eatingAudioSource.Length - 1);
+        Debug.Log(index);
+        eatingAudioSource[index].Play();
+        eatingAudioSource[5].Play();
     }
     void Update()
     {
-        //Debug.Log(hand.barragePrep);
         //IF not paused
         if (!FindObjectOfType<PauseMenu>().isPaused)
         {
