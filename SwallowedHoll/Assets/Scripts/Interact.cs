@@ -88,6 +88,8 @@ public class Interact : MonoBehaviour
     }
     // this just makes you drop whatever you are holding
     public void detach(){
+        hand.setisHolding(false);
+        grab.sizes = Grab.objectSizes.none;
 
         if(prop.gameObject.tag == "ragdoll"){
             dummy.GetChild(5).SetParent(ragdollParent);
@@ -96,28 +98,25 @@ public class Interact : MonoBehaviour
         else{
             dummy.GetChild(5).SetParent(null);
         }
-        grab.sizes = Grab.objectSizes.none;
         //opposite of the pick up section, just undoing all of that back to its default state
         grab.isgrabCharging = false;
         bone.toggle(false);
-        hand.setisHolding(false);
-        
        // body = prop.gameObject.GetComponent<CustomGravityRigidbody>();
        // body.enabled = true;
         propRB.isKinematic=(false);
         grab.isHolding = false;
         //this may not be super smart, but i am assuming everything you pick up is labeled as a rigid body. If that changes, this should be updated
+        foreach (GameObject G in GameObject.FindGameObjectsWithTag("ragdoll")){
+            G.layer = 13;
+            foreach (Rigidbody R in G.GetComponentsInChildren<Rigidbody>()){
+                R.gameObject.layer = 13;
+            }
+        }
         prop.transform.gameObject.layer = 13;
         foreach ( Transform child in prop.transform){
             child.transform.gameObject.layer = 13;
             foreach ( Transform child2 in child.transform){
                 child2.transform.gameObject.layer = 13;
-            }
-        }
-        foreach (GameObject G in GameObject.FindGameObjectsWithTag("ragdoll")){
-            G.layer = 13;
-            foreach (Rigidbody R in G.GetComponentsInChildren<Rigidbody>()){
-                R.gameObject.layer = 13;
             }
         }
     }

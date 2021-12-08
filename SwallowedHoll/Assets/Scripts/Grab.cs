@@ -9,6 +9,10 @@ using UnityEngine;
 public class Grab : MonoBehaviour
 {
     [SerializeField] private AudioSource[] eatingAudioSource;
+    [SerializeField]
+    AudioSource[] pickUpAudioSource;
+    [SerializeField]
+    AudioSource[] throwAudioSource;
     //Components
     HandAnim hand;
     Movement movement;
@@ -77,7 +81,10 @@ public class Grab : MonoBehaviour
     }
 
     public void pickUp(Transform dummy, Transform prop, Rigidbody propRB, GameObject propGame)
-    {      
+    {    
+        int index = Random.Range(0, pickUpAudioSource.Length - 1);
+        pickUpAudioSource[index].Play();  
+
         //Is the held object something you can eat?
         if(propGame.GetComponent<Eat>()){
             isFood = true;
@@ -160,6 +167,9 @@ public class Grab : MonoBehaviour
             //IF Left Mouse released and is holding an object
             if (Input.GetKeyUp(controls.keys["throw"]) && isHolding && !hand.barragePrep && !movement.isBarraging && !justThrew && !isFood)
             {
+                int index = Random.Range(0, throwAudioSource.Length - 1);
+                throwAudioSource[index].Play(); 
+                
                 //Remove from grip
                 interact.detach();
                 //Add appropriate force to object
