@@ -22,6 +22,7 @@ public class HelpMenu : MonoBehaviour
     Image diveJump;
     GameObject errTxt;
     GameObject promptTxt;
+    GameObject rebindTxt;
 
     Controls controls;
 
@@ -46,6 +47,7 @@ public class HelpMenu : MonoBehaviour
         diveJump = GameObject.Find("DiveJump").GetComponent<Image>();
         errTxt = GameObject.Find("ErrorText");
         promptTxt = GameObject.Find("PromptText");
+        rebindTxt = GameObject.Find("RebindText");
 
 
         //Update controls
@@ -118,10 +120,12 @@ public class HelpMenu : MonoBehaviour
         errTxt.SetActive(true);
         yield return new WaitForSecondsRealtime(3);
         errTxt.SetActive(false);
+        rebindTxt.SetActive(true);
     }
 
     private IEnumerator prompt()
     {
+        rebindTxt.SetActive(false);
         promptTxt.SetActive(true);
         yield return new WaitUntil(() => Input.anyKey);
         promptTxt.SetActive(false);
@@ -144,6 +148,7 @@ public class HelpMenu : MonoBehaviour
 
         errTxt.SetActive(false);
         promptTxt.SetActive(false);
+        rebindTxt.SetActive(true);
 
         //Set images to associated key sprite
         moveLeft.sprite = Resources.Load<Sprite>(leftKey.ToString());
