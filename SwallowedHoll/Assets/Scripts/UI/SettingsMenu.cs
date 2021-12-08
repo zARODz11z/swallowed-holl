@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Linq;
 
 // Brian Meginness
 public class SettingsMenu : MonoBehaviour
@@ -20,7 +21,7 @@ public class SettingsMenu : MonoBehaviour
         //Get components
         volSlide = GameObject.Find("VolumeSlide").GetComponent<Slider>();
         resDrop = GameObject.Find("Resolution").GetComponent<Dropdown>();
-        resolutions = Screen.resolutions;
+        resolutions = Screen.resolutions.Where(resolution => resolution.refreshRate == Screen.currentResolution.refreshRate).ToArray();
         fullToggle = GameObject.Find("Fullscreen").GetComponent<Toggle>();
         fullToggle.isOn = Screen.fullScreen;
         qualDrop = GameObject.Find("Quality").GetComponent<Dropdown>();
@@ -77,8 +78,7 @@ public class SettingsMenu : MonoBehaviour
     //Set whether window is fullscreen
     public void SetFullscreen(bool fullscreen)
     {
-        Debug.Log(fullscreen);
-        Screen.fullScreen = fullscreen;
+        Screen.SetResolution(Screen.width, Screen.height, fullscreen);
     }
 
     private void GetQuality()
@@ -98,7 +98,6 @@ public class SettingsMenu : MonoBehaviour
     //Set graphics engine quality preset
     public void setQuality(int quality)
     {
-        Debug.Log("Qual");
         QualitySettings.SetQualityLevel(quality);
     }
 }
