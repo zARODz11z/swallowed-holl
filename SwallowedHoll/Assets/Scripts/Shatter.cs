@@ -93,8 +93,10 @@ public class Shatter : MonoBehaviour
             
         }
         Destroy(this.gameObject);
-        if(player.GetComponent<Grab>().isHolding && player.transform.GetChild(2).GetChild(0).GetChild(5).gameObject == this.gameObject){
-            player.GetComponent<Interact>().detach();
+        if(player.GetComponent<Grab>().isHolding && !player.GetComponent<Grab>().isFood){
+            if(player.transform.GetChild(2).GetChild(0).GetChild(5).gameObject != null && player.transform.GetChild(2).GetChild(0).GetChild(5).gameObject == this.gameObject){
+                player.GetComponent<Interact>().detach();
+            }
         }
     }
 }

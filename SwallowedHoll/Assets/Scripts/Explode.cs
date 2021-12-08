@@ -24,6 +24,18 @@ public class Explode : MonoBehaviour
     //float otherExplosiveTime = 1f;
     //Shatter otherExplosive;
     // Start is called before the first frame update
+
+    void ragdollBlast(){
+        Vector3 explosionPos = transform.position;
+        Collider[] colliders = Physics.OverlapSphere(explosionPos, radius);
+        foreach (Collider hit in colliders)
+        {
+            Rigidbody rb = hit.GetComponent<Rigidbody>();
+            if(hit.tag == "ragdoll"){
+                rb.AddExplosionForce(power/2, explosionPos, radius, upModifier);
+            }
+        }
+    }
     void Start()
     {
         if(this.gameObject.tag == "Explosive"){
@@ -52,6 +64,10 @@ public class Explode : MonoBehaviour
         	Collider[] colliders = Physics.OverlapSphere(explosionPos, radius);
         	foreach (Collider hit in colliders)
         	{
+                if(hit.gameObject.tag == "NPC" && hit.gameObject.transform.parent.gameObject.GetComponent<ragdollSpawn>() != null && isBomb){
+                    hit.gameObject.transform.parent.gameObject.GetComponent<ragdollSpawn>().spawn();
+                    ragdollBlast();
+                }
             	Rigidbody rb = hit.GetComponent<Rigidbody>();
                 if(!isBomb){
                     if (hit.transform.IsChildOf(this.transform)){

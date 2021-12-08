@@ -89,7 +89,7 @@ public class HandAnim : MonoBehaviour
     }
     void Start()
     {
-        controls = GameObject.Find("Player").GetComponentInChildren<Controls>();
+        controls = GameObject.Find("Data").GetComponentInChildren<Controls>();
         speedController = sphere.GetComponent<MovementSpeedController>();
         animator = GetComponent<Animator>();
         movement = sphere.GetComponent<Movement>();
@@ -157,10 +157,18 @@ public class HandAnim : MonoBehaviour
         animator.SetBool("EatFood", true);
         Invoke("resetEatFood", .1f);
     }
+    public void forceIdle(){
+        animator.SetBool("isMoving", false);
+        animator.SetBool("isClimbing", false);
+        animator.SetBool("HungerDive", false);
+        animator.SetBool("isSprinting", false);
+        animator.SetBool("walkPressed", false);
+    }
 
     // Update is called once per frame
     void Update()
     {
+        barragePrep = animator.GetBool("barragePrep");
         //IF not paused
         if (!FindObjectOfType<PauseMenu>().isPaused) {
 
@@ -264,14 +272,12 @@ public class HandAnim : MonoBehaviour
             if (Input.GetKeyDown("mouse 1")) {
                 if (flipflop2 && !movement.isBarraging && !grab.isHolding) {
                     animator.SetBool("barragePrep", true);
-                    barragePrep = true;
                     blocker = false;
                     flipflop2 = false;
                 }
                 else if (!flipflop2) {
                     movement.isBarraging = false;
                     animator.SetBool("barragePrep", false);
-                    barragePrep = false;
                     blocker = true;
                     flipflop2 = true;
                 }

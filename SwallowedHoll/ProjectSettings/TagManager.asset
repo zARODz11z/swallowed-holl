@@ -9,7 +9,8 @@ TagManager:
   - wp
   - Breakable
   - Gravity
-  - food
+  - NPC
+  - ragdoll
   layers:
   - Default
   - TransparentFX

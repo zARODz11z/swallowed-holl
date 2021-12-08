@@ -20,13 +20,18 @@ public class HelpMenu : MonoBehaviour
     Image eat;
     Image diveCrouch;
     Image diveJump;
+    GameObject errTxt;
+    GameObject promptTxt;
+    GameObject rebindTxt;
 
     Controls controls;
+
+    private static IEnumerator err;
 
     private void Start()
     {
         //Assign components
-        controls = GameObject.Find("Player").GetComponentInChildren<Controls>();
+        controls = GameObject.Find("Data").GetComponentInChildren<Controls>();
         moveLeft = GameObject.Find("WalkLeft").GetComponent<Image>();
         moveRight = GameObject.Find("WalkRight").GetComponent<Image>();
         moveUp = GameObject.Find("WalkForward").GetComponent<Image>();
@@ -40,8 +45,19 @@ public class HelpMenu : MonoBehaviour
         eat = GameObject.Find("Eat").GetComponent<Image>();
         diveCrouch = GameObject.Find("DiveCrouch").GetComponent<Image>();
         diveJump = GameObject.Find("DiveJump").GetComponent<Image>();
+        errTxt = GameObject.Find("ErrorText");
+        promptTxt = GameObject.Find("PromptText");
+        rebindTxt = GameObject.Find("RebindText");
+
+
+        //Update controls
+        if (controls)
+        {
+            draw();
+        }
     }
 
+    //Update controls when menu is opened
     private void OnEnable()
     {
         if (controls)
@@ -59,6 +75,15 @@ public class HelpMenu : MonoBehaviour
     //Coroutine to wait for user input
     private IEnumerator WaitForKeyPress(string action)
     {
+        errTxt.SetActive(false);
+        try
+        {
+            StopCoroutine(err);
+        }
+        catch { }
+
+        StartCoroutine(prompt());
+
         //Save previous key for the specified action, set to not in use
         KeyCode oldKey = controls.keys[action];
         controls.inUse[oldKey] = false;
@@ -72,7 +97,7 @@ public class HelpMenu : MonoBehaviour
         //Figure out what key was pressed
         foreach (KeyCode key in System.Enum.GetValues(typeof(KeyCode)))
         {
-            
+
             if (Input.GetKey(key) && !controls.inUse[key])
             {
                 Debug.Log(action + " changed to " + key);
@@ -81,8 +106,29 @@ public class HelpMenu : MonoBehaviour
                 controls.inUse[key] = true;
                 draw();
             }
+            else if (Input.GetKey(key) && controls.inUse[key])
+            {
+                err = ErrorMsg();
+                StartCoroutine(err);
+            }
         }
 
+    }
+
+    private IEnumerator ErrorMsg()
+    {
+        errTxt.SetActive(true);
+        yield return new WaitForSecondsRealtime(3);
+        errTxt.SetActive(false);
+        rebindTxt.SetActive(true);
+    }
+
+    private IEnumerator prompt()
+    {
+        rebindTxt.SetActive(false);
+        promptTxt.SetActive(true);
+        yield return new WaitUntil(() => Input.anyKey);
+        promptTxt.SetActive(false);
     }
 
     private void draw()
@@ -99,6 +145,10 @@ public class HelpMenu : MonoBehaviour
         KeyCode warpKey = controls.keys["warp"];
         KeyCode throwKey = controls.keys["throw"];
         KeyCode eatKey = controls.keys["eat"];
+
+        errTxt.SetActive(false);
+        promptTxt.SetActive(false);
+        rebindTxt.SetActive(true);
 
         //Set images to associated key sprite
         moveLeft.sprite = Resources.Load<Sprite>(leftKey.ToString());
