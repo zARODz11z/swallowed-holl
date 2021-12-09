@@ -269,19 +269,23 @@ public class HandAnim : MonoBehaviour
                     animator.SetFloat("walkBlend", playerSpeed);
                 }
             }
-            if (Input.GetKeyDown("mouse 1")) {
-                if (flipflop2 && !movement.isBarraging && !grab.isHolding) {
-                    animator.SetBool("barragePrep", true);
-                    blocker = false;
-                    flipflop2 = false;
-                }
-                else if (!flipflop2) {
-                    movement.isBarraging = false;
-                    animator.SetBool("barragePrep", false);
-                    blocker = true;
-                    flipflop2 = true;
-                }
-            }
+
+            //Barrage Attack
+           // if (Input.GetKeyDown("mouse 1")) {
+           //     if (flipflop2 && !movement.isBarraging && !grab.isHolding) {
+           //         animator.SetBool("barragePrep", true);
+           //         blocker = false;
+           //         flipflop2 = false;
+           //     }
+           //     else if (!flipflop2) {
+           //         movement.isBarraging = false;
+           //         animator.SetBool("barragePrep", false);
+           //         blocker = true;
+           //         flipflop2 = true;
+           //     }
+           // }
+
+
             if (Input.GetKeyDown(controls.keys["throw"])) {
                 if (blocker && !grab.isHolding) {
                     if (flipflop) {
