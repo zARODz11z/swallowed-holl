@@ -192,7 +192,7 @@ public class Grab : MonoBehaviour
                 if (throwingforce <= maxThrowingForce)
                 {
                     isgrabCharging = true;
-                    throwingforce = throwingforce + chargeRate;
+                    throwingforce = throwingforce + (chargeRate * Time.deltaTime) * 100;
                 }
                 if (throwingforce > maxThrowingForce)
                 {

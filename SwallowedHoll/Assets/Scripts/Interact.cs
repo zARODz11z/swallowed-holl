@@ -88,9 +88,9 @@ public class Interact : MonoBehaviour
     }
     // this just makes you drop whatever you are holding
     public void detach(){
-        hand.setisHolding(false);
         grab.sizes = Grab.objectSizes.none;
-
+        grab.transform.GetChild(2).GetChild(0).GetComponent<heldItemColliderToggle>().clear();
+        hand.setisHolding(false);
         if(prop.gameObject.tag == "ragdoll"){
             dummy.GetChild(5).SetParent(ragdollParent);
             this.transform.root.gameObject.GetComponent<WorldShift>().setShiftBlockedFalse();
@@ -105,7 +105,6 @@ public class Interact : MonoBehaviour
        // body.enabled = true;
         propRB.isKinematic=(false);
         grab.isHolding = false;
-        //this may not be super smart, but i am assuming everything you pick up is labeled as a rigid body. If that changes, this should be updated
         foreach (GameObject G in GameObject.FindGameObjectsWithTag("ragdoll")){
             G.layer = 13;
             foreach (Rigidbody R in G.GetComponentsInChildren<Rigidbody>()){
@@ -119,6 +118,7 @@ public class Interact : MonoBehaviour
                 child2.transform.gameObject.layer = 13;
             }
         }
+        //Debug.Log("DROPPED");
     }
 
     //removes the "thru hoop" status of any basketballs you pick up
@@ -150,7 +150,7 @@ public class Interact : MonoBehaviour
                 {
                     RaycastHit hit;
                     //IF a raycast hits something
-                    if (Physics.SphereCast(origin.transform.position, .001f, (dummy.position - origin.transform.position), out hit, distance, mask))
+                    if (Physics.SphereCast(origin.transform.position, .5f, (dummy.position - origin.transform.position), out hit, distance, mask))
                     {
                         //Get the properties of the something you hit
                         propRB = hit.rigidbody;

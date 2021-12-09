@@ -7,13 +7,25 @@ public class soundTrackToggler : MonoBehaviour
 {
     [SerializeField]
     float defaultVolume = .1f;
+    public bool whichOne;
+
+    public void swap(bool plug){
+        if(!plug){
+            transform.GetChild(0).gameObject.GetComponent<AudioSource>().volume = defaultVolume;
+            transform.GetChild(1).gameObject.GetComponent<AudioSource>().volume = 0;
+            whichOne = plug;
+        }
+        else{
+            transform.GetChild(0).gameObject.GetComponent<AudioSource>().volume = 0;
+            transform.GetChild(1).gameObject.GetComponent<AudioSource>().volume = defaultVolume;
+            whichOne = plug;
+        }
+    }
     public void swapOff(){
-        Debug.Log("SWAPPED");
         transform.GetChild(0).gameObject.GetComponent<AudioSource>().volume = defaultVolume;
         transform.GetChild(1).gameObject.GetComponent<AudioSource>().volume = 0;
     }
     public void swapOn(){
-        Debug.Log("SWAPPED");
         transform.GetChild(0).gameObject.GetComponent<AudioSource>().volume = 0;
         transform.GetChild(1).gameObject.GetComponent<AudioSource>().volume = defaultVolume;
     }

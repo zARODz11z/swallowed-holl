@@ -18,10 +18,16 @@ public class heldItemColliderToggle : MonoBehaviour
         largeCollider = transform.GetChild(2).gameObject;
     }
 
+    public void clear(){
+        smallCollider.gameObject.SetActive(false);
+        medCollider.SetActive(false);
+        largeCollider.SetActive(false);
+    }
+
     // Update is called once per frame
     void Update()
     {
-        if( grab.isHolding ){
+        if(grab.isHolding){
             if(grab.sizes == Grab.objectSizes.large){
                 largeCollider.SetActive(true);
             }

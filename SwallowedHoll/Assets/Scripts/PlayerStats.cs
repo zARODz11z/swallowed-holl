@@ -19,11 +19,12 @@ public class PlayerStats : MonoBehaviour
     [HideInInspector]
     public bool portalWarp;
     public PlayerDeath playerDeath;
-
+    bool whichOne;
 
     public void SavePlayer()
     {
         SaveSystem.SavePlayer(this);
+        whichOne = transform.root.gameObject.GetComponent<WorldShift>().whichOne;
     }
     public void LoadPlayer()
     {
@@ -40,6 +41,22 @@ public class PlayerStats : MonoBehaviour
         transform.position = position;
         GetComponent<WorldShift>().hollOrReal = data.hollOrReal;
 
+        if(whichOne){
+            transform.root.gameObject.GetComponent<WorldShift>().swap(true);
+        }
+        else{
+            transform.root.gameObject.GetComponent<WorldShift>().swap(false);
+        }
+
+    }
+
+    public void restoreHP(float healAmount){
+        if (hp + healAmount > 100){
+            hp = 100;
+        }
+        else{
+            hp += healAmount;
+        }
     }
 
     public void takeDamage(float damage){

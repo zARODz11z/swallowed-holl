@@ -8,6 +8,8 @@ using UnityEngine.UI;
 public class DialogueManager : MonoBehaviour
 {
     [SerializeField]
+    AudioSource textScrollNoise;
+    [SerializeField]
     PauseMenu pause;
     [SerializeField]
     Grab grab;
@@ -21,6 +23,7 @@ public class DialogueManager : MonoBehaviour
     public Text dialogueText; //dialogue text object
     private Queue<string> sentences; 
     public GameObject dialogueBox;
+    float gate;
 
     // Start is called before the first frame update
     void Start()
@@ -65,8 +68,19 @@ public class DialogueManager : MonoBehaviour
     IEnumerator TypeSentence (string sentence)//displays words in sentence with a delay
     {
         dialogueText.text = "";
+        gate = 5;
+        //textScrollNoise.pitch = Random.Range(.8f, 1.25f);
         foreach (char letter in sentence.ToCharArray())
         {
+            if(gate == 5){
+                
+                textScrollNoise.Play();
+                gate = 0;
+            }
+            else{
+                gate += 1;
+            }
+
             dialogueText.text += letter;
             yield return null;
         }
