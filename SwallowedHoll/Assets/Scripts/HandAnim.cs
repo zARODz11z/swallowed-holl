@@ -13,7 +13,7 @@ public class HandAnim : MonoBehaviour
     [HideInInspector]
     public bool barragePrep = false;
     bool flipflop = true;
-    bool flipflop2 = true;
+    //bool flipflop2 = true;
     bool blocker = true;
     float charge;
     Animator animator;
@@ -99,7 +99,7 @@ public class HandAnim : MonoBehaviour
     void startBarrage(){
         animator.SetBool("barragePrep", false);
         movement.isBarraging = true;
-        flipflop2 = true;
+        //flipflop2 = true;
         //speedController.setFactor(.5f);
         //Debug.Log("SPEED CUT");
         //movement change here

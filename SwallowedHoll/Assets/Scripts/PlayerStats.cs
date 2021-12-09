@@ -7,6 +7,8 @@ using UnityEngine;
 //this script will just keep track of the player's various stats and allow other scripts to access and edit them
 public class PlayerStats : MonoBehaviour
 {
+    [SerializeField]
+    AudioSource[] painSounds;
     public float hunger = 100;
     public float hp = 100;
 
@@ -43,13 +45,19 @@ public class PlayerStats : MonoBehaviour
     public void takeDamage(float damage){
         if (hp - damage < 0){
             //Debug.Log("Went from "+hp+" to 0");
+
             hp = 0;
             playerDeath.Death();
 
         }
         else {
+
             //Debug.Log("Went from "+hp+" to "+ Mathf.Round(hp-damage));
-            hp = Mathf.Round(hp-damage);
+            if(hp != Mathf.Round(hp-damage)){
+                int index = Random.Range(0, painSounds.Length - 1);
+                painSounds[index].Play();
+                hp = Mathf.Round(hp-damage);
+            }
         }
     }
 
