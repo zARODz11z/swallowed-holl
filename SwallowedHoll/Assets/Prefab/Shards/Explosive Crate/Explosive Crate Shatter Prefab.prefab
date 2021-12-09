@@ -2390,6 +2390,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3544460323273864761}
   - component: {fileID: 3943687208461458550}
+  - component: {fileID: 8882532548553531141}
   m_Layer: 0
   m_Name: Explosive Crate Shatter Prefab
   m_TagString: Untagged
@@ -2460,11 +2461,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9346b1c2837afb4686bd9878f654fbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bombAudioSource: []
   radius: 50
   power: 2500
   upModifier: 2
   isBomb: 1
-  otherExplosiveTime: 1
+  playerDamageMax: 0
+  playerDamageMin: 0
+--- !u!114 &8882532548553531141
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4214141435555097731}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f6e2f15f1eda9b41a1b9c6b45d71b8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lifeMin: 11
+  lifeMax: 11
 --- !u!1 &4605108127750555157
 GameObject:
   m_ObjectHideFlags: 0

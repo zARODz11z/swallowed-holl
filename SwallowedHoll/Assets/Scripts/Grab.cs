@@ -8,6 +8,11 @@ using UnityEngine;
 // reflect that they are holding something. It also disables dynamic bones while you are holding something. This script also handles the logic for throwing objects, including charging up and releasing
 public class Grab : MonoBehaviour
 {
+
+    [SerializeField]
+    AudioSource[] pickUpAudioSource;
+    [SerializeField]
+    AudioSource[] throwAudioSource;
     //Components
     HandAnim hand;
     Movement movement;
@@ -61,7 +66,7 @@ public class Grab : MonoBehaviour
 
     void Start() {
         //Set components
-        controls = GameObject.Find("Data").GetComponentInChildren<Controls>();
+        controls = GameObject.Find("Player").GetComponentInChildren<Controls>();
         interact = GetComponent<Interact>();
         throwingTemp = throwingforce;
         movement = transform.root.GetComponent<Movement>();
@@ -76,7 +81,10 @@ public class Grab : MonoBehaviour
     }
 
     public void pickUp(Transform dummy, Transform prop, Rigidbody propRB, GameObject propGame)
-    {     
+    {    
+        int index = Random.Range(0, pickUpAudioSource.Length - 1);
+        pickUpAudioSource[index].Play();  
+
         //Is the held object something you can eat?
         if(propGame.GetComponent<Eat>()){
             isFood = true;
@@ -121,7 +129,7 @@ public class Grab : MonoBehaviour
             }
         }
         else{
-            //Debug.Log("Holding Food");
+            Debug.Log("Holding Food");
             propRB.isKinematic=(true);
             prop = prop.transform.root.transform;
             propGame = propGame.transform.root.gameObject;
@@ -145,17 +153,18 @@ public class Grab : MonoBehaviour
     public void eatFood(){
         interact.foodDetach();
         interact.prop.gameObject.GetComponent<Eat>().eatFood();
-
     }
     void Update()
     {
-        //Debug.Log(hand.barragePrep);
         //IF not paused
         if (!FindObjectOfType<PauseMenu>().isPaused)
         {
             //IF Left Mouse released and is holding an object
             if (Input.GetKeyUp(controls.keys["throw"]) && isHolding && !hand.barragePrep && !movement.isBarraging && !justThrew && !isFood)
             {
+                int index = Random.Range(0, throwAudioSource.Length - 1);
+                throwAudioSource[index].Play(); 
+                
                 //Remove from grip
                 interact.detach();
                 //Add appropriate force to object

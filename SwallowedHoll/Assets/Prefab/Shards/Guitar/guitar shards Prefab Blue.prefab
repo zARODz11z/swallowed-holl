@@ -430,6 +430,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6850739157148101692}
   - component: {fileID: 6383869559175838919}
+  - component: {fileID: 2123558625920159085}
   m_Layer: 0
   m_Name: guitar shards Prefab Blue
   m_TagString: Untagged
@@ -468,11 +469,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9346b1c2837afb4686bd9878f654fbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bombAudioSource: []
   radius: 100
   power: 200
   upModifier: 1
   isBomb: 0
-  otherExplosiveTime: 1
+  playerDamageMax: 0
+  playerDamageMin: 0
+--- !u!114 &2123558625920159085
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6078001717102491270}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f6e2f15f1eda9b41a1b9c6b45d71b8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lifeMin: 11
+  lifeMax: 11
 --- !u!1 &6996100595123187678
 GameObject:
   m_ObjectHideFlags: 0

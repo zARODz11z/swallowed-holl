@@ -6,6 +6,10 @@ using UnityEngine;
 public class DoorOpenandClose : MonoBehaviour
 {
     [SerializeField]
+    AudioSource[] doorOpen;
+    [SerializeField]
+    AudioSource[] doorClose;
+    [SerializeField]
     float rate;
     Animator anim;
     bool gate;
@@ -54,6 +58,10 @@ public class DoorOpenandClose : MonoBehaviour
 
     public void openSlidingDoor(){
         if(!subGate){
+
+            int index = Random.Range(0, doorOpen.Length);
+            doorOpen[index].Play();
+
             gate = true;
             direction = true;
             counter = 0;
@@ -63,6 +71,10 @@ public class DoorOpenandClose : MonoBehaviour
     }
     public void closeSlidingDoor(){
         if(!subGate){
+
+            int index = Random.Range(0, doorClose.Length);
+            doorClose[index].Play();
+
             gate = true;
             direction = false;
             counter = 0;

@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Explode : MonoBehaviour
 {
+    [SerializeField] 
+    private AudioSource[] bombAudioSource = null;
     Rigidbody body; 
     [SerializeField]
     float radius;
@@ -36,6 +38,11 @@ public class Explode : MonoBehaviour
     }
     void Start()
     {
+        if(this.gameObject.tag == "Explosive"){
+            int index = Random.Range(0, bombAudioSource.Length);
+            Debug.Log(index);
+            bombAudioSource[index].Play();
+        }
         foreach (GameObject G in GameObject.FindGameObjectsWithTag("Player")){
             if(G.GetComponent<Movement>() != null){
                 player = G;
@@ -72,11 +79,12 @@ public class Explode : MonoBehaviour
                         hit.gameObject.GetComponent<Shatter>().oneShot(0);
                     }
                     if (rb != null){
-                        //if (rb.gameObject.tag == "Explosive"){
+                       // if (rb.gameObject.tag == "Explosive"){
+      
                         //    otherExplosive = rb.gameObject.GetComponent<Shatter>();
                         //    otherExplosive.oneShot(otherExplosiveTime);
-                       // }
-                    rb.AddExplosionForce(power, explosionPos, radius, upModifier);
+                        //}
+                        rb.AddExplosionForce(power, explosionPos, radius, upModifier);
                     if(!gate){
                         player.GetComponent<PlayerStats>().takeDamage(Mathf.Lerp(playerDamageMax, playerDamageMin, damage));
                         //Debug.Log("Lerping from "+ damage);

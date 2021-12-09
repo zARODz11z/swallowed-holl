@@ -5,6 +5,7 @@ using UnityEngine;
 // the effect of a shatter. if its explosive, this force also effects the environment as well as the shards. after that, the shards despawn after a set amount of time 
 public class Shatter : MonoBehaviour
 {
+
     bool boomBlocked;
     public GameObject explosionEffect;
     public GameObject shatterPrefab;
@@ -36,9 +37,13 @@ public class Shatter : MonoBehaviour
         if(throwableBreak){
             if((other.gameObject.GetComponent<Rigidbody>() != null && (other.gameObject.GetComponent<Rigidbody>().velocity.magnitude > breakSpeed && other.gameObject.tag != "Player") || (this.gameObject.GetComponent<Rigidbody>().velocity.magnitude > breakSpeed && other.gameObject.tag != "Player")) ){
                 oneShot(0);
+                //if (other.gameObject.tag == "Explosive") {
+                  //  bombAudioSource.Play(); }
+
             }
         }
     }
+
     void Start() {
         foreach(GameObject g in GameObject.FindGameObjectsWithTag("Player")){
             if(g.GetComponent<Movement>()!=null){
@@ -84,6 +89,8 @@ public class Shatter : MonoBehaviour
         Instantiate(shatterPrefab, shatterSpawnPos.transform.position, shatterSpawnPos.transform.rotation);
         if(explosionEffect != null){
             Instantiate(explosionEffect, transform.position, transform.rotation);
+
+            
         }
         Destroy(this.gameObject);
         if(player.GetComponent<Grab>().isHolding && !player.GetComponent<Grab>().isFood){

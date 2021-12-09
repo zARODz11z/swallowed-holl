@@ -6,6 +6,8 @@ using UnityEngine;
 public class buttonPush : MonoBehaviour
 {
     [SerializeField]
+    AudioSource[] buttonPressSound;
+    [SerializeField]
     public bool oneTime;
     [HideInInspector]
     public Animator anim;
@@ -55,6 +57,10 @@ public class buttonPush : MonoBehaviour
 
     public void press(){
         if(door != null && !door.subGate || belt != null && !belt.subGate){
+
+            int index = Random.Range(0, buttonPressSound.Length);
+            buttonPressSound[index].Play();
+
             if(oneTime){
                 if(!anim.GetBool("onePush")){
                     anim.SetBool("onePush", true);
@@ -96,6 +102,10 @@ public class buttonPush : MonoBehaviour
             }
         }
         else if(door == null && belt == null){
+
+            int index = Random.Range(0, buttonPressSound.Length);
+            buttonPressSound[index].Play();
+            
             if(oneTime){
                 if(!anim.GetBool("onePush")){
                     anim.SetBool("onePush", true);
