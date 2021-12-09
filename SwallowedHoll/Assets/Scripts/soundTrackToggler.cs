@@ -1,7 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+//Travis Parks
+//This script switches the volume levels of the two soundtracks to make them toggle when you world shift
 public class soundTrackToggler : MonoBehaviour
 {
     [SerializeField]

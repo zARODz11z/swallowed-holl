@@ -5458,6 +5458,92 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 07f0e5d61dfc9ae429044e702f8486cc, type: 3}
+--- !u!1001 &265024693
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1039102907}
+    m_Modifications:
+    - target: {fileID: 1618143204638796498, guid: 79337014cf7148d49abd0fa6c16191f3, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1618143204638796498, guid: 79337014cf7148d49abd0fa6c16191f3, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -264.95
+      objectReference: {fileID: 0}
+    - target: {fileID: 1618143204638796498, guid: 79337014cf7148d49abd0fa6c16191f3, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -311.09
+      objectReference: {fileID: 0}
+    - target: {fileID: 1618143204638796498, guid: 79337014cf7148d49abd0fa6c16191f3, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -308.4072
+      objectReference: {fileID: 0}
+    - target: {fileID: 1618143204638796498, guid: 79337014cf7148d49abd0fa6c16191f3, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9238793
+      objectReference: {fileID: 0}
+    - target: {fileID: 1618143204638796498, guid: 79337014cf7148d49abd0fa6c16191f3, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1618143204638796498, guid: 79337014cf7148d49abd0fa6c16191f3, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.38268414
+      objectReference: {fileID: 0}
+    - target: {fileID: 1618143204638796498, guid: 79337014cf7148d49abd0fa6c16191f3, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1618143204638796498, guid: 79337014cf7148d49abd0fa6c16191f3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1618143204638796498, guid: 79337014cf7148d49abd0fa6c16191f3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -45
+      objectReference: {fileID: 0}
+    - target: {fileID: 1618143204638796498, guid: 79337014cf7148d49abd0fa6c16191f3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1618143204638796499, guid: 79337014cf7148d49abd0fa6c16191f3, type: 3}
+      propertyPath: dialogueBox
+      value: 
+      objectReference: {fileID: 832956176}
+    - target: {fileID: 1618143204638796499, guid: 79337014cf7148d49abd0fa6c16191f3, type: 3}
+      propertyPath: dialogue.name
+      value: Dr. Archibold Lewis Ladder
+      objectReference: {fileID: 0}
+    - target: {fileID: 1618143204638796499, guid: 79337014cf7148d49abd0fa6c16191f3, type: 3}
+      propertyPath: dialogue.sentences.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1618143204638796499, guid: 79337014cf7148d49abd0fa6c16191f3, type: 3}
+      propertyPath: dialogue.sentences.Array.data[0]
+      value: I bet you could climb on this green surface here!
+      objectReference: {fileID: 0}
+    - target: {fileID: 1618143204638796499, guid: 79337014cf7148d49abd0fa6c16191f3, type: 3}
+      propertyPath: dialogue.sentences.Array.data[1]
+      value: It seems quite grippy...
+      objectReference: {fileID: 0}
+    - target: {fileID: 1618143204638796499, guid: 79337014cf7148d49abd0fa6c16191f3, type: 3}
+      propertyPath: dialogue.sentences.Array.data[2]
+      value: If you hold down crouch I bet you could manage it!
+      objectReference: {fileID: 0}
+    - target: {fileID: 1618143204638796501, guid: 79337014cf7148d49abd0fa6c16191f3, type: 3}
+      propertyPath: m_Name
+      value: Scientist Prefab (9)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 79337014cf7148d49abd0fa6c16191f3, type: 3}
+--- !u!4 &265024694 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1618143204638796498, guid: 79337014cf7148d49abd0fa6c16191f3, type: 3}
+  m_PrefabInstance: {fileID: 265024693}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &271278597
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -25034,6 +25120,7 @@ RectTransform:
   - {fileID: 498544228}
   - {fileID: 1401927457}
   - {fileID: 1084392469}
+  - {fileID: 265024694}
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

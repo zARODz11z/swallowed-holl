@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+//Written by Travis Parks
+//This script controls the behavior of the bomb item, specifically making the bomb explode when you worldshift.
 
 public class Bomb : MonoBehaviour
 {

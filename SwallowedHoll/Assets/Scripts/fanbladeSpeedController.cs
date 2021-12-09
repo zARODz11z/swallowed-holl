@@ -1,7 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+//Travis Parks
+//This script controls the playback speed of the fan animation
 public class fanbladeSpeedController : MonoBehaviour
 {
     Animator anim;

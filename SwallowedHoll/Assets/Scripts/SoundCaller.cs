@@ -1,7 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+//Travis Parks
+//This script calls sound objects tied to a certain object
 public class SoundCaller : MonoBehaviour
 {
     [SerializeField]

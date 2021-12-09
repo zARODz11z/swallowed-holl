@@ -1,7 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+//Travis Parks
+//This script controls the special kind of switch that appears in the bomb level that requires you to pull two switches to trigger a door
 public class doubleSwitch : MonoBehaviour
 {
     [SerializeField]

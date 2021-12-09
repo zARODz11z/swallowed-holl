@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+//Travis Parks
 // this script toggles on and off the colliders that represent a held object depending on its size. 
 public class heldItemColliderToggle : MonoBehaviour
 {

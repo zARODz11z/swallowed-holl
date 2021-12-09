@@ -1,7 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+//Travis Parks
+//This script Controls the bahavior of the bomb dispansor item. It will spawn a new bomb and destroy all existing bombs, unless it is tagged as a spawner
 public class bombDIspensor : MonoBehaviour
 {
     [SerializeField]

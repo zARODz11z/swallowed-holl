@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 //Travis Parks
+//This script controls the speed that the barrage aniamtion plays
 public class BarrageSpeed : MonoBehaviour
 {
     float speed = .7f;
