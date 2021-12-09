@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 //this script is meant to control the character's speed and allow other scripts to place boosts or limits upon it.
+//Travis Parks
 public class MovementSpeedController : MonoBehaviour
 {
     Movement movement;

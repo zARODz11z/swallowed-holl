@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 //handles "breaking" a breakable object, as wella s exploding explodable objects. upon being called, it will delete the original object, then spawn a prefab of debris with a force added to it, giving 
 // the effect of a shatter. if its explosive, this force also effects the environment as well as the shards. after that, the shards despawn after a set amount of time 
+//Travis Parks
 public class Shatter : MonoBehaviour
 {
 
@@ -59,20 +60,6 @@ public class Shatter : MonoBehaviour
         }
     }
     public void takeDamage(){
-        if (Damagestate < hitPoints){
-            foreach(Material m in color.materials ){
-                m.SetColor("_EmissionColor", Color.grey * darken);
-                m.SetColor("_Color", Color.grey * darken);
-                Damagestate++;
-                darken -= .2f;
-            }
-        }
-        else if ( Damagestate >= hitPoints){
-            Invoke("spawnShatter", 0);
-        }
-    }
-    public void takeDamagePUNCH(){
-        sounds.gameObject.GetComponent<SoundCaller>().playPunch();
         if (Damagestate < hitPoints){
             foreach(Material m in color.materials ){
                 m.SetColor("_EmissionColor", Color.grey * darken);

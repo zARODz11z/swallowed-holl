@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+//Travis and Lizbeth
 public class Explode : MonoBehaviour
 {
     [SerializeField] 
@@ -40,7 +40,7 @@ public class Explode : MonoBehaviour
     {
         if(this.gameObject.tag == "Explosive"){
             int index = Random.Range(0, bombAudioSource.Length);
-            Debug.Log(index);
+            //Debug.Log(index);
             bombAudioSource[index].Play();
         }
         foreach (GameObject G in GameObject.FindGameObjectsWithTag("Player")){
@@ -86,7 +86,10 @@ public class Explode : MonoBehaviour
                         //}
                         rb.AddExplosionForce(power, explosionPos, radius, upModifier);
                     if(!gate){
-                        player.GetComponent<PlayerStats>().takeDamage(Mathf.Lerp(playerDamageMax, playerDamageMin, damage));
+                        float test = Mathf.Lerp(playerDamageMax, playerDamageMin, damage);
+                        if(player.GetComponent<PlayerStats>().hp - test != player.GetComponent<PlayerStats>().hp){
+                            player.GetComponent<PlayerStats>().takeDamage(test);
+                        }
                         //Debug.Log("Lerping from "+ damage);
                         //Debug.Log("Reduce"+ Mathf.Lerp(playerDamageMax, playerDamageMin, damage));
                         gate = true;

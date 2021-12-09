@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+//Travis Parks
 //this script moves the object upwards at a set rate until it reaches a certain threshold, then it pauses once it reaches that point
 public class DoorOpenandClose : MonoBehaviour
 {
@@ -58,14 +58,12 @@ public class DoorOpenandClose : MonoBehaviour
 
     public void openSlidingDoor(){
         if(!subGate){
-
-            int index = Random.Range(0, doorOpen.Length);
-            doorOpen[index].Play();
-
             gate = true;
             direction = true;
             counter = 0;
             subGate = true;
+            int index = Random.Range(0, doorOpen.Length);
+            doorOpen[index].Play();
         }
         
     }

@@ -1,5 +1,6 @@
 using UnityEngine;
 //Travis Parks
+//This script pushes rigidbodies that are within its range away
 public class AccelerationZone : MonoBehaviour {
 	public bool Gate = false;
 

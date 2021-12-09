@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+//Breaks or damages any breakable object this object collides with
+//Travis Parks
 public class PropBuster : MonoBehaviour
 {
+    [SerializeField]
+    AudioSource[] punchSounds;
     [SerializeField]
     bool isPunch;
     [SerializeField]
@@ -14,6 +17,12 @@ public class PropBuster : MonoBehaviour
     bool oneShot = false;
     Shatter otherExplosive;
     void OnCollisionEnter(Collision other) {
+
+        if(other.gameObject.tag != "Player" && punchSounds.Length != 0){
+            int index = Random.Range(0, punchSounds.Length - 1);
+            punchSounds[index].Play();
+        }
+
         if(other.gameObject.GetComponent<Rigidbody>() != null){
             if (other.gameObject.GetComponent<Rigidbody>() != null && other.gameObject.tag != "Breakable" || other.gameObject.tag != "Explosive"){
                 other.gameObject.GetComponent<Rigidbody>().AddExplosionForce(power, transform.root.position, radius);
@@ -24,8 +33,7 @@ public class PropBuster : MonoBehaviour
                     if(otherExplosive.punchAble){
                         other.gameObject.GetComponent<Rigidbody>().AddExplosionForce(power, transform.root.position, radius);
                         if(isPunch){
-                            
-                            otherExplosive.takeDamagePUNCH();
+                            otherExplosive.takeDamage();
                         }
                         else{
                             otherExplosive.takeDamage();
@@ -34,6 +42,7 @@ public class PropBuster : MonoBehaviour
                 }
                 else{
                     if(otherExplosive.punchAble){
+
                         otherExplosive = other.gameObject.GetComponent<Shatter>();
                         otherExplosive.oneShot(0);
                     }

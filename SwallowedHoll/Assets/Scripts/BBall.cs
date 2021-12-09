@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 //Travis Parks
+//This script holds the thruHoop bool that is checked un bballhoop
 public class BBall : MonoBehaviour
 {
     bool thruHoop = false;

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 //this script handles the first person camera movement, sensitivity, acelleration, etc.
+//Adapted from Mcdogsman by Travis Parks
 public class SimpleCameraMovement : MonoBehaviour
 {
     [SerializeField]

@@ -9,7 +9,7 @@ public class WorldShift : MonoBehaviour
     [SerializeField]
     AudioSource[] shiftSounds;
     [SerializeField]
-    GameObject soundTrack;
+    public GameObject soundTrack;
     Controls controls;
     [SerializeField]
     public float shiftCost;
@@ -22,11 +22,13 @@ public class WorldShift : MonoBehaviour
     float warpOffset;
     bool desiresShift;
     bool subDummy = false;
+    public bool whichOne;
     public bool possibleShift;
     [Tooltip("True = holl, false = realWorld")]
     public bool hollOrReal;
     [SerializeField]
     public bool shiftBlocked = false;
+    
     public void setShiftBlocked(bool plug){
         shiftBlocked = plug;
     }
@@ -48,11 +50,17 @@ public class WorldShift : MonoBehaviour
 
     private void Start()
     {
+        
         controls = GameObject.Find("Data").GetComponentInChildren<Controls>();
+    }
+
+    public void swap(bool plug){
+        soundTrack.GetComponent<soundTrackToggler>().swap(plug);
     }
 
     void Update()
     {
+        whichOne = soundTrack.GetComponent<soundTrackToggler>().whichOne;
         if(hollOrReal){
                 dummy.transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z - warpOffset);
         }
@@ -75,7 +83,7 @@ public class WorldShift : MonoBehaviour
                                 shiftSounds[3].Play();
 
                                 if(soundTrack != null){
-                                    soundTrack.gameObject.GetComponent<soundTrackToggler>().swapOff();
+                                    soundTrack.gameObject.GetComponent<soundTrackToggler>().swap(false);
                                 }
                                 transform.position = dummy.transform.position;
                                 GetComponent<PlayerStats>().hunger = GetComponent<PlayerStats>().hunger - shiftCost;
@@ -91,7 +99,7 @@ public class WorldShift : MonoBehaviour
                                 shiftSounds[3].Play();
 
                                 if(soundTrack != null){
-                                    soundTrack.gameObject.GetComponent<soundTrackToggler>().swapOff();
+                                    soundTrack.gameObject.GetComponent<soundTrackToggler>().swap(false);
                                 }
                                 GetComponent<PlayerStats>().hunger = GetComponent<PlayerStats>().hunger - shiftCost;
                                 hollOrReal = false;
@@ -109,7 +117,7 @@ public class WorldShift : MonoBehaviour
                                     shiftSounds[3].Play();
 
                                     if(soundTrack != null){
-                                        soundTrack.gameObject.GetComponent<soundTrackToggler>().swapOff();
+                                        soundTrack.gameObject.GetComponent<soundTrackToggler>().swap(false);
                                     }
                                     GetComponent<PlayerStats>().hunger = GetComponent<PlayerStats>().hunger - shiftCost;
                                     subDummy = true;
@@ -144,7 +152,7 @@ public class WorldShift : MonoBehaviour
                             shiftSounds[3].Play();
 
                             if(soundTrack != null){
-                                soundTrack.gameObject.GetComponent<soundTrackToggler>().swapOn();
+                                soundTrack.gameObject.GetComponent<soundTrackToggler>().swap(true);
                             }
                             transform.position = dummy.transform.position;
                             GetComponent<PlayerStats>().hunger = GetComponent<PlayerStats>().hunger - shiftCost;
@@ -158,7 +166,7 @@ public class WorldShift : MonoBehaviour
                             shiftSounds[3].Play();
 
                             if(soundTrack != null){
-                                soundTrack.gameObject.GetComponent<soundTrackToggler>().swapOn();
+                                soundTrack.gameObject.GetComponent<soundTrackToggler>().swap(true);
                             }
                             transform.position = dummy.transform.position;
                             GetComponent<PlayerStats>().hunger = GetComponent<PlayerStats>().hunger - shiftCost;
@@ -177,7 +185,7 @@ public class WorldShift : MonoBehaviour
                                 shiftSounds[3].Play();
 
                                 if(soundTrack != null){
-                                    soundTrack.gameObject.GetComponent<soundTrackToggler>().swapOn();
+                                    soundTrack.gameObject.GetComponent<soundTrackToggler>().swap(true);
                                 }
                                 GetComponent<PlayerStats>().hunger = GetComponent<PlayerStats>().hunger - shiftCost;
                                 subDummy = true;

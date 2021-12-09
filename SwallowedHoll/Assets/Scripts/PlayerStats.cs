@@ -7,6 +7,8 @@ using UnityEngine;
 //this script will just keep track of the player's various stats and allow other scripts to access and edit them
 public class PlayerStats : MonoBehaviour
 {
+    [SerializeField]
+    AudioSource[] painSounds;
     public float hunger = 100;
     public float hp = 100;
 
@@ -17,11 +19,12 @@ public class PlayerStats : MonoBehaviour
     [HideInInspector]
     public bool portalWarp;
     public PlayerDeath playerDeath;
-
+    bool whichOne;
 
     public void SavePlayer()
     {
         SaveSystem.SavePlayer(this);
+        whichOne = transform.root.gameObject.GetComponent<WorldShift>().whichOne;
     }
     public void LoadPlayer()
     {
@@ -38,18 +41,40 @@ public class PlayerStats : MonoBehaviour
         transform.position = position;
         GetComponent<WorldShift>().hollOrReal = data.hollOrReal;
 
+        if(whichOne){
+            transform.root.gameObject.GetComponent<WorldShift>().swap(true);
+        }
+        else{
+            transform.root.gameObject.GetComponent<WorldShift>().swap(false);
+        }
+
+    }
+
+    public void restoreHP(float healAmount){
+        if (hp + healAmount > 100){
+            hp = 100;
+        }
+        else{
+            hp += healAmount;
+        }
     }
 
     public void takeDamage(float damage){
         if (hp - damage < 0){
             //Debug.Log("Went from "+hp+" to 0");
+
             hp = 0;
             playerDeath.Death();
 
         }
         else {
+
             //Debug.Log("Went from "+hp+" to "+ Mathf.Round(hp-damage));
-            hp = Mathf.Round(hp-damage);
+            if(hp != Mathf.Round(hp-damage)){
+                int index = Random.Range(0, painSounds.Length - 1);
+                painSounds[index].Play();
+                hp = Mathf.Round(hp-damage);
+            }
         }
     }
 

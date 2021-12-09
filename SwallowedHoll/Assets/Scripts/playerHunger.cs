@@ -29,10 +29,12 @@ public class playerHunger : MonoBehaviour
         if (stats.hunger + food >= maxHunger){
             //Set to max value
             stats.hunger = maxHunger;
+            stats.restoreHP(food/2);
         }
         else{
             //ELSE add value to current
             stats.hunger += food;
+            stats.restoreHP(food/2);
         }
     }
 

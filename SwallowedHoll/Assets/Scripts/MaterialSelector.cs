@@ -1,5 +1,6 @@
 using UnityEngine;
-
+//Adapted from https://catlikecoding.com by Travis Parks
+//Just switches an objects material on an event
 public class MaterialSelector : MonoBehaviour {
 
     //public Transform parentPrefab;

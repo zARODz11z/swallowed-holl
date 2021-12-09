@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 //this script controls where your "grab point " is, that being where a held object it pinned to. It moves depending on the size of the object, and when you charge up a throw
+//Travis Parks
 public class grabPointAnimController : MonoBehaviour
 {
     Animator anim;

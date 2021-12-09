@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+//Lizbeth 
 //this script is just so that we can disable the dynamic bone, or "flopyness" of the hands at will
 public class disableDynamicBone : MonoBehaviour
 {

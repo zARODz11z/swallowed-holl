@@ -66,7 +66,7 @@ public class Grab : MonoBehaviour
 
     void Start() {
         //Set components
-        controls = GameObject.Find("Player").GetComponentInChildren<Controls>();
+        controls = GameObject.Find("Data").GetComponentInChildren<Controls>();
         interact = GetComponent<Interact>();
         throwingTemp = throwingforce;
         movement = transform.root.GetComponent<Movement>();
@@ -192,7 +192,7 @@ public class Grab : MonoBehaviour
                 if (throwingforce <= maxThrowingForce)
                 {
                     isgrabCharging = true;
-                    throwingforce = throwingforce + chargeRate;
+                    throwingforce = throwingforce + (chargeRate * Time.deltaTime) * 100;
                 }
                 if (throwingforce > maxThrowingForce)
                 {

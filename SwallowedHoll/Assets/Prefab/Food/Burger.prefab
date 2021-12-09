@@ -60,9 +60,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86a2f82399ff0ef4681c263de2fa459a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  food: 10
+  food: 20
   respawn: 1
-  respawnDur: 5
+  respawnDur: 20
 --- !u!54 &1818297634448796352
 Rigidbody:
   m_ObjectHideFlags: 0
