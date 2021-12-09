@@ -66,7 +66,7 @@ public class Grab : MonoBehaviour
 
     void Start() {
         //Set components
-        controls = GameObject.Find("Player").GetComponentInChildren<Controls>();
+        controls = FindObjectOfType<Controls>();
         interact = GetComponent<Interact>();
         throwingTemp = throwingforce;
         movement = transform.root.GetComponent<Movement>();
