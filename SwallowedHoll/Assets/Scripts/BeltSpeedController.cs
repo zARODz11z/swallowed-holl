@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 //Travis Parks
+//This script controls the speed that the conveyor belt animation plays
 public class BeltSpeedController : MonoBehaviour
 {
     Animator animator;

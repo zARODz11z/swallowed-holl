@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using System.Collections.Generic;
 //this script allows you to drag and drop game obejcts in the editor and select a a specific method to be called in one way or another. has functionality to work on volumes as well. 
+//Travis Parks
 public class InteractableObject : MonoBehaviour {
 	
 	[SerializeField]

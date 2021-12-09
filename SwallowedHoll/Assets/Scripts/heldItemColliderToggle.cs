@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+//Travis Parks
 // this script toggles on and off the colliders that represent a held object depending on its size. 
 public class heldItemColliderToggle : MonoBehaviour
 {
@@ -17,10 +18,16 @@ public class heldItemColliderToggle : MonoBehaviour
         largeCollider = transform.GetChild(2).gameObject;
     }
 
+    public void clear(){
+        smallCollider.gameObject.SetActive(false);
+        medCollider.SetActive(false);
+        largeCollider.SetActive(false);
+    }
+
     // Update is called once per frame
     void Update()
     {
-        if( grab.isHolding ){
+        if(grab.isHolding){
             if(grab.sizes == Grab.objectSizes.large){
                 largeCollider.SetActive(true);
             }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 //Brian Meginness and Travis Parks
+//This script controls food objects being consumed
 public class Eat : MonoBehaviour
 {
 

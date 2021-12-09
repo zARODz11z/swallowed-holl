@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+//Brian and Travis 
+//Keeps track of various player stats
 
 [System.Serializable]
 public class PlayerData

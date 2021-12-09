@@ -13,7 +13,7 @@ public class HandAnim : MonoBehaviour
     [HideInInspector]
     public bool barragePrep = false;
     bool flipflop = true;
-    bool flipflop2 = true;
+    //bool flipflop2 = true;
     bool blocker = true;
     float charge;
     Animator animator;
@@ -99,7 +99,7 @@ public class HandAnim : MonoBehaviour
     void startBarrage(){
         animator.SetBool("barragePrep", false);
         movement.isBarraging = true;
-        flipflop2 = true;
+        //flipflop2 = true;
         //speedController.setFactor(.5f);
         //Debug.Log("SPEED CUT");
         //movement change here
@@ -269,19 +269,23 @@ public class HandAnim : MonoBehaviour
                     animator.SetFloat("walkBlend", playerSpeed);
                 }
             }
-            if (Input.GetKeyDown("mouse 1")) {
-                if (flipflop2 && !movement.isBarraging && !grab.isHolding) {
-                    animator.SetBool("barragePrep", true);
-                    blocker = false;
-                    flipflop2 = false;
-                }
-                else if (!flipflop2) {
-                    movement.isBarraging = false;
-                    animator.SetBool("barragePrep", false);
-                    blocker = true;
-                    flipflop2 = true;
-                }
-            }
+
+            //Barrage Attack
+           // if (Input.GetKeyDown("mouse 1")) {
+           //     if (flipflop2 && !movement.isBarraging && !grab.isHolding) {
+           //         animator.SetBool("barragePrep", true);
+           //         blocker = false;
+           //         flipflop2 = false;
+           //     }
+           //     else if (!flipflop2) {
+           //         movement.isBarraging = false;
+           //         animator.SetBool("barragePrep", false);
+           //         blocker = true;
+           //         flipflop2 = true;
+           //     }
+           // }
+
+
             if (Input.GetKeyDown(controls.keys["throw"])) {
                 if (blocker && !grab.isHolding) {
                     if (flipflop) {

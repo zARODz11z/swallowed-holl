@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 //Travis Parks
+//This controls the behavior of the conveyor belt object, pushing rigidbodies that fall upon it
 public class ConveyorBelt : MonoBehaviour
 {
     [SerializeField]

@@ -24,7 +24,9 @@ public class DeathMenu : MonoBehaviour
     //used for the Back to Main Menu Button
     public void BackToMainMenu()
     {
-      //loads the start menu
-      SceneManager.LoadScene(mainMenuLevel);
+        //unpauses time
+        Time.timeScale = 1;
+        //loads the start menu
+        SceneManager.LoadScene(mainMenuLevel);
     }
 }
