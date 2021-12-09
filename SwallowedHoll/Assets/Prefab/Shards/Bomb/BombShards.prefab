@@ -1177,10 +1177,10 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 135
+  Priority: 0
   DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 50
+  MinDistance: 20.91
+  MaxDistance: 61.3
   Pan2D: 0
   rolloffMode: 1
   BypassEffects: 0
@@ -1445,10 +1445,10 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 135
+  Priority: 0
   DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 50
+  MinDistance: 20.91
+  MaxDistance: 61.3
   Pan2D: 0
   rolloffMode: 1
   BypassEffects: 0
@@ -1956,6 +1956,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4860709554722771776}
   - component: {fileID: 4971425242331420595}
+  - component: {fileID: 5526787290336146097}
   m_Layer: 0
   m_Name: BombShards
   m_TagString: Explosive
@@ -2024,6 +2025,20 @@ MonoBehaviour:
   isBomb: 1
   playerDamageMax: 30
   playerDamageMin: 0
+--- !u!114 &5526787290336146097
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5205990996850592250}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f6e2f15f1eda9b41a1b9c6b45d71b8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lifeMin: 11
+  lifeMax: 11
 --- !u!1 &5429628454282808524
 GameObject:
   m_ObjectHideFlags: 0
@@ -2496,10 +2511,10 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 135
+  Priority: 0
   DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 50
+  MinDistance: 20.91
+  MaxDistance: 61.3
   Pan2D: 0
   rolloffMode: 1
   BypassEffects: 0
@@ -2764,10 +2779,10 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 135
+  Priority: 0
   DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 50
+  MinDistance: 20.91
+  MaxDistance: 61.3
   Pan2D: 0
   rolloffMode: 1
   BypassEffects: 0

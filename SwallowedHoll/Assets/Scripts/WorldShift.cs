@@ -6,6 +6,10 @@ using UnityEngine;
 //Travis Parks, modified to pause and rebind controls by Brian Meginness
 public class WorldShift : MonoBehaviour
 {
+    [SerializeField]
+    AudioSource[] shiftSounds;
+    [SerializeField]
+    GameObject soundTrack;
     Controls controls;
     [SerializeField]
     public float shiftCost;
@@ -65,6 +69,14 @@ public class WorldShift : MonoBehaviour
                             if(dummy.gameObject.GetComponent<canShift>().getCollider() != null){
                                 //Debug.Log("Shifting to Breakable Object");
                                 dummy.gameObject.GetComponent<canShift>().getCollider().GetComponent<Shatter>().oneShot(0);
+
+                                int index = Random.Range(0, shiftSounds.Length-1);
+                                shiftSounds[index].Play();
+                                shiftSounds[3].Play();
+
+                                if(soundTrack != null){
+                                    soundTrack.gameObject.GetComponent<soundTrackToggler>().swapOff();
+                                }
                                 transform.position = dummy.transform.position;
                                 GetComponent<PlayerStats>().hunger = GetComponent<PlayerStats>().hunger - shiftCost;
                                 hollOrReal = false;
@@ -73,6 +85,14 @@ public class WorldShift : MonoBehaviour
                             else{
                                 //Debug.Log("Shifting to Main dummy");
                                 transform.position = dummy.transform.position;
+
+                                int index = Random.Range(0, shiftSounds.Length-1);
+                                shiftSounds[index].Play();
+                                shiftSounds[3].Play();
+
+                                if(soundTrack != null){
+                                    soundTrack.gameObject.GetComponent<soundTrackToggler>().swapOff();
+                                }
                                 GetComponent<PlayerStats>().hunger = GetComponent<PlayerStats>().hunger - shiftCost;
                                 hollOrReal = false;
                             }
@@ -83,6 +103,14 @@ public class WorldShift : MonoBehaviour
                                 if(d.gameObject.GetComponent<canShift>().getShiftable()){
                                     //Debug.Log("Shifting to subdummy "+ d);
                                     transform.position = d.transform.position;
+
+                                    int index = Random.Range(0, shiftSounds.Length-1);
+                                    shiftSounds[index].Play();
+                                    shiftSounds[3].Play();
+
+                                    if(soundTrack != null){
+                                        soundTrack.gameObject.GetComponent<soundTrackToggler>().swapOff();
+                                    }
                                     GetComponent<PlayerStats>().hunger = GetComponent<PlayerStats>().hunger - shiftCost;
                                     subDummy = true;
                                     hollOrReal = false;
@@ -110,12 +138,28 @@ public class WorldShift : MonoBehaviour
                         if(dummy.gameObject.GetComponent<canShift>().getCollider() != null){
                             //Debug.Log("Shifting to Breakable Object");
                             dummy.gameObject.GetComponent<canShift>().getCollider().GetComponent<Shatter>().oneShot(0);
+
+                            int index = Random.Range(0, shiftSounds.Length-1);
+                            shiftSounds[index].Play();
+                            shiftSounds[3].Play();
+
+                            if(soundTrack != null){
+                                soundTrack.gameObject.GetComponent<soundTrackToggler>().swapOn();
+                            }
                             transform.position = dummy.transform.position;
                             GetComponent<PlayerStats>().hunger = GetComponent<PlayerStats>().hunger - shiftCost;
                             hollOrReal = true;
                         }
                         else{
                             //Debug.Log("Shifting to Main dummy");
+
+                            int index = Random.Range(0, shiftSounds.Length-1);
+                            shiftSounds[index].Play();
+                            shiftSounds[3].Play();
+
+                            if(soundTrack != null){
+                                soundTrack.gameObject.GetComponent<soundTrackToggler>().swapOn();
+                            }
                             transform.position = dummy.transform.position;
                             GetComponent<PlayerStats>().hunger = GetComponent<PlayerStats>().hunger - shiftCost;
                             hollOrReal = true;
@@ -127,6 +171,14 @@ public class WorldShift : MonoBehaviour
                             if(d.gameObject.GetComponent<canShift>().getShiftable()){
                                 //Debug.Log("Shifting to subdummy "+ d);
                                 transform.position = d.transform.position;
+
+                                int index = Random.Range(0, shiftSounds.Length-1);
+                                shiftSounds[index].Play();
+                                shiftSounds[3].Play();
+
+                                if(soundTrack != null){
+                                    soundTrack.gameObject.GetComponent<soundTrackToggler>().swapOn();
+                                }
                                 GetComponent<PlayerStats>().hunger = GetComponent<PlayerStats>().hunger - shiftCost;
                                 subDummy = true;
                                 hollOrReal = true;
