@@ -151,19 +151,19 @@ public class HelpMenu : MonoBehaviour
         promptTxt.SetActive(false);
         rebindTxt.SetActive(true);
 
-        //Set images to associated key sprite
-        moveLeft.sprite = Resources.Load<Sprite>(leftKey.ToString());
-        moveRight.sprite = Resources.Load<Sprite>(rightKey.ToString());
-        moveUp.sprite = Resources.Load<Sprite>(upKey.ToString());
-        moveDown.sprite = Resources.Load<Sprite>(downKey.ToString());
-        jump.sprite = Resources.Load<Sprite>(jumpKey.ToString());
-        duck.sprite = Resources.Load<Sprite>(duckKey.ToString());
-        sprint.sprite = Resources.Load<Sprite>(runKey.ToString());
-        interact.sprite = Resources.Load<Sprite>(interKey.ToString());
-        warp.sprite = Resources.Load<Sprite>(warpKey.ToString());
-        throwItem.sprite = Resources.Load<Sprite>(throwKey.ToString());
-        eat.sprite = Resources.Load<Sprite>(eatKey.ToString());
-        diveCrouch.sprite = Resources.Load<Sprite>(duckKey.ToString());
-        diveJump.sprite = Resources.Load<Sprite>(jumpKey.ToString());
+        //Set images to associated key sprite, or blank if associated sprite doesn't exist
+        moveLeft.sprite = Resources.Load<Sprite>(leftKey.ToString()) == null ? Resources.Load<Sprite>("Blank") : Resources.Load<Sprite>(leftKey.ToString());
+        moveRight.sprite = Resources.Load<Sprite>(rightKey.ToString()) == null ? Resources.Load<Sprite>("Blank") : Resources.Load<Sprite>(rightKey.ToString());
+        moveUp.sprite = Resources.Load<Sprite>(upKey.ToString()) == null ? Resources.Load<Sprite>("Blank") : Resources.Load<Sprite>(upKey.ToString());
+        moveDown.sprite = Resources.Load<Sprite>(downKey.ToString()) == null ? Resources.Load<Sprite>("Blank") : Resources.Load<Sprite>(downKey.ToString());
+        jump.sprite = Resources.Load<Sprite>(jumpKey.ToString()) == null ? Resources.Load<Sprite>("Blank") : Resources.Load<Sprite>(jumpKey.ToString());
+        duck.sprite = Resources.Load<Sprite>(duckKey.ToString()) == null ? Resources.Load<Sprite>("Blank") : Resources.Load<Sprite>(duckKey.ToString());
+        sprint.sprite = Resources.Load<Sprite>(runKey.ToString()) == null ? Resources.Load<Sprite>("Blank") : Resources.Load<Sprite>(runKey.ToString());
+        interact.sprite = Resources.Load<Sprite>(interKey.ToString()) == null ? Resources.Load<Sprite>("Blank") : Resources.Load<Sprite>(interKey.ToString());
+        warp.sprite = Resources.Load<Sprite>(warpKey.ToString()) == null ? Resources.Load<Sprite>("Blank") : Resources.Load<Sprite>(warpKey.ToString());
+        throwItem.sprite = Resources.Load<Sprite>(throwKey.ToString()) == null ? Resources.Load<Sprite>("Blank") : Resources.Load<Sprite>(throwKey.ToString());
+        eat.sprite = Resources.Load<Sprite>(eatKey.ToString()) == null ? Resources.Load<Sprite>("Blank") : Resources.Load<Sprite>(eatKey.ToString());
+        diveCrouch.sprite = duck.sprite;
+        diveJump.sprite = jump.sprite;
     }
 }
