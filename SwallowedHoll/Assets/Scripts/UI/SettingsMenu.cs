@@ -1,10 +1,11 @@
+//Author: Brian Meginness
+//Debugging: Brian Meginness
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System.Linq;
 
-// Brian Meginness
 public class SettingsMenu : MonoBehaviour
 {
     //Menu components
@@ -20,12 +21,12 @@ public class SettingsMenu : MonoBehaviour
     {
         //Get components
         volSlide = GameObject.Find("VolumeSlide").GetComponent<Slider>();
+        volSlide.value = 0.5f;
         resDrop = GameObject.Find("Resolution").GetComponent<Dropdown>();
         resolutions = Screen.resolutions.Where(resolution => resolution.refreshRate == Screen.currentResolution.refreshRate).ToArray();
         fullToggle = GameObject.Find("Fullscreen").GetComponent<Toggle>();
         fullToggle.isOn = Screen.fullScreen;
         qualDrop = GameObject.Find("Quality").GetComponent<Dropdown>();
-
         //Get available, current resolutions for resolutions dropdown
         GetResolutions();
 
@@ -38,7 +39,7 @@ public class SettingsMenu : MonoBehaviour
         //Slider OnChange() is called when initialized, sometimes before start() can finish
         if (volSlide)
         {
-            Debug.Log("Vol Changed: " + volSlide.value);
+            AudioListener.volume = volSlide.value * 2;
         }
 
     }
