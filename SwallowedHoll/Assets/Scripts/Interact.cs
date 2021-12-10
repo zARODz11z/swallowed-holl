@@ -1,7 +1,9 @@
+//Author: Travis Parks
+//Debugging: Travis Parks, Brian Meginness
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-//Travis Parks and Brian Meginness
+
 //this script handles interacting with various objects, such as a button, a lever, a pickupable object, etc. essentially just pressing e on something
 public class Interact : MonoBehaviour
 {

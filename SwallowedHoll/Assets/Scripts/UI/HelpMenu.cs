@@ -1,9 +1,10 @@
+//Author: Brian Meginness
+//Debugging: Brian Meginness, Travis Parks
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-//Brian Meginness
 public class HelpMenu : MonoBehaviour
 {
     //Menu images

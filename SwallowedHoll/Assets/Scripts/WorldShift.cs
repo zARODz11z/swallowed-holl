@@ -1,9 +1,11 @@
+//Author: Travis Parks
+//Debugging: Travis Parks, Brian Meginness
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 
-//Travis Parks, modified to pause and rebind controls by Brian Meginness
+//Modified to pause and rebind controls by Brian Meginness
 public class WorldShift : MonoBehaviour
 {
     [SerializeField]

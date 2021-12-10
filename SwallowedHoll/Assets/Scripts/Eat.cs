@@ -1,8 +1,9 @@
+//Authors: Brian Meginness, Travis Parks
+//Debugging: Brian Meginness
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-//Brian Meginness and Travis Parks
 //This script controls food objects being consumed
 public class Eat : MonoBehaviour
 {

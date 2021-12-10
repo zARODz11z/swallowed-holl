@@ -1,9 +1,10 @@
+//Author: Brian Meginness
+//Debugging: Brian Meginness
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-//Brian Meginness
 public class MainMenu : MonoBehaviour
 {
     //Menu components

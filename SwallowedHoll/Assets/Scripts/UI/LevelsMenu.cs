@@ -1,3 +1,5 @@
+//Author: Brian Meginness
+//Debugging: Brian Meginness
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,12 +8,7 @@ using UnityEngine.SceneManagement;
 public class LevelsMenu : MonoBehaviour
 {
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
+    // On level select, load appropriate scene
     public void startLevel(int level)
     {
         SceneManager.LoadScene(level);
