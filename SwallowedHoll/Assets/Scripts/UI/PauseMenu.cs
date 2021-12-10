@@ -1,10 +1,11 @@
+//Author: Brian Meginness
+//Debugging: Brian Meginness, Travis Parks, Andrew Rodriguez
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-//Brian Meginness
 public class PauseMenu : MonoBehaviour
 {
     // Components for each UI screen

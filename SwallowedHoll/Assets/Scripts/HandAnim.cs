@@ -1,7 +1,9 @@
+//Author: Travis Parks
+//Debugging: Travis Parks
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-//Travis Parks, Update() pausing by Brian Meginness
+
 //this script controls all the animations tied to the character, such as when certain animations should be played and how they should be played.
 public class HandAnim : MonoBehaviour
 {
@@ -165,6 +167,7 @@ public class HandAnim : MonoBehaviour
         animator.SetBool("walkPressed", false);
     }
 
+    //Update() pausing by Brian Meginness
     // Update is called once per frame
     void Update()
     {

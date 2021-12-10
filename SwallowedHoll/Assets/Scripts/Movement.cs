@@ -1,3 +1,5 @@
+//Author: Travis Parks
+//Debugging: Travis Parks, Brian Meginness
 using UnityEngine;
 public class Movement : MonoBehaviour { 
 	//This script controls the movement of the character. Adapted from https://catlikecoding.com/unity/tutorials/movement/ by Travis Parks

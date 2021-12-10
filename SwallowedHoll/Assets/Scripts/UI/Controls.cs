@@ -1,8 +1,9 @@
+//Author: Brian Meginness
+//Debugging: Brian Meginness
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-//Brian Meginness
 public class Controls : MonoBehaviour
 {
     public Dictionary<string, KeyCode> keys;

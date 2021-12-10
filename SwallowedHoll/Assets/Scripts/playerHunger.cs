@@ -1,7 +1,8 @@
+//Author: Brian Meginness, Travis Parks
+//Debugging: Travis Parks
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-//Brian Meginness and Travis Parks
 //this script handles the players hunger and the rate at which it decays, assuming it decays at all. It also controls how it is increased. 
 public class playerHunger : MonoBehaviour
 {
@@ -21,7 +22,6 @@ public class playerHunger : MonoBehaviour
     public void increaseHunger(float food){
 
         int index = Random.Range(0, eatingAudioSource.Length - 1);
-        Debug.Log(index);
         eatingAudioSource[index].Play();
         eatingAudioSource[5].Play();
 

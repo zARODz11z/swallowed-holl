@@ -1711,7 +1711,7 @@ Material:
     - m_start_scrollingEmissionOptions: 0
     - m_start_scrollingEmissionOptions1: 0
     - m_start_shadowTexture: 0
-    - m_start_specular: 0
+    - m_start_specular: 1
     - m_start_specular1: 0
     - m_start_subsurface: 0
     - m_start_vertexManipulation: 0
