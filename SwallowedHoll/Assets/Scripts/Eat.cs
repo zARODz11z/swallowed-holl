@@ -50,17 +50,17 @@ public class Eat : MonoBehaviour
             if (other.transform.parent.GetComponentInChildren<Movement>().hungerDive()){
                 eatFood(other.transform.parent.GetComponentInChildren<playerHunger>());
             }
-            else {
-            GameObject copy = Instantiate(this.gameObject);
-            if (this.GetComponent<BoxCollider>() && this.GetComponent<BoxCollider>().isTrigger){ 
-            hideFood();
-            }
-            Interact playerInteract = other.transform.parent.GetComponentInChildren<Interact>();
+            else if (!other.transform.parent.GetComponentInChildren<Grab>().isHolding) {
+                GameObject copy = Instantiate(this.gameObject);
+                if (this.GetComponent<BoxCollider>() && this.GetComponent<BoxCollider>().isTrigger){ 
+                hideFood();
+                }
+                Interact playerInteract = other.transform.parent.GetComponentInChildren<Interact>();
 
-            copy.GetComponent<Floater>().enabled = false;
-            copy.GetComponent<BoxCollider>().isTrigger = false;
-            copy.GetComponent<Rigidbody>().useGravity = true;
-            playerInteract.pickUp(copy);
+                copy.GetComponent<Floater>().enabled = false;
+                copy.GetComponent<BoxCollider>().isTrigger = false;
+                copy.GetComponent<Rigidbody>().useGravity = true;
+                playerInteract.pickUp(copy);
             }
         
         } 
