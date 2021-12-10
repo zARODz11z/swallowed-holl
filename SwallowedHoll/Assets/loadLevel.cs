@@ -10,29 +10,6 @@ public class loadLevel : MonoBehaviour
 
     public bool useIntegerToLoadLevel = false;
 
-    
-    void Start()
-    {
-        
-    }
-
-    
-    void Update()
-    {
-        
-    }
-    
-    private void onTriggerEnter(Collision other)
-    {
-        GameObject collisionGameObject = other.gameObject;
-
-        if(collisionGameObject.tag == "Player")
-        {
-            LoadScene();
-        }
-
-    }
-
    
     /*void onCollisionEnter(Collision gameObjectInformation)
     {
@@ -43,7 +20,7 @@ public class loadLevel : MonoBehaviour
         }
     }*/
 
-    void LoadScene()
+    public void LoadScene()
     {
         if (useIntegerToLoadLevel)
         {
