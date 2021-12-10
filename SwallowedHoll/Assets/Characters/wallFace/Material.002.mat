@@ -8,13 +8,16 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Material.002
-  m_Shader: {fileID: 4800000, guid: 917b37092bae034459c28c00a3a19b54, type: 3}
+  m_Shader: {fileID: 4800000, guid: 897f6100085484741a60ed75b2e4484b, type: 3}
   m_ShaderKeywords: VIGNETTE_MASKED _SMOOTHNESS_TEXTURE_ALBEDO_CHANNEL_A _SPECGLOSSMAP
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
+  m_CustomRenderQueue: 2000
+  stringTagMap:
+    OptimizedShaderFolder: Material.002-80213f44
+    OriginalShader: ".poiyomi/\u2022 Poiyomi Toon \u2022"
+    RenderType: Opaque
   disabledShaderPasses: []
   m_SavedProperties:
     serializedVersion: 3
@@ -765,7 +768,7 @@ Material:
     - _EnableSSSAnimated: 0
     - _EnableScifiSpawnInAnimated: 0
     - _EnableSpecular: 1
-    - _EnableSpecular1: 0
+    - _EnableSpecular1: 1
     - _EnableSpecular1Animated: 0
     - _EnableSpecularAnimated: 0
     - _EnableTouchGlowAnimated: 0
@@ -1321,7 +1324,7 @@ Material:
     - _ScrollingEmission1: 0
     - _ScrollingEmission1Animated: 0
     - _ScrollingEmissionAnimated: 0
-    - _ShaderOptimizerEnabled: 0
+    - _ShaderOptimizerEnabled: 1
     - _ShadowMix: 0
     - _ShadowMixAnimated: 0
     - _ShadowMixThreshold: 0.5
@@ -1335,7 +1338,7 @@ Material:
     - _Smoothness: 0
     - _SmoothnessAnimated: 0
     - _SmoothnessFrom: 1
-    - _SmoothnessFrom1: 1
+    - _SmoothnessFrom1: 0
     - _SmoothnessFrom1Animated: 0
     - _SmoothnessFromAnimated: 0
     - _SmoothnessMaskAnimated: 0
@@ -1423,20 +1426,20 @@ Material:
     - _SpecularNormal1: 1
     - _SpecularNormal1Animated: 0
     - _SpecularNormalAnimated: 0
-    - _SpecularSmoothness: 0.642
-    - _SpecularSmoothness1: 0.75
+    - _SpecularSmoothness: 0.866
+    - _SpecularSmoothness1: 0.66
     - _SpecularSmoothness1Animated: 0
     - _SpecularSmoothnessAnimated: 0
     - _SpecularTint1Animated: 0
     - _SpecularTintAnimated: 0
-    - _SpecularToonEnd: 1.196
-    - _SpecularToonEnd1: 1
+    - _SpecularToonEnd: 1.227
+    - _SpecularToonEnd1: 1.026
     - _SpecularToonEnd1Animated: 0
     - _SpecularToonEndAnimated: 0
     - _SpecularToonInnerOuter1Animated: 0
     - _SpecularToonInnerOuterAnimated: 0
-    - _SpecularToonStart: 0.892
-    - _SpecularToonStart1: 0.95
+    - _SpecularToonStart: 0.737
+    - _SpecularToonStart1: 0.652
     - _SpecularToonStart1Animated: 0
     - _SpecularToonStartAnimated: 0
     - _SpecularType: 1
@@ -1709,7 +1712,7 @@ Material:
     - m_start_scrollingEmissionOptions1: 0
     - m_start_shadowTexture: 0
     - m_start_specular: 1
-    - m_start_specular1: 0
+    - m_start_specular1: 1
     - m_start_subsurface: 0
     - m_start_vertexManipulation: 0
     - shader_is_using_thry_editor: 69
@@ -1832,7 +1835,7 @@ Material:
     - _SpecularTint: {r: 1, g: 1, b: 1, a: 1}
     - _SpecularTint1: {r: 1, g: 1, b: 1, a: 1}
     - _SpecularToonInnerOuter: {r: 0.25, g: 0.3, b: 0, a: 1}
-    - _SpecularToonInnerOuter1: {r: 0.25, g: 0.3, b: 0, a: 1}
+    - _SpecularToonInnerOuter1: {r: 0, g: 0.050000012, b: 0, a: 1}
     - _TextFPSColor: {r: 1, g: 1, b: 1, a: 1}
     - _TextFPSOffset: {r: 0, g: 0, b: 0, a: 0}
     - _TextFPSPadding: {r: 0, g: 0, b: 0, a: 0}

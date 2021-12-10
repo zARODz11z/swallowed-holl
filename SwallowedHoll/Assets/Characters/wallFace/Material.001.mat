@@ -442,7 +442,7 @@ Material:
     - _BumpMapPanAnimated: 0
     - _BumpMapUV: 0
     - _BumpMapUVAnimated: 0
-    - _BumpScale: 1
+    - _BumpScale: 2.91
     - _BumpScaleAnimated: 0
     - _CameraAngleMax: 90
     - _CameraAngleMaxAnimated: 0
@@ -697,7 +697,7 @@ Material:
     - _EmissionScrollingVertexColor1: 0
     - _EmissionScrollingVertexColor1Animated: 0
     - _EmissionScrollingVertexColorAnimated: 0
-    - _EmissionStrength: 7.11
+    - _EmissionStrength: 6.08
     - _EmissionStrength1: 0
     - _EmissionStrength1Animated: 0
     - _EmissionStrengthAnimated: 0
@@ -1010,7 +1010,7 @@ Material:
     - _MainAlphaToCoverage: 0
     - _MainAlphaToCoverageAnimated: 0
     - _MainDistanceFadeAnimated: 0
-    - _MainEmissionStrength: 0
+    - _MainEmissionStrength: 1.91
     - _MainEmissionStrengthAnimated: 0
     - _MainFadeTextureAnimated: 0
     - _MainFadeTexturePanAnimated: 0
@@ -1728,7 +1728,7 @@ Material:
     - _ClearCoatMaskPan: {r: 0, g: 0, b: 0, a: 0}
     - _ClearCoatSmoothnessMapPan: {r: 0, g: 0, b: 0, a: 0}
     - _ClearCoatTint: {r: 1, g: 1, b: 1, a: 1}
-    - _Color: {r: 0.8836721, g: 1, b: 0.6907356, a: 1}
+    - _Color: {r: 0.8510914, g: 1, b: 0.1745283, a: 1}
     - _DecalColor: {r: 1, g: 1, b: 1, a: 1}
     - _DecalMaskPan: {r: 0, g: 0, b: 0, a: 0}
     - _DecalPosition: {r: 0.5, g: 0.5, b: 0, a: 0}
