@@ -22,7 +22,7 @@ public class loadLevel : MonoBehaviour
         
     }
     
-    private void onTriggerEnter(Collision other)
+    private void OnTriggerEnter(Collider other)
     {
         GameObject collisionGameObject = other.gameObject;
 
