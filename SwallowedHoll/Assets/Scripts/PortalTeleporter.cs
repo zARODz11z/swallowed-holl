@@ -7,6 +7,8 @@ using UnityEngine;
 
 public class PortalTeleporter : MonoBehaviour
 {
+    [SerializeField]
+    AudioSource shiftNoise;
     //reference to player
     public Transform player;
     //reference to receiving portal
@@ -49,6 +51,7 @@ public class PortalTeleporter : MonoBehaviour
     {
       if (other.tag == "Player" && !player.GetComponent<PlayerStats>().portalWarp)
       {
+        shiftNoise.Play();
         playerIsOverlapping = true;
       }
     }

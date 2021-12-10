@@ -18,4 +18,5 @@ public class SoundCaller : MonoBehaviour
         index = Random.Range(0, punches.Length);
         punches[index].GetComponent<AudioSource>().Play();
     }
+    
 }
