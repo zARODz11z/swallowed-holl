@@ -34,13 +34,18 @@ public class Eat : MonoBehaviour
     {
         hideFood();
         ph.increaseHunger(food);
-        
-        
+
     }
 
     //For being called in external methods, such as when eating from held (See Grab.cs)
     public void eatFood(){
-        GameObject.FindGameObjectWithTag("Player").GetComponent<playerHunger>().increaseHunger(food);
+        
+        foreach(GameObject G in GameObject.FindGameObjectsWithTag("Player")){
+            if(G.GetComponent<Movement>()){
+                G.GetComponent<playerHunger>().increaseHunger(food);
+            }
+        }
+
         Destroy(gameObject);
     }
     
