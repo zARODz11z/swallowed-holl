@@ -6792,7 +6792,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 24300002, guid: 0dbf3beb2375f7d41bbb7840bb835b57, type: 2}
   m_audioClip: {fileID: 8300000, guid: bc315d11fdecb4840951a0578cac283d, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.822
+  m_Volume: 0.393
   m_Pitch: 0.9
   Loop: 0
   Mute: 0
@@ -11044,8 +11044,6 @@ MonoBehaviour:
   hp: 100
   hungerBar: {fileID: 0}
   healthBar: {fileID: 0}
-  saveKey: 118
-  loadGameKey: 98
   portalWarp: 0
   playerDeath: {fileID: 3941264005942276419}
 --- !u!114 &130062652677496377

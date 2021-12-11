@@ -152,7 +152,7 @@ public class Interact : MonoBehaviour
                 {
                     RaycastHit hit;
                     //IF a raycast hits something
-                    if (Physics.SphereCast(origin.transform.position, .5f, (dummy.position - origin.transform.position), out hit, distance, mask))
+                    if (Physics.SphereCast(origin.transform.position, .2f, (dummy.position - origin.transform.position), out hit, distance, mask))
                     {
                         //Get the properties of the something you hit
                         propRB = hit.rigidbody;

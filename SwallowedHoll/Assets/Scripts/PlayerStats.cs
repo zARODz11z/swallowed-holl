@@ -14,8 +14,6 @@ public class PlayerStats : MonoBehaviour
 
     public HungerBar hungerBar;
     public HealthBar healthBar;
-    public KeyCode saveKey = KeyCode.V;
-    public KeyCode loadGameKey = KeyCode.B;
     [HideInInspector]
     public bool portalWarp;
     public PlayerDeath playerDeath;
@@ -94,15 +92,6 @@ public class PlayerStats : MonoBehaviour
         hungerBar.SetHunger(hunger);
         //updates the slider value to match the current hp value
         healthBar.SetHealth(hp);
-
-        if (Input.GetKeyDown(saveKey))
-        {
-            SavePlayer();
-        }
-        else if (Input.GetKey(loadGameKey))
-        {
-            LoadPlayer();
-        }
     }
 
 }
