@@ -52,7 +52,7 @@ public class DoorOpenandClose : MonoBehaviour
     }
 
     public void timedOpenDoor(){
-        Invoke("openSlidingDoor", 30f);
+        Invoke("openSlidingDoor", 15f);
     }
 
 
