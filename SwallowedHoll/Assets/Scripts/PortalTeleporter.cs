@@ -51,7 +51,7 @@ public class PortalTeleporter : MonoBehaviour
     {
       if (other.tag == "Player" && !player.GetComponent<PlayerStats>().portalWarp)
       {
-        shiftNoise.Play();
+        shiftNoise.Play(); 
         playerIsOverlapping = true;
       }
     }

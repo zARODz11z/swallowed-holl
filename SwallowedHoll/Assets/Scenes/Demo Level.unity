@@ -17160,7 +17160,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh1602224
+  m_Name: pb_Mesh57208
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -25723,7 +25723,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-647390
+  m_Name: pb_Mesh-50552
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -27086,7 +27086,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh1602014
+  m_Name: pb_Mesh57000
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -29681,7 +29681,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-650388
+  m_Name: pb_Mesh-53624
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -30704,7 +30704,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh1602936
+  m_Name: pb_Mesh57940
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -44636,7 +44636,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7164784198832043838, guid: 78407b530d2cb104da8bac86a18ce0b9, type: 3}
       propertyPath: dialogue.sentences.Array.data[4]
-      value: if you simply crouch, the jump while crouched, you can fling yourself
+      value: if you simply crouch, then jump while crouched, you can fling yourself
         forward, mouth first!
       objectReference: {fileID: 0}
     - target: {fileID: 7164784198832043838, guid: 78407b530d2cb104da8bac86a18ce0b9, type: 3}
@@ -45253,7 +45253,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh1603268
+  m_Name: pb_Mesh58270
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -45588,7 +45588,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh1604216
+  m_Name: pb_Mesh59222
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -45852,7 +45852,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-654030
+  m_Name: pb_Mesh-57172
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -47566,7 +47566,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh1602194
+  m_Name: pb_Mesh57178
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -48098,7 +48098,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh1603560
+  m_Name: pb_Mesh58558
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -50102,7 +50102,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-647892
+  m_Name: pb_Mesh-51040
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -50779,7 +50779,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh1601276
+  m_Name: pb_Mesh56266
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -51772,7 +51772,7 @@ PrefabInstance:
     - target: {fileID: 6766651333825255981, guid: a2df2a8846fc39d499cdc7ec9c25e8a3, type: 3}
       propertyPath: dialogue.sentences.Array.data[1]
       value: We have provided some provisions for you here, on top of the provisions
-        you had upon entering ourr facility
+        you had upon entering our facility
       objectReference: {fileID: 0}
     - target: {fileID: 6766651333825255981, guid: a2df2a8846fc39d499cdc7ec9c25e8a3, type: 3}
       propertyPath: dialogue.sentences.Array.data[2]
@@ -51825,7 +51825,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6766651333825255981, guid: a2df2a8846fc39d499cdc7ec9c25e8a3, type: 3}
       propertyPath: dialogue.sentences.Array.data[12]
-      value: On the top left of you screen, you will notice a blue orb. Since it
+      value: On the top left of your screen, you will notice a blue orb. Since it
         is blue, you can rest assured you are home!
       objectReference: {fileID: 0}
     - target: {fileID: 6766651333825255981, guid: a2df2a8846fc39d499cdc7ec9c25e8a3, type: 3}
